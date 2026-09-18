@@ -1,0 +1,98 @@
+##### Written on 2026/09/18 13:40:59 ################################################
+
+##### INFO ##########################################################################
+
+Current Device:
+    PGL50H-6FBG484
+
+Top Module:
+    led_top
+
+Constraint File(s):
+    E:/code/PangoWork/Works/led/Constraints/io/clk.fdc
+    E:/code/PangoWork/Works/led/Constraints/io/key.fdc
+    E:/code/PangoWork/Works/led/Constraints/io/led.fdc
+    E:/code/PangoWork/Works/led/Constraints/clock/clocks.fdc
+
+##### SUMMARY #######################################################################
+
+Found 0 error(s), 9 critical warning(s), 36 warning(s), out of 75 constraint(s)
+
+Constraints With Issues(infos):
+********************************************
+
+define_attribute {p:io_key_in[0]} {PAP_IO_DIRECTION} {OUTPUT}
+    C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_key_in[0]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically.
+
+define_attribute {p:io_key_in[0]} {PAP_IO_LOC} {K18}
+    W: ConstraintEditor-4040: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 2)] Port p:io_key_in[0] has been placed at location K18, whose type is share pin.
+
+define_attribute {p:io_key_in[1]} {PAP_IO_DIRECTION} {OUTPUT}
+    C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 5)] 'OUTPUT' is not correct, direction of port 'io_key_in[1]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically.
+
+define_attribute {p:io_key_in[2]} {PAP_IO_DIRECTION} {OUTPUT}
+    C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 9)] 'OUTPUT' is not correct, direction of port 'io_key_in[2]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically.
+
+define_attribute {p:io_key_in[3]} {PAP_IO_DIRECTION} {OUTPUT}
+    C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 13)] 'OUTPUT' is not correct, direction of port 'io_key_in[3]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically.
+
+define_attribute {p:io_key_in[4]} {PAP_IO_DIRECTION} {OUTPUT}
+    C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 17)] 'OUTPUT' is not correct, direction of port 'io_key_in[4]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically.
+
+define_attribute {p:io_key_in[5]} {PAP_IO_DIRECTION} {OUTPUT}
+    C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 21)] 'OUTPUT' is not correct, direction of port 'io_key_in[5]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically.
+
+define_attribute {p:io_key_in[5]} {PAP_IO_LOC} {J19}
+    W: ConstraintEditor-4040: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 22)] Port p:io_key_in[5] has been placed at location J19, whose type is share pin.
+
+define_attribute {p:io_key_in[6]} {PAP_IO_DIRECTION} {OUTPUT}
+    C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 25)] 'OUTPUT' is not correct, direction of port 'io_key_in[6]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically.
+
+define_attribute {p:io_key_in[6]} {PAP_IO_LOC} {H20}
+    W: ConstraintEditor-4040: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 26)] Port p:io_key_in[6] has been placed at location H20, whose type is share pin.
+
+define_attribute {p:io_key_in[7]} {PAP_IO_DIRECTION} {OUTPUT}
+    C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 29)] 'OUTPUT' is not correct, direction of port 'io_key_in[7]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically.
+
+define_attribute {p:io_rst_n} {PAP_IO_LOC} {AB13}
+    W: ConstraintEditor-4040: [E:/code/PangoWork/Works/led/Constraints/io/clk.fdc(line number: 8)] Port p:io_rst_n has been placed at location AB13, whose type is share pin.
+
+define_attribute {p:io_sys_clk_50mhz} {PAP_IO_DIRECTION} {OUTPUT}
+    C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/clk.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_sys_clk_50mhz' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 7)]. The direction has been corrected automatically.
+
+Other Issues(infos):
+********************************************
+
+    W: ConstraintEditor-4042: Port 'p:io_key_in[0]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_key_in[1]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_key_in[2]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_key_in[3]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_key_in[4]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_key_in[5]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_key_in[6]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_key_in[7]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[0]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[0]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[0]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[1]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[1]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[1]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[2]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[2]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[2]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[3]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[3]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[3]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[4]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[4]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[4]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[5]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[5]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[5]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[6]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[6]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[6]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[7]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[7]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:io_led_out[7]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+
