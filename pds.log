@@ -778,3 +778,766 @@ Process "Report Timing" done.
 Process "Generate Bitstream" done.
 Open Configuration ...
 Configuration initialization started successfully.
+Configuration Closed.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Fri Sep 18 18:14:09 2026
+Process "Generate Bitstream" done.
+ 
+Command: set_option -options { top_module {led_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Fri Sep 18 18:14:20 2026
+Process "Compile" done.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Fri Sep 18 18:14:24 2026
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/clk.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_sys_clk_50mhz' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 7)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_key_in[0]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 5)] 'OUTPUT' is not correct, direction of port 'io_key_in[1]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 9)] 'OUTPUT' is not correct, direction of port 'io_key_in[2]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 13)] 'OUTPUT' is not correct, direction of port 'io_key_in[3]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 17)] 'OUTPUT' is not correct, direction of port 'io_key_in[4]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 21)] 'OUTPUT' is not correct, direction of port 'io_key_in[5]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 25)] 'OUTPUT' is not correct, direction of port 'io_key_in[6]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 29)] 'OUTPUT' is not correct, direction of port 'io_key_in[7]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: SDC-2025: Clock source 'n:key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+Process "Synthesize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+Process "Device Map" started.
+Current time: Fri Sep 18 18:14:28 2026
+C: SDC-2025: Clock source 'n:key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [pnr_1::Device Map]
+Process "Device Map" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+Process "Place" started.
+Current time: Fri Sep 18 18:14:31 2026
+C: ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [E:/code/PangoWork/Works/led/prj_tasks/pnr_1/place_route/ports_defalut_attribute.txt(line number:0)] to confirm. [pnr_1::Place]
+Process "Place" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+Process "Route" started.
+Current time: Fri Sep 18 18:14:42 2026
+C: Route-2036: The clock path from key/clk_detect/opit_0_inv_L5Q:Q to key/key_data[4]/opit_0_inv_L5Q:CLK is routed by SRB. [pnr_1::Route]
+Process "Route" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+Process "Route Optimize" started.
+Current time: Fri Sep 18 18:14:53 2026
+Process "Route Optimize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Process "Report Timing" started.
+Current time: Fri Sep 18 18:15:01 2026
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Fri Sep 18 18:15:01 2026
+Process "Report Timing" done.
+Process "Generate Bitstream" done.
+Open Configuration ...
+Configuration initialization started successfully.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+ 
+Command: set_option -options { top_module {led_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Fri Sep 18 18:16:58 2026
+Process "Compile" done.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Fri Sep 18 18:17:02 2026
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/clk.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_sys_clk_50mhz' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 7)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_key_in[0]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 5)] 'OUTPUT' is not correct, direction of port 'io_key_in[1]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 9)] 'OUTPUT' is not correct, direction of port 'io_key_in[2]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 13)] 'OUTPUT' is not correct, direction of port 'io_key_in[3]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 17)] 'OUTPUT' is not correct, direction of port 'io_key_in[4]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 21)] 'OUTPUT' is not correct, direction of port 'io_key_in[5]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 25)] 'OUTPUT' is not correct, direction of port 'io_key_in[6]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 29)] 'OUTPUT' is not correct, direction of port 'io_key_in[7]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: STA-3009: The clock io_sys_clk_50mhz is not connected to any clock endpoints,it will be treated as a normal port or pin. [syn_1::Synthesize]
+Process "Synthesize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+Process "Device Map" started.
+Current time: Fri Sep 18 18:17:06 2026
+Process "Device Map" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+Process "Place" started.
+Current time: Fri Sep 18 18:17:10 2026
+C: ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [E:/code/PangoWork/Works/led/prj_tasks/pnr_1/place_route/ports_defalut_attribute.txt(line number:0)] to confirm. [pnr_1::Place]
+Process "Place" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+Process "Route" started.
+Current time: Fri Sep 18 18:17:20 2026
+Process "Route" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+Process "Route Optimize" started.
+Current time: Fri Sep 18 18:17:32 2026
+Process "Route Optimize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Process "Report Timing" started.
+Current time: Fri Sep 18 18:17:41 2026
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Fri Sep 18 18:17:41 2026
+Process "Report Timing" done.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+Process "Generate Bitstream" done.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+ 
+Command: set_option -options { top_module {led_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Fri Sep 18 18:18:02 2026
+Process "Compile" done.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Fri Sep 18 18:18:07 2026
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/clk.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_sys_clk_50mhz' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 7)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_key_in[0]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 5)] 'OUTPUT' is not correct, direction of port 'io_key_in[1]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 9)] 'OUTPUT' is not correct, direction of port 'io_key_in[2]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 13)] 'OUTPUT' is not correct, direction of port 'io_key_in[3]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 17)] 'OUTPUT' is not correct, direction of port 'io_key_in[4]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 21)] 'OUTPUT' is not correct, direction of port 'io_key_in[5]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 25)] 'OUTPUT' is not correct, direction of port 'io_key_in[6]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 29)] 'OUTPUT' is not correct, direction of port 'io_key_in[7]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: SDC-2025: Clock source 'n:key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+Process "Synthesize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+Process "Device Map" started.
+Current time: Fri Sep 18 18:18:10 2026
+C: SDC-2025: Clock source 'n:key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [pnr_1::Device Map]
+Process "Device Map" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+Process "Place" started.
+Current time: Fri Sep 18 18:18:14 2026
+C: ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [E:/code/PangoWork/Works/led/prj_tasks/pnr_1/place_route/ports_defalut_attribute.txt(line number:0)] to confirm. [pnr_1::Place]
+Process "Place" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+Process "Route" started.
+Current time: Fri Sep 18 18:18:24 2026
+C: Route-2036: The clock path from key/clk_detect/opit_0_inv_L5Q:Q to key/key_data[2]/opit_0_inv_L5Q:CLK is routed by SRB. [pnr_1::Route]
+Process "Route" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+Process "Route Optimize" started.
+Current time: Fri Sep 18 18:18:35 2026
+Process "Route Optimize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Process "Report Timing" started.
+Current time: Fri Sep 18 18:18:43 2026
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Fri Sep 18 18:18:43 2026
+Process "Report Timing" done.
+Process "Generate Bitstream" done.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 43)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 43)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 44)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 44)] Identifier 'i' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 43)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 43)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 44)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 44)] Identifier 'i' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 43)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 43)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 44)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 44)] Identifier 'i' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 43)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 43)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 44)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 44)] Identifier 'i' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 43)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 43)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 44)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 44)] Identifier 'i' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 43)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 43)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 44)] Identifier 'i' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 44)] Identifier 'i' is not declared.
+ 
+Command: set_option -options { top_module {led_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Fri Sep 18 18:28:05 2026
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared. [syn_1::Compile]
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared. [syn_1::Compile]
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared. [syn_1::Compile]
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Identifier 'i' is not declared. [syn_1::Compile]
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 43)] Identifier 'i' is not declared. [syn_1::Compile]
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 43)] Identifier 'i' is not declared. [syn_1::Compile]
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 44)] Identifier 'i' is not declared. [syn_1::Compile]
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 44)] Identifier 'i' is not declared. [syn_1::Compile]
+Run process "Compile" failed, exit code: 1.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+E: Verilog-4261: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Syntax error of for statement in verilog, Enable SystemVerilog features first.
+E: Parsing ERROR.
+ 
+Command: set_option -options { top_module {led_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Fri Sep 18 18:28:43 2026
+E: Verilog-4261: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 42)] Syntax error of for statement in verilog, Enable SystemVerilog features first. [syn_1::Compile]
+E: Parsing ERROR. [syn_1::Compile]
+Run process "Compile" failed, exit code: 1.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+ 
+Command: set_option -options { top_module {led_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Fri Sep 18 18:29:29 2026
+Process "Compile" done.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Fri Sep 18 18:29:33 2026
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/clk.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_sys_clk_50mhz' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 7)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_key_in[0]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 5)] 'OUTPUT' is not correct, direction of port 'io_key_in[1]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 9)] 'OUTPUT' is not correct, direction of port 'io_key_in[2]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 13)] 'OUTPUT' is not correct, direction of port 'io_key_in[3]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 17)] 'OUTPUT' is not correct, direction of port 'io_key_in[4]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 21)] 'OUTPUT' is not correct, direction of port 'io_key_in[5]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 25)] 'OUTPUT' is not correct, direction of port 'io_key_in[6]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 29)] 'OUTPUT' is not correct, direction of port 'io_key_in[7]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: SDC-2025: Clock source 'n:key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+Process "Synthesize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+Process "Device Map" started.
+Current time: Fri Sep 18 18:29:36 2026
+C: SDC-2025: Clock source 'n:key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [pnr_1::Device Map]
+Process "Device Map" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+Process "Place" started.
+Current time: Fri Sep 18 18:29:40 2026
+C: ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [E:/code/PangoWork/Works/led/prj_tasks/pnr_1/place_route/ports_defalut_attribute.txt(line number:0)] to confirm. [pnr_1::Place]
+Process "Place" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+Process "Route" started.
+Current time: Fri Sep 18 18:29:51 2026
+C: Route-2036: The clock path from key/clk_detect/opit_0_inv_L5Q:Q to key/key_data[3]/opit_0_inv_L5Q:CLK is routed by SRB. [pnr_1::Route]
+Process "Route" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+Process "Route Optimize" started.
+Current time: Fri Sep 18 18:30:02 2026
+Process "Route Optimize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Process "Report Timing" started.
+Current time: Fri Sep 18 18:30:10 2026
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Fri Sep 18 18:30:10 2026
+Process "Report Timing" done.
+Process "Generate Bitstream" done.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+ 
+Command: set_option -options { top_module {led_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Fri Sep 18 18:31:13 2026
+Process "Compile" done.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Fri Sep 18 18:31:17 2026
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/clk.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_sys_clk_50mhz' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 7)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_key_in[0]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 5)] 'OUTPUT' is not correct, direction of port 'io_key_in[1]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 9)] 'OUTPUT' is not correct, direction of port 'io_key_in[2]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 13)] 'OUTPUT' is not correct, direction of port 'io_key_in[3]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 17)] 'OUTPUT' is not correct, direction of port 'io_key_in[4]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 21)] 'OUTPUT' is not correct, direction of port 'io_key_in[5]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 25)] 'OUTPUT' is not correct, direction of port 'io_key_in[6]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 29)] 'OUTPUT' is not correct, direction of port 'io_key_in[7]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: SDC-2025: Clock source 'n:key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+Process "Synthesize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+Process "Device Map" started.
+Current time: Fri Sep 18 18:31:20 2026
+C: SDC-2025: Clock source 'n:key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [pnr_1::Device Map]
+Process "Device Map" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+Process "Place" started.
+Current time: Fri Sep 18 18:31:24 2026
+C: ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [E:/code/PangoWork/Works/led/prj_tasks/pnr_1/place_route/ports_defalut_attribute.txt(line number:0)] to confirm. [pnr_1::Place]
+Process "Place" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+Process "Route" started.
+Current time: Fri Sep 18 18:31:35 2026
+C: Route-2036: The clock path from key/clk_detect/opit_0_inv_L5Q:Q to key/key_data[3]/opit_0_inv_L5Q:CLK is routed by SRB. [pnr_1::Route]
+Process "Route" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+Process "Route Optimize" started.
+Current time: Fri Sep 18 18:31:46 2026
+Process "Route Optimize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Process "Report Timing" started.
+Current time: Fri Sep 18 18:31:54 2026
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Fri Sep 18 18:31:54 2026
+Process "Report Timing" done.
+Process "Generate Bitstream" done.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 27)] Identifier 'clk_detect' is not declared.
+E: Verilog-4073: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 29)] The type of assignment target 'key_data' must be variable or genvar.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'last_key_in' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 34)] Identifier 'last_key_in' is not declared.
+E: Verilog-4073: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 35)] The type of assignment target 'key_data' must be variable or genvar.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 38)] Identifier 'last_key_in' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+E: Verilog-4073: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 29)] The type of assignment target 'key_data' must be variable or genvar.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'last_key_in' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 34)] Identifier 'last_key_in' is not declared.
+E: Verilog-4073: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 35)] The type of assignment target 'key_data' must be variable or genvar.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 38)] Identifier 'last_key_in' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'last_key_in' is not declared.
+E: Verilog-4073: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 31)] The type of assignment target 'key_data' must be variable or genvar.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 34)] Identifier 'last_key_in' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 29)] Identifier 'last_key_in' is not declared.
+E: Verilog-4073: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] The type of assignment target 'key_data' must be variable or genvar.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 33)] Identifier 'last_key_in' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+E: Verilog-4073: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] The type of assignment target 'key_data' must be variable or genvar.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'led_data' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'led_data' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'led_data' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'led_data' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'led_data' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 33)] Identifier 'led_data' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'led_data' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'led_data' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 33)] Identifier 'led_data' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/key/key_controller.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'led_data' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'led_data' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 33)] Identifier 'led_data' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 29)] Identifier 'last_led_data' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'led_data' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'led_data' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 33)] Identifier 'last_led_data' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 33)] Identifier 'led_data' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'led_data' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'led_data' is not declared.
+ 
+Command: set_option -options { top_module {led_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Fri Sep 18 18:42:40 2026
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'led_data' is not declared. [syn_1::Compile]
+E: Verilog-4039: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Identifier 'led_data' is not declared. [syn_1::Compile]
+Run process "Compile" failed, exit code: 1.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+ 
+Command: set_option -options { top_module {led_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Fri Sep 18 18:44:01 2026
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[5], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[6], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[2], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[1], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[0], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[3], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[4], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[7], possible missing assignment in an if or case statement. [syn_1::Compile]
+Process "Compile" done.
+ 
+Command: set_option -options { top_module {led_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Fri Sep 18 18:44:11 2026
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[5], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[6], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[2], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[1], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[0], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[3], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[4], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 28)] Latch is generated for signal led_data[7], possible missing assignment in an if or case statement. [syn_1::Compile]
+Process "Compile" done.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Fri Sep 18 18:44:15 2026
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/clk.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_sys_clk_50mhz' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 7)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_key_in[0]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 5)] 'OUTPUT' is not correct, direction of port 'io_key_in[1]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 9)] 'OUTPUT' is not correct, direction of port 'io_key_in[2]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 13)] 'OUTPUT' is not correct, direction of port 'io_key_in[3]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 17)] 'OUTPUT' is not correct, direction of port 'io_key_in[4]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 21)] 'OUTPUT' is not correct, direction of port 'io_key_in[5]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 25)] 'OUTPUT' is not correct, direction of port 'io_key_in[6]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 29)] 'OUTPUT' is not correct, direction of port 'io_key_in[7]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: SDC-2025: Clock source 'n:key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+C: STA-3009: The clock io_sys_clk_50mhz is not connected to any clock endpoints,it will be treated as a normal port or pin. [syn_1::Synthesize]
+Process "Synthesize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+Process "Device Map" started.
+Current time: Fri Sep 18 18:44:18 2026
+Process "Device Map" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+Process "Place" started.
+Current time: Fri Sep 18 18:44:22 2026
+C: ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [E:/code/PangoWork/Works/led/prj_tasks/pnr_1/place_route/ports_defalut_attribute.txt(line number:0)] to confirm. [pnr_1::Place]
+Process "Place" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+Process "Route" started.
+Current time: Fri Sep 18 18:44:31 2026
+Process "Route" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+Process "Route Optimize" started.
+Current time: Fri Sep 18 18:44:42 2026
+Process "Route Optimize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Process "Report Timing" started.
+Current time: Fri Sep 18 18:44:50 2026
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Fri Sep 18 18:44:50 2026
+Process "Report Timing" done.
+Process "Generate Bitstream" done.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+E: Verilog-4306: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Unknown macro 'b1'.
+E: Verilog-4306: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 30)] Unknown macro 'b1'.
+E: Parsing ERROR.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+ 
+Command: set_option -options { top_module {led_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Fri Sep 18 18:48:42 2026
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 29)] Latch is generated for signal led_data[2], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 29)] Latch is generated for signal led_data[1], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 29)] Latch is generated for signal led_data[6], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 29)] Latch is generated for signal led_data[0], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 29)] Latch is generated for signal led_data[7], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 29)] Latch is generated for signal led_data[3], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 29)] Latch is generated for signal led_data[5], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 29)] Latch is generated for signal led_data[4], possible missing assignment in an if or case statement. [syn_1::Compile]
+Process "Compile" done.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Fri Sep 18 18:48:46 2026
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/clk.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_sys_clk_50mhz' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 7)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_key_in[0]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 5)] 'OUTPUT' is not correct, direction of port 'io_key_in[1]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 9)] 'OUTPUT' is not correct, direction of port 'io_key_in[2]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 13)] 'OUTPUT' is not correct, direction of port 'io_key_in[3]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 17)] 'OUTPUT' is not correct, direction of port 'io_key_in[4]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 21)] 'OUTPUT' is not correct, direction of port 'io_key_in[5]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 25)] 'OUTPUT' is not correct, direction of port 'io_key_in[6]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 29)] 'OUTPUT' is not correct, direction of port 'io_key_in[7]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: SDC-2025: Clock source 'n:key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+C: STA-3009: The clock io_sys_clk_50mhz is not connected to any clock endpoints,it will be treated as a normal port or pin. [syn_1::Synthesize]
+Process "Synthesize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+Process "Device Map" started.
+Current time: Fri Sep 18 18:48:50 2026
+Process "Device Map" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+Process "Place" started.
+Current time: Fri Sep 18 18:48:53 2026
+C: ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [E:/code/PangoWork/Works/led/prj_tasks/pnr_1/place_route/ports_defalut_attribute.txt(line number:0)] to confirm. [pnr_1::Place]
+Process "Place" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+Process "Route" started.
+Current time: Fri Sep 18 18:49:03 2026
+Process "Route" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+Process "Route Optimize" started.
+Current time: Fri Sep 18 18:49:13 2026
+Process "Route Optimize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Process "Report Timing" started.
+Current time: Fri Sep 18 18:49:22 2026
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Fri Sep 18 18:49:22 2026
+Process "Report Timing" done.
+Process "Generate Bitstream" done.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+ 
+Command: set_option -options { top_module {led_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Fri Sep 18 18:53:06 2026
+Process "Compile" done.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Fri Sep 18 18:53:11 2026
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/clk.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_sys_clk_50mhz' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 7)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'io_key_in[0]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 5)] 'OUTPUT' is not correct, direction of port 'io_key_in[1]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 9)] 'OUTPUT' is not correct, direction of port 'io_key_in[2]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 13)] 'OUTPUT' is not correct, direction of port 'io_key_in[3]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 17)] 'OUTPUT' is not correct, direction of port 'io_key_in[4]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 21)] 'OUTPUT' is not correct, direction of port 'io_key_in[5]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 25)] 'OUTPUT' is not correct, direction of port 'io_key_in[6]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: UserConstraintEditor-2001: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 29)] 'OUTPUT' is not correct, direction of port 'io_key_in[7]' is 'INPUT' defined in [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 9)]. The direction has been corrected automatically. [syn_1::Synthesize]
+C: SDC-2025: Clock source 'n:key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+Process "Synthesize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+Process "Device Map" started.
+Current time: Fri Sep 18 18:53:15 2026
+C: SDC-2025: Clock source 'n:key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [pnr_1::Device Map]
+Process "Device Map" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+Process "Place" started.
+Current time: Fri Sep 18 18:53:18 2026
+C: ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [E:/code/PangoWork/Works/led/prj_tasks/pnr_1/place_route/ports_defalut_attribute.txt(line number:0)] to confirm. [pnr_1::Place]
+Process "Place" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+Process "Route" started.
+Current time: Fri Sep 18 18:53:30 2026
+Parse module hierarchy of project 'E:/code/PangoWork/Works/led/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/led/Designs/led_top.v'. 
+C: Route-2036: The clock path from key/clk_detect/opit_0_inv_L5Q:Q to key/key_data[5]/opit_0_inv_L5Q:CLK is routed by SRB. [pnr_1::Route]
+Process "Route" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+Process "Route Optimize" started.
+Current time: Fri Sep 18 18:53:43 2026
+Process "Route Optimize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Process "Report Timing" started.
+Current time: Fri Sep 18 18:53:52 2026
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Fri Sep 18 18:53:53 2026
+Process "Report Timing" done.
+Process "Generate Bitstream" done.

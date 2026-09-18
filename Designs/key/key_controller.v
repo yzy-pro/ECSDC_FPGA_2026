@@ -8,12 +8,12 @@ module key_controller #(
     output reg [7:0] key_data
 );
 
-    localparam integer KeyDetectFreq  = 20;
+    localparam integer KeyDetectFreq  = 10;
     localparam integer KeyDetectCount = KEY_SYSCLK_FREQ / KeyDetectFreq / 2;
 
 
     reg clk_detect;
-    reg [21:0] cnt_detect;
+    reg [23:0] cnt_detect;
 
 
     always @(posedge clk or negedge io_rst_n) begin
@@ -38,7 +38,7 @@ module key_controller #(
             key_data <= 8'b0;
         end
         else begin
-            key_data <= ~io_key_in;  //按键低电平有效
+            key_data <= ~io_key_in;
         end
     end
 

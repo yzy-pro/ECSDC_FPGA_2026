@@ -9,6 +9,9 @@
             <data message="5">ConstraintEditor-4040: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 2)] Port p:io_key_in[0] has been placed at location K18, whose type is share pin.</data>
         </row>
         <row>
+            <data message="5">ConstraintEditor-4040: [E:/code/PangoWork/Works/led/Constraints/io/clk.fdc(line number: 8)] Port p:io_rst_n has been placed at location AB13, whose type is share pin.</data>
+        </row>
+        <row>
             <data message="5">ConstraintEditor-4040: [E:/code/PangoWork/Works/led/Constraints/io/key.fdc(line number: 22)] Port p:io_key_in[5] has been placed at location J19, whose type is share pin.</data>
         </row>
         <row>
@@ -141,28 +144,76 @@
             <data message="6">SDC-2025: Clock source 'n:key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate.</data>
         </row>
         <row>
-            <data message="5">STA-3011: Clock pin 'key/key_data[0]/CLK' (GTP_DFF_C.CLK) has no clock, timing propagation is disabled at the pin.</data>
+            <data message="4">Constant propagation done on N7 (bmsREDAND).</data>
         </row>
         <row>
-            <data message="5">STA-3011: Clock pin 'key/key_data[1]/CLK' (GTP_DFF_C.CLK) has no clock, timing propagation is disabled at the pin.</data>
+            <data message="4">Constant propagation done on N16 (bmsREDAND).</data>
         </row>
         <row>
-            <data message="5">STA-3011: Clock pin 'key/key_data[2]/CLK' (GTP_DFF_C.CLK) has no clock, timing propagation is disabled at the pin.</data>
+            <data message="4">Constant propagation done on N25 (bmsREDAND).</data>
         </row>
         <row>
-            <data message="5">STA-3011: Clock pin 'key/key_data[3]/CLK' (GTP_DFF_C.CLK) has no clock, timing propagation is disabled at the pin.</data>
+            <data message="4">Constant propagation done on N34 (bmsREDAND).</data>
         </row>
         <row>
-            <data message="5">STA-3011: Clock pin 'key/key_data[4]/CLK' (GTP_DFF_C.CLK) has no clock, timing propagation is disabled at the pin.</data>
+            <data message="4">Constant propagation done on N43 (bmsREDAND).</data>
         </row>
         <row>
-            <data message="5">STA-3011: Clock pin 'key/key_data[5]/CLK' (GTP_DFF_C.CLK) has no clock, timing propagation is disabled at the pin.</data>
+            <data message="4">Constant propagation done on N52 (bmsREDAND).</data>
         </row>
         <row>
-            <data message="5">STA-3011: Clock pin 'key/key_data[6]/CLK' (GTP_DFF_C.CLK) has no clock, timing propagation is disabled at the pin.</data>
+            <data message="4">Constant propagation done on N61 (bmsREDAND).</data>
         </row>
         <row>
-            <data message="5">STA-3011: Clock pin 'key/key_data[7]/CLK' (GTP_DFF_C.CLK) has no clock, timing propagation is disabled at the pin.</data>
+            <data message="4">Constant propagation done on N70 (bmsREDAND).</data>
+        </row>
+        <row>
+            <data message="5">Adm-4083: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 19)] Removed bmsWIDEDFFCPE inst cnt_detect[23:0] at 23 that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="4">Constant propagation done on key/cnt_detect[23:0] (bmsWIDEDFFCPE).</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 36)] Instance 'key/key_data[7:0]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 19)] Instance 'key/clk_detect' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/led/Designs/key/key_controller.v(line number: 19)] Instance 'key/cnt_detect[23:0]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="4">Removed inst Q[0](led_data[2]) which is redundant to Q[0](led_data[3]) (type bmsWIDEDLATCHCP)</data>
+        </row>
+        <row>
+            <data message="4">Removed inst Q[0](led_data[1]) which is redundant to Q[0](led_data[3]) (type bmsWIDEDLATCHCP)</data>
+        </row>
+        <row>
+            <data message="4">Removed inst Q[0](led_data[0]) which is redundant to Q[0](led_data[3]) (type bmsWIDEDLATCHCP)</data>
+        </row>
+        <row>
+            <data message="4">Removed inst Q[0](led_data[7]) which is redundant to Q[0](led_data[3]) (type bmsWIDEDLATCHCP)</data>
+        </row>
+        <row>
+            <data message="4">Removed inst Q[0](led_data[6]) which is redundant to Q[0](led_data[3]) (type bmsWIDEDLATCHCP)</data>
+        </row>
+        <row>
+            <data message="4">Removed inst Q[0](led_data[5]) which is redundant to Q[0](led_data[3]) (type bmsWIDEDLATCHCP)</data>
+        </row>
+        <row>
+            <data message="4">Removed inst Q[0](led_data[4]) which is redundant to Q[0](led_data[3]) (type bmsWIDEDLATCHCP)</data>
+        </row>
+        <row>
+            <data message="5">Adm-4082: [E:/code/PangoWork/Works/led/Designs/led_top.v(line number: 29)] Removed GTP_DLATCH inst led_data[3] that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="4">Constant propagation done on led_data[3] (GTP_DLATCH).</data>
+        </row>
+        <row>
+            <data message="5">Adm-4083: [E:/code/PangoWork/Works/led/Designs/led/led_controller.v(line number: 10)] Removed bmsWIDEDFFCPE inst led/io_led_out[7:0] at 0 that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="6">STA-3009: The clock io_sys_clk_50mhz is not connected to any clock endpoints,it will be treated as a normal port or pin.</data>
         </row>
         <row>
             <data message="5">Timing-4087: Port 'io_led_out[0]' is not constrained, it is treated as combinational output.</data>
@@ -187,9 +238,6 @@
         </row>
         <row>
             <data message="5">Timing-4087: Port 'io_led_out[7]' is not constrained, it is treated as combinational output.</data>
-        </row>
-        <row>
-            <data message="5">Timing-4086: Port 'rst_n' is not constrained, it is treated as combinational input.</data>
         </row>
     </table>
 </tables>

@@ -21,11 +21,11 @@
             <data>Route delay</data>
         </column_headers>
         <row>
-            <data>16.160</data>
+            <data>16.113</data>
             <data>10</data>
             <data>23</data>
-            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[4]/opit_0_inv_A2Q21/CLK</data>
-            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[21]/opit_0_inv_AQ/Cin</data>
+            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[4]/opit_0_inv_A2Q21/CLK</data>
+            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[21]/opit_0_inv_AQ_perm/Cin</data>
             <data/>
             <data>io_sys_clk_50mhz</data>
             <data>io_sys_clk_50mhz</data>
@@ -35,13 +35,13 @@
             <data>3.275</data>
             <data>0.189</data>
             <data>20.000</data>
-            <data>3.643</data>
-            <data>2.358 (64.7%)</data>
-            <data>1.285 (35.3%)</data>
+            <data>3.690</data>
+            <data>2.217 (60.1%)</data>
+            <data>1.473 (39.9%)</data>
             <general_container>
-                <data>Path #1: setup slack is 16.160(MET)</data>
+                <data>Path #1: setup slack is 16.113(MET)</data>
                 <table_container>
-                    <table id="arrival" title="Data arrival time is 7.122" column_number="6">
+                    <table id="arrival" title="Data arrival time is 7.169" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -123,218 +123,122 @@
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>CLMA_182_308/CLK</data>
+                            <data>CLMA_222_292/CLK</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[4]/opit_0_inv_A2Q21/CLK</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[4]/opit_0_inv_A2Q21/CLK</data>
                         </row>
                         <row>
-                            <data>CLMA_182_308/Q2</data>
+                            <data>CLMA_222_292/Q3</data>
                             <data>tco</data>
-                            <data>0.224</data>
-                            <data>3.703</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[4]/opit_0_inv_A2Q21/Q0</data>
+                            <data>0.220</data>
+                            <data>3.699</data>
+                            <data>f</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[4]/opit_0_inv_A2Q21/Q1</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=2)</data>
-                            <data>0.071</data>
-                            <data>3.774</data>
+                            <data>0.250</data>
+                            <data>3.949</data>
                             <data> </data>
-                            <data object_valid="true">key/cnt_detect [3]</data>
+                            <data object_valid="true">key/cnt_detect [4]</data>
                         </row>
                         <row>
-                            <data>CLMA_182_309/Y0</data>
+                            <data>CLMS_218_293/Y0</data>
                             <data>td</data>
-                            <data>0.380</data>
-                            <data>4.154</data>
+                            <data>0.378</data>
+                            <data>4.327</data>
                             <data>f</data>
-                            <data object_valid="true">key/N4_mux3_4/gateop_perm/Z</data>
+                            <data object_valid="true">key/N4_mux4_5/gateop_perm/Z</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=1)</data>
-                            <data>0.182</data>
-                            <data>4.336</data>
+                            <data>0.167</data>
+                            <data>4.494</data>
                             <data> </data>
-                            <data object_valid="true">key/_N7</data>
+                            <data object_valid="true">key/_N9</data>
                         </row>
                         <row>
-                            <data>CLMA_182_317/Y0</data>
+                            <data>CLMS_218_297/Y0</data>
                             <data>td</data>
                             <data>0.226</data>
-                            <data>4.562</data>
+                            <data>4.720</data>
                             <data>f</data>
-                            <data object_valid="true">key/N4_mux7_3/gateop_perm/Z</data>
+                            <data object_valid="true">key/N4_mux8_3/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.167</data>
+                            <data>4.887</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N17</data>
+                        </row>
+                        <row>
+                            <data>CLMS_218_301/Y2</data>
+                            <data>td</data>
+                            <data>0.264</data>
+                            <data>5.151</data>
+                            <data>f</data>
+                            <data object_valid="true">key/N4_mux12_3/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.249</data>
+                            <data>5.400</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N25</data>
+                        </row>
+                        <row>
+                            <data>CLMS_218_305/Y0</data>
+                            <data>td</data>
+                            <data>0.162</data>
+                            <data>5.562</data>
+                            <data>r</data>
+                            <data object_valid="true">key/N4_mux16_4/gateop_perm/Z</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=1)</data>
                             <data>0.157</data>
-                            <data>4.719</data>
+                            <data>5.719</data>
                             <data> </data>
-                            <data object_valid="true">key/_N15</data>
+                            <data object_valid="true">key/_N33</data>
                         </row>
                         <row>
-                            <data>CLMA_182_317/Y1</data>
+                            <data>CLMS_218_309/Y1</data>
                             <data>td</data>
-                            <data>0.359</data>
-                            <data>5.078</data>
+                            <data>0.224</data>
+                            <data>5.943</data>
                             <data>f</data>
-                            <data object_valid="true">key/N4_mux11_3/gateop_perm/Z</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.182</data>
-                            <data>5.260</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N23</data>
-                        </row>
-                        <row>
-                            <data>CLMA_182_325/Y0</data>
-                            <data>td</data>
-                            <data>0.264</data>
-                            <data>5.524</data>
-                            <data>f</data>
-                            <data object_valid="true">key/N4_mux17_3/gateop_perm/Z</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.182</data>
-                            <data>5.706</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N35</data>
-                        </row>
-                        <row>
-                            <data>CLMA_182_332/Y1</data>
-                            <data>td</data>
-                            <data>0.162</data>
-                            <data>5.868</data>
-                            <data>r</data>
                             <data object_valid="true">key/N4_mux21/gateop_perm/Z</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=23)</data>
-                            <data>0.511</data>
-                            <data>6.379</data>
+                            <data>0.483</data>
+                            <data>6.426</data>
                             <data> </data>
                             <data object_valid="true">key/N4</data>
                         </row>
                         <row>
-                            <data>CLMA_182_308/COUT</data>
+                            <data>CLMA_222_292/COUT</data>
                             <data>td</data>
                             <data>0.391</data>
-                            <data>6.770</data>
+                            <data>6.817</data>
                             <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[4]/opit_0_inv_A2Q21/Cout</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[4]/opit_0_inv_A2Q21/Cout</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=1)</data>
                             <data>0.000</data>
-                            <data>6.770</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N48</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>6.814</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[6]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>6.814</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N50</data>
-                        </row>
-                        <row>
-                            <data>CLMA_182_316/COUT</data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>6.858</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[8]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>6.858</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N52</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>6.902</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[10]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>6.902</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N54</data>
-                        </row>
-                        <row>
-                            <data>CLMA_182_320/COUT</data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>6.946</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[12]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>6.946</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N56</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>6.990</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[14]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>6.990</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N58</data>
-                        </row>
-                        <row>
-                            <data>CLMA_182_324/COUT</data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>7.034</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[16]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>7.034</data>
+                            <data>6.817</data>
                             <data> </data>
                             <data object_valid="true">key/_N60</data>
                         </row>
@@ -342,41 +246,137 @@
                             <data> </data>
                             <data>td</data>
                             <data>0.044</data>
-                            <data>7.078</data>
+                            <data>6.861</data>
                             <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[18]/opit_0_inv_A2Q21/Cout</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[6]/opit_0_inv_A2Q21/Cout</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=1)</data>
                             <data>0.000</data>
-                            <data>7.078</data>
+                            <data>6.861</data>
                             <data> </data>
                             <data object_valid="true">key/_N62</data>
                         </row>
                         <row>
-                            <data>CLMA_182_328/COUT</data>
+                            <data>CLMA_222_296/COUT</data>
                             <data>td</data>
                             <data>0.044</data>
-                            <data>7.122</data>
+                            <data>6.905</data>
                             <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[20]/opit_0_inv_A2Q21/Cout</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[8]/opit_0_inv_A2Q21/Cout</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=1)</data>
                             <data>0.000</data>
-                            <data>7.122</data>
+                            <data>6.905</data>
                             <data> </data>
                             <data object_valid="true">key/_N64</data>
                         </row>
                         <row>
-                            <data>CLMA_182_332/CIN</data>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>6.949</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[10]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>6.949</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N66</data>
+                        </row>
+                        <row>
+                            <data>CLMA_222_300/COUT</data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>6.993</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[12]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>6.993</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N68</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>7.037</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[14]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>7.037</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N70</data>
+                        </row>
+                        <row>
+                            <data>CLMA_222_304/COUT</data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>7.081</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[16]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>7.081</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N72</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>7.125</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[18]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>7.125</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N74</data>
+                        </row>
+                        <row>
+                            <data>CLMA_222_308/COUT</data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>7.169</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[20]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>7.169</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N76</data>
+                        </row>
+                        <row>
+                            <data>CLMA_222_316/CIN</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[21]/opit_0_inv_AQ/Cin</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[21]/opit_0_inv_AQ_perm/Cin</data>
                         </row>
                     </table>
                 </table_container>
@@ -463,12 +463,12 @@
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>CLMA_182_332/CLK</data>
+                            <data>CLMA_222_316/CLK</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[21]/opit_0_inv_AQ/CLK</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[21]/opit_0_inv_AQ_perm/CLK</data>
                         </row>
                         <row>
                             <data>clock pessimism</data>
@@ -499,11 +499,11 @@
             </general_container>
         </row>
         <row>
-            <data>16.208</data>
+            <data>16.161</data>
             <data>9</data>
             <data>23</data>
-            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[4]/opit_0_inv_A2Q21/CLK</data>
-            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[20]/opit_0_inv_A2Q21/Cin</data>
+            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[4]/opit_0_inv_A2Q21/CLK</data>
+            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[20]/opit_0_inv_A2Q21/Cin</data>
             <data/>
             <data>io_sys_clk_50mhz</data>
             <data>io_sys_clk_50mhz</data>
@@ -513,13 +513,13 @@
             <data>3.275</data>
             <data>0.189</data>
             <data>20.000</data>
-            <data>3.599</data>
-            <data>2.314 (64.3%)</data>
-            <data>1.285 (35.7%)</data>
+            <data>3.646</data>
+            <data>2.173 (59.6%)</data>
+            <data>1.473 (40.4%)</data>
             <general_container>
-                <data>Path #2: setup slack is 16.208(MET)</data>
+                <data>Path #2: setup slack is 16.161(MET)</data>
                 <table_container>
-                    <table id="arrival" title="Data arrival time is 7.078" column_number="6">
+                    <table id="arrival" title="Data arrival time is 7.125" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -601,218 +601,122 @@
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>CLMA_182_308/CLK</data>
+                            <data>CLMA_222_292/CLK</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[4]/opit_0_inv_A2Q21/CLK</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[4]/opit_0_inv_A2Q21/CLK</data>
                         </row>
                         <row>
-                            <data>CLMA_182_308/Q2</data>
+                            <data>CLMA_222_292/Q3</data>
                             <data>tco</data>
-                            <data>0.224</data>
-                            <data>3.703</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[4]/opit_0_inv_A2Q21/Q0</data>
+                            <data>0.220</data>
+                            <data>3.699</data>
+                            <data>f</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[4]/opit_0_inv_A2Q21/Q1</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=2)</data>
-                            <data>0.071</data>
-                            <data>3.774</data>
+                            <data>0.250</data>
+                            <data>3.949</data>
                             <data> </data>
-                            <data object_valid="true">key/cnt_detect [3]</data>
+                            <data object_valid="true">key/cnt_detect [4]</data>
                         </row>
                         <row>
-                            <data>CLMA_182_309/Y0</data>
+                            <data>CLMS_218_293/Y0</data>
                             <data>td</data>
-                            <data>0.380</data>
-                            <data>4.154</data>
+                            <data>0.378</data>
+                            <data>4.327</data>
                             <data>f</data>
-                            <data object_valid="true">key/N4_mux3_4/gateop_perm/Z</data>
+                            <data object_valid="true">key/N4_mux4_5/gateop_perm/Z</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=1)</data>
-                            <data>0.182</data>
-                            <data>4.336</data>
+                            <data>0.167</data>
+                            <data>4.494</data>
                             <data> </data>
-                            <data object_valid="true">key/_N7</data>
+                            <data object_valid="true">key/_N9</data>
                         </row>
                         <row>
-                            <data>CLMA_182_317/Y0</data>
+                            <data>CLMS_218_297/Y0</data>
                             <data>td</data>
                             <data>0.226</data>
-                            <data>4.562</data>
+                            <data>4.720</data>
                             <data>f</data>
-                            <data object_valid="true">key/N4_mux7_3/gateop_perm/Z</data>
+                            <data object_valid="true">key/N4_mux8_3/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.167</data>
+                            <data>4.887</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N17</data>
+                        </row>
+                        <row>
+                            <data>CLMS_218_301/Y2</data>
+                            <data>td</data>
+                            <data>0.264</data>
+                            <data>5.151</data>
+                            <data>f</data>
+                            <data object_valid="true">key/N4_mux12_3/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.249</data>
+                            <data>5.400</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N25</data>
+                        </row>
+                        <row>
+                            <data>CLMS_218_305/Y0</data>
+                            <data>td</data>
+                            <data>0.162</data>
+                            <data>5.562</data>
+                            <data>r</data>
+                            <data object_valid="true">key/N4_mux16_4/gateop_perm/Z</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=1)</data>
                             <data>0.157</data>
-                            <data>4.719</data>
+                            <data>5.719</data>
                             <data> </data>
-                            <data object_valid="true">key/_N15</data>
+                            <data object_valid="true">key/_N33</data>
                         </row>
                         <row>
-                            <data>CLMA_182_317/Y1</data>
+                            <data>CLMS_218_309/Y1</data>
                             <data>td</data>
-                            <data>0.359</data>
-                            <data>5.078</data>
+                            <data>0.224</data>
+                            <data>5.943</data>
                             <data>f</data>
-                            <data object_valid="true">key/N4_mux11_3/gateop_perm/Z</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.182</data>
-                            <data>5.260</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N23</data>
-                        </row>
-                        <row>
-                            <data>CLMA_182_325/Y0</data>
-                            <data>td</data>
-                            <data>0.264</data>
-                            <data>5.524</data>
-                            <data>f</data>
-                            <data object_valid="true">key/N4_mux17_3/gateop_perm/Z</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.182</data>
-                            <data>5.706</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N35</data>
-                        </row>
-                        <row>
-                            <data>CLMA_182_332/Y1</data>
-                            <data>td</data>
-                            <data>0.162</data>
-                            <data>5.868</data>
-                            <data>r</data>
                             <data object_valid="true">key/N4_mux21/gateop_perm/Z</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=23)</data>
-                            <data>0.511</data>
-                            <data>6.379</data>
+                            <data>0.483</data>
+                            <data>6.426</data>
                             <data> </data>
                             <data object_valid="true">key/N4</data>
                         </row>
                         <row>
-                            <data>CLMA_182_308/COUT</data>
+                            <data>CLMA_222_292/COUT</data>
                             <data>td</data>
                             <data>0.391</data>
-                            <data>6.770</data>
+                            <data>6.817</data>
                             <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[4]/opit_0_inv_A2Q21/Cout</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[4]/opit_0_inv_A2Q21/Cout</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=1)</data>
                             <data>0.000</data>
-                            <data>6.770</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N48</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>6.814</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[6]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>6.814</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N50</data>
-                        </row>
-                        <row>
-                            <data>CLMA_182_316/COUT</data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>6.858</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[8]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>6.858</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N52</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>6.902</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[10]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>6.902</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N54</data>
-                        </row>
-                        <row>
-                            <data>CLMA_182_320/COUT</data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>6.946</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[12]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>6.946</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N56</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>6.990</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[14]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>6.990</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N58</data>
-                        </row>
-                        <row>
-                            <data>CLMA_182_324/COUT</data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>7.034</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[16]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>7.034</data>
+                            <data>6.817</data>
                             <data> </data>
                             <data object_valid="true">key/_N60</data>
                         </row>
@@ -820,17 +724,113 @@
                             <data> </data>
                             <data>td</data>
                             <data>0.044</data>
-                            <data>7.078</data>
+                            <data>6.861</data>
                             <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[18]/opit_0_inv_A2Q21/Cout</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[6]/opit_0_inv_A2Q21/Cout</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=1)</data>
                             <data>0.000</data>
-                            <data>7.078</data>
+                            <data>6.861</data>
                             <data> </data>
                             <data object_valid="true">key/_N62</data>
+                        </row>
+                        <row>
+                            <data>CLMA_222_296/COUT</data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>6.905</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[8]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>6.905</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N64</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>6.949</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[10]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>6.949</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N66</data>
+                        </row>
+                        <row>
+                            <data>CLMA_222_300/COUT</data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>6.993</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[12]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>6.993</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N68</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>7.037</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[14]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>7.037</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N70</data>
+                        </row>
+                        <row>
+                            <data>CLMA_222_304/COUT</data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>7.081</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[16]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>7.081</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N72</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>7.125</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[18]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>7.125</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N74</data>
                         </row>
                         <row>
                             <data> </data>
@@ -838,7 +838,7 @@
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[20]/opit_0_inv_A2Q21/Cin</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[20]/opit_0_inv_A2Q21/Cin</data>
                         </row>
                     </table>
                 </table_container>
@@ -925,12 +925,12 @@
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>CLMA_182_328/CLK</data>
+                            <data>CLMA_222_308/CLK</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[20]/opit_0_inv_A2Q21/CLK</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[20]/opit_0_inv_A2Q21/CLK</data>
                         </row>
                         <row>
                             <data>clock pessimism</data>
@@ -961,11 +961,11 @@
             </general_container>
         </row>
         <row>
-            <data>16.248</data>
+            <data>16.201</data>
             <data>9</data>
             <data>23</data>
-            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[4]/opit_0_inv_A2Q21/CLK</data>
-            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[18]/opit_0_inv_A2Q21/Cin</data>
+            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[4]/opit_0_inv_A2Q21/CLK</data>
+            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[18]/opit_0_inv_A2Q21/Cin</data>
             <data/>
             <data>io_sys_clk_50mhz</data>
             <data>io_sys_clk_50mhz</data>
@@ -975,13 +975,13 @@
             <data>3.275</data>
             <data>0.189</data>
             <data>20.000</data>
-            <data>3.555</data>
-            <data>2.270 (63.9%)</data>
-            <data>1.285 (36.1%)</data>
+            <data>3.602</data>
+            <data>2.129 (59.1%)</data>
+            <data>1.473 (40.9%)</data>
             <general_container>
-                <data>Path #3: setup slack is 16.248(MET)</data>
+                <data>Path #3: setup slack is 16.201(MET)</data>
                 <table_container>
-                    <table id="arrival" title="Data arrival time is 7.034" column_number="6">
+                    <table id="arrival" title="Data arrival time is 7.081" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -1063,228 +1063,228 @@
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>CLMA_182_308/CLK</data>
+                            <data>CLMA_222_292/CLK</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[4]/opit_0_inv_A2Q21/CLK</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[4]/opit_0_inv_A2Q21/CLK</data>
                         </row>
                         <row>
-                            <data>CLMA_182_308/Q2</data>
+                            <data>CLMA_222_292/Q3</data>
                             <data>tco</data>
-                            <data>0.224</data>
-                            <data>3.703</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[4]/opit_0_inv_A2Q21/Q0</data>
+                            <data>0.220</data>
+                            <data>3.699</data>
+                            <data>f</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[4]/opit_0_inv_A2Q21/Q1</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=2)</data>
-                            <data>0.071</data>
-                            <data>3.774</data>
+                            <data>0.250</data>
+                            <data>3.949</data>
                             <data> </data>
-                            <data object_valid="true">key/cnt_detect [3]</data>
+                            <data object_valid="true">key/cnt_detect [4]</data>
                         </row>
                         <row>
-                            <data>CLMA_182_309/Y0</data>
+                            <data>CLMS_218_293/Y0</data>
                             <data>td</data>
-                            <data>0.380</data>
-                            <data>4.154</data>
+                            <data>0.378</data>
+                            <data>4.327</data>
                             <data>f</data>
-                            <data object_valid="true">key/N4_mux3_4/gateop_perm/Z</data>
+                            <data object_valid="true">key/N4_mux4_5/gateop_perm/Z</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=1)</data>
-                            <data>0.182</data>
-                            <data>4.336</data>
+                            <data>0.167</data>
+                            <data>4.494</data>
                             <data> </data>
-                            <data object_valid="true">key/_N7</data>
+                            <data object_valid="true">key/_N9</data>
                         </row>
                         <row>
-                            <data>CLMA_182_317/Y0</data>
+                            <data>CLMS_218_297/Y0</data>
                             <data>td</data>
                             <data>0.226</data>
-                            <data>4.562</data>
+                            <data>4.720</data>
                             <data>f</data>
-                            <data object_valid="true">key/N4_mux7_3/gateop_perm/Z</data>
+                            <data object_valid="true">key/N4_mux8_3/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.167</data>
+                            <data>4.887</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N17</data>
+                        </row>
+                        <row>
+                            <data>CLMS_218_301/Y2</data>
+                            <data>td</data>
+                            <data>0.264</data>
+                            <data>5.151</data>
+                            <data>f</data>
+                            <data object_valid="true">key/N4_mux12_3/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.249</data>
+                            <data>5.400</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N25</data>
+                        </row>
+                        <row>
+                            <data>CLMS_218_305/Y0</data>
+                            <data>td</data>
+                            <data>0.162</data>
+                            <data>5.562</data>
+                            <data>r</data>
+                            <data object_valid="true">key/N4_mux16_4/gateop_perm/Z</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=1)</data>
                             <data>0.157</data>
-                            <data>4.719</data>
+                            <data>5.719</data>
                             <data> </data>
-                            <data object_valid="true">key/_N15</data>
+                            <data object_valid="true">key/_N33</data>
                         </row>
                         <row>
-                            <data>CLMA_182_317/Y1</data>
+                            <data>CLMS_218_309/Y1</data>
                             <data>td</data>
-                            <data>0.359</data>
-                            <data>5.078</data>
+                            <data>0.224</data>
+                            <data>5.943</data>
                             <data>f</data>
-                            <data object_valid="true">key/N4_mux11_3/gateop_perm/Z</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.182</data>
-                            <data>5.260</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N23</data>
-                        </row>
-                        <row>
-                            <data>CLMA_182_325/Y0</data>
-                            <data>td</data>
-                            <data>0.264</data>
-                            <data>5.524</data>
-                            <data>f</data>
-                            <data object_valid="true">key/N4_mux17_3/gateop_perm/Z</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.182</data>
-                            <data>5.706</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N35</data>
-                        </row>
-                        <row>
-                            <data>CLMA_182_332/Y1</data>
-                            <data>td</data>
-                            <data>0.162</data>
-                            <data>5.868</data>
-                            <data>r</data>
                             <data object_valid="true">key/N4_mux21/gateop_perm/Z</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=23)</data>
-                            <data>0.511</data>
-                            <data>6.379</data>
+                            <data>0.483</data>
+                            <data>6.426</data>
                             <data> </data>
                             <data object_valid="true">key/N4</data>
                         </row>
                         <row>
-                            <data>CLMA_182_308/COUT</data>
+                            <data>CLMA_222_292/COUT</data>
                             <data>td</data>
                             <data>0.391</data>
-                            <data>6.770</data>
+                            <data>6.817</data>
                             <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[4]/opit_0_inv_A2Q21/Cout</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[4]/opit_0_inv_A2Q21/Cout</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=1)</data>
                             <data>0.000</data>
-                            <data>6.770</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N48</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>6.814</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[6]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>6.814</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N50</data>
-                        </row>
-                        <row>
-                            <data>CLMA_182_316/COUT</data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>6.858</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[8]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>6.858</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N52</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>6.902</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[10]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>6.902</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N54</data>
-                        </row>
-                        <row>
-                            <data>CLMA_182_320/COUT</data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>6.946</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[12]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>6.946</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N56</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>6.990</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[14]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>6.990</data>
-                            <data> </data>
-                            <data object_valid="true">key/_N58</data>
-                        </row>
-                        <row>
-                            <data>CLMA_182_324/COUT</data>
-                            <data>td</data>
-                            <data>0.044</data>
-                            <data>7.034</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[16]/opit_0_inv_A2Q21/Cout</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>7.034</data>
+                            <data>6.817</data>
                             <data> </data>
                             <data object_valid="true">key/_N60</data>
                         </row>
                         <row>
-                            <data>CLMA_182_328/CIN</data>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>6.861</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[6]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>6.861</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N62</data>
+                        </row>
+                        <row>
+                            <data>CLMA_222_296/COUT</data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>6.905</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[8]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>6.905</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N64</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>6.949</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[10]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>6.949</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N66</data>
+                        </row>
+                        <row>
+                            <data>CLMA_222_300/COUT</data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>6.993</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[12]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>6.993</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N68</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>7.037</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[14]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>7.037</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N70</data>
+                        </row>
+                        <row>
+                            <data>CLMA_222_304/COUT</data>
+                            <data>td</data>
+                            <data>0.044</data>
+                            <data>7.081</data>
+                            <data>r</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[16]/opit_0_inv_A2Q21/Cout</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>7.081</data>
+                            <data> </data>
+                            <data object_valid="true">key/_N72</data>
+                        </row>
+                        <row>
+                            <data>CLMA_222_308/CIN</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[18]/opit_0_inv_A2Q21/Cin</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[18]/opit_0_inv_A2Q21/Cin</data>
                         </row>
                     </table>
                 </table_container>
@@ -1371,12 +1371,12 @@
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>CLMA_182_328/CLK</data>
+                            <data>CLMA_222_308/CLK</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/key/key_controller.v" line_number="18">key/cnt_detect[18]/opit_0_inv_A2Q21/CLK</data>
+                            <data file_id="../Designs/key/key_controller.v" line_number="19">key/cnt_detect[18]/opit_0_inv_A2Q21/CLK</data>
                         </row>
                         <row>
                             <data>clock pessimism</data>
