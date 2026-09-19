@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="report_timing_fast_path_recovery" title="Recovery Path Summary" column_number="17">
+        <column_headers>
+            <data>Slack</data>
+            <data>Logic Levels</data>
+            <data>High Fanout</data>
+            <data>Start Point</data>
+            <data>End Point</data>
+            <data>Exception</data>
+            <data>Launch Clock</data>
+            <data>Capture Clock</data>
+            <data>Clock Edges</data>
+            <data>Clock Skew</data>
+            <data>Launch Clock Delay</data>
+            <data>Capture Clock Delay</data>
+            <data>Clock Pessimism Removal</data>
+            <data>Requirement</data>
+            <data>Data delay</data>
+            <data>Logic delay</data>
+            <data>Route delay</data>
+        </column_headers>
+        <row>
+            <data>18.115</data>
+            <data>6</data>
+            <data>98</data>
+            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="3837">u_CORES/u_debug_core_0/resetn/opit_0/CLK</data>
+            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="4095">u_CORES/u_debug_core_0/data_pipe[1][3]/opit_0_inv_L5Q_perm/RS</data>
+            <data/>
+            <data>sys_clk_50mhz</data>
+            <data>sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data>-0.019</data>
+            <data>3.367</data>
+            <data>3.165</data>
+            <data>0.183</data>
+            <data>20.000</data>
+            <data>1.285</data>
+            <data>0.901 (70.1%)</data>
+            <data>0.384 (29.9%)</data>
+            <general_container>
+                <data>Path #1: recovery slack is 18.115(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 4.652" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>0.074</data>
+                            <data/>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>0.861</data>
+                            <data>0.935</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>0.935</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.058</data>
+                            <data>0.993</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>1.449</data>
+                            <data>2.442</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>2.442</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=215)</data>
+                            <data>0.925</data>
+                            <data>3.367</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_220/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="3837">u_CORES/u_debug_core_0/resetn/opit_0/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_220/Q0</data>
+                            <data>tco</data>
+                            <data>0.223</data>
+                            <data>3.590</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="3837">u_CORES/u_debug_core_0/resetn/opit_0/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=98)</data>
+                            <data>0.384</data>
+                            <data>3.974</data>
+                            <data> </data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="3836">u_CORES/u_debug_core_0/resetn</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_205/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.087</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_storage_condition_v1_3.vp" line_number="993">u_CORES/u_debug_core_0/u_Storage_Condition/trig_mask_win/opit_0_inv/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=4)</data>
+                            <data>0.000</data>
+                            <data>4.087</data>
+                            <data> </data>
+                            <data object_valid="true">ntR23</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_209/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.200</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_storage_condition_v1_3.vp" line_number="878">u_CORES/u_debug_core_0/u_Storage_Condition/trigger_nsa_d1/opit_0_inv_L5Q/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=4)</data>
+                            <data>0.000</data>
+                            <data>4.200</data>
+                            <data> </data>
+                            <data object_valid="true">ntR22</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_213/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.313</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_storage_condition_v1_3.vp" line_number="555">u_CORES/u_debug_core_0/u_Storage_Condition/conf_reg[15]/opit_0_inv_L5Q_perm/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>4.313</data>
+                            <data> </data>
+                            <data object_valid="true">ntR21</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_217/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.426</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_cfg_reg_file_v1_0.vp" line_number="120">u_CORES/u_debug_core_0/u_Storage_Condition/u_cfg_reg_file/bit_cnt[3]/opit_0_inv_L5Q_perm/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>4.426</data>
+                            <data> </data>
+                            <data object_valid="true">ntR20</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_221/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.539</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_storage_condition_v1_3.vp" line_number="555">u_CORES/u_debug_core_0/u_Storage_Condition/conf_reg[16]/opit_0_inv/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>4.539</data>
+                            <data> </data>
+                            <data object_valid="true">ntR19</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_225/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.652</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_storage_condition_v1_3.vp" line_number="555">u_CORES/u_debug_core_0/u_Storage_Condition/conf_reg[11]/opit_0_inv_L5Q_perm/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.000</data>
+                            <data>4.652</data>
+                            <data> </data>
+                            <data object_valid="true">ntR18</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_229/RSCI</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="4095">u_CORES/u_debug_core_0/data_pipe[1][3]/opit_0_inv_L5Q_perm/RS</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 22.767" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>20.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>20.074</data>
+                            <data/>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>0.735</data>
+                            <data>20.809</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>20.809</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.038</data>
+                            <data>20.847</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>1.423</data>
+                            <data>22.270</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>22.270</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=215)</data>
+                            <data>0.895</data>
+                            <data>23.165</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_229/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="4095">u_CORES/u_debug_core_0/data_pipe[1][3]/opit_0_inv_L5Q_perm/CLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.183</data>
+                            <data>23.348</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.050</data>
+                            <data>23.298</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Recovery time</data>
+                            <data/>
+                            <data>-0.531</data>
+                            <data>22.767</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>18.115</data>
+            <data>6</data>
+            <data>98</data>
+            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="3837">u_CORES/u_debug_core_0/resetn/opit_0/CLK</data>
+            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="4095">u_CORES/u_debug_core_0/data_pipe[2][1]/opit_0_inv_L5Q_perm/RS</data>
+            <data/>
+            <data>sys_clk_50mhz</data>
+            <data>sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data>-0.019</data>
+            <data>3.367</data>
+            <data>3.165</data>
+            <data>0.183</data>
+            <data>20.000</data>
+            <data>1.285</data>
+            <data>0.901 (70.1%)</data>
+            <data>0.384 (29.9%)</data>
+            <general_container>
+                <data>Path #2: recovery slack is 18.115(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 4.652" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>0.074</data>
+                            <data/>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>0.861</data>
+                            <data>0.935</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>0.935</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.058</data>
+                            <data>0.993</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>1.449</data>
+                            <data>2.442</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>2.442</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=215)</data>
+                            <data>0.925</data>
+                            <data>3.367</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_220/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="3837">u_CORES/u_debug_core_0/resetn/opit_0/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_220/Q0</data>
+                            <data>tco</data>
+                            <data>0.223</data>
+                            <data>3.590</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="3837">u_CORES/u_debug_core_0/resetn/opit_0/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=98)</data>
+                            <data>0.384</data>
+                            <data>3.974</data>
+                            <data> </data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="3836">u_CORES/u_debug_core_0/resetn</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_205/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.087</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_storage_condition_v1_3.vp" line_number="993">u_CORES/u_debug_core_0/u_Storage_Condition/trig_mask_win/opit_0_inv/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=4)</data>
+                            <data>0.000</data>
+                            <data>4.087</data>
+                            <data> </data>
+                            <data object_valid="true">ntR23</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_209/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.200</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_storage_condition_v1_3.vp" line_number="878">u_CORES/u_debug_core_0/u_Storage_Condition/trigger_nsa_d1/opit_0_inv_L5Q/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=4)</data>
+                            <data>0.000</data>
+                            <data>4.200</data>
+                            <data> </data>
+                            <data object_valid="true">ntR22</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_213/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.313</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_storage_condition_v1_3.vp" line_number="555">u_CORES/u_debug_core_0/u_Storage_Condition/conf_reg[15]/opit_0_inv_L5Q_perm/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>4.313</data>
+                            <data> </data>
+                            <data object_valid="true">ntR21</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_217/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.426</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_cfg_reg_file_v1_0.vp" line_number="120">u_CORES/u_debug_core_0/u_Storage_Condition/u_cfg_reg_file/bit_cnt[3]/opit_0_inv_L5Q_perm/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>4.426</data>
+                            <data> </data>
+                            <data object_valid="true">ntR20</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_221/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.539</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_storage_condition_v1_3.vp" line_number="555">u_CORES/u_debug_core_0/u_Storage_Condition/conf_reg[16]/opit_0_inv/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>4.539</data>
+                            <data> </data>
+                            <data object_valid="true">ntR19</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_225/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.652</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_storage_condition_v1_3.vp" line_number="555">u_CORES/u_debug_core_0/u_Storage_Condition/conf_reg[11]/opit_0_inv_L5Q_perm/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.000</data>
+                            <data>4.652</data>
+                            <data> </data>
+                            <data object_valid="true">ntR18</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_229/RSCI</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="4095">u_CORES/u_debug_core_0/data_pipe[2][1]/opit_0_inv_L5Q_perm/RS</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 22.767" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>20.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>20.074</data>
+                            <data/>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>0.735</data>
+                            <data>20.809</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>20.809</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.038</data>
+                            <data>20.847</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>1.423</data>
+                            <data>22.270</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>22.270</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=215)</data>
+                            <data>0.895</data>
+                            <data>23.165</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_229/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="4095">u_CORES/u_debug_core_0/data_pipe[2][1]/opit_0_inv_L5Q_perm/CLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.183</data>
+                            <data>23.348</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.050</data>
+                            <data>23.298</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Recovery time</data>
+                            <data/>
+                            <data>-0.531</data>
+                            <data>22.767</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>18.115</data>
+            <data>6</data>
+            <data>98</data>
+            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="3837">u_CORES/u_debug_core_0/resetn/opit_0/CLK</data>
+            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="4095">u_CORES/u_debug_core_0/data_pipe[2][3]/opit_0_inv_L5Q_perm/RS</data>
+            <data/>
+            <data>sys_clk_50mhz</data>
+            <data>sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data>-0.019</data>
+            <data>3.367</data>
+            <data>3.165</data>
+            <data>0.183</data>
+            <data>20.000</data>
+            <data>1.285</data>
+            <data>0.901 (70.1%)</data>
+            <data>0.384 (29.9%)</data>
+            <general_container>
+                <data>Path #3: recovery slack is 18.115(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 4.652" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>0.074</data>
+                            <data/>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>0.861</data>
+                            <data>0.935</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>0.935</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.058</data>
+                            <data>0.993</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>1.449</data>
+                            <data>2.442</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>2.442</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=215)</data>
+                            <data>0.925</data>
+                            <data>3.367</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_220/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="3837">u_CORES/u_debug_core_0/resetn/opit_0/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_220/Q0</data>
+                            <data>tco</data>
+                            <data>0.223</data>
+                            <data>3.590</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="3837">u_CORES/u_debug_core_0/resetn/opit_0/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=98)</data>
+                            <data>0.384</data>
+                            <data>3.974</data>
+                            <data> </data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="3836">u_CORES/u_debug_core_0/resetn</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_205/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.087</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_storage_condition_v1_3.vp" line_number="993">u_CORES/u_debug_core_0/u_Storage_Condition/trig_mask_win/opit_0_inv/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=4)</data>
+                            <data>0.000</data>
+                            <data>4.087</data>
+                            <data> </data>
+                            <data object_valid="true">ntR23</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_209/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.200</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_storage_condition_v1_3.vp" line_number="878">u_CORES/u_debug_core_0/u_Storage_Condition/trigger_nsa_d1/opit_0_inv_L5Q/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=4)</data>
+                            <data>0.000</data>
+                            <data>4.200</data>
+                            <data> </data>
+                            <data object_valid="true">ntR22</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_213/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.313</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_storage_condition_v1_3.vp" line_number="555">u_CORES/u_debug_core_0/u_Storage_Condition/conf_reg[15]/opit_0_inv_L5Q_perm/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>4.313</data>
+                            <data> </data>
+                            <data object_valid="true">ntR21</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_217/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.426</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_cfg_reg_file_v1_0.vp" line_number="120">u_CORES/u_debug_core_0/u_Storage_Condition/u_cfg_reg_file/bit_cnt[3]/opit_0_inv_L5Q_perm/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>4.426</data>
+                            <data> </data>
+                            <data object_valid="true">ntR20</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_221/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.539</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_storage_condition_v1_3.vp" line_number="555">u_CORES/u_debug_core_0/u_Storage_Condition/conf_reg[16]/opit_0_inv/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>4.539</data>
+                            <data> </data>
+                            <data object_valid="true">ntR19</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_225/RSCO</data>
+                            <data>td</data>
+                            <data>0.113</data>
+                            <data>4.652</data>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_storage_condition_v1_3.vp" line_number="555">u_CORES/u_debug_core_0/u_Storage_Condition/conf_reg[11]/opit_0_inv_L5Q_perm/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.000</data>
+                            <data>4.652</data>
+                            <data> </data>
+                            <data object_valid="true">ntR18</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_229/RSCI</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="4095">u_CORES/u_debug_core_0/data_pipe[2][3]/opit_0_inv_L5Q_perm/RS</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 22.767" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>20.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>20.074</data>
+                            <data/>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>0.735</data>
+                            <data>20.809</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>20.809</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.038</data>
+                            <data>20.847</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>1.423</data>
+                            <data>22.270</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>22.270</data>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_compare_256b_v1_0.vp" line_number="2">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=215)</data>
+                            <data>0.895</data>
+                            <data>23.165</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_229/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../../../../../../../../../work/pango/PDS_2025.2-ads/arch/vendor/pango/arch/cdt/debug_core_rtls_pdir/ips_dbc_debug_core_v1_4.vp" line_number="4095">u_CORES/u_debug_core_0/data_pipe[2][3]/opit_0_inv_L5Q_perm/CLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.183</data>
+                            <data>23.348</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.050</data>
+                            <data>23.298</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Recovery time</data>
+                            <data/>
+                            <data>-0.531</data>
+                            <data>22.767</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+    </table>
+</tables>

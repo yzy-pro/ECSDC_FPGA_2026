@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <general_container id="route_opt_clock_summary" align="4">
+        <table_container>
+            <data>Global Clock</data>
+            <table id="route_opt_global_clock" title="Global Clock" column_number="11">
+                <column_headers>
+                    <data>GClk Inst</data>
+                    <data>Site Of GClk Inst</data>
+                    <data>Input Pin</data>
+                    <data>Net of Input</data>
+                    <data>Driver Inst</data>
+                    <data>Driver Pin</data>
+                    <data>Site Of Driver Inst</data>
+                    <data>Output Pin</data>
+                    <data>Net of Output</data>
+                    <data>Clock Loads</data>
+                    <data>Non_Clock Loads</data>
+                </column_headers>
+                <row>
+                    <data>clkbufg_0/gopclkbufg</data>
+                    <data>USCM_84_108</data>
+                    <data>CLK</data>
+                    <data>nt_sys_clk_50mhz_rt_0</data>
+                    <data>sys_clk_50mhz_ibuf/opit_1</data>
+                    <data>INCK</data>
+                    <data>IOL_327_210</data>
+                    <data>CLKOUT</data>
+                    <data>ntclkbufg_0</data>
+                    <data>215</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>clkbufg_1/gopclkbufg</data>
+                    <data>USCM_84_109</data>
+                    <data>CLK</data>
+                    <data>u_CORES/drck1_wire</data>
+                    <data>u_CORES/u_GTP_SCANCHAIN/scanchain</data>
+                    <data>TCK_USER</data>
+                    <data>SCANCHAIN_325_1</data>
+                    <data>CLKOUT</data>
+                    <data>ntclkbufg_1</data>
+                    <data>123</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>clkbufg_2/gopclkbufg</data>
+                    <data>USCM_84_110</data>
+                    <data>CLK</data>
+                    <data>uart_clk_921600</data>
+                    <data>u_pll_50mhz/u_pll_e3/goppll</data>
+                    <data>CLKOUT1</data>
+                    <data>PLL_158_55</data>
+                    <data>CLKOUT</data>
+                    <data>ntclkbufg_2</data>
+                    <data>30</data>
+                    <data>0</data>
+                </row>
+                <row>
+                    <data>clkbufg_3/gopclkbufg</data>
+                    <data>USCM_84_111</data>
+                    <data>CLK</data>
+                    <data>pll_clk_50mhz</data>
+                    <data>u_pll_50mhz/u_pll_e3/goppll</data>
+                    <data>CLKOUT0</data>
+                    <data>PLL_158_55</data>
+                    <data>CLKOUT</data>
+                    <data>ntclkbufg_3</data>
+                    <data>8</data>
+                    <data>0</data>
+                </row>
+            </table>
+        </table_container>
+        <table_container>
+            <data>PLL Clock</data>
+            <table id="route_opt_pll_clock" title="PLL Clock" column_number="9">
+                <column_headers>
+                    <data>Pll Inst</data>
+                    <data>Site Of Pll Inst</data>
+                    <data>Pin</data>
+                    <data>Net Of Pin</data>
+                    <data>Clock Loads</data>
+                    <data>Non_Clock Loads</data>
+                    <data>Driver(Load) Inst</data>
+                    <data>Driver(Load) Pin</data>
+                    <data>Site Of Driver(Load) Inst</data>
+                </column_headers>
+                <row>
+                    <data>u_pll_50mhz/u_pll_e3/goppll</data>
+                    <data>PLL_158_55</data>
+                    <data>CLKFB</data>
+                    <data>u_pll_50mhz/u_pll_e3/ntCLKFB</data>
+                    <data> - </data>
+                    <data> - </data>
+                    <data>u_pll_50mhz/u_pll_e3/goppll</data>
+                    <data>CLK_INT_FB</data>
+                    <data>PLL_158_55</data>
+                </row>
+                <row>
+                    <data>u_pll_50mhz/u_pll_e3/goppll</data>
+                    <data>PLL_158_55</data>
+                    <data>CLKIN1</data>
+                    <data>nt_sys_clk_50mhz_rt_0</data>
+                    <data> - </data>
+                    <data> - </data>
+                    <data>sys_clk_50mhz_ibuf/opit_1</data>
+                    <data>INCK</data>
+                    <data>IOL_327_210</data>
+                </row>
+                <row>
+                    <data>u_pll_50mhz/u_pll_e3/goppll</data>
+                    <data>PLL_158_55</data>
+                    <data>CLKIN2</data>
+                    <data>_GND53</data>
+                    <data> - </data>
+                    <data> - </data>
+                    <data>GND_53</data>
+                    <data>Z</data>
+                    <data>CLMA_154_56</data>
+                </row>
+                <row>
+                    <data>u_pll_50mhz/u_pll_e3/goppll</data>
+                    <data>PLL_158_55</data>
+                    <data>CLKOUT0</data>
+                    <data>pll_clk_50mhz</data>
+                    <data>8</data>
+                    <data>0</data>
+                    <data> ... </data>
+                    <data> ... </data>
+                    <data> ... </data>
+                </row>
+                <row>
+                    <data>u_pll_50mhz/u_pll_e3/goppll</data>
+                    <data>PLL_158_55</data>
+                    <data>CLKOUT0_WL</data>
+                    <data>nullptr</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>nullptr</data>
+                    <data>nullptr</data>
+                    <data>nullptr</data>
+                </row>
+                <row>
+                    <data>u_pll_50mhz/u_pll_e3/goppll</data>
+                    <data>PLL_158_55</data>
+                    <data>CLKOUT0_EXT</data>
+                    <data>nullptr</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>nullptr</data>
+                    <data>nullptr</data>
+                    <data>nullptr</data>
+                </row>
+                <row>
+                    <data>u_pll_50mhz/u_pll_e3/goppll</data>
+                    <data>PLL_158_55</data>
+                    <data>CLKOUT1</data>
+                    <data>uart_clk_921600</data>
+                    <data>30</data>
+                    <data>0</data>
+                    <data> ... </data>
+                    <data> ... </data>
+                    <data> ... </data>
+                </row>
+                <row>
+                    <data>u_pll_50mhz/u_pll_e3/goppll</data>
+                    <data>PLL_158_55</data>
+                    <data>CLKOUT2</data>
+                    <data>nullptr</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>nullptr</data>
+                    <data>nullptr</data>
+                    <data>nullptr</data>
+                </row>
+                <row>
+                    <data>u_pll_50mhz/u_pll_e3/goppll</data>
+                    <data>PLL_158_55</data>
+                    <data>CLKOUT3</data>
+                    <data>nullptr</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>nullptr</data>
+                    <data>nullptr</data>
+                    <data>nullptr</data>
+                </row>
+                <row>
+                    <data>u_pll_50mhz/u_pll_e3/goppll</data>
+                    <data>PLL_158_55</data>
+                    <data>CLKOUT4</data>
+                    <data>nullptr</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>nullptr</data>
+                    <data>nullptr</data>
+                    <data>nullptr</data>
+                </row>
+                <row>
+                    <data>u_pll_50mhz/u_pll_e3/goppll</data>
+                    <data>PLL_158_55</data>
+                    <data>CLKOUT5</data>
+                    <data>nullptr</data>
+                    <data>0</data>
+                    <data>0</data>
+                    <data>nullptr</data>
+                    <data>nullptr</data>
+                    <data>nullptr</data>
+                </row>
+            </table>
+        </table_container>
+    </general_container>
+</tables>
