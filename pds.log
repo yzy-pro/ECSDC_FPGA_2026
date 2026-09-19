@@ -2064,3 +2064,870 @@ Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Ma
 I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
 Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
 I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+C: Flow-2001: Design file missing: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'.
+C: Flow-2001: Design file missing: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+ 
+Command: set_option -options { top_module {uart_rx_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Sat Sep 19 15:37:16 2026
+Process "Compile" done.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Sat Sep 19 15:37:20 2026
+C: SDC-2025: Clock source 'n:u_pll_50mhz/clkout1' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+C: SDC-2025: Clock source 'n:u_pll_50mhz/clkout0' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+Process "Synthesize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+Process "Device Map" started.
+Current time: Sat Sep 19 15:37:24 2026
+Process "Device Map" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+Process "Place" started.
+Current time: Sat Sep 19 15:37:40 2026
+C: ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [E:/code/PangoWork/Works/uart/prj_tasks/pnr_1/place_route/ports_defalut_attribute.txt(line number:0)] to confirm. [pnr_1::Place]
+Process "Place" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+Process "Route" started.
+Current time: Sat Sep 19 15:37:56 2026
+C: Route-2036: The clock path from u_CORES/u_GTP_SCANCHAIN/scanchain:CAPDR to u_CORES/u_debug_core_0/u_hub_data_decode/newconfini.conf_id_ini[3]/opit_0_inv:CLK is routed by SRB. [pnr_1::Route]
+C: Route-2036: The clock path from u_CORES/u_GTP_SCANCHAIN/scanchain:TCK_USER to clkbufg_1/gopclkbufg:CLK is routed by SRB. [pnr_1::Route]
+Process "Route" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+Process "Route Optimize" started.
+Current time: Sat Sep 19 15:38:10 2026
+Process "Route Optimize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Process "Report Timing" started.
+Current time: Sat Sep 19 15:38:19 2026
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Sat Sep 19 15:38:19 2026
+Process "Report Timing" done.
+Process "Generate Bitstream" done.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+ 
+Command: set_option -options { top_module {uart_rx_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Sat Sep 19 15:39:33 2026
+Process "Compile" done.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Sat Sep 19 15:39:37 2026
+C: SDC-2025: Clock source 'n:u_pll_50mhz/clkout1' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+C: SDC-2025: Clock source 'n:u_pll_50mhz/clkout0' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+Process "Synthesize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+Process "Device Map" started.
+Current time: Sat Sep 19 15:39:40 2026
+Process "Device Map" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+Process "Place" started.
+Current time: Sat Sep 19 15:39:56 2026
+C: ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [E:/code/PangoWork/Works/uart/prj_tasks/pnr_1/place_route/ports_defalut_attribute.txt(line number:0)] to confirm. [pnr_1::Place]
+Process "Place" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+Process "Route" started.
+Current time: Sat Sep 19 15:40:15 2026
+C: Route-2036: The clock path from u_CORES/u_GTP_SCANCHAIN/scanchain:CAPDR to u_CORES/u_debug_core_0/u_hub_data_decode/newconfini.conf_id_ini[3]/opit_0_inv:CLK is routed by SRB. [pnr_1::Route]
+C: Route-2036: The clock path from u_CORES/u_GTP_SCANCHAIN/scanchain:TCK_USER to clkbufg_1/gopclkbufg:CLK is routed by SRB. [pnr_1::Route]
+Process "Route" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+Process "Route Optimize" started.
+Current time: Sat Sep 19 15:40:34 2026
+Process "Route Optimize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Process "Report Timing" started.
+Current time: Sat Sep 19 15:40:45 2026
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Sat Sep 19 15:40:45 2026
+Process "Report Timing" done.
+Process "Generate Bitstream" done.
+Configuration Closed.
+Open Configuration ...
+Configuration initialization started successfully.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 61)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 66)] Identifier 'StateRxReady' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 61)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 66)] Identifier 'StateRxReady' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 61)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 66)] Identifier 'StateRxReady' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 61)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 66)] Identifier 'StateRxReady' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 60)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 65)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 71)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 81)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 92)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 103)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 114)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 125)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 136)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 147)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 158)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 169)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 60)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 65)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 71)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 81)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 92)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 103)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 114)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 125)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 136)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 147)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 158)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 169)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 61)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 66)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 72)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 82)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 93)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 104)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 115)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 126)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 137)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 148)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 159)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 170)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 62)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 67)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 73)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 83)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 94)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 105)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 116)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 127)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 138)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 149)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 160)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 171)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 62)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 67)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 73)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 83)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 94)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 105)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 116)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 127)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 138)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 149)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 160)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 171)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 62)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 67)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 73)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 83)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 94)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 105)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 116)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 127)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 138)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 149)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 160)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 171)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 61)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 66)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 72)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 82)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 93)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 104)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 115)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 126)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 137)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 148)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 159)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 170)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 75)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 80)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 86)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 96)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 107)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 118)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 129)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 140)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 151)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 162)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 173)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 184)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 75)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 80)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 86)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 96)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 107)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 118)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 129)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 140)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 151)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 162)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 173)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 184)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 73)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 78)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 84)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 94)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 105)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 116)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 127)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 138)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 149)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 160)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 171)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 182)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 73)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 78)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 84)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 94)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 105)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 116)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 127)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 138)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 149)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 160)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 171)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 182)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 222)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 227)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 233)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 243)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 254)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 265)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 276)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 287)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 298)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 309)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 320)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 331)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 69)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 74)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 80)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 90)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 101)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 112)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 123)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 134)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 145)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 156)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 167)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 178)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 218)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 223)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 229)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 239)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 250)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 261)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 272)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 283)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 294)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 305)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 316)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 327)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 68)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 73)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 79)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 89)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 100)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 111)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 122)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 133)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 144)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 155)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 166)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 177)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 217)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 222)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 228)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 238)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 249)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 260)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 271)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 282)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 293)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 304)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 315)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 326)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 66)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 71)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 77)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 87)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 98)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 109)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 120)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 131)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 142)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 153)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 164)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 175)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 215)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 220)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 226)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 236)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 247)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 258)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 269)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 280)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 291)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 302)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 313)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 324)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 71)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 81)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 92)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 103)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 114)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 125)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 136)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 147)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 158)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 169)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 209)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 214)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 220)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 230)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 241)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 252)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 263)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 274)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 285)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 296)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 307)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 318)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 81)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 92)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 103)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 114)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 125)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 136)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 147)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 158)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 169)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 209)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 214)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 220)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 230)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 241)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 252)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 263)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 274)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 285)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 296)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 307)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 318)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 77)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 88)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 99)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 110)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 121)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 132)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 143)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 165)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 205)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 210)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 216)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 226)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 237)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 248)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 259)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 270)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 281)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 292)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 303)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 314)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 88)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 99)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 110)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 121)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 132)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 143)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 165)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 205)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 210)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 216)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 226)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 237)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 248)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 259)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 270)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 281)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 292)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 303)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 314)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 83)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 94)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 105)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 116)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 127)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 138)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 149)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 160)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 200)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 205)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 211)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 221)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 232)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 243)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 254)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 265)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 276)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 287)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 298)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 309)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 159)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 165)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 175)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 186)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 197)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 208)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 219)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 230)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 241)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 252)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 263)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 152)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 157)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 163)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 173)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 184)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 195)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 206)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 217)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 228)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 239)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 250)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 261)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 153)] Identifier 'StateRxReady' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 159)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 169)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 180)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 191)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 202)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 213)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 224)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 235)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 246)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 257)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 164)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 175)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 186)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 197)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 208)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 219)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 230)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 241)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 252)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 173)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 184)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 195)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 206)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 217)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 228)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 239)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 250)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 171)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 182)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 193)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 204)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 215)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 226)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 237)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 248)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 180)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 191)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 202)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 213)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 224)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 235)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 246)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 178)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 189)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 200)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 211)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 222)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 233)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 244)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 194)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 205)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 216)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 227)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 238)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 202)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 213)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 224)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 235)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 210)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 221)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 232)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 218)] Identifier 'BitSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 229)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 226)] Identifier 'BitSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared.
+ 
+Command: set_option -options { top_module {uart_rx_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Sat Sep 19 15:55:10 2026
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 154)] Identifier 'StartSampleCount' is not declared. [syn_1::Compile]
+Run process "Compile" failed, exit code: 1.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+ 
+Command: set_option -options { top_module {uart_rx_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Sat Sep 19 15:55:38 2026
+E: Verilog-4086: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 132)] More than one always block assigned a value to the same variable 'sample_count'. [syn_1::Compile]
+Run process "Compile" failed, exit code: 1.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+ 
+Command: set_option -options { top_module {uart_rx_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Sat Sep 19 15:56:42 2026
+Process "Compile" done.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Sat Sep 19 15:56:49 2026
+C: SDC-2025: Clock source 'n:u_pll_50mhz/clkout1' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+C: SDC-2025: Clock source 'n:u_pll_50mhz/clkout0' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+Process "Synthesize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+Process "Device Map" started.
+Current time: Sat Sep 19 15:56:52 2026
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Process "Device Map" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+Process "Place" started.
+Current time: Sat Sep 19 15:57:12 2026
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+C: ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [E:/code/PangoWork/Works/uart/prj_tasks/pnr_1/place_route/ports_defalut_attribute.txt(line number:0)] to confirm. [pnr_1::Place]
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Process "Place" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+Process "Route" started.
+Current time: Sat Sep 19 15:57:39 2026
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+C: Route-2036: The clock path from u_CORES/u_GTP_SCANCHAIN/scanchain:CAPDR to u_CORES/u_debug_core_0/u_hub_data_decode/id_sample.conf_id[1]/opit_0_inv:CLK is routed by SRB. [pnr_1::Route]
+C: Route-2036: The clock path from u_CORES/u_GTP_SCANCHAIN/scanchain:TCK_USER to clkbufg_1/gopclkbufg:CLK is routed by SRB. [pnr_1::Route]
+Process "Route" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+Process "Route Optimize" started.
+Current time: Sat Sep 19 15:57:54 2026
+Process "Route Optimize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Process "Report Timing" started.
+Current time: Sat Sep 19 15:58:08 2026
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Sat Sep 19 15:58:08 2026
+Process "Report Timing" done.
+Process "Generate Bitstream" done.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
