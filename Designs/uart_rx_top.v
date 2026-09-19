@@ -26,7 +26,7 @@ module uart_rx_top (
     uart_rx u_uart_rx (
         .clk(uart_clk_921600),
         .rst_n(rst_n),
-        .rx(uart_rx),
+        .data_in(uart_rx),
         .data_out(data),
         .data_valid()
     );

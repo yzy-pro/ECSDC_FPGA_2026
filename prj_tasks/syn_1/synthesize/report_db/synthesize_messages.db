@@ -120,9 +120,6 @@
             <data message="5">ConstraintEditor-4042: Port 'p:uart_tx' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.</data>
         </row>
         <row>
-            <data message="6">UserConstraintEditor-2001: [E:/code/PangoWork/Works/uart/Constraints/io/clk.fdc(line number: 1)] 'OUTPUT' is not correct, direction of port 'sys_clk_50mhz' is 'INPUT' defined in [E:/code/PangoWork/Works/uart/Designs/uart_rx_top.v(line number: 2)]. The direction has been corrected automatically.</data>
-        </row>
-        <row>
             <data message="6">SDC-2025: Clock source 'n:u_pll_50mhz/clkout1' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate.</data>
         </row>
         <row>
@@ -135,10 +132,55 @@
             <data message="4">Infer clock: create_generated_clock -name {sys_clk_50mhz|u_pll_50mhz/u_pll_e3/CLKOUT0_Inferred} -source [ get_ports {sys_clk_50mhz} ] [ get_pins {u_pll_50mhz/u_pll_e3:CLKOUT0} ] -master_clock {sys_clk_50mhz} -edges {1 2 3} -edge_shift {0.000000 0.000000 0.000000} -add.</data>
         </row>
         <row>
-            <data message="5">Public-4008: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 118)] Instance 'u_uart_rx/data_valid' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+            <data message="4">Encoding type of FSM 'state_fsm[3:0]' is: onehot.</data>
         </row>
         <row>
-            <data message="5">Public-4008: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 104)] Instance 'u_uart_rx/data_valid_temp' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+            <data message="4">Encoding table of FSM 'state_fsm[3:0]':</data>
+        </row>
+        <row>
+            <data message="4">from  u_uart_rx/state[3] u_uart_rx/state[2] u_uart_rx/state[1] u_uart_rx/state[0]</data>
+        </row>
+        <row>
+            <data message="4">to  u_uart_rx/state_reg[11] u_uart_rx/state_reg[10] u_uart_rx/state_reg[9] u_uart_rx/state_reg[8] u_uart_rx/state_reg[7] u_uart_rx/state_reg[6] u_uart_rx/state_reg[5] u_uart_rx/state_reg[4] u_uart_rx/state_reg[3] u_uart_rx/state_reg[2] u_uart_rx/state_reg[1] u_uart_rx/state_reg[0]</data>
+        </row>
+        <row>
+            <data message="4">0000 =&gt; 000000000001</data>
+        </row>
+        <row>
+            <data message="4">0001 =&gt; 000000000010</data>
+        </row>
+        <row>
+            <data message="4">0010 =&gt; 000000000100</data>
+        </row>
+        <row>
+            <data message="4">0011 =&gt; 000000001000</data>
+        </row>
+        <row>
+            <data message="4">0100 =&gt; 000000010000</data>
+        </row>
+        <row>
+            <data message="4">0101 =&gt; 000000100000</data>
+        </row>
+        <row>
+            <data message="4">0110 =&gt; 000001000000</data>
+        </row>
+        <row>
+            <data message="4">0111 =&gt; 000010000000</data>
+        </row>
+        <row>
+            <data message="4">1000 =&gt; 000100000000</data>
+        </row>
+        <row>
+            <data message="4">1001 =&gt; 001000000000</data>
+        </row>
+        <row>
+            <data message="4">1010 =&gt; 010000000000</data>
+        </row>
+        <row>
+            <data message="4">1011 =&gt; 100000000000</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v(line number: 141)] Instance 'u_uart_rx/data_valid' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
         </row>
         <row>
             <data message="5">Timing-4087: Port 'led_out[0]' is not constrained, it is treated as combinational output.</data>

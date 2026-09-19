@@ -411,11 +411,6 @@ Pin
 Z;2
 
 Inst
-GND_75;gopGND
-Pin
-Z;2
-
-Inst
 GRS_INST/grs;gopGRS
 Pin
 GRS_N;1
@@ -661,21 +656,6 @@ Pin
 Z;2
 
 Inst
-VCC_48;gopVCC
-Pin
-Z;2
-
-Inst
-VCC_49;gopVCC
-Pin
-Z;2
-
-Inst
-VCC_50;gopVCC
-Pin
-Z;2
-
-Inst
 clkbufg_0/gopclkbufg;gopCLKBUFG
 Pin
 CLKOUT;2
@@ -698,6 +678,20 @@ clkbufg_3/gopclkbufg;gopCLKBUFG
 Pin
 CLKOUT;2
 CLK;1
+
+Inst
+gopCLKROUTE_A_AB_78_208;gopCLKROUTE
+Pin
+Z;2
+L7in;1
+M;1
+
+Inst
+gopCLKROUTE_A_CD_50_260;gopCLKROUTE
+Pin
+Z;2
+L7in;1
+M;1
 
 Inst
 key_in_ibuf[0]/opit_0;gopIBUF
@@ -1452,7 +1446,7 @@ L4;1
 RS;1
 
 Inst
-u_CORES/u_debug_core_0/data_pipe[0][6]/opit_0_inv_L5Q;gopL5Q
+u_CORES/u_debug_core_0/data_pipe[0][6]/opit_0_inv_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -1500,7 +1494,7 @@ L4;1
 RS;1
 
 Inst
-u_CORES/u_debug_core_0/data_pipe[1][0]/opit_0_inv_L5Q_perm;gopL5Q
+u_CORES/u_debug_core_0/data_pipe[1][0]/opit_0_inv_L5Q;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -1756,7 +1750,7 @@ L4;1
 RS;1
 
 Inst
-u_CORES/u_debug_core_0/data_pipe[2][7]/opit_0_inv_L5Q_perm;gopL5Q
+u_CORES/u_debug_core_0/data_pipe[2][7]/opit_0_inv_L5Q;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -2098,7 +2092,7 @@ D;1
 RS;1
 
 Inst
-u_CORES/u_debug_core_0/operation_ind/opit_0_inv_L5Q;gopL5Q
+u_CORES/u_debug_core_0/operation_ind/opit_0_inv_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -2350,7 +2344,7 @@ D;1
 RS;1
 
 Inst
-u_CORES/u_debug_core_0/rst_trig[0]/opit_0_inv_L5Q;gopL5Q
+u_CORES/u_debug_core_0/rst_trig[0]/opit_0_inv_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -2964,7 +2958,7 @@ L4;1
 RS;1
 
 Inst
-u_CORES/u_debug_core_0/u0_trig_unit/conf_reg[7]/opit_0_inv_L5Q_perm;gopL5Q
+u_CORES/u_debug_core_0/u0_trig_unit/conf_reg[7]/opit_0_inv_L5Q;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -3124,7 +3118,7 @@ L4;1
 RS;1
 
 Inst
-u_CORES/u_debug_core_0/u0_trig_unit/conf_reg[17]/opit_0_inv_L5Q;gopL5Q
+u_CORES/u_debug_core_0/u0_trig_unit/conf_reg[17]/opit_0_inv_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -3651,7 +3645,7 @@ S20;1
 S21;1
 
 Inst
-u_CORES/u_debug_core_0/u0_trig_unit/u_cfg_reg_file/N342_1/gateop_perm;gopLUT5
+u_CORES/u_debug_core_0/u0_trig_unit/u_cfg_reg_file/N342_1/gateop;gopLUT5
 Pin
 Z;2
 L0;1
@@ -5236,7 +5230,7 @@ L4;1
 RS;1
 
 Inst
-u_CORES/u_debug_core_0/u_Storage_Condition/conf_reg[13]/opit_0_inv_L5Q;gopL5Q
+u_CORES/u_debug_core_0/u_Storage_Condition/conf_reg[13]/opit_0_inv_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -5682,7 +5676,7 @@ L3;1
 L4;1
 
 Inst
-u_CORES/u_debug_core_0/u_Storage_Condition/position_p_134/gateop_perm;gopLUT5
+u_CORES/u_debug_core_0/u_Storage_Condition/position_p_134/gateop;gopLUT5
 Pin
 Z;2
 L0;1
@@ -5692,7 +5686,7 @@ L3;1
 L4;1
 
 Inst
-u_CORES/u_debug_core_0/u_Storage_Condition/stor_en_nsa_d1/opit_0_inv_L5Q_perm;gopL5Q
+u_CORES/u_debug_core_0/u_Storage_Condition/stor_en_nsa_d1/opit_0_inv_L5Q;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -5757,7 +5751,7 @@ D;1
 RS;1
 
 Inst
-u_CORES/u_debug_core_0/u_Storage_Condition/trigger_nsa_d1/opit_0_inv_L5Q;gopL5Q
+u_CORES/u_debug_core_0/u_Storage_Condition/trigger_nsa_d1/opit_0_inv_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -6164,7 +6158,7 @@ L4;1
 RS;1
 
 Inst
-u_CORES/u_debug_core_0/u_Trigger_Condition/conf_reg[1]/opit_0_inv_L5Q;gopL5Q
+u_CORES/u_debug_core_0/u_Trigger_Condition/conf_reg[1]/opit_0_inv_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -6459,7 +6453,7 @@ L3;1
 L4;1
 
 Inst
-u_CORES/u_debug_core_0/u_hub_data_decode/conf_rden[0]/opit_0_inv_L5Q_perm;gopL5Q
+u_CORES/u_debug_core_0/u_hub_data_decode/conf_rden[0]/opit_0_inv_L5Q;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -7571,7 +7565,7 @@ I14;1
 RS;1
 
 Inst
-u_CORES/u_debug_core_0/u_rd_addr_gen/confck_same_ram.ram_radr[11]/opit_0_inv_AQ_perm;gopAQ
+u_CORES/u_debug_core_0/u_rd_addr_gen/confck_same_ram.ram_radr[11]/opit_0_inv_AQ;gopAQ
 Pin
 CEOUT;2
 Cout;2
@@ -7708,7 +7702,7 @@ L4;1
 RS;1
 
 Inst
-u_CORES/u_debug_core_0/u_rd_addr_gen/status_ff[6]/opit_0_inv_L5Q_perm;gopL5Q
+u_CORES/u_debug_core_0/u_rd_addr_gen/status_ff[6]/opit_0_inv_L5Q;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -7740,7 +7734,7 @@ L4;1
 RS;1
 
 Inst
-u_CORES/u_debug_core_0/u_rd_addr_gen/status_ff[8]/opit_0_inv_L5Q_perm;gopL5Q
+u_CORES/u_debug_core_0/u_rd_addr_gen/status_ff[8]/opit_0_inv_L5Q;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -7971,7 +7965,7 @@ L4;1
 RS;1
 
 Inst
-u_CORES/u_jtag_hub/id.id_o[1]/opit_0_inv_L5Q;gopL5Q
+u_CORES/u_jtag_hub/id.id_o[1]/opit_0_inv_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -8051,7 +8045,7 @@ L4;1
 RS;1
 
 Inst
-u_CORES/u_jtag_hub/shft.shift_data[1]/opit_0_L5Q;gopL5Q
+u_CORES/u_jtag_hub/shft.shift_data[1]/opit_0_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -8462,7 +8456,7 @@ RST;1
 RSTODIV;1
 
 Inst
-u_uart_rx/N52_1/gateop_perm;gopLUT5
+u_uart_rx/N131_4/gateop_perm;gopLUT5
 Pin
 Z;2
 L0;1
@@ -8472,7 +8466,7 @@ L3;1
 L4;1
 
 Inst
-u_uart_rx/N66_1/gateop_perm;gopLUT5
+u_uart_rx/N131_8_8/gateop_perm;gopLUT5
 Pin
 Z;2
 L0;1
@@ -8482,247 +8476,87 @@ L3;1
 L4;1
 
 Inst
-u_uart_rx/bit_count[0]/opit_0_inv_L5Q_perm;gopL5Q
+u_uart_rx/N131_8_9/gateop_perm;gopLUT5
 Pin
-CEOUT;2
-Q;2
-RSOUT;2
 Z;2
-CE;1
-CLK;1
 L0;1
 L1;1
 L2;1
 L3;1
 L4;1
-RS;1
 
 Inst
-u_uart_rx/bit_count[1]/opit_0_inv_L5Q_perm;gopL5Q
+u_uart_rx/N255_4/gateop_perm;gopLUT5
 Pin
-CEOUT;2
-Q;2
-RSOUT;2
 Z;2
-CE;1
-CLK;1
 L0;1
 L1;1
 L2;1
 L3;1
 L4;1
-RS;1
 
 Inst
-u_uart_rx/bit_count[2]/opit_0_inv_L5Q_perm;gopL5Q
+u_uart_rx/N308_1_1_3/gateop_perm;gopLUT5
 Pin
-CEOUT;2
-Q;2
-RSOUT;2
 Z;2
-CE;1
-CLK;1
 L0;1
 L1;1
 L2;1
 L3;1
 L4;1
-RS;1
 
 Inst
-u_uart_rx/bit_count[3]/opit_0_inv_L5Q_perm;gopL5Q
+u_uart_rx/N308_1_1_4/gateop_perm;gopLUT5
 Pin
-CEOUT;2
-Q;2
-RSOUT;2
 Z;2
-CE;1
-CLK;1
 L0;1
 L1;1
 L2;1
 L3;1
 L4;1
-RS;1
 
 Inst
-u_uart_rx/data_out[0]/opit_0_inv;gopQ
+u_uart_rx/N308_3/gateop_perm;gopLUT5
 Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
+Z;2
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
 
 Inst
-u_uart_rx/data_out[1]/opit_0_inv;gopQ
+u_uart_rx/N340_1_1/gateop_perm;gopLUT5
 Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
+Z;2
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
 
 Inst
-u_uart_rx/data_out[2]/opit_0_inv;gopQ
+u_uart_rx/N340_1_2/gateop_perm;gopLUT5
 Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
+Z;2
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
 
 Inst
-u_uart_rx/data_out[3]/opit_0_inv;gopQ
+u_uart_rx/N340_1_3/gateop_perm;gopLUT5
 Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
+Z;2
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
 
 Inst
-u_uart_rx/data_out[4]/opit_0_inv;gopQ
-Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
-
-Inst
-u_uart_rx/data_out[5]/opit_0_inv;gopQ
-Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
-
-Inst
-u_uart_rx/data_out[6]/opit_0_inv;gopQ
-Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
-
-Inst
-u_uart_rx/data_out[7]/opit_0_inv;gopQ
-Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
-
-Inst
-u_uart_rx/data_out_temp[0]/opit_0_inv;gopQ
-Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
-
-Inst
-u_uart_rx/data_out_temp[1]/opit_0_inv;gopQ
-Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
-
-Inst
-u_uart_rx/data_out_temp[2]/opit_0_inv;gopQ
-Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
-
-Inst
-u_uart_rx/data_out_temp[3]/opit_0_inv;gopQ
-Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
-
-Inst
-u_uart_rx/data_out_temp[4]/opit_0_inv;gopQ
-Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
-
-Inst
-u_uart_rx/data_out_temp[5]/opit_0_inv;gopQ
-Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
-
-Inst
-u_uart_rx/data_out_temp[6]/opit_0_inv;gopQ
-Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
-
-Inst
-u_uart_rx/data_out_temp[7]/opit_0_inv;gopQ
-Pin
-CEOUT;2
-Q;2
-RSOUT;2
-CE;1
-CLK;1
-D;1
-RS;1
-
-Inst
-u_uart_rx/rx_busy/opit_0_inv_L5Q_perm;gopL5Q
+u_uart_rx/data_out[0]/opit_0_inv_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -8738,7 +8572,103 @@ L4;1
 RS;1
 
 Inst
-u_uart_rx/rx_start/opit_0_inv_L5Q_perm;gopL5Q
+u_uart_rx/data_out[1]/opit_0_inv_L5Q;gopL5Q
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+Z;2
+CE;1
+CLK;1
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
+RS;1
+
+Inst
+u_uart_rx/data_out[2]/opit_0_inv_L5Q_perm;gopL5Q
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+Z;2
+CE;1
+CLK;1
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
+RS;1
+
+Inst
+u_uart_rx/data_out[3]/opit_0_inv_L5Q_perm;gopL5Q
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+Z;2
+CE;1
+CLK;1
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
+RS;1
+
+Inst
+u_uart_rx/data_out[4]/opit_0_inv_L5Q_perm;gopL5Q
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+Z;2
+CE;1
+CLK;1
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
+RS;1
+
+Inst
+u_uart_rx/data_out[5]/opit_0_inv_L5Q_perm;gopL5Q
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+Z;2
+CE;1
+CLK;1
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
+RS;1
+
+Inst
+u_uart_rx/data_out[6]/opit_0_inv_L5Q_perm;gopL5Q
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+Z;2
+CE;1
+CLK;1
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
+RS;1
+
+Inst
+u_uart_rx/data_out[7]/opit_0_inv_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -8818,7 +8748,51 @@ L4;1
 RS;1
 
 Inst
-u_uart_rx/sample_flag/opit_0_inv_L5Q_perm;gopL5Q
+u_uart_rx/state_reg[0]/opit_0_inv;gopQ
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+CE;1
+CLK;1
+D;1
+RS;1
+
+Inst
+u_uart_rx/state_reg[1]/opit_0_inv;gopQ
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+CE;1
+CLK;1
+D;1
+RS;1
+
+Inst
+u_uart_rx/state_reg[2]/opit_0_inv;gopQ
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+CE;1
+CLK;1
+D;1
+RS;1
+
+Inst
+u_uart_rx/state_reg[3]/opit_0_inv;gopQ
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+CE;1
+CLK;1
+D;1
+RS;1
+
+Inst
+u_uart_rx/state_reg[4]/opit_0_inv_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -8831,6 +8805,206 @@ L1;1
 L2;1
 L3;1
 L4;1
+RS;1
+
+Inst
+u_uart_rx/state_reg[5]/opit_0_inv_L5Q_perm;gopL5Q
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+Z;2
+CE;1
+CLK;1
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
+RS;1
+
+Inst
+u_uart_rx/state_reg[6]/opit_0_inv_L5Q_perm;gopL5Q
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+Z;2
+CE;1
+CLK;1
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
+RS;1
+
+Inst
+u_uart_rx/state_reg[7]/opit_0_inv_L5Q_perm;gopL5Q
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+Z;2
+CE;1
+CLK;1
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
+RS;1
+
+Inst
+u_uart_rx/state_reg[8]/opit_0_inv_L5Q_perm;gopL5Q
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+Z;2
+CE;1
+CLK;1
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
+RS;1
+
+Inst
+u_uart_rx/state_reg[9]/opit_0_inv_L5Q_perm;gopL5Q
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+Z;2
+CE;1
+CLK;1
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
+RS;1
+
+Inst
+u_uart_rx/state_reg[10]/opit_0_inv_L5Q_perm;gopL5Q
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+Z;2
+CE;1
+CLK;1
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
+RS;1
+
+Inst
+u_uart_rx/state_reg[11]/opit_0_inv_L5Q_perm;gopL5Q
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+Z;2
+CE;1
+CLK;1
+L0;1
+L1;1
+L2;1
+L3;1
+L4;1
+RS;1
+
+Inst
+u_uart_rx/tmp_data_out[0]/opit_0_inv;gopQ
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+CE;1
+CLK;1
+D;1
+RS;1
+
+Inst
+u_uart_rx/tmp_data_out[1]/opit_0_inv;gopQ
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+CE;1
+CLK;1
+D;1
+RS;1
+
+Inst
+u_uart_rx/tmp_data_out[2]/opit_0_inv;gopQ
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+CE;1
+CLK;1
+D;1
+RS;1
+
+Inst
+u_uart_rx/tmp_data_out[3]/opit_0_inv;gopQ
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+CE;1
+CLK;1
+D;1
+RS;1
+
+Inst
+u_uart_rx/tmp_data_out[4]/opit_0_inv;gopQ
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+CE;1
+CLK;1
+D;1
+RS;1
+
+Inst
+u_uart_rx/tmp_data_out[5]/opit_0_inv;gopQ
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+CE;1
+CLK;1
+D;1
+RS;1
+
+Inst
+u_uart_rx/tmp_data_out[6]/opit_0_inv;gopQ
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+CE;1
+CLK;1
+D;1
+RS;1
+
+Inst
+u_uart_rx/tmp_data_out[7]/opit_0_inv;gopQ
+Pin
+CEOUT;2
+Q;2
+RSOUT;2
+CE;1
+CLK;1
+D;1
 RS;1
 
 Inst
@@ -8903,6 +9077,13 @@ O;2
 T;2
 IN;1
 MI;1
+
+Inst
+gopCLKROUTE_S_AB_74_237;gopCLKROUTE
+Pin
+Z;2
+L7in;1
+M;1
 
 Net
 _GND0;
@@ -8980,7 +9161,6 @@ _GND71;
 _GND72;
 _GND73;
 _GND74;
-_GND75;
 _VCC0;
 _VCC1;
 _VCC2;
@@ -9029,9 +9209,6 @@ _VCC44;
 _VCC45;
 _VCC46;
 _VCC47;
-_VCC48;
-_VCC49;
-_VCC50;
 key_in_ibuf[0]/ntD;
 key_in_ibuf[1]/ntD;
 key_in_ibuf[2]/ntD;
@@ -9116,7 +9293,6 @@ ntR64;
 ntR65;
 ntR66;
 ntR67;
-ntR68;
 nt_hard_wire_0;
 nt_hard_wire_1;
 nt_hard_wire_2;
@@ -9297,11 +9473,15 @@ u_pll_50mhz/u_pll_e3/ntCLKFB;
 u_rd_addr_gen/N464_7_1__4;
 u_rd_addr_gen/N464_7_3__4;
 u_rd_addr_gen/N720_1_inv;
-u_uart_rx/N52;
-u_uart_rx/N66;
-u_uart_rx/rx_busy;
-u_uart_rx/rx_start;
-u_uart_rx/sample_flag;
+u_uart_rx/N131;
+u_uart_rx/N308_inv;
+u_uart_rx/N340;
+u_uart_rx/_N14;
+u_uart_rx/_N30;
+u_uart_rx/_N59;
+u_uart_rx/_N73;
+u_uart_rx/_N74;
+u_uart_rx/_N75;
 uart_clk_921600;
 uart_rx;
 uart_rx_ibuf/ntD;
@@ -9719,22 +9899,31 @@ u_CORES/u_jtag_hub/shift_data [5];
 u_CORES/u_jtag_hub/shift_data [6];
 u_CORES/u_jtag_hub/shift_data [7];
 u_CORES/u_jtag_hub/shift_data [8];
-u_uart_rx/bit_count [0];
-u_uart_rx/bit_count [1];
-u_uart_rx/bit_count [2];
-u_uart_rx/bit_count [3];
-u_uart_rx/data_out_temp [0];
-u_uart_rx/data_out_temp [1];
-u_uart_rx/data_out_temp [2];
-u_uart_rx/data_out_temp [3];
-u_uart_rx/data_out_temp [4];
-u_uart_rx/data_out_temp [5];
-u_uart_rx/data_out_temp [6];
-u_uart_rx/data_out_temp [7];
+u_uart_rx/N353 [1];
 u_uart_rx/sample_count [0];
 u_uart_rx/sample_count [1];
 u_uart_rx/sample_count [2];
 u_uart_rx/sample_count [3];
+u_uart_rx/state_reg [0];
+u_uart_rx/state_reg [1];
+u_uart_rx/state_reg [2];
+u_uart_rx/state_reg [3];
+u_uart_rx/state_reg [4];
+u_uart_rx/state_reg [5];
+u_uart_rx/state_reg [6];
+u_uart_rx/state_reg [7];
+u_uart_rx/state_reg [8];
+u_uart_rx/state_reg [9];
+u_uart_rx/state_reg [10];
+u_uart_rx/state_reg [11];
+u_uart_rx/tmp_data_out [0];
+u_uart_rx/tmp_data_out [1];
+u_uart_rx/tmp_data_out [2];
+u_uart_rx/tmp_data_out [3];
+u_uart_rx/tmp_data_out [4];
+u_uart_rx/tmp_data_out [5];
+u_uart_rx/tmp_data_out [6];
+u_uart_rx/tmp_data_out [7];
 u_uart_rx/tmp_reg [0];
 u_uart_rx/tmp_reg [1];
 u_uart_rx/tmp_reg [2];
