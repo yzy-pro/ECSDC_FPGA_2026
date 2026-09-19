@@ -3559,3 +3559,279 @@ Process "Generate Bitstream" started.
 Current time: Sat Sep 19 16:34:43 2026
 Process "Report Timing" done.
 Process "Generate Bitstream" done.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart_rx_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart_rx_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart_rx_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart_rx_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart_rx_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart_rx_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart_rx_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart_rx_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart_rx_top.v'. 
+File "E:/code/PangoWork/Works/uart/Designs/uart_txrx_top.v" has been added to project successfully. 
+File "E:/code/PangoWork/Works/uart/Designs/uart/uart_tx.v" has been added to project successfully. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_tx.v(line number: 143)] Identifier 'data_in_valid' is not declared.
+ 
+Command: set_option -options { top_module {uart_txrx_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Sat Sep 19 16:59:30 2026
+E: Verilog-4039: [E:/code/PangoWork/Works/uart/Designs/uart/uart_tx.v(line number: 143)] Identifier 'data_in_valid' is not declared. [syn_1::Compile]
+Run process "Compile" failed, exit code: 1.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_tx.v'. 
+ 
+Command: set_option -options { top_module {uart_txrx_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Sat Sep 19 16:59:58 2026
+Process "Compile" done.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Sat Sep 19 17:00:05 2026
+C: SDC-2025: Clock source 'n:u_pll_50mhz/clkout1' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+C: SDC-2025: Clock source 'n:u_pll_50mhz/clkout0' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+E: DRC-1021: Net _$$_VCC_$$_ has multiple drivers in module uart_txrx_top (see run.log for details). [syn_1::Synthesize]
+Run process "Synthesize" failed, exit code: 1.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Sat Sep 19 17:00:55 2026
+C: SDC-2025: Clock source 'n:u_pll_50mhz/clkout1' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+C: SDC-2025: Clock source 'n:u_pll_50mhz/clkout0' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+E: DRC-1021: Net _$$_VCC_$$_ has multiple drivers in module uart_txrx_top (see run.log for details). [syn_1::Synthesize]
+Run process "Synthesize" failed, exit code: 1.
+C: Flow-2004: Constraint file modified: 'E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc'.
+C: Flow-2004: Constraint file modified: 'E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc'.
+C: Flow-2004: Constraint file modified: 'E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc'.
+C: Flow-2004: Constraint file modified: 'E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc'.
+C: Flow-2004: Constraint file modified: 'E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc'.
+C: Flow-2004: Constraint file modified: 'E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc'.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Sat Sep 19 17:02:49 2026
+Constraint check start.
+W: ConstraintEditor-4040: [E:/code/PangoWork/Works/uart/Constraints/io/key.fdc(line number: 2)] Port p:key_in[0] has been placed at location K18, whose type is share pin.
+W: ConstraintEditor-4040: [E:/code/PangoWork/Works/uart/Constraints/io/clk.fdc(line number: 8)] Port p:rst_n has been placed at location AB13, whose type is share pin.
+W: ConstraintEditor-4040: [E:/code/PangoWork/Works/uart/Constraints/io/key.fdc(line number: 22)] Port p:key_in[5] has been placed at location J19, whose type is share pin.
+W: ConstraintEditor-4040: [E:/code/PangoWork/Works/uart/Constraints/io/key.fdc(line number: 26)] Port p:key_in[6] has been placed at location H20, whose type is share pin.
+W: ConstraintEditor-4042: Port 'p:key_in[0]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:key_in[1]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:key_in[2]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:key_in[3]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:key_in[4]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:key_in[5]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:key_in[6]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:key_in[7]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[0]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[0]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[0]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[1]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[1]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[1]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[2]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[2]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[2]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[3]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[3]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[3]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[4]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[4]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[4]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[5]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[5]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[5]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[6]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[6]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[6]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[7]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[7]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:led_out[7]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:uart_tx' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+W: ConstraintEditor-4042: Port 'p:uart_tx' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+C: Timing-4002: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 3)] Port 'pll_clk_50mhz' is not found in current design.
+C: Timing-4002: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 5)] Port 'uart_clk_14m7456' is not found in current design.
+E: CommandTiming-0057: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 3)] Nothing matched for 'source_list', command 'create_clock' is aborted.
+E: ConstraintEditor-0046: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 3)] Parse file error: Failed to import constraint "create_clock -name pll_clk_50mhz [get_ports pll_clk_50mhz] -period 20.0 -waveform {0 10.0}".
+E: CommandTiming-0057: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 5)] Nothing matched for 'source_list', command 'create_clock' is aborted.
+E: ConstraintEditor-0046: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 5)] Parse file error: Failed to import constraint "create_clock -name uart_clk_14m7456 [get_ports uart_clk_14m7456] -period 67.817 -waveform {0 33.9085}".
+Constraint check end.
+Total time(hh:mm:ss) of constraint check : 00:00:00
+C: Timing-4002: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 3)] Port 'pll_clk_50mhz' is not found in current design. [syn_1::Synthesize]
+C: Timing-4002: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 5)] Port 'uart_clk_14m7456' is not found in current design. [syn_1::Synthesize]
+E: CommandTiming-0057: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 3)] Nothing matched for 'source_list', command 'create_clock' is aborted. [syn_1::Synthesize]
+E: ConstraintEditor-0046: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 3)] Parse file error: Failed to import constraint "create_clock -name pll_clk_50mhz [get_ports pll_clk_50mhz] -period 20.0 -waveform {0 10.0}". [syn_1::Synthesize]
+E: CommandTiming-0057: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 5)] Nothing matched for 'source_list', command 'create_clock' is aborted. [syn_1::Synthesize]
+E: ConstraintEditor-0046: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 5)] Parse file error: Failed to import constraint "create_clock -name uart_clk_14m7456 [get_ports uart_clk_14m7456] -period 67.817 -waveform {0 33.9085}". [syn_1::Synthesize]
+Run process "Synthesize" failed, exit code: 1.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Sat Sep 19 17:03:27 2026
+C: Timing-4002: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 3)] Port 'pll_clk_50mhz' is not found in current design. [syn_1::Synthesize]
+C: Timing-4002: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 5)] Port 'uart_clk_14m7456' is not found in current design. [syn_1::Synthesize]
+E: CommandTiming-0057: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 3)] Nothing matched for 'source_list', command 'create_clock' is aborted. [syn_1::Synthesize]
+E: ConstraintEditor-0046: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 3)] Parse file error: Failed to import constraint "create_clock -name pll_clk_50mhz [get_ports pll_clk_50mhz] -period 20.0 -waveform {0 10.0}". [syn_1::Synthesize]
+E: CommandTiming-0057: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 5)] Nothing matched for 'source_list', command 'create_clock' is aborted. [syn_1::Synthesize]
+E: ConstraintEditor-0046: [E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc(line number: 5)] Parse file error: Failed to import constraint "create_clock -name uart_clk_14m7456 [get_ports uart_clk_14m7456] -period 67.817 -waveform {0 33.9085}". [syn_1::Synthesize]
+Run process "Synthesize" failed, exit code: 1.
+C: Flow-2004: Constraint file modified: 'E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc'.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Sat Sep 19 17:03:46 2026
+C: SDC-2025: Clock source 'n:u_pll_50mhz/clkout1' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+C: SDC-2025: Clock source 'n:u_pll_50mhz/clkout0' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+E: DRC-1021: Net _$$_VCC_$$_ has multiple drivers in module uart_txrx_top (see run.log for details). [syn_1::Synthesize]
+Run process "Synthesize" failed, exit code: 1.
+C: Flow-2004: Constraint file modified: 'E:/code/PangoWork/Works/uart/Constraints/clock/clocks.fdc'.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Sat Sep 19 17:05:46 2026
+E: DRC-1021: Net _$$_VCC_$$_ has multiple drivers in module uart_txrx_top (see run.log for details). [syn_1::Synthesize]
+Run process "Synthesize" failed, exit code: 1.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart_txrx_top.v'. 
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Sat Sep 19 17:06:54 2026
+E: DRC-1021: Net _$$_VCC_$$_ has multiple drivers in module uart_txrx_top (see run.log for details). [syn_1::Synthesize]
+E: Flow-0288: Synthesize: Process exits abnormally. 
+Run process "Synthesize" failed, exit code: -9.
+ 
+Command: set_option -options { top_module {uart_txrx_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Sat Sep 19 17:07:00 2026
+Process "Compile" done.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Sat Sep 19 17:07:05 2026
+Process "Synthesize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+Process "Device Map" started.
+Current time: Sat Sep 19 17:07:12 2026
+Process "Device Map" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+Process "Place" started.
+Current time: Sat Sep 19 17:07:16 2026
+C: ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [E:/code/PangoWork/Works/uart/prj_tasks/pnr_1/place_route/ports_defalut_attribute.txt(line number:0)] to confirm. [pnr_1::Place]
+Process "Place" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+Process "Route" started.
+Current time: Sat Sep 19 17:07:28 2026
+Process "Route" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+Process "Route Optimize" started.
+Current time: Sat Sep 19 17:07:40 2026
+Process "Route Optimize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Process "Report Timing" started.
+Current time: Sat Sep 19 17:07:48 2026
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Sat Sep 19 17:07:48 2026
+Process "Report Timing" done.
+Process "Generate Bitstream" done.
+Debugger Closed.
+Inserter (Post Synthesize) Closed.
+Configuration Closed.
+Open Configuration ...
+Configuration initialization started successfully.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/uart/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/uart/Designs/uart/uart_rx.v'. 
+ 
+Command: set_option -options { top_module {uart_txrx_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Sat Sep 19 17:09:19 2026
+Process "Compile" done.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Sat Sep 19 17:09:23 2026
+Process "Synthesize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+Process "Device Map" started.
+Current time: Sat Sep 19 17:09:27 2026
+Process "Device Map" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+Process "Place" started.
+Current time: Sat Sep 19 17:09:30 2026
+C: ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [E:/code/PangoWork/Works/uart/prj_tasks/pnr_1/place_route/ports_defalut_attribute.txt(line number:0)] to confirm. [pnr_1::Place]
+Process "Place" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+Process "Route" started.
+Current time: Sat Sep 19 17:09:43 2026
+Process "Route" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+Process "Route Optimize" started.
+Current time: Sat Sep 19 17:09:54 2026
+Process "Route Optimize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Process "Report Timing" started.
+Current time: Sat Sep 19 17:10:03 2026
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Sat Sep 19 17:10:03 2026
+Process "Report Timing" done.
+Process "Generate Bitstream" done.

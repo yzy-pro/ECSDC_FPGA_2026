@@ -178,11 +178,12 @@ CLK;1
 D;1
 
 Inst
-led_data_in[6]_1;GTP_LUT2
+led_data_in[6]_1;GTP_LUT3
 Pin
 Z;2
 I0;1
 I1;1
+I2;1
 
 Inst
 led_data_in[7];GTP_DFF_C
@@ -754,6 +755,13 @@ I0;1
 I1;1
 
 Inst
+u_uart_rx/N401_16;GTP_LUT2
+Pin
+Z;2
+I0;1
+I1;1
+
+Inst
 u_uart_rx/data_out[0];GTP_DFF_CE
 Pin
 Q;2
@@ -800,6 +808,15 @@ D;1
 
 Inst
 u_uart_rx/data_out[5];GTP_DFF_CE
+Pin
+Q;2
+C;1
+CE;1
+CLK;1
+D;1
+
+Inst
+u_uart_rx/data_out[6];GTP_DFF_CE
 Pin
 Q;2
 C;1
@@ -1116,6 +1133,7 @@ uart_data_out[2];
 uart_data_out[3];
 uart_data_out[4];
 uart_data_out[5];
+uart_data_out[6];
 uart_data_out[7];
 uart_data_valid;
 uart_rx;
@@ -1143,6 +1161,7 @@ u_uart_rx/N401[2];
 u_uart_rx/N401[3];
 u_uart_rx/N401[4];
 u_uart_rx/N401[5];
+u_uart_rx/N401[6];
 u_uart_rx/N401[7];
 u_uart_rx/N439[0];
 u_uart_rx/_N20;

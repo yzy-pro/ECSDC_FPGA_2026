@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <tables>
-    <general_container id="device_map_timing_constraint">
-        <table_container>
-            <table id="device_map_timing_constraint" title="Timing Constraint" column_number="1">
-                <column_headers>
-                    <data>Command</data>
-                </column_headers>
-                <row>
-                    <data>create_clock -name sys_clk_50mhz [get_ports sys_clk_50mhz] -period 20.0 -waveform {0 10.0}</data>
-                </row>
-            </table>
-        </table_container>
-        <table_container>
-            <table id="device_map_timing_constraint" title="Inferred clocks commands" column_number="1">
-                <column_headers>
-                    <data>Command</data>
-                </column_headers>
-                <row>
-                    <data>create_generated_clock -name {sys_clk_50mhz|u_pll_50mhz/u_pll_e3/CLKOUT1_Inferred} -master_clock {sys_clk_50mhz} -source [get_ports {sys_clk_50mhz}] -edges {1 2 3} -edge_shift {0.000000 23.913043 47.826087} [get_pins {u_pll_50mhz/u_pll_e3.CLKOUT1}] -add</data>
-                </row>
-                <row>
-                    <data>create_generated_clock -name {sys_clk_50mhz|u_pll_50mhz/u_pll_e3/CLKOUT0_Inferred} -master_clock {sys_clk_50mhz} -source [get_ports {sys_clk_50mhz}] -edges {1 2 3} -edge_shift {0.000000 0.000000 0.000000} [get_pins {u_pll_50mhz/u_pll_e3.CLKOUT0}] -add</data>
-                </row>
-            </table>
-        </table_container>
-    </general_container>
+    <table id="device_map_timing_constraint" title="Timing Constraint" column_number="1">
+        <column_headers>
+            <data>Command</data>
+        </column_headers>
+        <row>
+            <data>create_clock -name sys_clk_50mhz [get_ports sys_clk_50mhz] -period 20.0 -waveform {0 10.0}</data>
+        </row>
+        <row>
+            <data>create_generated_clock -name pll_clk_50mhz -source [get_ports sys_clk_50mhz] -master_clock sys_clk_50mhz -multiply_by 1 -divide_by 1 [get_nets u_pll_50mhz/clkout0]</data>
+        </row>
+        <row>
+            <data>create_generated_clock -name uart_clk_14m7456 -source [get_ports sys_clk_50mhz] -master_clock sys_clk_50mhz -multiply_by 23 -divide_by 78 [get_nets u_pll_50mhz/clkout1]</data>
+        </row>
+    </table>
 </tables>

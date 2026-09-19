@@ -39,8 +39,10 @@ module uart_rx_top (
     uart_rx u_uart_rx (
         .clk(uart_clk_14m7456),
         .rst_n(rst_n),
+
         .data_in(uart_rx),
         .data_out(uart_data_out),
+
         .data_valid(uart_data_valid)
     );
 

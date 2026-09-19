@@ -4,7 +4,9 @@ module uart_rx #(
 ) (
     input wire clk,
     input wire rst_n,
+
     input wire data_in,
+
     output reg [7:0] data_out,
     output reg data_valid
 );
@@ -152,8 +154,8 @@ module uart_rx #(
             case (state)
                 StateRxIdle: begin
                     tmp_data_out <= 8'd0;
-                    // data_out <= 8'd0;
-                    // data_valid <= 1'b0;
+                    data_out <= 8'd0;
+                    data_valid <= 1'b0;
                 end
 
                 StateRxDataBegin: begin
