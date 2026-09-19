@@ -152,8 +152,8 @@ module uart_rx #(
             case (state)
                 StateRxIdle: begin
                     tmp_data_out <= 8'd0;
-                    data_out <= 8'd0;
-                    data_valid <= 1'b0;
+                    // data_out <= 8'd0;
+                    // data_valid <= 1'b0;
                 end
 
                 StateRxDataBegin: begin

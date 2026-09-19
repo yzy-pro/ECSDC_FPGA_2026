@@ -22,15 +22,6 @@
                 <row>
                     <data>create_generated_clock -name {sys_clk_50mhz|u_pll_50mhz/u_pll_e3/CLKOUT0_Inferred} -master_clock {sys_clk_50mhz} -source [get_ports {sys_clk_50mhz}] -edges {1 2 3} -edge_shift {0.000000 0.000000 0.000000} [get_pins {u_pll_50mhz/u_pll_e3.CLKOUT0}] -add</data>
                 </row>
-                <row>
-                    <data>create_clock -period {100} -waveform {25 75} -name {CORES|CORES|SCANCHAIN_CAPTURE} [get_pins {u_CORES/u_GTP_SCANCHAIN.CAPDR}] -add</data>
-                </row>
-                <row>
-                    <data>create_clock -period {50} -waveform {0 25} -name {CORES|CORES|SCANCHAIN_JCLK} [get_pins {u_CORES/u_GTP_SCANCHAIN.TCK_USER}] -add</data>
-                </row>
-                <row>
-                    <data>set_clock_groups -name {CORES|Inferred_clock_group_u_GTP_SCANCHAIN_1} -asynchronous -group [get_clocks {CORES|CORES|SCANCHAIN_JCLK CORES|CORES|SCANCHAIN_CAPTURE}]</data>
-                </row>
             </table>
         </table_container>
     </general_container>
