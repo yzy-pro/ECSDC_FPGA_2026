@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="device_map_timing_constraint" title="Inferred clocks commands" column_number="1">
+        <column_headers>
+            <data>Command</data>
+        </column_headers>
+        <row>
+            <data>create_clock -period {1000} -waveform {0 500} -name {i2c_eeprom_test|clk} [get_ports {clk}] -add</data>
+        </row>
+        <row>
+            <data>set_clock_groups -name {i2c_eeprom_test|Inferred_clock_group_0} -asynchronous -group [get_clocks {i2c_eeprom_test|clk}]</data>
+        </row>
+    </table>
+</tables>

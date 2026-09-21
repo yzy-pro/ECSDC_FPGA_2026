@@ -1,0 +1,1297 @@
+
+----------------------------------------------------------------------------------------------------
+| Tool Version : Fabric Compiler (version 2025.2 <build 211867>)
+| Date         : Wed Sep 16 16:18:26 2026
+| Design       : i2c_eeprom_test
+| Device       : PGL50H
+| Speed Grade  : -6
+| Package      : FBG484
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+| Timing Models: Production
+| Tcl Command  : launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+----------------------------------------------------------------------------------------------------
+
+Timing analysis mode : multi corner
+
+ Clock Summary:                                                                                     
+****************************************************************************************************
+                                                                         Clock   Non-clock          
+ Clock                    Period       Waveform            Type          Loads       Loads  Sources 
+----------------------------------------------------------------------------------------------------
+ i2c_eeprom_test|clk      1000.0000    {0.0000 500.0000}   Declared         93           0  {clk}   
+====================================================================================================
+
+ Clock Groups:                                                                                      
+****************************************************************************************************
+ Clock Group                   Group Type                 Clocks                                    
+----------------------------------------------------------------------------------------------------
+ i2c_eeprom_test|Inferred_clock_group_0
+                               asynchronous               i2c_eeprom_test|clk                       
+====================================================================================================
+
+ Performance Summary:                                                                               
+****************************************************************************************************
+                              Requested       Estimated      Requested      Estimated               
+ Clock                        Frequency       Frequency      Period         Period             Slack
+----------------------------------------------------------------------------------------------------
+ i2c_eeprom_test|clk         1.0000 MHz    218.3883 MHz      1000.0000         4.5790        995.421
+====================================================================================================
+
+Design Summary : All Constraints Met.
+
+Setup Summary(Slow Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ i2c_eeprom_test|clk    i2c_eeprom_test|clk        995.421       0.000              0            307
+====================================================================================================
+
+Hold Summary(Slow Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ i2c_eeprom_test|clk    i2c_eeprom_test|clk          0.342       0.000              0            307
+====================================================================================================
+
+Recovery Summary(Slow Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+
+Removal Summary(Slow Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+
+Skew Summary(Slow Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Startpoint Clock       Endpoint Clock             WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+
+Minimum Pulse Width Summary(Slow Corner):
+****************************************************************************************************
+                                                                         WPWS Failing     WPWS Total
+ Clock                                            WPWS(ns)    TPWS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ i2c_eeprom_test|clk                               499.380       0.000              0             93
+====================================================================================================
+
+Setup Summary(Fast Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ i2c_eeprom_test|clk    i2c_eeprom_test|clk        996.672       0.000              0            307
+====================================================================================================
+
+Hold Summary(Fast Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ i2c_eeprom_test|clk    i2c_eeprom_test|clk          0.266       0.000              0            307
+====================================================================================================
+
+Recovery Summary(Fast Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Launch Clock           Capture Clock              WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+
+Removal Summary(Fast Corner):
+****************************************************************************************************
+                                                                          THS Failing      THS Total
+ Launch Clock           Capture Clock              WHS(ns)     THS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+
+Skew Summary(Fast Corner):
+****************************************************************************************************
+                                                                          TNS Failing      TNS Total
+ Startpoint Clock       Endpoint Clock             WNS(ns)     TNS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+
+Minimum Pulse Width Summary(Fast Corner):
+****************************************************************************************************
+                                                                         WPWS Failing     WPWS Total
+ Clock                                            WPWS(ns)    TPWS(ns)      Endpoints      Endpoints
+----------------------------------------------------------------------------------------------------
+ i2c_eeprom_test|clk                               499.504       0.000              0             93
+====================================================================================================
+
+Slow Corner
+****************************************************************************************************
+====================================================================================================
+
+Startpoint  : iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK
+Endpoint    : iic_dri/state_reg[0]/opit_0_inv/CE
+Path Group  : i2c_eeprom_test|clk
+Path Type   : max (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    -0.036  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  5.216
+  Launch Clock Delay      :  5.550
+  Clock Pessimism Removal :  0.298
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    1.254       1.328 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.328         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.076       1.404 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.438       3.842         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       3.842 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.708       5.550         ntclkbufg_0      
+ CLMS_66_337/CLK                                                           r       iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK
+
+ CLMS_66_337/Q3                    tco                   0.288       5.838 r       iic_dri/fre_cnt[4]/opit_0_A2Q21/Q1
+                                   net (fanout=3)        0.269       6.107         iic_dri/fre_cnt [4]
+ CLMS_66_333/Y3                    td                    0.459       6.566 r       iic_dri/N317_3/gateop_perm/Z
+                                   net (fanout=4)        0.412       6.978         iic_dri/_N199    
+ CLMS_66_341/Y3                    td                    0.459       7.437 r       iic_dri/N317_6/gateop_perm/Z
+                                   net (fanout=11)       0.575       8.012         iic_dri/full_cycle
+ CLMS_70_321/Y0                    td                    0.210       8.222 r       iic_dri/N35/gateop_perm/Z
+                                   net (fanout=12)       0.314       8.536         iic_dri/start    
+ CLMA_70_328/Y0                    td                    0.341       8.877 f       iic_dri/N435_7_1_3/gateop/F
+                                   net (fanout=5)        0.249       9.126         iic_dri/N435_inv 
+ CLMA_70_324/CECO                  td                    0.170       9.296 f       iic_dri/state_reg[6]/opit_0_inv_L5Q_perm/CEOUT
+                                   net (fanout=2)        0.000       9.296         ntR16            
+ CLMA_70_328/CECI                                                          f       iic_dri/state_reg[0]/opit_0_inv/CE
+
+ Data arrival time                                                   9.296         Logic Levels: 5  
+                                                                                   Logic: 1.927ns(51.442%), Route: 1.819ns(48.558%)
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                      1000.000    1000.000 r                        
+ P20                                                     0.000    1000.000 r       clk (port)       
+                                   net (fanout=1)        0.074    1000.074         clk              
+ IOBS_LR_328_209/DIN               td                    1.047    1001.121 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000    1001.121         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.048    1001.169 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.395    1003.564         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000    1003.564 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.652    1005.216         ntclkbufg_0      
+ CLMA_70_328/CLK                                                           r       iic_dri/state_reg[0]/opit_0_inv/CLK
+ clock pessimism                                         0.298    1005.514                          
+ clock uncertainty                                      -0.050    1005.464                          
+
+ Setup time                                             -0.747    1004.717                          
+
+ Data required time                                               1004.717                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                               1004.717                          
+ Data arrival time                                                   9.296                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                       995.421                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK
+Endpoint    : iic_dri/state_reg[1]/opit_0_inv_L5Q_perm/CE
+Path Group  : i2c_eeprom_test|clk
+Path Type   : max (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    -0.036  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  5.216
+  Launch Clock Delay      :  5.550
+  Clock Pessimism Removal :  0.298
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    1.254       1.328 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.328         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.076       1.404 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.438       3.842         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       3.842 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.708       5.550         ntclkbufg_0      
+ CLMS_66_337/CLK                                                           r       iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK
+
+ CLMS_66_337/Q3                    tco                   0.288       5.838 r       iic_dri/fre_cnt[4]/opit_0_A2Q21/Q1
+                                   net (fanout=3)        0.269       6.107         iic_dri/fre_cnt [4]
+ CLMS_66_333/Y3                    td                    0.459       6.566 r       iic_dri/N317_3/gateop_perm/Z
+                                   net (fanout=4)        0.412       6.978         iic_dri/_N199    
+ CLMS_66_341/Y3                    td                    0.459       7.437 r       iic_dri/N317_6/gateop_perm/Z
+                                   net (fanout=11)       0.575       8.012         iic_dri/full_cycle
+ CLMS_70_321/Y0                    td                    0.210       8.222 r       iic_dri/N35/gateop_perm/Z
+                                   net (fanout=12)       0.314       8.536         iic_dri/start    
+ CLMA_70_328/Y0                    td                    0.341       8.877 f       iic_dri/N435_7_1_3/gateop/F
+                                   net (fanout=5)        0.249       9.126         iic_dri/N435_inv 
+ CLMA_70_324/CECO                  td                    0.170       9.296 f       iic_dri/state_reg[6]/opit_0_inv_L5Q_perm/CEOUT
+                                   net (fanout=2)        0.000       9.296         ntR16            
+ CLMA_70_328/CECI                                                          f       iic_dri/state_reg[1]/opit_0_inv_L5Q_perm/CE
+
+ Data arrival time                                                   9.296         Logic Levels: 5  
+                                                                                   Logic: 1.927ns(51.442%), Route: 1.819ns(48.558%)
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                      1000.000    1000.000 r                        
+ P20                                                     0.000    1000.000 r       clk (port)       
+                                   net (fanout=1)        0.074    1000.074         clk              
+ IOBS_LR_328_209/DIN               td                    1.047    1001.121 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000    1001.121         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.048    1001.169 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.395    1003.564         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000    1003.564 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.652    1005.216         ntclkbufg_0      
+ CLMA_70_328/CLK                                                           r       iic_dri/state_reg[1]/opit_0_inv_L5Q_perm/CLK
+ clock pessimism                                         0.298    1005.514                          
+ clock uncertainty                                      -0.050    1005.464                          
+
+ Setup time                                             -0.747    1004.717                          
+
+ Data required time                                               1004.717                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                               1004.717                          
+ Data arrival time                                                   9.296                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                       995.421                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK
+Endpoint    : iic_dri/state_reg[2]/opit_0_inv_L5Q_perm/CE
+Path Group  : i2c_eeprom_test|clk
+Path Type   : max (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    -0.036  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  5.216
+  Launch Clock Delay      :  5.550
+  Clock Pessimism Removal :  0.298
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    1.254       1.328 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.328         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.076       1.404 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.438       3.842         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       3.842 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.708       5.550         ntclkbufg_0      
+ CLMS_66_337/CLK                                                           r       iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK
+
+ CLMS_66_337/Q3                    tco                   0.288       5.838 r       iic_dri/fre_cnt[4]/opit_0_A2Q21/Q1
+                                   net (fanout=3)        0.269       6.107         iic_dri/fre_cnt [4]
+ CLMS_66_333/Y3                    td                    0.459       6.566 r       iic_dri/N317_3/gateop_perm/Z
+                                   net (fanout=4)        0.412       6.978         iic_dri/_N199    
+ CLMS_66_341/Y3                    td                    0.459       7.437 r       iic_dri/N317_6/gateop_perm/Z
+                                   net (fanout=11)       0.575       8.012         iic_dri/full_cycle
+ CLMS_70_321/Y0                    td                    0.210       8.222 r       iic_dri/N35/gateop_perm/Z
+                                   net (fanout=12)       0.314       8.536         iic_dri/start    
+ CLMA_70_328/Y0                    td                    0.341       8.877 f       iic_dri/N435_7_1_3/gateop/F
+                                   net (fanout=5)        0.396       9.273         iic_dri/N435_inv 
+ CLMS_70_329/CE                                                            f       iic_dri/state_reg[2]/opit_0_inv_L5Q_perm/CE
+
+ Data arrival time                                                   9.273         Logic Levels: 4  
+                                                                                   Logic: 1.757ns(47.193%), Route: 1.966ns(52.807%)
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                      1000.000    1000.000 r                        
+ P20                                                     0.000    1000.000 r       clk (port)       
+                                   net (fanout=1)        0.074    1000.074         clk              
+ IOBS_LR_328_209/DIN               td                    1.047    1001.121 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000    1001.121         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.048    1001.169 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.395    1003.564         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000    1003.564 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.652    1005.216         ntclkbufg_0      
+ CLMS_70_329/CLK                                                           r       iic_dri/state_reg[2]/opit_0_inv_L5Q_perm/CLK
+ clock pessimism                                         0.298    1005.514                          
+ clock uncertainty                                      -0.050    1005.464                          
+
+ Setup time                                             -0.617    1004.847                          
+
+ Data required time                                               1004.847                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                               1004.847                          
+ Data arrival time                                                   9.273                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                       995.574                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_dri/state_reg[0]/opit_0_inv/CLK
+Endpoint    : iic_dri/state_reg[1]/opit_0_inv_L5Q_perm/L4
+Path Group  : i2c_eeprom_test|clk
+Path Type   : min (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    0.000  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  5.550
+  Launch Clock Delay      :  5.216
+  Clock Pessimism Removal :  -0.334
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    1.047       1.121 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.121         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.048       1.169 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.395       3.564         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       3.564 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.652       5.216         ntclkbufg_0      
+ CLMA_70_328/CLK                                                           r       iic_dri/state_reg[0]/opit_0_inv/CLK
+
+ CLMA_70_328/Q0                    tco                   0.222       5.438 f       iic_dri/state_reg[0]/opit_0_inv/Q
+                                   net (fanout=2)        0.085       5.523         iic_dri/state_reg [0]
+ CLMA_70_328/B4                                                            f       iic_dri/state_reg[1]/opit_0_inv_L5Q_perm/L4
+
+ Data arrival time                                                   5.523         Logic Levels: 0  
+                                                                                   Logic: 0.222ns(72.313%), Route: 0.085ns(27.687%)
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    1.254       1.328 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.328         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.076       1.404 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.438       3.842         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       3.842 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.708       5.550         ntclkbufg_0      
+ CLMA_70_328/CLK                                                           r       iic_dri/state_reg[1]/opit_0_inv_L5Q_perm/CLK
+ clock pessimism                                        -0.334       5.216                          
+ clock uncertainty                                       0.000       5.216                          
+
+ Hold time                                              -0.035       5.181                          
+
+ Data required time                                                  5.181                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  5.181                          
+ Data arrival time                                                   5.523                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.342                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_dri/trans_bit[0]/opit_0_L5Q_perm/CLK
+Endpoint    : iic_dri/trans_bit[0]/opit_0_L5Q_perm/L4
+Path Group  : i2c_eeprom_test|clk
+Path Type   : min (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    0.000  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  5.550
+  Launch Clock Delay      :  5.216
+  Clock Pessimism Removal :  -0.334
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    1.047       1.121 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.121         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.048       1.169 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.395       3.564         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       3.564 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.652       5.216         ntclkbufg_0      
+ CLMA_66_328/CLK                                                           r       iic_dri/trans_bit[0]/opit_0_L5Q_perm/CLK
+
+ CLMA_66_328/Q3                    tco                   0.221       5.437 f       iic_dri/trans_bit[0]/opit_0_L5Q_perm/Q
+                                   net (fanout=7)        0.089       5.526         iic_dri/trans_bit [0]
+ CLMA_66_328/D4                                                            f       iic_dri/trans_bit[0]/opit_0_L5Q_perm/L4
+
+ Data arrival time                                                   5.526         Logic Levels: 0  
+                                                                                   Logic: 0.221ns(71.290%), Route: 0.089ns(28.710%)
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    1.254       1.328 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.328         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.076       1.404 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.438       3.842         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       3.842 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.708       5.550         ntclkbufg_0      
+ CLMA_66_328/CLK                                                           r       iic_dri/trans_bit[0]/opit_0_L5Q_perm/CLK
+ clock pessimism                                        -0.334       5.216                          
+ clock uncertainty                                       0.000       5.216                          
+
+ Hold time                                              -0.034       5.182                          
+
+ Data required time                                                  5.182                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  5.182                          
+ Data arrival time                                                   5.526                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.344                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_pluse/opit_0_inv_L5Q_perm/CLK
+Endpoint    : iic_dri/pluse_1d/opit_0_inv/D
+Path Group  : i2c_eeprom_test|clk
+Path Type   : min (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    0.000  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  5.550
+  Launch Clock Delay      :  5.216
+  Clock Pessimism Removal :  -0.334
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    1.047       1.121 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.121         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.048       1.169 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.395       3.564         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       3.564 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.652       5.216         ntclkbufg_0      
+ CLMA_78_316/CLK                                                           r       iic_pluse/opit_0_inv_L5Q_perm/CLK
+
+ CLMA_78_316/Q1                    tco                   0.224       5.440 f       iic_pluse/opit_0_inv_L5Q_perm/Q
+                                   net (fanout=1)        0.189       5.629         iic_pluse        
+ CLMA_78_316/AD                                                            f       iic_dri/pluse_1d/opit_0_inv/D
+
+ Data arrival time                                                   5.629         Logic Levels: 0  
+                                                                                   Logic: 0.224ns(54.237%), Route: 0.189ns(45.763%)
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    1.254       1.328 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.328         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.076       1.404 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.438       3.842         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       3.842 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.708       5.550         ntclkbufg_0      
+ CLMA_78_316/CLK                                                           r       iic_dri/pluse_1d/opit_0_inv/CLK
+ clock pessimism                                        -0.334       5.216                          
+ clock uncertainty                                       0.000       5.216                          
+
+ Hold time                                               0.053       5.269                          
+
+ Data required time                                                  5.269                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  5.269                          
+ Data arrival time                                                   5.629                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.360                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_dri/scl_out/opit_0_inv_L5Q/CLK
+Endpoint    : scl (port)
+Path Group  : (none)
+Path Type   : max (slow corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    1.254       1.328 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.328         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.076       1.404 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.438       3.842         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       3.842 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.708       5.550         ntclkbufg_0      
+ CLMA_78_332/CLK                                                           r       iic_dri/scl_out/opit_0_inv_L5Q/CLK
+
+ CLMA_78_332/Q0                    tco                   0.287       5.837 f       iic_dri/scl_out/opit_0_inv_L5Q/Q
+                                   net (fanout=2)        2.302       8.139         nt_scl           
+ IOL_243_373/DO                    td                    0.139       8.278 f       scl_obuf/opit_1/O
+                                   net (fanout=1)        0.000       8.278         scl_obuf/ntO     
+ IOBS_TB_241_376/PAD               td                    3.853      12.131 f       scl_obuf/opit_0/O
+                                   net (fanout=1)        0.057      12.188         scl              
+ F15                                                                       f       scl (port)       
+
+ Data arrival time                                                  12.188         Logic Levels: 2  
+                                                                                   Logic: 4.279ns(64.462%), Route: 2.359ns(35.538%)
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_dri/state_reg[3]/opit_0_inv/CLK
+Endpoint    : sda (port)
+Path Group  : (none)
+Path Type   : max (slow corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    1.254       1.328 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.328         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.076       1.404 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.438       3.842         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       3.842 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.708       5.550         ntclkbufg_0      
+ CLMA_74_328/CLK                                                           r       iic_dri/state_reg[3]/opit_0_inv/CLK
+
+ CLMA_74_328/Q1                    tco                   0.291       5.841 r       iic_dri/state_reg[3]/opit_0_inv/Q
+                                   net (fanout=8)        0.565       6.406         iic_dri/state_reg [3]
+ CLMA_66_336/Y2                    td                    0.295       6.701 f       iic_dri/N83_1/gateop_perm/Z
+                                   net (fanout=1)        0.742       7.443         sda_out_en_inv   
+ IOL_71_374/TO                     td                    0.139       7.582 f       iobuf/opit_1/T   
+                                   net (fanout=1)        0.000       7.582         iobuf/ntT        
+ IOBD_68_376/PAD                   tse                   3.853      11.435 f       iobuf/opit_0/IO  
+                                   net (fanout=1)        0.060      11.495         sda              
+ G8                                                                        f       sda (port)       
+
+ Data arrival time                                                  11.495         Logic Levels: 3  
+                                                                                   Logic: 4.578ns(77.006%), Route: 1.367ns(22.994%)
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_dri/data_out_reg[0]/opit_0_inv/CLK
+Endpoint    : led[0] (port)
+Path Group  : (none)
+Path Type   : max (slow corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    1.254       1.328 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.328         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.076       1.404 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.438       3.842         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       3.842 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.708       5.550         ntclkbufg_0      
+ CLMA_58_344/CLK                                                           r       iic_dri/data_out_reg[0]/opit_0_inv/CLK
+
+ CLMA_58_344/Q0                    tco                   0.287       5.837 f       iic_dri/data_out_reg[0]/opit_0_inv/Q
+                                   net (fanout=1)        1.226       7.063         nt_led[0]        
+ IOL_19_374/DO                     td                    0.139       7.202 f       led_obuf[0]/opit_1/O
+                                   net (fanout=1)        0.000       7.202         led_obuf[0]/ntO  
+ IOBD_16_376/PAD                   td                    3.853      11.055 f       led_obuf[0]/opit_0/O
+                                   net (fanout=1)        0.109      11.164         led[0]           
+ B2                                                                        f       led[0] (port)    
+
+ Data arrival time                                                  11.164         Logic Levels: 2  
+                                                                                   Logic: 4.279ns(76.220%), Route: 1.335ns(23.780%)
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : sda (port)
+Endpoint    : iic_dri/receiv_data[0]/opit_0_inv/D
+Path Group  : (none)
+Path Type   : min (slow corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+
+ G8                                                      0.000       0.000 r       sda (port)       
+                                   net (fanout=1)        0.060       0.060         sda              
+ IOBD_68_376/DIN                   td                    1.047       1.107 r       iobuf/opit_0/O   
+                                   net (fanout=1)        0.000       1.107         iobuf/ntI        
+ IOL_71_374/RX_DATA_DD             td                    0.082       1.189 r       iobuf/opit_1/OUT 
+                                   net (fanout=1)        0.654       1.843         sda_in           
+ CLMA_62_344/M3                                                            r       iic_dri/receiv_data[0]/opit_0_inv/D
+
+ Data arrival time                                                   1.843         Logic Levels: 2  
+                                                                                   Logic: 1.129ns(61.259%), Route: 0.714ns(38.741%)
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : key[1] (port)
+Endpoint    : u_btn_deb/btn_in_reg[1]/opit_0/D
+Path Group  : (none)
+Path Type   : min (slow corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+
+ J17                                                     0.000       0.000 r       key[1] (port)    
+                                   net (fanout=1)        0.076       0.076         key[1]           
+ IOBS_LR_328_296/DIN               td                    1.047       1.123 r       key_ibuf[1]/opit_0/O
+                                   net (fanout=1)        0.000       1.123         key_ibuf[1]/ntD  
+ IOL_327_297/RX_DATA_DD            td                    0.082       1.205 r       key_ibuf[1]/opit_1/OUT
+                                   net (fanout=3)        2.110       3.315         nt_key[1]        
+ CLMA_94_304/M0                                                            r       u_btn_deb/btn_in_reg[1]/opit_0/D
+
+ Data arrival time                                                   3.315         Logic Levels: 2  
+                                                                                   Logic: 1.129ns(34.057%), Route: 2.186ns(65.943%)
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : key[1] (port)
+Endpoint    : u_btn_deb/genblk1[1].btn_deb_fix[1]/opit_0_inv/D
+Path Group  : (none)
+Path Type   : min (slow corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+
+ J17                                                     0.000       0.000 r       key[1] (port)    
+                                   net (fanout=1)        0.076       0.076         key[1]           
+ IOBS_LR_328_296/DIN               td                    1.047       1.123 r       key_ibuf[1]/opit_0/O
+                                   net (fanout=1)        0.000       1.123         key_ibuf[1]/ntD  
+ IOL_327_297/RX_DATA_DD            td                    0.082       1.205 r       key_ibuf[1]/opit_1/OUT
+                                   net (fanout=3)        2.229       3.434         nt_key[1]        
+ CLMA_94_308/M0                                                            r       u_btn_deb/genblk1[1].btn_deb_fix[1]/opit_0_inv/D
+
+ Data arrival time                                                   3.434         Logic Levels: 2  
+                                                                                   Logic: 1.129ns(32.877%), Route: 2.305ns(67.123%)
+====================================================================================================
+
+{i2c_eeprom_test|clk} Minimum Pulse Width :
+****************************************************************************************************
+ Slack       Actual Width    Require Width   Type              Location                Pin          
+----------------------------------------------------------------------------------------------------
+ 499.380     500.000         0.620           High Pulse Width  CLMS_78_309/CLK         btn_deb_reg[2]/opit_0/CLK
+ 499.380     500.000         0.620           Low Pulse Width   CLMS_78_309/CLK         btn_deb_reg[2]/opit_0/CLK
+ 499.380     500.000         0.620           Low Pulse Width   CLMS_66_341/CLK         iic_dri/fre_cnt[0]/opit_0_L5Q_perm/CLK
+====================================================================================================
+
+====================================================================================================
+Fast Corner
+****************************************************************************************************
+====================================================================================================
+
+Startpoint  : iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK
+Endpoint    : iic_dri/state_reg[0]/opit_0_inv/CE
+Path Group  : i2c_eeprom_test|clk
+Path Type   : max (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    -0.019  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.275
+  Launch Clock Delay      :  3.479
+  Clock Pessimism Removal :  0.185
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    0.861       0.935 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.935         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.058       0.993 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.449       2.442         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       2.442 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.037       3.479         ntclkbufg_0      
+ CLMS_66_337/CLK                                                           r       iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK
+
+ CLMS_66_337/Q3                    tco                   0.220       3.699 f       iic_dri/fre_cnt[4]/opit_0_A2Q21/Q1
+                                   net (fanout=3)        0.173       3.872         iic_dri/fre_cnt [4]
+ CLMS_66_333/Y3                    td                    0.358       4.230 f       iic_dri/N317_3/gateop_perm/Z
+                                   net (fanout=4)        0.268       4.498         iic_dri/_N199    
+ CLMS_66_341/Y3                    td                    0.358       4.856 f       iic_dri/N317_6/gateop_perm/Z
+                                   net (fanout=11)       0.388       5.244         iic_dri/full_cycle
+ CLMS_70_321/Y0                    td                    0.162       5.406 r       iic_dri/N35/gateop_perm/Z
+                                   net (fanout=12)       0.193       5.599         iic_dri/start    
+ CLMA_70_328/Y0                    td                    0.264       5.863 f       iic_dri/N435_7_1_3/gateop/F
+                                   net (fanout=5)        0.167       6.030         iic_dri/N435_inv 
+ CLMA_70_324/CECO                  td                    0.132       6.162 f       iic_dri/state_reg[6]/opit_0_inv_L5Q_perm/CEOUT
+                                   net (fanout=2)        0.000       6.162         ntR16            
+ CLMA_70_328/CECI                                                          f       iic_dri/state_reg[0]/opit_0_inv/CE
+
+ Data arrival time                                                   6.162         Logic Levels: 5  
+                                                                                   Logic: 1.494ns(55.684%), Route: 1.189ns(44.316%)
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                      1000.000    1000.000 r                        
+ P20                                                     0.000    1000.000 r       clk (port)       
+                                   net (fanout=1)        0.074    1000.074         clk              
+ IOBS_LR_328_209/DIN               td                    0.735    1000.809 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000    1000.809         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.038    1000.847 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.423    1002.270         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000    1002.270 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.005    1003.275         ntclkbufg_0      
+ CLMA_70_328/CLK                                                           r       iic_dri/state_reg[0]/opit_0_inv/CLK
+ clock pessimism                                         0.185    1003.460                          
+ clock uncertainty                                      -0.050    1003.410                          
+
+ Setup time                                             -0.576    1002.834                          
+
+ Data required time                                               1002.834                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                               1002.834                          
+ Data arrival time                                                   6.162                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                       996.672                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK
+Endpoint    : iic_dri/state_reg[1]/opit_0_inv_L5Q_perm/CE
+Path Group  : i2c_eeprom_test|clk
+Path Type   : max (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    -0.019  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.275
+  Launch Clock Delay      :  3.479
+  Clock Pessimism Removal :  0.185
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    0.861       0.935 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.935         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.058       0.993 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.449       2.442         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       2.442 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.037       3.479         ntclkbufg_0      
+ CLMS_66_337/CLK                                                           r       iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK
+
+ CLMS_66_337/Q3                    tco                   0.220       3.699 f       iic_dri/fre_cnt[4]/opit_0_A2Q21/Q1
+                                   net (fanout=3)        0.173       3.872         iic_dri/fre_cnt [4]
+ CLMS_66_333/Y3                    td                    0.358       4.230 f       iic_dri/N317_3/gateop_perm/Z
+                                   net (fanout=4)        0.268       4.498         iic_dri/_N199    
+ CLMS_66_341/Y3                    td                    0.358       4.856 f       iic_dri/N317_6/gateop_perm/Z
+                                   net (fanout=11)       0.388       5.244         iic_dri/full_cycle
+ CLMS_70_321/Y0                    td                    0.162       5.406 r       iic_dri/N35/gateop_perm/Z
+                                   net (fanout=12)       0.193       5.599         iic_dri/start    
+ CLMA_70_328/Y0                    td                    0.264       5.863 f       iic_dri/N435_7_1_3/gateop/F
+                                   net (fanout=5)        0.167       6.030         iic_dri/N435_inv 
+ CLMA_70_324/CECO                  td                    0.132       6.162 f       iic_dri/state_reg[6]/opit_0_inv_L5Q_perm/CEOUT
+                                   net (fanout=2)        0.000       6.162         ntR16            
+ CLMA_70_328/CECI                                                          f       iic_dri/state_reg[1]/opit_0_inv_L5Q_perm/CE
+
+ Data arrival time                                                   6.162         Logic Levels: 5  
+                                                                                   Logic: 1.494ns(55.684%), Route: 1.189ns(44.316%)
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                      1000.000    1000.000 r                        
+ P20                                                     0.000    1000.000 r       clk (port)       
+                                   net (fanout=1)        0.074    1000.074         clk              
+ IOBS_LR_328_209/DIN               td                    0.735    1000.809 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000    1000.809         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.038    1000.847 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.423    1002.270         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000    1002.270 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.005    1003.275         ntclkbufg_0      
+ CLMA_70_328/CLK                                                           r       iic_dri/state_reg[1]/opit_0_inv_L5Q_perm/CLK
+ clock pessimism                                         0.185    1003.460                          
+ clock uncertainty                                      -0.050    1003.410                          
+
+ Setup time                                             -0.576    1002.834                          
+
+ Data required time                                               1002.834                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                               1002.834                          
+ Data arrival time                                                   6.162                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                       996.672                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK
+Endpoint    : iic_dri/state_reg[2]/opit_0_inv_L5Q_perm/CE
+Path Group  : i2c_eeprom_test|clk
+Path Type   : max (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    -0.019  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.275
+  Launch Clock Delay      :  3.479
+  Clock Pessimism Removal :  0.185
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    0.861       0.935 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.935         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.058       0.993 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.449       2.442         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       2.442 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.037       3.479         ntclkbufg_0      
+ CLMS_66_337/CLK                                                           r       iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK
+
+ CLMS_66_337/Q3                    tco                   0.220       3.699 f       iic_dri/fre_cnt[4]/opit_0_A2Q21/Q1
+                                   net (fanout=3)        0.173       3.872         iic_dri/fre_cnt [4]
+ CLMS_66_333/Y3                    td                    0.358       4.230 f       iic_dri/N317_3/gateop_perm/Z
+                                   net (fanout=4)        0.268       4.498         iic_dri/_N199    
+ CLMS_66_341/Y3                    td                    0.358       4.856 f       iic_dri/N317_6/gateop_perm/Z
+                                   net (fanout=11)       0.388       5.244         iic_dri/full_cycle
+ CLMS_70_321/Y0                    td                    0.162       5.406 r       iic_dri/N35/gateop_perm/Z
+                                   net (fanout=12)       0.193       5.599         iic_dri/start    
+ CLMA_70_328/Y0                    td                    0.264       5.863 f       iic_dri/N435_7_1_3/gateop/F
+                                   net (fanout=5)        0.264       6.127         iic_dri/N435_inv 
+ CLMS_70_329/CE                                                            f       iic_dri/state_reg[2]/opit_0_inv_L5Q_perm/CE
+
+ Data arrival time                                                   6.127         Logic Levels: 4  
+                                                                                   Logic: 1.362ns(51.435%), Route: 1.286ns(48.565%)
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                      1000.000    1000.000 r                        
+ P20                                                     0.000    1000.000 r       clk (port)       
+                                   net (fanout=1)        0.074    1000.074         clk              
+ IOBS_LR_328_209/DIN               td                    0.735    1000.809 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000    1000.809         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.038    1000.847 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.423    1002.270         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000    1002.270 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.005    1003.275         ntclkbufg_0      
+ CLMS_70_329/CLK                                                           r       iic_dri/state_reg[2]/opit_0_inv_L5Q_perm/CLK
+ clock pessimism                                         0.185    1003.460                          
+ clock uncertainty                                      -0.050    1003.410                          
+
+ Setup time                                             -0.476    1002.934                          
+
+ Data required time                                               1002.934                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                               1002.934                          
+ Data arrival time                                                   6.127                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                       996.807                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_dri/state_reg[0]/opit_0_inv/CLK
+Endpoint    : iic_dri/state_reg[1]/opit_0_inv_L5Q_perm/L4
+Path Group  : i2c_eeprom_test|clk
+Path Type   : min (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    0.001  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.479
+  Launch Clock Delay      :  3.275
+  Clock Pessimism Removal :  -0.203
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    0.735       0.809 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.809         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.038       0.847 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.423       2.270         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       2.270 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.005       3.275         ntclkbufg_0      
+ CLMA_70_328/CLK                                                           r       iic_dri/state_reg[0]/opit_0_inv/CLK
+
+ CLMA_70_328/Q0                    tco                   0.179       3.454 f       iic_dri/state_reg[0]/opit_0_inv/Q
+                                   net (fanout=2)        0.059       3.513         iic_dri/state_reg [0]
+ CLMA_70_328/B4                                                            f       iic_dri/state_reg[1]/opit_0_inv_L5Q_perm/L4
+
+ Data arrival time                                                   3.513         Logic Levels: 0  
+                                                                                   Logic: 0.179ns(75.210%), Route: 0.059ns(24.790%)
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    0.861       0.935 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.935         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.058       0.993 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.449       2.442         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       2.442 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.037       3.479         ntclkbufg_0      
+ CLMA_70_328/CLK                                                           r       iic_dri/state_reg[1]/opit_0_inv_L5Q_perm/CLK
+ clock pessimism                                        -0.203       3.276                          
+ clock uncertainty                                       0.000       3.276                          
+
+ Hold time                                              -0.029       3.247                          
+
+ Data required time                                                  3.247                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  3.247                          
+ Data arrival time                                                   3.513                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.266                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_dri/trans_bit[0]/opit_0_L5Q_perm/CLK
+Endpoint    : iic_dri/trans_bit[0]/opit_0_L5Q_perm/L4
+Path Group  : i2c_eeprom_test|clk
+Path Type   : min (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    0.000  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.479
+  Launch Clock Delay      :  3.275
+  Clock Pessimism Removal :  -0.204
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    0.735       0.809 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.809         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.038       0.847 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.423       2.270         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       2.270 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.005       3.275         ntclkbufg_0      
+ CLMA_66_328/CLK                                                           r       iic_dri/trans_bit[0]/opit_0_L5Q_perm/CLK
+
+ CLMA_66_328/Q3                    tco                   0.178       3.453 f       iic_dri/trans_bit[0]/opit_0_L5Q_perm/Q
+                                   net (fanout=7)        0.063       3.516         iic_dri/trans_bit [0]
+ CLMA_66_328/D4                                                            f       iic_dri/trans_bit[0]/opit_0_L5Q_perm/L4
+
+ Data arrival time                                                   3.516         Logic Levels: 0  
+                                                                                   Logic: 0.178ns(73.859%), Route: 0.063ns(26.141%)
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    0.861       0.935 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.935         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.058       0.993 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.449       2.442         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       2.442 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.037       3.479         ntclkbufg_0      
+ CLMA_66_328/CLK                                                           r       iic_dri/trans_bit[0]/opit_0_L5Q_perm/CLK
+ clock pessimism                                        -0.204       3.275                          
+ clock uncertainty                                       0.000       3.275                          
+
+ Hold time                                              -0.028       3.247                          
+
+ Data required time                                                  3.247                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  3.247                          
+ Data arrival time                                                   3.516                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.269                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_pluse/opit_0_inv_L5Q_perm/CLK
+Endpoint    : iic_dri/pluse_1d/opit_0_inv/D
+Path Group  : i2c_eeprom_test|clk
+Path Type   : min (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    0.001  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.479
+  Launch Clock Delay      :  3.275
+  Clock Pessimism Removal :  -0.203
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    0.735       0.809 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.809         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.038       0.847 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.423       2.270         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       2.270 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.005       3.275         ntclkbufg_0      
+ CLMA_78_316/CLK                                                           r       iic_pluse/opit_0_inv_L5Q_perm/CLK
+
+ CLMA_78_316/Q1                    tco                   0.180       3.455 f       iic_pluse/opit_0_inv_L5Q_perm/Q
+                                   net (fanout=1)        0.132       3.587         iic_pluse        
+ CLMA_78_316/AD                                                            f       iic_dri/pluse_1d/opit_0_inv/D
+
+ Data arrival time                                                   3.587         Logic Levels: 0  
+                                                                                   Logic: 0.180ns(57.692%), Route: 0.132ns(42.308%)
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    0.861       0.935 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.935         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.058       0.993 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.449       2.442         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       2.442 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.037       3.479         ntclkbufg_0      
+ CLMA_78_316/CLK                                                           r       iic_dri/pluse_1d/opit_0_inv/CLK
+ clock pessimism                                        -0.203       3.276                          
+ clock uncertainty                                       0.000       3.276                          
+
+ Hold time                                               0.040       3.316                          
+
+ Data required time                                                  3.316                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  3.316                          
+ Data arrival time                                                   3.587                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.271                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_dri/scl_out/opit_0_inv_L5Q/CLK
+Endpoint    : scl (port)
+Path Group  : (none)
+Path Type   : max (fast corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    0.861       0.935 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.935         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.058       0.993 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.449       2.442         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       2.442 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.037       3.479         ntclkbufg_0      
+ CLMA_78_332/CLK                                                           r       iic_dri/scl_out/opit_0_inv_L5Q/CLK
+
+ CLMA_78_332/Q0                    tco                   0.221       3.700 f       iic_dri/scl_out/opit_0_inv_L5Q/Q
+                                   net (fanout=2)        1.617       5.317         nt_scl           
+ IOL_243_373/DO                    td                    0.106       5.423 f       scl_obuf/opit_1/O
+                                   net (fanout=1)        0.000       5.423         scl_obuf/ntO     
+ IOBS_TB_241_376/PAD               td                    3.238       8.661 f       scl_obuf/opit_0/O
+                                   net (fanout=1)        0.057       8.718         scl              
+ F15                                                                       f       scl (port)       
+
+ Data arrival time                                                   8.718         Logic Levels: 2  
+                                                                                   Logic: 3.565ns(68.047%), Route: 1.674ns(31.953%)
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_dri/state_reg[3]/opit_0_inv/CLK
+Endpoint    : sda (port)
+Path Group  : (none)
+Path Type   : max (fast corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    0.861       0.935 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.935         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.058       0.993 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.449       2.442         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       2.442 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.037       3.479         ntclkbufg_0      
+ CLMA_74_328/CLK                                                           r       iic_dri/state_reg[3]/opit_0_inv/CLK
+
+ CLMA_74_328/Q1                    tco                   0.223       3.702 f       iic_dri/state_reg[3]/opit_0_inv/Q
+                                   net (fanout=8)        0.368       4.070         iic_dri/state_reg [3]
+ CLMA_66_336/Y2                    td                    0.227       4.297 f       iic_dri/N83_1/gateop_perm/Z
+                                   net (fanout=1)        0.513       4.810         sda_out_en_inv   
+ IOL_71_374/TO                     td                    0.106       4.916 f       iobuf/opit_1/T   
+                                   net (fanout=1)        0.000       4.916         iobuf/ntT        
+ IOBD_68_376/PAD                   tse                   3.275       8.191 r       iobuf/opit_0/IO  
+                                   net (fanout=1)        0.060       8.251         sda              
+ G8                                                                        r       sda (port)       
+
+ Data arrival time                                                   8.251         Logic Levels: 3  
+                                                                                   Logic: 3.831ns(80.281%), Route: 0.941ns(19.719%)
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : iic_dri/data_out_reg[0]/opit_0_inv/CLK
+Endpoint    : led[0] (port)
+Path Group  : (none)
+Path Type   : max (fast corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock i2c_eeprom_test|clk (rising edge)
+                                                         0.000       0.000 r                        
+ P20                                                     0.000       0.000 r       clk (port)       
+                                   net (fanout=1)        0.074       0.074         clk              
+ IOBS_LR_328_209/DIN               td                    0.861       0.935 r       clk_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.935         clk_ibuf/ntD     
+ IOL_327_210/INCK                  td                    0.058       0.993 r       clk_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.449       2.442         nt_clk_rt_0      
+ USCM_84_108/CLK_USCM              td                    0.000       2.442 r       clkbufg_0/gopclkbufg/CLKOUT
+                                   net (fanout=93)       1.037       3.479         ntclkbufg_0      
+ CLMA_58_344/CLK                                                           r       iic_dri/data_out_reg[0]/opit_0_inv/CLK
+
+ CLMA_58_344/Q0                    tco                   0.221       3.700 f       iic_dri/data_out_reg[0]/opit_0_inv/Q
+                                   net (fanout=1)        0.849       4.549         nt_led[0]        
+ IOL_19_374/DO                     td                    0.106       4.655 f       led_obuf[0]/opit_1/O
+                                   net (fanout=1)        0.000       4.655         led_obuf[0]/ntO  
+ IOBD_16_376/PAD                   td                    3.238       7.893 f       led_obuf[0]/opit_0/O
+                                   net (fanout=1)        0.109       8.002         led[0]           
+ B2                                                                        f       led[0] (port)    
+
+ Data arrival time                                                   8.002         Logic Levels: 2  
+                                                                                   Logic: 3.565ns(78.819%), Route: 0.958ns(21.181%)
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : sda (port)
+Endpoint    : iic_dri/receiv_data[0]/opit_0_inv/D
+Path Group  : (none)
+Path Type   : min (fast corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+
+ G8                                                      0.000       0.000 r       sda (port)       
+                                   net (fanout=1)        0.060       0.060         sda              
+ IOBD_68_376/DIN                   td                    0.735       0.795 r       iobuf/opit_0/O   
+                                   net (fanout=1)        0.000       0.795         iobuf/ntI        
+ IOL_71_374/RX_DATA_DD             td                    0.066       0.861 r       iobuf/opit_1/OUT 
+                                   net (fanout=1)        0.399       1.260         sda_in           
+ CLMA_62_344/M3                                                            r       iic_dri/receiv_data[0]/opit_0_inv/D
+
+ Data arrival time                                                   1.260         Logic Levels: 2  
+                                                                                   Logic: 0.801ns(63.571%), Route: 0.459ns(36.429%)
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : key[1] (port)
+Endpoint    : u_btn_deb/btn_in_reg[1]/opit_0/D
+Path Group  : (none)
+Path Type   : min (fast corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+
+ J17                                                     0.000       0.000 r       key[1] (port)    
+                                   net (fanout=1)        0.076       0.076         key[1]           
+ IOBS_LR_328_296/DIN               td                    0.735       0.811 r       key_ibuf[1]/opit_0/O
+                                   net (fanout=1)        0.000       0.811         key_ibuf[1]/ntD  
+ IOL_327_297/RX_DATA_DD            td                    0.066       0.877 r       key_ibuf[1]/opit_1/OUT
+                                   net (fanout=3)        1.410       2.287         nt_key[1]        
+ CLMA_94_304/M0                                                            r       u_btn_deb/btn_in_reg[1]/opit_0/D
+
+ Data arrival time                                                   2.287         Logic Levels: 2  
+                                                                                   Logic: 0.801ns(35.024%), Route: 1.486ns(64.976%)
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : key[1] (port)
+Endpoint    : u_btn_deb/genblk1[1].btn_deb_fix[1]/opit_0_inv/D
+Path Group  : (none)
+Path Type   : min (fast corner)
+Path Class  : combinational timing path
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+
+ J17                                                     0.000       0.000 r       key[1] (port)    
+                                   net (fanout=1)        0.076       0.076         key[1]           
+ IOBS_LR_328_296/DIN               td                    0.735       0.811 r       key_ibuf[1]/opit_0/O
+                                   net (fanout=1)        0.000       0.811         key_ibuf[1]/ntD  
+ IOL_327_297/RX_DATA_DD            td                    0.066       0.877 r       key_ibuf[1]/opit_1/OUT
+                                   net (fanout=3)        1.481       2.358         nt_key[1]        
+ CLMA_94_308/M0                                                            r       u_btn_deb/genblk1[1].btn_deb_fix[1]/opit_0_inv/D
+
+ Data arrival time                                                   2.358         Logic Levels: 2  
+                                                                                   Logic: 0.801ns(33.969%), Route: 1.557ns(66.031%)
+====================================================================================================
+
+{i2c_eeprom_test|clk} Minimum Pulse Width :
+****************************************************************************************************
+ Slack       Actual Width    Require Width   Type              Location                Pin          
+----------------------------------------------------------------------------------------------------
+ 499.504     500.000         0.496           High Pulse Width  CLMS_78_309/CLK         btn_deb_reg[2]/opit_0/CLK
+ 499.504     500.000         0.496           Low Pulse Width   CLMS_78_309/CLK         btn_deb_reg[2]/opit_0/CLK
+ 499.504     500.000         0.496           Low Pulse Width   CLMS_66_341/CLK         iic_dri/fre_cnt[0]/opit_0_L5Q_perm/CLK
+====================================================================================================
+
+====================================================================================================
+
+Inputs and Outputs :
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Type       | File Name                                                                                                                                          
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Input      | E:/code/PangoWork/References/pango50k/2_Demo/03_i2c_eeprom_test/03_i2c_eeprom_test/prj_tasks/pnr_1/place_route/i2c_eeprom_test_pnr.adf             
+| Output     | E:/code/PangoWork/References/pango50k/2_Demo/03_i2c_eeprom_test/03_i2c_eeprom_test/prj_tasks/pnr_1/report_timing/i2c_eeprom_test_rtp.adf           
+|            | E:/code/PangoWork/References/pango50k/2_Demo/03_i2c_eeprom_test/03_i2c_eeprom_test/prj_tasks/pnr_1/report_timing/i2c_eeprom_test_exception.rtr     
+|            | E:/code/PangoWork/References/pango50k/2_Demo/03_i2c_eeprom_test/03_i2c_eeprom_test/prj_tasks/pnr_1/report_timing/i2c_eeprom_test.rtr               
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Flow Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Peak memory: 396 MB
+Total CPU time to report_timing completion : 0h:0m:4s
+Process Total CPU time to report_timing completion : 0h:0m:5s
+Total real time to report_timing completion : 0h:0m:6s

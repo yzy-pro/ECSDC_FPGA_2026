@@ -1,0 +1,1010 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="report_timing_slow_path_setup" title="Setup Path Summary" column_number="17">
+        <column_headers>
+            <data>Slack</data>
+            <data>Logic Levels</data>
+            <data>High Fanout</data>
+            <data>Start Point</data>
+            <data>End Point</data>
+            <data>Exception</data>
+            <data>Launch Clock</data>
+            <data>Capture Clock</data>
+            <data>Clock Edges</data>
+            <data>Clock Skew</data>
+            <data>Launch Clock Delay</data>
+            <data>Capture Clock Delay</data>
+            <data>Clock Pessimism Removal</data>
+            <data>Requirement</data>
+            <data>Data delay</data>
+            <data>Logic delay</data>
+            <data>Route delay</data>
+        </column_headers>
+        <row>
+            <data>995.421</data>
+            <data>5</data>
+            <data>12</data>
+            <data file_id="../source/iic_driver.v" line_number="33">iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK</data>
+            <data file_id="../source/iic_driver.v" line_number="194">iic_dri/state_reg[0]/opit_0_inv/CE</data>
+            <data/>
+            <data>i2c_eeprom_test|clk</data>
+            <data>i2c_eeprom_test|clk</data>
+            <data>rise-rise</data>
+            <data>-0.036</data>
+            <data>5.550</data>
+            <data>5.216</data>
+            <data>0.298</data>
+            <data>1000.000</data>
+            <data>3.746</data>
+            <data>1.927 (51.4%)</data>
+            <data>1.819 (48.6%)</data>
+            <general_container>
+                <data>Path #1: setup slack is 995.421(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 9.296" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock i2c_eeprom_test|clk (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>0.074</data>
+                            <data/>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.254</data>
+                            <data>1.328</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>1.328</data>
+                            <data/>
+                            <data object_valid="true">clk_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.076</data>
+                            <data>1.404</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>2.438</data>
+                            <data>3.842</data>
+                            <data/>
+                            <data object_valid="true">nt_clk_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>3.842</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=93)</data>
+                            <data>1.708</data>
+                            <data>5.550</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_337/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../source/iic_driver.v" line_number="33">iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_337/Q3</data>
+                            <data>tco</data>
+                            <data>0.288</data>
+                            <data>5.838</data>
+                            <data>r</data>
+                            <data file_id="../source/iic_driver.v" line_number="33">iic_dri/fre_cnt[4]/opit_0_A2Q21/Q1</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.269</data>
+                            <data>6.107</data>
+                            <data> </data>
+                            <data object_valid="true">iic_dri/fre_cnt [4]</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_333/Y3</data>
+                            <data>td</data>
+                            <data>0.459</data>
+                            <data>6.566</data>
+                            <data>r</data>
+                            <data object_valid="true">iic_dri/N317_3/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=4)</data>
+                            <data>0.412</data>
+                            <data>6.978</data>
+                            <data> </data>
+                            <data object_valid="true">iic_dri/_N199</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_341/Y3</data>
+                            <data>td</data>
+                            <data>0.459</data>
+                            <data>7.437</data>
+                            <data>r</data>
+                            <data object_valid="true">iic_dri/N317_6/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=11)</data>
+                            <data>0.575</data>
+                            <data>8.012</data>
+                            <data> </data>
+                            <data file_id="../source/iic_driver.v" line_number="38">iic_dri/full_cycle</data>
+                        </row>
+                        <row>
+                            <data>CLMS_70_321/Y0</data>
+                            <data>td</data>
+                            <data>0.210</data>
+                            <data>8.222</data>
+                            <data>r</data>
+                            <data file_id="../source/iic_driver.v" line_number="62">iic_dri/N35/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=12)</data>
+                            <data>0.314</data>
+                            <data>8.536</data>
+                            <data> </data>
+                            <data file_id="../source/iic_driver.v" line_number="43">iic_dri/start</data>
+                        </row>
+                        <row>
+                            <data>CLMA_70_328/Y0</data>
+                            <data>td</data>
+                            <data>0.341</data>
+                            <data>8.877</data>
+                            <data>f</data>
+                            <data object_valid="true">iic_dri/N435_7_1_3/gateop/F</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=5)</data>
+                            <data>0.249</data>
+                            <data>9.126</data>
+                            <data> </data>
+                            <data object_valid="true">iic_dri/N435_inv</data>
+                        </row>
+                        <row>
+                            <data>CLMA_70_324/CECO</data>
+                            <data>td</data>
+                            <data>0.170</data>
+                            <data>9.296</data>
+                            <data>f</data>
+                            <data file_id="../source/iic_driver.v" line_number="194">iic_dri/state_reg[6]/opit_0_inv_L5Q_perm/CEOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>9.296</data>
+                            <data> </data>
+                            <data object_valid="true">ntR16</data>
+                        </row>
+                        <row>
+                            <data>CLMA_70_328/CECI</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../source/iic_driver.v" line_number="194">iic_dri/state_reg[0]/opit_0_inv/CE</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 1004.717" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock i2c_eeprom_test|clk (rising edge)</data>
+                            <data/>
+                            <data>1000.000</data>
+                            <data>1000.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>1000.000</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>1000.074</data>
+                            <data/>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.047</data>
+                            <data>1001.121</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>1001.121</data>
+                            <data/>
+                            <data object_valid="true">clk_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.048</data>
+                            <data>1001.169</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>2.395</data>
+                            <data>1003.564</data>
+                            <data/>
+                            <data object_valid="true">nt_clk_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>1003.564</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=93)</data>
+                            <data>1.652</data>
+                            <data>1005.216</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMA_70_328/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../source/iic_driver.v" line_number="194">iic_dri/state_reg[0]/opit_0_inv/CLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.298</data>
+                            <data>1005.514</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.050</data>
+                            <data>1005.464</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.747</data>
+                            <data>1004.717</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>995.421</data>
+            <data>5</data>
+            <data>12</data>
+            <data file_id="../source/iic_driver.v" line_number="33">iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK</data>
+            <data file_id="../source/iic_driver.v" line_number="194">iic_dri/state_reg[1]/opit_0_inv_L5Q_perm/CE</data>
+            <data/>
+            <data>i2c_eeprom_test|clk</data>
+            <data>i2c_eeprom_test|clk</data>
+            <data>rise-rise</data>
+            <data>-0.036</data>
+            <data>5.550</data>
+            <data>5.216</data>
+            <data>0.298</data>
+            <data>1000.000</data>
+            <data>3.746</data>
+            <data>1.927 (51.4%)</data>
+            <data>1.819 (48.6%)</data>
+            <general_container>
+                <data>Path #2: setup slack is 995.421(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 9.296" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock i2c_eeprom_test|clk (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>0.074</data>
+                            <data/>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.254</data>
+                            <data>1.328</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>1.328</data>
+                            <data/>
+                            <data object_valid="true">clk_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.076</data>
+                            <data>1.404</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>2.438</data>
+                            <data>3.842</data>
+                            <data/>
+                            <data object_valid="true">nt_clk_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>3.842</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=93)</data>
+                            <data>1.708</data>
+                            <data>5.550</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_337/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../source/iic_driver.v" line_number="33">iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_337/Q3</data>
+                            <data>tco</data>
+                            <data>0.288</data>
+                            <data>5.838</data>
+                            <data>r</data>
+                            <data file_id="../source/iic_driver.v" line_number="33">iic_dri/fre_cnt[4]/opit_0_A2Q21/Q1</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.269</data>
+                            <data>6.107</data>
+                            <data> </data>
+                            <data object_valid="true">iic_dri/fre_cnt [4]</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_333/Y3</data>
+                            <data>td</data>
+                            <data>0.459</data>
+                            <data>6.566</data>
+                            <data>r</data>
+                            <data object_valid="true">iic_dri/N317_3/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=4)</data>
+                            <data>0.412</data>
+                            <data>6.978</data>
+                            <data> </data>
+                            <data object_valid="true">iic_dri/_N199</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_341/Y3</data>
+                            <data>td</data>
+                            <data>0.459</data>
+                            <data>7.437</data>
+                            <data>r</data>
+                            <data object_valid="true">iic_dri/N317_6/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=11)</data>
+                            <data>0.575</data>
+                            <data>8.012</data>
+                            <data> </data>
+                            <data file_id="../source/iic_driver.v" line_number="38">iic_dri/full_cycle</data>
+                        </row>
+                        <row>
+                            <data>CLMS_70_321/Y0</data>
+                            <data>td</data>
+                            <data>0.210</data>
+                            <data>8.222</data>
+                            <data>r</data>
+                            <data file_id="../source/iic_driver.v" line_number="62">iic_dri/N35/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=12)</data>
+                            <data>0.314</data>
+                            <data>8.536</data>
+                            <data> </data>
+                            <data file_id="../source/iic_driver.v" line_number="43">iic_dri/start</data>
+                        </row>
+                        <row>
+                            <data>CLMA_70_328/Y0</data>
+                            <data>td</data>
+                            <data>0.341</data>
+                            <data>8.877</data>
+                            <data>f</data>
+                            <data object_valid="true">iic_dri/N435_7_1_3/gateop/F</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=5)</data>
+                            <data>0.249</data>
+                            <data>9.126</data>
+                            <data> </data>
+                            <data object_valid="true">iic_dri/N435_inv</data>
+                        </row>
+                        <row>
+                            <data>CLMA_70_324/CECO</data>
+                            <data>td</data>
+                            <data>0.170</data>
+                            <data>9.296</data>
+                            <data>f</data>
+                            <data file_id="../source/iic_driver.v" line_number="194">iic_dri/state_reg[6]/opit_0_inv_L5Q_perm/CEOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>9.296</data>
+                            <data> </data>
+                            <data object_valid="true">ntR16</data>
+                        </row>
+                        <row>
+                            <data>CLMA_70_328/CECI</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../source/iic_driver.v" line_number="194">iic_dri/state_reg[1]/opit_0_inv_L5Q_perm/CE</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 1004.717" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock i2c_eeprom_test|clk (rising edge)</data>
+                            <data/>
+                            <data>1000.000</data>
+                            <data>1000.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>1000.000</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>1000.074</data>
+                            <data/>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.047</data>
+                            <data>1001.121</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>1001.121</data>
+                            <data/>
+                            <data object_valid="true">clk_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.048</data>
+                            <data>1001.169</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>2.395</data>
+                            <data>1003.564</data>
+                            <data/>
+                            <data object_valid="true">nt_clk_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>1003.564</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=93)</data>
+                            <data>1.652</data>
+                            <data>1005.216</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMA_70_328/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../source/iic_driver.v" line_number="194">iic_dri/state_reg[1]/opit_0_inv_L5Q_perm/CLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.298</data>
+                            <data>1005.514</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.050</data>
+                            <data>1005.464</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.747</data>
+                            <data>1004.717</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>995.574</data>
+            <data>4</data>
+            <data>12</data>
+            <data file_id="../source/iic_driver.v" line_number="33">iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK</data>
+            <data file_id="../source/iic_driver.v" line_number="194">iic_dri/state_reg[2]/opit_0_inv_L5Q_perm/CE</data>
+            <data/>
+            <data>i2c_eeprom_test|clk</data>
+            <data>i2c_eeprom_test|clk</data>
+            <data>rise-rise</data>
+            <data>-0.036</data>
+            <data>5.550</data>
+            <data>5.216</data>
+            <data>0.298</data>
+            <data>1000.000</data>
+            <data>3.723</data>
+            <data>1.757 (47.2%)</data>
+            <data>1.966 (52.8%)</data>
+            <general_container>
+                <data>Path #3: setup slack is 995.574(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 9.273" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock i2c_eeprom_test|clk (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>0.074</data>
+                            <data/>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.254</data>
+                            <data>1.328</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>1.328</data>
+                            <data/>
+                            <data object_valid="true">clk_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.076</data>
+                            <data>1.404</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>2.438</data>
+                            <data>3.842</data>
+                            <data/>
+                            <data object_valid="true">nt_clk_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>3.842</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=93)</data>
+                            <data>1.708</data>
+                            <data>5.550</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_337/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../source/iic_driver.v" line_number="33">iic_dri/fre_cnt[4]/opit_0_A2Q21/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_337/Q3</data>
+                            <data>tco</data>
+                            <data>0.288</data>
+                            <data>5.838</data>
+                            <data>r</data>
+                            <data file_id="../source/iic_driver.v" line_number="33">iic_dri/fre_cnt[4]/opit_0_A2Q21/Q1</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.269</data>
+                            <data>6.107</data>
+                            <data> </data>
+                            <data object_valid="true">iic_dri/fre_cnt [4]</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_333/Y3</data>
+                            <data>td</data>
+                            <data>0.459</data>
+                            <data>6.566</data>
+                            <data>r</data>
+                            <data object_valid="true">iic_dri/N317_3/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=4)</data>
+                            <data>0.412</data>
+                            <data>6.978</data>
+                            <data> </data>
+                            <data object_valid="true">iic_dri/_N199</data>
+                        </row>
+                        <row>
+                            <data>CLMS_66_341/Y3</data>
+                            <data>td</data>
+                            <data>0.459</data>
+                            <data>7.437</data>
+                            <data>r</data>
+                            <data object_valid="true">iic_dri/N317_6/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=11)</data>
+                            <data>0.575</data>
+                            <data>8.012</data>
+                            <data> </data>
+                            <data file_id="../source/iic_driver.v" line_number="38">iic_dri/full_cycle</data>
+                        </row>
+                        <row>
+                            <data>CLMS_70_321/Y0</data>
+                            <data>td</data>
+                            <data>0.210</data>
+                            <data>8.222</data>
+                            <data>r</data>
+                            <data file_id="../source/iic_driver.v" line_number="62">iic_dri/N35/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=12)</data>
+                            <data>0.314</data>
+                            <data>8.536</data>
+                            <data> </data>
+                            <data file_id="../source/iic_driver.v" line_number="43">iic_dri/start</data>
+                        </row>
+                        <row>
+                            <data>CLMA_70_328/Y0</data>
+                            <data>td</data>
+                            <data>0.341</data>
+                            <data>8.877</data>
+                            <data>f</data>
+                            <data object_valid="true">iic_dri/N435_7_1_3/gateop/F</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=5)</data>
+                            <data>0.396</data>
+                            <data>9.273</data>
+                            <data> </data>
+                            <data object_valid="true">iic_dri/N435_inv</data>
+                        </row>
+                        <row>
+                            <data>CLMS_70_329/CE</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../source/iic_driver.v" line_number="194">iic_dri/state_reg[2]/opit_0_inv_L5Q_perm/CE</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 1004.847" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock i2c_eeprom_test|clk (rising edge)</data>
+                            <data/>
+                            <data>1000.000</data>
+                            <data>1000.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>1000.000</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>1000.074</data>
+                            <data/>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.047</data>
+                            <data>1001.121</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>1001.121</data>
+                            <data/>
+                            <data object_valid="true">clk_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.048</data>
+                            <data>1001.169</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clk_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>2.395</data>
+                            <data>1003.564</data>
+                            <data/>
+                            <data object_valid="true">nt_clk_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>1003.564</data>
+                            <data>r</data>
+                            <data file_id="../source/i2c_eeprom_test.v" line_number="6">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=93)</data>
+                            <data>1.652</data>
+                            <data>1005.216</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMS_70_329/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../source/iic_driver.v" line_number="194">iic_dri/state_reg[2]/opit_0_inv_L5Q_perm/CLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.298</data>
+                            <data>1005.514</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.050</data>
+                            <data>1005.464</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.617</data>
+                            <data>1004.847</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+    </table>
+</tables>

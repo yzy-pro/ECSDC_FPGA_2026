@@ -1,0 +1,71 @@
+#-- Written by Fabric Compiler (version 2022.1-SP2 build 109751) Wed Feb 22 18:26:24 2023
+
+#project files
+add_file -verilog  -lib work "E:/project/i2c_eeprom_test/source/src/iic_dri.v"
+
+#implementation: "synplify_impl"
+impl -add "E:/project/i2c_eeprom_test/synthesize/synplify_impl" -type fpga
+
+#device options
+set_option -technology Logos
+set_option -part PGL50H
+set_option -speed_grade -6
+set_option -package FBG484
+set_option -part_companion ""
+
+#compilation/mapping options
+set_option -top_module iic_dri
+
+set_option -fanout_limit 10000
+set_option -disable_io_insertion 0
+set_option -update_models_cp 0
+set_option -enable_prepacking 1
+set_option -rw_check_on_ram 0
+set_option -run_prop_extract 1
+set_option -resolve_multiple_driver 0
+
+set_option -automatic_compile_point 0
+set_option -max_parallel_jobs 4
+set_option -symbolic_fsm_compiler 1
+set_option -syn_encoding {default}
+set_option -resource_sharing 1
+set_option -pipe 1
+set_option -retiming 0
+set_option -distributed_compile 0
+
+set_option -frequency auto
+set_option -auto_constrain_io 0
+
+set_option -num_critical_paths 3
+
+set_option -vlog_std v2001
+set_option -compiler_compatible 0
+set_option -allow_duplicate_modules 0
+set_option -multi_file_compilation_unit 1
+set_option -beta_vfeatures 0
+set_option -synthesis_onoff_pragma 0
+set_option -vhdl2008 0
+set_option -vhdl2019 0
+set_option -supporttypedflt 0
+set_option -beta_vhfeatures 0
+set_option -default_enum_encoding {default}
+set_option -looplimit 2000
+set_option -project_relative_includes 1
+set_option -include_path {E:/project/i2c_eeprom_test}
+set_option -fix_gated_and_generated_clocks 1
+
+# Compiler Options
+set_option -auto_infer_blackbox 0
+
+# NFilter
+set_option -no_sequential_opt 0
+
+#automatic place and route (vendor) options
+set_option -write_verilog 1
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file synplify.vm
+
+#set log file
+project -log_file synplify.log

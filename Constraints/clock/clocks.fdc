@@ -1,0 +1,17 @@
+create_clock -name {sys_clk_50mhz} [get_ports {sys_clk_50mhz}] -period {20.0} -waveform {0 10.0}
+
+# PLL parameters: Fout = 50 MHz * 46 / (2 * output_divider).
+# clkout0: output_divider = 23, Fout = 50 MHz.
+create_generated_clock -name {pll_clk_50mhz} \
+    -source [get_ports {sys_clk_50mhz}] \
+    -master_clock {sys_clk_50mhz} \
+    -multiply_by 1 -divide_by 1 \
+    [get_nets {u_pll_50mhz/clkout0}]
+
+# clkout1: output_divider = 78, Fout = 50 MHz * 23 / 78
+#          = 14.7435897 MHz (67.826087 ns).
+create_generated_clock -name {uart_clk_14m7456} \
+    -source [get_ports {sys_clk_50mhz}] \
+    -master_clock {sys_clk_50mhz} \
+    -multiply_by 23 -divide_by 78 \
+    [get_nets {u_pll_50mhz/clkout1}]
