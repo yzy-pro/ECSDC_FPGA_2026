@@ -90,7 +90,7 @@ module i2c #(
             bit_cnt <= 3'd0;
         end
         else if ((state == StateIdle) || (state == StateWrAddrStart) || (state == StateRdDataStart)
-                 || (state == StateAckDeviceAddr) || (stats == StateAckStroageAddrH) ||
+                 || (state == StateAckDeviceAddr) || (state == StateAckStroageAddrH) ||
                  (state == StateAckStroageAddrL) || (state == StateAckWrData) ||
                  (state == StateAckWrRdAddr) || (state == StateNAck)) begin
             bit_cnt <= 3'd0;
@@ -273,7 +273,7 @@ module i2c #(
             end
         end
         else if ((state == StateStop)) begin
-            if ((scl_cnt == 2'd0) && b(it_cnt == 3'd0)) begin
+            if ((scl_cnt == 2'd0) && (bit_cnt == 3'd0)) begin
                 scl <= 1'b0;
             end
             else begin
