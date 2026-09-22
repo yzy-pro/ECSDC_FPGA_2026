@@ -1,4 +1,4 @@
-module key_controller #(
+module key #(
     parameter integer KEY_SYSCLK_FREQ = 50_000_000,
     parameter integer KEY_WIDTH = 8
 ) (
