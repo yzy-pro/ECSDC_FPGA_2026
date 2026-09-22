@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="device_map_timing_constraint" title="Timing Constraint" column_number="1">
+        <column_headers>
+            <data>Command</data>
+        </column_headers>
+        <row>
+            <data>create_clock -name sys_clk_50mhz [get_ports sys_clk_50mhz] -period 20.0 -waveform {0 10.0}</data>
+        </row>
+        <row>
+            <data>create_generated_clock -name pll_clk_50mhz -source [get_ports sys_clk_50mhz] -master_clock sys_clk_50mhz -multiply_by 1 -divide_by 1 [get_nets u_pll_50mhz/clkout0]</data>
+        </row>
+    </table>
+</tables>

@@ -10,6 +10,7 @@ module i2c_eeprom_top (
 );
     wire pll_clk_50mhz;
     reg i2c_clk_1mhz;
+
     //实现一个i2c测试模块
     //按下0号按键时，向eeprom写入数据0x55到地址0x55
     //按下1号按键时，从eeprom地址0x55读取数据，并显示在led上

@@ -342,3 +342,84 @@ Parse module hierarchy of project 'E:/code/PangoWork/Works/i2c/temp_projects/Mai
 I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/i2c/Designs/i2c_eeprom_top.v'. 
 Parse module hierarchy of project 'E:/code/PangoWork/Works/i2c/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
 I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/i2c/Designs/i2c_eeprom_top.v'. 
+ 
+Command: set_option -options { top_module {i2c_eeprom_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Tue Sep 22 18:01:20 2026
+C: Sdm-3007: [E:/code/PangoWork/Works/i2c/Designs/i2c/i2c.v(line number: 231)] Latch is generated for signal ack, possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/i2c/Designs/i2c/i2c.v(line number: 289)] Latch is generated for signal rd_data_reg[0], possible missing assignment in an if or case statement. [syn_1::Compile]
+Process "Compile" done.
+File "E:/code/PangoWork/Works/i2c/Constraints/io/clk.fdc" has been added to project successfully. 
+File "E:/code/PangoWork/Works/i2c/Constraints/io/eeprom_i2c.fdc" has been added to project successfully. 
+File "E:/code/PangoWork/Works/i2c/Constraints/io/key.fdc" has been added to project successfully. 
+File "E:/code/PangoWork/Works/i2c/Constraints/io/led.fdc" has been added to project successfully. 
+File "E:/code/PangoWork/Works/i2c/Constraints/clock/clocks.fdc" has been added to project successfully. 
+C: Flow-2004: Constraint file modified: 'E:/code/PangoWork/Works/i2c/Constraints/clock/clocks.fdc'.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Tue Sep 22 18:02:43 2026
+E: ConstraintEditor-0046: [E:/code/PangoWork/Works/i2c/Constraints/io/clk.fdc(line number: 7)] Parse file error: Object 'p:rst_n' can not be found in current view, please verify the correctness of the argument. [syn_1::Synthesize]
+E: ConstraintEditor-0046: [E:/code/PangoWork/Works/i2c/Constraints/io/clk.fdc(line number: 8)] Parse file error: Object 'p:rst_n' can not be found in current view, please verify the correctness of the argument. [syn_1::Synthesize]
+E: ConstraintEditor-0046: [E:/code/PangoWork/Works/i2c/Constraints/io/clk.fdc(line number: 9)] Parse file error: Object 'p:rst_n' can not be found in current view, please verify the correctness of the argument. [syn_1::Synthesize]
+E: ConstraintEditor-0046: [E:/code/PangoWork/Works/i2c/Constraints/io/clk.fdc(line number: 10)] Parse file error: Object 'p:rst_n' can not be found in current view, please verify the correctness of the argument. [syn_1::Synthesize]
+E: ConstraintEditor-0046: [E:/code/PangoWork/Works/i2c/Constraints/io/clk.fdc(line number: 11)] Parse file error: Object 'p:rst_n' can not be found in current view, please verify the correctness of the argument. [syn_1::Synthesize]
+Run process "Synthesize" failed, exit code: 1.
+C: Flow-2004: Constraint file modified: 'E:/code/PangoWork/Works/i2c/Constraints/io/clk.fdc'.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Tue Sep 22 18:03:16 2026
+C: SDC-2025: Clock source 'n:u_key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+C: SDC-2025: Clock source 'n:i2c_clk_1mhz' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+C: SDC-2030: [E:/code/PangoWork/Works/i2c/Constraints/clock/clocks.fdc(line number: 5)] Source of the clock 'pll_clk_50mhz' cannot be found, it may have been optimized. [syn_1::Synthesize]
+C: STA-3009: The clock sys_clk_50mhz is not connected to any clock endpoints,it will be treated as a normal port or pin. [syn_1::Synthesize]
+C: STA-3009: The clock pll_clk_50mhz is not connected to any clock endpoints,it will be treated as a normal port or pin. [syn_1::Synthesize]
+Process "Synthesize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+Process "Device Map" started.
+Current time: Tue Sep 22 18:03:31 2026
+C: SDC-2030: [E:/code/PangoWork/Works/i2c/Constraints/clock/clocks.fdc(line number: 5)] Source of the clock 'pll_clk_50mhz' cannot be found, it may have been optimized. [pnr_1::Device Map]
+Process "Device Map" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+Process "Place" started.
+Current time: Tue Sep 22 18:03:35 2026
+C: ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [E:/code/PangoWork/Works/i2c/prj_tasks/pnr_1/place_route/ports_defalut_attribute.txt(line number:0)] to confirm. [pnr_1::Place]
+Process "Place" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+Process "Route" started.
+Current time: Tue Sep 22 18:03:45 2026
+Process "Route" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+Process "Route Optimize" started.
+Current time: Tue Sep 22 18:03:55 2026
+Process "Route Optimize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Process "Report Timing" started.
+Current time: Tue Sep 22 18:04:04 2026
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Tue Sep 22 18:04:04 2026
+C: STA-3009: The clock pll_clk_50mhz is not connected to any clock endpoints,it will be treated as a normal port or pin. [pnr_1::Report Timing]
+Process "Report Timing" done.
+Process "Generate Bitstream" done.
+Open Configuration ...
+Configuration initialization started successfully.
+Parse module hierarchy of project 'E:/code/PangoWork/Works/i2c/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/i2c/Designs/i2c_eeprom_top.v'. 

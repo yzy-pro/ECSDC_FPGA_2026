@@ -37,3 +37,29 @@ set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
 set_option -options { top_module {i2c_eeprom_top} top_library {work}} [get_filesets design_1]
 launch_tasks [get_tasks {syn_1}] -to_action compile
 wait_on_tasks [get_tasks {syn_1}] -to_action compile
+set_option max_threads 0
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+set_option -options { top_module {i2c_eeprom_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+add_constraint "E:/code/PangoWork/Works/i2c/Constraints/io/clk.fdc"
+add_constraint "E:/code/PangoWork/Works/i2c/Constraints/io/eeprom_i2c.fdc"
+add_constraint "E:/code/PangoWork/Works/i2c/Constraints/io/key.fdc"
+add_constraint "E:/code/PangoWork/Works/i2c/Constraints/io/led.fdc"
+add_constraint "E:/code/PangoWork/Works/i2c/Constraints/clock/clocks.fdc"
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
