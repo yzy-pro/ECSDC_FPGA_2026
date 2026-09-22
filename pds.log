@@ -423,3 +423,88 @@ Open Configuration ...
 Configuration initialization started successfully.
 Parse module hierarchy of project 'E:/code/PangoWork/Works/i2c/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
 I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/i2c/Designs/i2c_eeprom_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/i2c/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/i2c/Designs/i2c_eeprom_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/i2c/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/i2c/Designs/i2c_eeprom_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/i2c/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/i2c/Designs/i2c_eeprom_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/i2c/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/i2c/Designs/i2c_eeprom_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/i2c/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/i2c/Designs/i2c_eeprom_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/i2c/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/i2c/Designs/i2c_eeprom_top.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/i2c/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/i2c/Designs/i2c/i2c.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/i2c/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/i2c/Designs/i2c/i2c.v'. 
+Parse module hierarchy of project 'E:/code/PangoWork/Works/i2c/temp_projects/Main_Flow/Main_Flow.pds' (ADS Parser)
+I: Flow-6004: Design file modified: 'E:/code/PangoWork/Works/i2c/Designs/i2c/i2c.v'. 
+ 
+Command: set_option -options { top_module {i2c_eeprom_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+Process "Compile" started.
+Current time: Tue Sep 22 18:10:58 2026
+C: Sdm-3007: [E:/code/PangoWork/Works/i2c/Designs/i2c/i2c.v(line number: 289)] Latch is generated for signal sda_reg, possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/i2c/Designs/i2c/i2c.v(line number: 231)] Latch is generated for signal ack, possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/i2c/Designs/i2c/i2c.v(line number: 289)] Latch is generated for signal rd_data_reg[7], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/i2c/Designs/i2c/i2c.v(line number: 289)] Latch is generated for signal rd_data_reg[6], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/i2c/Designs/i2c/i2c.v(line number: 289)] Latch is generated for signal rd_data_reg[5], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/i2c/Designs/i2c/i2c.v(line number: 289)] Latch is generated for signal rd_data_reg[4], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/i2c/Designs/i2c/i2c.v(line number: 289)] Latch is generated for signal rd_data_reg[3], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/i2c/Designs/i2c/i2c.v(line number: 289)] Latch is generated for signal rd_data_reg[2], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/i2c/Designs/i2c/i2c.v(line number: 289)] Latch is generated for signal rd_data_reg[1], possible missing assignment in an if or case statement. [syn_1::Compile]
+C: Sdm-3007: [E:/code/PangoWork/Works/i2c/Designs/i2c/i2c.v(line number: 289)] Latch is generated for signal rd_data_reg[0], possible missing assignment in an if or case statement. [syn_1::Compile]
+Process "Compile" done.
+ 
+Command: launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+Process "Synthesize" started.
+Current time: Tue Sep 22 18:11:25 2026
+C: SDC-2025: Clock source 'n:u_key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+C: SDC-2025: Clock source 'n:i2c_clk_1mhz' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [syn_1::Synthesize]
+Process "Synthesize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+Process "Device Map" started.
+Current time: Tue Sep 22 18:11:29 2026
+C: SDC-2025: Clock source 'n:u_key/clk_detect' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [pnr_1::Device Map]
+C: SDC-2025: Clock source 'n:i2c_clk_1mhz' need a clock constraint, please use 'create_clock' or 'create_generate_clock' to generate. [pnr_1::Device Map]
+Process "Device Map" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+Process "Place" started.
+Current time: Tue Sep 22 18:11:32 2026
+C: ConstraintEditor-2022: There are some ports' attributes are set to default value, please read [E:/code/PangoWork/Works/i2c/prj_tasks/pnr_1/place_route/ports_defalut_attribute.txt(line number:0)] to confirm. [pnr_1::Place]
+Process "Place" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+Process "Route" started.
+Current time: Tue Sep 22 18:11:44 2026
+C: Route-2036: The clock path from i2c_clk_1mhz/opit_0_inv_L5Q:Q to u_eeprom/rd_data[6]/opit_0_inv:CLK is routed by SRB. [pnr_1::Route]
+C: Route-2036: The clock path from u_eeprom/N807/gateop:Z to u_eeprom.sda_tri/opit_1_iolatch:SYSCLK is routed by SRB. [pnr_1::Route]
+C: Route-2036: The clock path from u_key/clk_detect/opit_0_inv_L5Q:Q to u_key/key_data[0]/opit_0_inv_L5Q:CLK is routed by SRB. [pnr_1::Route]
+Process "Route" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+Process "Route Optimize" started.
+Current time: Tue Sep 22 18:11:54 2026
+Process "Route Optimize" done.
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+Process "Report Timing" started.
+Current time: Tue Sep 22 18:12:03 2026
+ 
+Command: launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+Process "Generate Bitstream" started.
+Current time: Tue Sep 22 18:12:03 2026
+Process "Report Timing" done.
+Process "Generate Bitstream" done.

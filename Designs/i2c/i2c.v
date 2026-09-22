@@ -12,7 +12,7 @@ module i2c #(
     input wire addr_length,
     input wire [15:0] addr,
     input wire [7:0] wr_data,
-    output reg rd_data,
+    output reg [7:0] rd_data,
 
     input wire i2c_start,
     output reg i2c_done,
@@ -54,7 +54,7 @@ module i2c #(
 
     reg [7:0] rd_data_reg;  // 读数据寄存器
 
-    assign sda_en = ((state == StateRdData) || (state == StateAckDeviceAddr) ||
+    assign sda_in_en = ((state == StateRdData) || (state == StateAckDeviceAddr) ||
                      (state == StateAckStroageAddrH) || (state == StateAckStroageAddrL) ||
                      (state == StateAckWrData) || (state == StateAckWrRdAddr)) ? 1'b0 : 1'b1;
     assign sda = sda_in_en ? sda_reg : 1'bz;

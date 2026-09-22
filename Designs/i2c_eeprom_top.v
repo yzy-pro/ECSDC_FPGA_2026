@@ -28,7 +28,7 @@ module i2c_eeprom_top (
     wire i2c_done;
 
     pll_50mhz u_pll_50mhz (
-        .clkin1(sys_clk),
+        .clkin1(sys_clk_50mhz),
         .clkout0(pll_clk_50mhz),
         .pll_lock()
     );
@@ -74,7 +74,7 @@ module i2c_eeprom_top (
         .wr_en(eeprom_wr_en),
         .rd_en(eeprom_rd_en),
 
-        .addr_length(8'd1),
+        .addr_length(1'd1),
         .addr(DebugAddr),
         .wr_data(DebugData),
         .rd_data(eeprom_rd_data),
@@ -82,8 +82,8 @@ module i2c_eeprom_top (
         .i2c_start(i2c_start),
         .i2c_done(i2c_done),
 
-        .sda(i2c_sda),
-        .scl(i2c_scl)
+        .sda(eeprom_i2c_sda),
+        .scl(eeprom_i2c_scl)
     );
 
     always @(posedge pll_clk_50mhz or negedge sys_rst_n) begin
@@ -96,6 +96,9 @@ module i2c_eeprom_top (
             end
             else if (key_data[7]) begin
                 led_data <= 8'b0;
+            end
+            else if (key_data[6]) begin
+                led_data <= 8'b11111111;
             end
         end
     end
