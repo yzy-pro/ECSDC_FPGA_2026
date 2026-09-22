@@ -16,8 +16,8 @@ module i2c_eeprom_top (
     //按下1号按键时，从eeprom地址0x55读取数据，并显示在led上
     //按下7号按键时，全部led熄灭
 
-    localparam integer DebugData = 8'b10101010;
-    localparam integer DebugAddr = 8'b10101010;
+    localparam [ 7:0] DebugData = 8'b10101010;
+    localparam [15:0] DebugAddr = 8'b10101010;
 
     reg eeprom_wr_en;
     reg eeprom_rd_en;
