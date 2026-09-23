@@ -24,15 +24,15 @@
             <data>0.779</data>
             <data>0</data>
             <data>1</data>
-            <data file_id="../Designs/i2c_eeprom_top.v" line_number="89">led_data[0]/CLK</data>
-            <data file_id="../Designs/led/led.v" line_number="10">u_led/led_out[0]/D</data>
+            <data file_id="../Designs/i2c_eeprom_top.v" line_number="93">eeprom_wr_en/CLK</data>
+            <data file_id="../Designs/i2c/i2c.v" line_number="85">u_eeprom/op_wr/D</data>
             <data/>
             <data>pll_clk_50mhz</data>
             <data>pll_clk_50mhz</data>
             <data>rise-rise</data>
             <data>0.000</data>
-            <data>3.360</data>
-            <data>3.360</data>
+            <data>3.516</data>
+            <data>3.516</data>
             <data>0.000</data>
             <data>0.000</data>
             <data>0.832</data>
@@ -41,7 +41,7 @@
             <general_container>
                 <data>Path #1: hold slack is 0.779(MET)</data>
                 <table_container>
-                    <table id="arrival" title="Data arrival time is 4.192" column_number="6">
+                    <table id="arrival" title="Data arrival time is 4.348" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -116,9 +116,9 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=48)</data>
-                            <data>0.782</data>
-                            <data>3.360</data>
+                            <data>net (fanout=126)</data>
+                            <data>0.938</data>
+                            <data>3.516</data>
                             <data/>
                             <data file_id="../Designs/i2c_eeprom_top.v" line_number="11">pll_clk_50mhz</data>
                         </row>
@@ -128,23 +128,277 @@
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="89">led_data[0]/CLK (GTP_DFF_CE)</data>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="93">eeprom_wr_en/CLK (GTP_DFF_CE)</data>
                         </row>
                         <row>
                             <data> </data>
                             <data>tco</data>
                             <data>0.368</data>
-                            <data>3.728</data>
+                            <data>3.884</data>
                             <data>f</data>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="89">led_data[0]/Q (GTP_DFF_CE)</data>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="93">eeprom_wr_en/Q (GTP_DFF_CE)</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=1)</data>
                             <data>0.464</data>
-                            <data>4.192</data>
+                            <data>4.348</data>
                             <data> </data>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="54">led_data[0]</data>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="26">eeprom_wr_en</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="85">u_eeprom/op_wr/D (GTP_DFF_CE)</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 3.569" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data/>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>1.380</data>
+                            <data>r</data>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>2.471</data>
+                            <data/>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="228">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.107</data>
+                            <data>2.578</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="228">u_pll_50mhz/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=126)</data>
+                            <data>0.938</data>
+                            <data>3.516</data>
+                            <data/>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="11">pll_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="85">u_eeprom/op_wr/CLK (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>3.516</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>3.516</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Hold time</data>
+                            <data/>
+                            <data>0.053</data>
+                            <data>3.569</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>0.779</data>
+            <data>0</data>
+            <data>1</data>
+            <data file_id="../Designs/i2c_eeprom_top.v" line_number="134">led_data[0]/CLK</data>
+            <data file_id="../Designs/led/led.v" line_number="10">u_led/led_out[0]/D</data>
+            <data/>
+            <data>pll_clk_50mhz</data>
+            <data>pll_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data>0.000</data>
+            <data>3.516</data>
+            <data>3.516</data>
+            <data>0.000</data>
+            <data>0.000</data>
+            <data>0.832</data>
+            <data>0.368 (44.2%)</data>
+            <data>0.464 (55.8%)</data>
+            <general_container>
+                <data>Path #2: hold slack is 0.779(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 4.348" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data/>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>1.380</data>
+                            <data>r</data>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>2.471</data>
+                            <data/>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="228">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.107</data>
+                            <data>2.578</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="228">u_pll_50mhz/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=126)</data>
+                            <data>0.938</data>
+                            <data>3.516</data>
+                            <data/>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="11">pll_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="134">led_data[0]/CLK (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>tco</data>
+                            <data>0.368</data>
+                            <data>3.884</data>
+                            <data>f</data>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="134">led_data[0]/Q (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>4.348</data>
+                            <data> </data>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="20">led_data[0]</data>
                         </row>
                         <row>
                             <data> </data>
@@ -157,7 +411,7 @@
                     </table>
                 </table_container>
                 <table_container>
-                    <table id="require" title="Data required time is 3.413" column_number="6">
+                    <table id="require" title="Data required time is 3.569" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -232,9 +486,9 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=48)</data>
-                            <data>0.782</data>
-                            <data>3.360</data>
+                            <data>net (fanout=126)</data>
+                            <data>0.938</data>
+                            <data>3.516</data>
                             <data/>
                             <data file_id="../Designs/i2c_eeprom_top.v" line_number="11">pll_clk_50mhz</data>
                         </row>
@@ -250,7 +504,7 @@
                             <data>clock pessimism</data>
                             <data/>
                             <data>0.000</data>
-                            <data>3.360</data>
+                            <data>3.516</data>
                             <data/>
                             <data/>
                         </row>
@@ -258,7 +512,7 @@
                             <data>clock uncertainty</data>
                             <data/>
                             <data>0.000</data>
-                            <data>3.360</data>
+                            <data>3.516</data>
                             <data/>
                             <data/>
                         </row>
@@ -266,7 +520,7 @@
                             <data>Hold time</data>
                             <data/>
                             <data>0.053</data>
-                            <data>3.413</data>
+                            <data>3.569</data>
                             <data/>
                             <data/>
                         </row>
@@ -278,24 +532,24 @@
             <data>0.779</data>
             <data>0</data>
             <data>1</data>
-            <data file_id="../Designs/i2c_eeprom_top.v" line_number="89">led_data[1]/CLK</data>
+            <data file_id="../Designs/i2c_eeprom_top.v" line_number="134">led_data[1]/CLK</data>
             <data file_id="../Designs/led/led.v" line_number="10">u_led/led_out[1]/D</data>
             <data/>
             <data>pll_clk_50mhz</data>
             <data>pll_clk_50mhz</data>
             <data>rise-rise</data>
             <data>0.000</data>
-            <data>3.360</data>
-            <data>3.360</data>
+            <data>3.516</data>
+            <data>3.516</data>
             <data>0.000</data>
             <data>0.000</data>
             <data>0.832</data>
             <data>0.368 (44.2%)</data>
             <data>0.464 (55.8%)</data>
             <general_container>
-                <data>Path #2: hold slack is 0.779(MET)</data>
+                <data>Path #3: hold slack is 0.779(MET)</data>
                 <table_container>
-                    <table id="arrival" title="Data arrival time is 4.192" column_number="6">
+                    <table id="arrival" title="Data arrival time is 4.348" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -370,9 +624,9 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=48)</data>
-                            <data>0.782</data>
-                            <data>3.360</data>
+                            <data>net (fanout=126)</data>
+                            <data>0.938</data>
+                            <data>3.516</data>
                             <data/>
                             <data file_id="../Designs/i2c_eeprom_top.v" line_number="11">pll_clk_50mhz</data>
                         </row>
@@ -382,23 +636,23 @@
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="89">led_data[1]/CLK (GTP_DFF_CE)</data>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="134">led_data[1]/CLK (GTP_DFF_CE)</data>
                         </row>
                         <row>
                             <data> </data>
                             <data>tco</data>
                             <data>0.368</data>
-                            <data>3.728</data>
+                            <data>3.884</data>
                             <data>f</data>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="89">led_data[1]/Q (GTP_DFF_CE)</data>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="134">led_data[1]/Q (GTP_DFF_CE)</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=1)</data>
                             <data>0.464</data>
-                            <data>4.192</data>
+                            <data>4.348</data>
                             <data> </data>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="54">led_data[1]</data>
+                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="20">led_data[1]</data>
                         </row>
                         <row>
                             <data> </data>
@@ -411,7 +665,7 @@
                     </table>
                 </table_container>
                 <table_container>
-                    <table id="require" title="Data required time is 3.413" column_number="6">
+                    <table id="require" title="Data required time is 3.569" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -486,9 +740,9 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=48)</data>
-                            <data>0.782</data>
-                            <data>3.360</data>
+                            <data>net (fanout=126)</data>
+                            <data>0.938</data>
+                            <data>3.516</data>
                             <data/>
                             <data file_id="../Designs/i2c_eeprom_top.v" line_number="11">pll_clk_50mhz</data>
                         </row>
@@ -504,7 +758,7 @@
                             <data>clock pessimism</data>
                             <data/>
                             <data>0.000</data>
-                            <data>3.360</data>
+                            <data>3.516</data>
                             <data/>
                             <data/>
                         </row>
@@ -512,7 +766,7 @@
                             <data>clock uncertainty</data>
                             <data/>
                             <data>0.000</data>
-                            <data>3.360</data>
+                            <data>3.516</data>
                             <data/>
                             <data/>
                         </row>
@@ -520,261 +774,7 @@
                             <data>Hold time</data>
                             <data/>
                             <data>0.053</data>
-                            <data>3.413</data>
-                            <data/>
-                            <data/>
-                        </row>
-                    </table>
-                </table_container>
-            </general_container>
-        </row>
-        <row>
-            <data>0.779</data>
-            <data>0</data>
-            <data>1</data>
-            <data file_id="../Designs/i2c_eeprom_top.v" line_number="89">led_data[2]/CLK</data>
-            <data file_id="../Designs/led/led.v" line_number="10">u_led/led_out[2]/D</data>
-            <data/>
-            <data>pll_clk_50mhz</data>
-            <data>pll_clk_50mhz</data>
-            <data>rise-rise</data>
-            <data>0.000</data>
-            <data>3.360</data>
-            <data>3.360</data>
-            <data>0.000</data>
-            <data>0.000</data>
-            <data>0.832</data>
-            <data>0.368 (44.2%)</data>
-            <data>0.464 (55.8%)</data>
-            <general_container>
-                <data>Path #3: hold slack is 0.779(MET)</data>
-                <table_container>
-                    <table id="arrival" title="Data arrival time is 4.192" column_number="6">
-                        <column_headers>
-                            <data>Location</data>
-                            <data>Delay Type</data>
-                            <data>Incr</data>
-                            <data>Path</data>
-                            <data>Trans</data>
-                            <data>Logical Resource</data>
-                        </column_headers>
-                        <row>
-                            <data>Clock pll_clk_50mhz (rising edge)</data>
-                            <data/>
-                            <data>0.000</data>
-                            <data>0.000</data>
-                            <data>r</data>
-                            <data/>
-                        </row>
-                        <row>
-                            <data>sys_clk_50mhz</data>
-                            <data></data>
-                            <data>0.000</data>
-                            <data>0.000</data>
-                            <data>r</data>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz (port)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>0.000</data>
-                            <data/>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz</data>
-                        </row>
-                        <row>
-                            <data></data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
-                        </row>
-                        <row>
-                            <data></data>
-                            <data>td</data>
-                            <data>1.380</data>
-                            <data>1.380</data>
-                            <data>r</data>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>1.091</data>
-                            <data>2.471</data>
-                            <data/>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">nt_sys_clk_50mhz</data>
-                        </row>
-                        <row>
-                            <data></data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="228">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
-                        </row>
-                        <row>
-                            <data></data>
-                            <data>td</data>
-                            <data>0.107</data>
-                            <data>2.578</data>
-                            <data>r</data>
-                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="228">u_pll_50mhz/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=48)</data>
-                            <data>0.782</data>
-                            <data>3.360</data>
-                            <data/>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="11">pll_clk_50mhz</data>
-                        </row>
-                        <row>
-                            <data></data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data>r</data>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="89">led_data[2]/CLK (GTP_DFF_CE)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>tco</data>
-                            <data>0.368</data>
-                            <data>3.728</data>
-                            <data>f</data>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="89">led_data[2]/Q (GTP_DFF_CE)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.464</data>
-                            <data>4.192</data>
-                            <data> </data>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="54">led_data[2]</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data>f</data>
-                            <data file_id="../Designs/led/led.v" line_number="10">u_led/led_out[2]/D (GTP_DFF_C)</data>
-                        </row>
-                    </table>
-                </table_container>
-                <table_container>
-                    <table id="require" title="Data required time is 3.413" column_number="6">
-                        <column_headers>
-                            <data>Location</data>
-                            <data>Delay Type</data>
-                            <data>Incr</data>
-                            <data>Path</data>
-                            <data>Trans</data>
-                            <data>Logical Resource</data>
-                        </column_headers>
-                        <row>
-                            <data>Clock pll_clk_50mhz (rising edge)</data>
-                            <data/>
-                            <data>0.000</data>
-                            <data>0.000</data>
-                            <data>r</data>
-                            <data/>
-                        </row>
-                        <row>
-                            <data>sys_clk_50mhz</data>
-                            <data></data>
-                            <data>0.000</data>
-                            <data>0.000</data>
-                            <data>r</data>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz (port)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>0.000</data>
-                            <data/>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz</data>
-                        </row>
-                        <row>
-                            <data></data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
-                        </row>
-                        <row>
-                            <data></data>
-                            <data>td</data>
-                            <data>1.380</data>
-                            <data>1.380</data>
-                            <data>r</data>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>1.091</data>
-                            <data>2.471</data>
-                            <data/>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="2">nt_sys_clk_50mhz</data>
-                        </row>
-                        <row>
-                            <data></data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="228">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
-                        </row>
-                        <row>
-                            <data></data>
-                            <data>td</data>
-                            <data>0.107</data>
-                            <data>2.578</data>
-                            <data>r</data>
-                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="228">u_pll_50mhz/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=48)</data>
-                            <data>0.782</data>
-                            <data>3.360</data>
-                            <data/>
-                            <data file_id="../Designs/i2c_eeprom_top.v" line_number="11">pll_clk_50mhz</data>
-                        </row>
-                        <row>
-                            <data></data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data>r</data>
-                            <data file_id="../Designs/led/led.v" line_number="10">u_led/led_out[2]/CLK (GTP_DFF_C)</data>
-                        </row>
-                        <row>
-                            <data>clock pessimism</data>
-                            <data/>
-                            <data>0.000</data>
-                            <data>3.360</data>
-                            <data/>
-                            <data/>
-                        </row>
-                        <row>
-                            <data>clock uncertainty</data>
-                            <data/>
-                            <data>0.000</data>
-                            <data>3.360</data>
-                            <data/>
-                            <data/>
-                        </row>
-                        <row>
-                            <data>Hold time</data>
-                            <data/>
-                            <data>0.053</data>
-                            <data>3.413</data>
+                            <data>3.569</data>
                             <data/>
                             <data/>
                         </row>

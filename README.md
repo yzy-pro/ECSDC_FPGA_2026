@@ -1,0 +1,1 @@
+pds工具安装路径：E:\work\pango\PDS_2025.2-ads\bin

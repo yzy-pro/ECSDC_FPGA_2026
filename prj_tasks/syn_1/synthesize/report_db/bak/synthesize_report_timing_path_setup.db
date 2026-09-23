@@ -21,27 +21,27 @@
             <data>Route delay</data>
         </column_headers>
         <row>
-            <data>14.272</data>
-            <data>11</data>
-            <data>23</data>
-            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[0]/CLK</data>
-            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[21]/D</data>
+            <data>15.650</data>
+            <data>3</data>
+            <data>19</data>
+            <data file_id="../Designs/i2c/i2c.v" line_number="74">u_eeprom/clk_div_cnt[1]/CLK</data>
+            <data file_id="../Designs/i2c/i2c.v" line_number="177">u_eeprom/state_reg[0]/CE</data>
             <data/>
             <data>pll_clk_50mhz</data>
             <data>pll_clk_50mhz</data>
             <data>rise-rise</data>
             <data>0.000</data>
-            <data>3.360</data>
-            <data>3.360</data>
+            <data>3.516</data>
+            <data>3.516</data>
             <data>0.000</data>
             <data>20.000</data>
-            <data>5.607</data>
-            <data>2.245 (40.0%)</data>
-            <data>3.362 (60.0%)</data>
+            <data>3.583</data>
+            <data>0.950 (26.5%)</data>
+            <data>2.633 (73.5%)</data>
             <general_container>
-                <data>Path #1: setup slack is 14.272(MET)</data>
+                <data>Path #1: setup slack is 15.650(MET)</data>
                 <table_container>
-                    <table id="arrival" title="Data arrival time is 8.967" column_number="6">
+                    <table id="arrival" title="Data arrival time is 7.099" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -116,9 +116,9 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=48)</data>
-                            <data>0.782</data>
-                            <data>3.360</data>
+                            <data>net (fanout=126)</data>
+                            <data>0.938</data>
+                            <data>3.516</data>
                             <data/>
                             <data file_id="../Designs/i2c_eeprom_top.v" line_number="11">pll_clk_50mhz</data>
                         </row>
@@ -128,23 +128,23 @@
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[0]/CLK (GTP_DFF_C)</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="74">u_eeprom/clk_div_cnt[1]/CLK (GTP_DFF_C)</data>
                         </row>
                         <row>
                             <data> </data>
                             <data>tco</data>
                             <data>0.375</data>
-                            <data>3.735</data>
+                            <data>3.891</data>
                             <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[0]/Q (GTP_DFF_C)</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="74">u_eeprom/clk_div_cnt[1]/Q (GTP_DFF_C)</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=4)</data>
-                            <data>0.641</data>
-                            <data>4.376</data>
+                            <data>net (fanout=3)</data>
+                            <data>0.605</data>
+                            <data>4.496</data>
                             <data> </data>
-                            <data file_id="../Designs/key/key.v" line_number="16">u_key/cnt_detect[0]</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="29">u_eeprom/clk_div_cnt[1]</data>
                         </row>
                         <row>
                             <data> </data>
@@ -152,47 +152,23 @@
                             <data/>
                             <data/>
                             <data/>
-                            <data object_valid="true">u_key/N4_mux4_5/I0 (GTP_LUT5)</data>
+                            <data object_valid="true">u_eeprom/N494_5/I0 (GTP_LUT4)</data>
                         </row>
                         <row>
                             <data> </data>
                             <data>td</data>
-                            <data>0.251</data>
-                            <data>4.627</data>
+                            <data>0.213</data>
+                            <data>4.709</data>
                             <data>r</data>
-                            <data object_valid="true">u_key/N4_mux4_5/Z (GTP_LUT5)</data>
+                            <data object_valid="true">u_eeprom/N494_5/Z (GTP_LUT4)</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.464</data>
-                            <data>5.091</data>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>5.262</data>
                             <data> </data>
-                            <data object_valid="true">u_key/_N40</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data object_valid="true">u_key/N4_mux8_3/I4 (GTP_LUT5)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.145</data>
-                            <data>5.236</data>
-                            <data>r</data>
-                            <data object_valid="true">u_key/N4_mux8_3/Z (GTP_LUT5)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.464</data>
-                            <data>5.700</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N48</data>
+                            <data object_valid="true">u_eeprom/_N637</data>
                         </row>
                         <row>
                             <data> </data>
@@ -200,23 +176,23 @@
                             <data/>
                             <data/>
                             <data/>
-                            <data object_valid="true">u_key/N4_mux12_3/I4 (GTP_LUT5)</data>
+                            <data object_valid="true">u_eeprom/N494_6/I2 (GTP_LUT3)</data>
                         </row>
                         <row>
                             <data> </data>
                             <data>td</data>
                             <data>0.145</data>
-                            <data>5.845</data>
+                            <data>5.407</data>
                             <data>r</data>
-                            <data object_valid="true">u_key/N4_mux12_3/Z (GTP_LUT5)</data>
+                            <data object_valid="true">u_eeprom/N494_6/Z (GTP_LUT3)</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.464</data>
-                            <data>6.309</data>
+                            <data>net (fanout=19)</data>
+                            <data>0.834</data>
+                            <data>6.241</data>
                             <data> </data>
-                            <data object_valid="true">u_key/_N56</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="30">u_eeprom/i2c_tick</data>
                         </row>
                         <row>
                             <data> </data>
@@ -224,564 +200,36 @@
                             <data/>
                             <data/>
                             <data/>
-                            <data object_valid="true">u_key/N4_mux16_4/I4 (GTP_LUT5)</data>
+                            <data object_valid="true">u_eeprom/N821_1_1/I2 (GTP_LUT5)</data>
                         </row>
                         <row>
                             <data> </data>
                             <data>td</data>
-                            <data>0.145</data>
-                            <data>6.454</data>
-                            <data>r</data>
-                            <data object_valid="true">u_key/N4_mux16_4/Z (GTP_LUT5)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.464</data>
-                            <data>6.918</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N64</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data object_valid="true">u_key/N4_mux21/I3 (GTP_LUT5)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.145</data>
-                            <data>7.063</data>
-                            <data>r</data>
-                            <data object_valid="true">u_key/N4_mux21/Z (GTP_LUT5)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=23)</data>
-                            <data>0.865</data>
-                            <data>7.928</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/N4</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_1/I2 (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.233</data>
-                            <data>8.161</data>
+                            <data>0.217</data>
+                            <data>6.458</data>
                             <data>f</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_1/COUT (GTP_LUT5CARRY)</data>
+                            <data object_valid="true">u_eeprom/N821_1_1/Z (GTP_LUT5)</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.161</data>
+                            <data>net (fanout=16)</data>
+                            <data>0.641</data>
+                            <data>7.099</data>
                             <data> </data>
-                            <data object_valid="true">u_key/_N118</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_2/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.191</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_2/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.191</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N119</data>
+                            <data object_valid="true">u_eeprom/N821</data>
                         </row>
                         <row>
                             <data> </data>
                             <data/>
                             <data/>
                             <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_3/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.221</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_3/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.221</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N120</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_4/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.251</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_4/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.251</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N121</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_5/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.281</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_5/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.281</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N122</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_6/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.311</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_6/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.311</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N123</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_7/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.341</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_7/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.341</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N124</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_8/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.371</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_8/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.371</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N125</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_9/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.401</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_9/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.401</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N126</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_10/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.431</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_10/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.431</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N127</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_11/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.461</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_11/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.461</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N128</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_12/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.491</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_12/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.491</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N129</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_13/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.521</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_13/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.521</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N130</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_14/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.551</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_14/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.551</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N131</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_15/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.581</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_15/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.581</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N132</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_16/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.611</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_16/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.611</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N133</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_17/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.641</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_17/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.641</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N134</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_18/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.671</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_18/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.671</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N135</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_19/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.701</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_19/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.701</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N136</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_20/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.731</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_20/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.731</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N137</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_21/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.236</data>
-                            <data>8.967</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_21/Z (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.967</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/N18[21]</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[21]/D (GTP_DFF_C)</data>
+                            <data>f</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="177">u_eeprom/state_reg[0]/CE (GTP_DFF_PE)</data>
                         </row>
                     </table>
                 </table_container>
                 <table_container>
-                    <table id="require" title="Data required time is 23.239" column_number="6">
+                    <table id="require" title="Data required time is 22.749" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -856,9 +304,9 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=48)</data>
-                            <data>0.782</data>
-                            <data>23.360</data>
+                            <data>net (fanout=126)</data>
+                            <data>0.938</data>
+                            <data>23.516</data>
                             <data/>
                             <data file_id="../Designs/i2c_eeprom_top.v" line_number="11">pll_clk_50mhz</data>
                         </row>
@@ -868,13 +316,13 @@
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[21]/CLK (GTP_DFF_C)</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="177">u_eeprom/state_reg[0]/CLK (GTP_DFF_PE)</data>
                         </row>
                         <row>
                             <data>clock pessimism</data>
                             <data/>
                             <data>0.000</data>
-                            <data>23.360</data>
+                            <data>23.516</data>
                             <data/>
                             <data/>
                         </row>
@@ -882,15 +330,15 @@
                             <data>clock uncertainty</data>
                             <data/>
                             <data>-0.150</data>
-                            <data>23.210</data>
+                            <data>23.366</data>
                             <data/>
                             <data/>
                         </row>
                         <row>
                             <data>Setup time</data>
                             <data/>
-                            <data>0.029</data>
-                            <data>23.239</data>
+                            <data>-0.617</data>
+                            <data>22.749</data>
                             <data/>
                             <data/>
                         </row>
@@ -899,27 +347,27 @@
             </general_container>
         </row>
         <row>
-            <data>14.302</data>
-            <data>10</data>
-            <data>23</data>
-            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[0]/CLK</data>
-            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[20]/D</data>
+            <data>15.650</data>
+            <data>3</data>
+            <data>19</data>
+            <data file_id="../Designs/i2c/i2c.v" line_number="74">u_eeprom/clk_div_cnt[1]/CLK</data>
+            <data file_id="../Designs/i2c/i2c.v" line_number="177">u_eeprom/state_reg[1]/CE</data>
             <data/>
             <data>pll_clk_50mhz</data>
             <data>pll_clk_50mhz</data>
             <data>rise-rise</data>
             <data>0.000</data>
-            <data>3.360</data>
-            <data>3.360</data>
+            <data>3.516</data>
+            <data>3.516</data>
             <data>0.000</data>
             <data>20.000</data>
-            <data>5.577</data>
-            <data>2.215 (39.7%)</data>
-            <data>3.362 (60.3%)</data>
+            <data>3.583</data>
+            <data>0.950 (26.5%)</data>
+            <data>2.633 (73.5%)</data>
             <general_container>
-                <data>Path #2: setup slack is 14.302(MET)</data>
+                <data>Path #2: setup slack is 15.650(MET)</data>
                 <table_container>
-                    <table id="arrival" title="Data arrival time is 8.937" column_number="6">
+                    <table id="arrival" title="Data arrival time is 7.099" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -994,9 +442,9 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=48)</data>
-                            <data>0.782</data>
-                            <data>3.360</data>
+                            <data>net (fanout=126)</data>
+                            <data>0.938</data>
+                            <data>3.516</data>
                             <data/>
                             <data file_id="../Designs/i2c_eeprom_top.v" line_number="11">pll_clk_50mhz</data>
                         </row>
@@ -1006,23 +454,23 @@
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[0]/CLK (GTP_DFF_C)</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="74">u_eeprom/clk_div_cnt[1]/CLK (GTP_DFF_C)</data>
                         </row>
                         <row>
                             <data> </data>
                             <data>tco</data>
                             <data>0.375</data>
-                            <data>3.735</data>
+                            <data>3.891</data>
                             <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[0]/Q (GTP_DFF_C)</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="74">u_eeprom/clk_div_cnt[1]/Q (GTP_DFF_C)</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=4)</data>
-                            <data>0.641</data>
-                            <data>4.376</data>
+                            <data>net (fanout=3)</data>
+                            <data>0.605</data>
+                            <data>4.496</data>
                             <data> </data>
-                            <data file_id="../Designs/key/key.v" line_number="16">u_key/cnt_detect[0]</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="29">u_eeprom/clk_div_cnt[1]</data>
                         </row>
                         <row>
                             <data> </data>
@@ -1030,47 +478,23 @@
                             <data/>
                             <data/>
                             <data/>
-                            <data object_valid="true">u_key/N4_mux4_5/I0 (GTP_LUT5)</data>
+                            <data object_valid="true">u_eeprom/N494_5/I0 (GTP_LUT4)</data>
                         </row>
                         <row>
                             <data> </data>
                             <data>td</data>
-                            <data>0.251</data>
-                            <data>4.627</data>
+                            <data>0.213</data>
+                            <data>4.709</data>
                             <data>r</data>
-                            <data object_valid="true">u_key/N4_mux4_5/Z (GTP_LUT5)</data>
+                            <data object_valid="true">u_eeprom/N494_5/Z (GTP_LUT4)</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.464</data>
-                            <data>5.091</data>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>5.262</data>
                             <data> </data>
-                            <data object_valid="true">u_key/_N40</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data object_valid="true">u_key/N4_mux8_3/I4 (GTP_LUT5)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.145</data>
-                            <data>5.236</data>
-                            <data>r</data>
-                            <data object_valid="true">u_key/N4_mux8_3/Z (GTP_LUT5)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.464</data>
-                            <data>5.700</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N48</data>
+                            <data object_valid="true">u_eeprom/_N637</data>
                         </row>
                         <row>
                             <data> </data>
@@ -1078,23 +502,23 @@
                             <data/>
                             <data/>
                             <data/>
-                            <data object_valid="true">u_key/N4_mux12_3/I4 (GTP_LUT5)</data>
+                            <data object_valid="true">u_eeprom/N494_6/I2 (GTP_LUT3)</data>
                         </row>
                         <row>
                             <data> </data>
                             <data>td</data>
                             <data>0.145</data>
-                            <data>5.845</data>
+                            <data>5.407</data>
                             <data>r</data>
-                            <data object_valid="true">u_key/N4_mux12_3/Z (GTP_LUT5)</data>
+                            <data object_valid="true">u_eeprom/N494_6/Z (GTP_LUT3)</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.464</data>
-                            <data>6.309</data>
+                            <data>net (fanout=19)</data>
+                            <data>0.834</data>
+                            <data>6.241</data>
                             <data> </data>
-                            <data object_valid="true">u_key/_N56</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="30">u_eeprom/i2c_tick</data>
                         </row>
                         <row>
                             <data> </data>
@@ -1102,540 +526,36 @@
                             <data/>
                             <data/>
                             <data/>
-                            <data object_valid="true">u_key/N4_mux16_4/I4 (GTP_LUT5)</data>
+                            <data object_valid="true">u_eeprom/N821_1_1/I2 (GTP_LUT5)</data>
                         </row>
                         <row>
                             <data> </data>
                             <data>td</data>
-                            <data>0.145</data>
-                            <data>6.454</data>
-                            <data>r</data>
-                            <data object_valid="true">u_key/N4_mux16_4/Z (GTP_LUT5)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.464</data>
-                            <data>6.918</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N64</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data object_valid="true">u_key/N4_mux21/I3 (GTP_LUT5)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.145</data>
-                            <data>7.063</data>
-                            <data>r</data>
-                            <data object_valid="true">u_key/N4_mux21/Z (GTP_LUT5)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=23)</data>
-                            <data>0.865</data>
-                            <data>7.928</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/N4</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_1/I2 (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.233</data>
-                            <data>8.161</data>
+                            <data>0.217</data>
+                            <data>6.458</data>
                             <data>f</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_1/COUT (GTP_LUT5CARRY)</data>
+                            <data object_valid="true">u_eeprom/N821_1_1/Z (GTP_LUT5)</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.161</data>
+                            <data>net (fanout=16)</data>
+                            <data>0.641</data>
+                            <data>7.099</data>
                             <data> </data>
-                            <data object_valid="true">u_key/_N118</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_2/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.191</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_2/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.191</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N119</data>
+                            <data object_valid="true">u_eeprom/N821</data>
                         </row>
                         <row>
                             <data> </data>
                             <data/>
                             <data/>
                             <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_3/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.221</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_3/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.221</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N120</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_4/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.251</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_4/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.251</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N121</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_5/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.281</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_5/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.281</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N122</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_6/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.311</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_6/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.311</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N123</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_7/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.341</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_7/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.341</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N124</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_8/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.371</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_8/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.371</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N125</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_9/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.401</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_9/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.401</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N126</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_10/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.431</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_10/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.431</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N127</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_11/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.461</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_11/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.461</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N128</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_12/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.491</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_12/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.491</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N129</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_13/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.521</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_13/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.521</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N130</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_14/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.551</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_14/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.551</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N131</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_15/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.581</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_15/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.581</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N132</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_16/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.611</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_16/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.611</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N133</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_17/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.641</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_17/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.641</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N134</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_18/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.671</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_18/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.671</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N135</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_19/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.701</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_19/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.701</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N136</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_20/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.236</data>
-                            <data>8.937</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_20/Z (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.937</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/N18[20]</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[20]/D (GTP_DFF_C)</data>
+                            <data>f</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="177">u_eeprom/state_reg[1]/CE (GTP_DFF_CE)</data>
                         </row>
                     </table>
                 </table_container>
                 <table_container>
-                    <table id="require" title="Data required time is 23.239" column_number="6">
+                    <table id="require" title="Data required time is 22.749" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -1710,9 +630,9 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=48)</data>
-                            <data>0.782</data>
-                            <data>23.360</data>
+                            <data>net (fanout=126)</data>
+                            <data>0.938</data>
+                            <data>23.516</data>
                             <data/>
                             <data file_id="../Designs/i2c_eeprom_top.v" line_number="11">pll_clk_50mhz</data>
                         </row>
@@ -1722,13 +642,13 @@
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[20]/CLK (GTP_DFF_C)</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="177">u_eeprom/state_reg[1]/CLK (GTP_DFF_CE)</data>
                         </row>
                         <row>
                             <data>clock pessimism</data>
                             <data/>
                             <data>0.000</data>
-                            <data>23.360</data>
+                            <data>23.516</data>
                             <data/>
                             <data/>
                         </row>
@@ -1736,15 +656,15 @@
                             <data>clock uncertainty</data>
                             <data/>
                             <data>-0.150</data>
-                            <data>23.210</data>
+                            <data>23.366</data>
                             <data/>
                             <data/>
                         </row>
                         <row>
                             <data>Setup time</data>
                             <data/>
-                            <data>0.029</data>
-                            <data>23.239</data>
+                            <data>-0.617</data>
+                            <data>22.749</data>
                             <data/>
                             <data/>
                         </row>
@@ -1753,27 +673,27 @@
             </general_container>
         </row>
         <row>
-            <data>14.332</data>
-            <data>10</data>
-            <data>23</data>
-            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[0]/CLK</data>
-            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[19]/D</data>
+            <data>15.650</data>
+            <data>3</data>
+            <data>19</data>
+            <data file_id="../Designs/i2c/i2c.v" line_number="74">u_eeprom/clk_div_cnt[1]/CLK</data>
+            <data file_id="../Designs/i2c/i2c.v" line_number="177">u_eeprom/state_reg[2]/CE</data>
             <data/>
             <data>pll_clk_50mhz</data>
             <data>pll_clk_50mhz</data>
             <data>rise-rise</data>
             <data>0.000</data>
-            <data>3.360</data>
-            <data>3.360</data>
+            <data>3.516</data>
+            <data>3.516</data>
             <data>0.000</data>
             <data>20.000</data>
-            <data>5.547</data>
-            <data>2.185 (39.4%)</data>
-            <data>3.362 (60.6%)</data>
+            <data>3.583</data>
+            <data>0.950 (26.5%)</data>
+            <data>2.633 (73.5%)</data>
             <general_container>
-                <data>Path #3: setup slack is 14.332(MET)</data>
+                <data>Path #3: setup slack is 15.650(MET)</data>
                 <table_container>
-                    <table id="arrival" title="Data arrival time is 8.907" column_number="6">
+                    <table id="arrival" title="Data arrival time is 7.099" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -1848,9 +768,9 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=48)</data>
-                            <data>0.782</data>
-                            <data>3.360</data>
+                            <data>net (fanout=126)</data>
+                            <data>0.938</data>
+                            <data>3.516</data>
                             <data/>
                             <data file_id="../Designs/i2c_eeprom_top.v" line_number="11">pll_clk_50mhz</data>
                         </row>
@@ -1860,23 +780,23 @@
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[0]/CLK (GTP_DFF_C)</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="74">u_eeprom/clk_div_cnt[1]/CLK (GTP_DFF_C)</data>
                         </row>
                         <row>
                             <data> </data>
                             <data>tco</data>
                             <data>0.375</data>
-                            <data>3.735</data>
+                            <data>3.891</data>
                             <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[0]/Q (GTP_DFF_C)</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="74">u_eeprom/clk_div_cnt[1]/Q (GTP_DFF_C)</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=4)</data>
-                            <data>0.641</data>
-                            <data>4.376</data>
+                            <data>net (fanout=3)</data>
+                            <data>0.605</data>
+                            <data>4.496</data>
                             <data> </data>
-                            <data file_id="../Designs/key/key.v" line_number="16">u_key/cnt_detect[0]</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="29">u_eeprom/clk_div_cnt[1]</data>
                         </row>
                         <row>
                             <data> </data>
@@ -1884,47 +804,23 @@
                             <data/>
                             <data/>
                             <data/>
-                            <data object_valid="true">u_key/N4_mux4_5/I0 (GTP_LUT5)</data>
+                            <data object_valid="true">u_eeprom/N494_5/I0 (GTP_LUT4)</data>
                         </row>
                         <row>
                             <data> </data>
                             <data>td</data>
-                            <data>0.251</data>
-                            <data>4.627</data>
+                            <data>0.213</data>
+                            <data>4.709</data>
                             <data>r</data>
-                            <data object_valid="true">u_key/N4_mux4_5/Z (GTP_LUT5)</data>
+                            <data object_valid="true">u_eeprom/N494_5/Z (GTP_LUT4)</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.464</data>
-                            <data>5.091</data>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>5.262</data>
                             <data> </data>
-                            <data object_valid="true">u_key/_N40</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data object_valid="true">u_key/N4_mux8_3/I4 (GTP_LUT5)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.145</data>
-                            <data>5.236</data>
-                            <data>r</data>
-                            <data object_valid="true">u_key/N4_mux8_3/Z (GTP_LUT5)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.464</data>
-                            <data>5.700</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N48</data>
+                            <data object_valid="true">u_eeprom/_N637</data>
                         </row>
                         <row>
                             <data> </data>
@@ -1932,23 +828,23 @@
                             <data/>
                             <data/>
                             <data/>
-                            <data object_valid="true">u_key/N4_mux12_3/I4 (GTP_LUT5)</data>
+                            <data object_valid="true">u_eeprom/N494_6/I2 (GTP_LUT3)</data>
                         </row>
                         <row>
                             <data> </data>
                             <data>td</data>
                             <data>0.145</data>
-                            <data>5.845</data>
+                            <data>5.407</data>
                             <data>r</data>
-                            <data object_valid="true">u_key/N4_mux12_3/Z (GTP_LUT5)</data>
+                            <data object_valid="true">u_eeprom/N494_6/Z (GTP_LUT3)</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.464</data>
-                            <data>6.309</data>
+                            <data>net (fanout=19)</data>
+                            <data>0.834</data>
+                            <data>6.241</data>
                             <data> </data>
-                            <data object_valid="true">u_key/_N56</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="30">u_eeprom/i2c_tick</data>
                         </row>
                         <row>
                             <data> </data>
@@ -1956,516 +852,36 @@
                             <data/>
                             <data/>
                             <data/>
-                            <data object_valid="true">u_key/N4_mux16_4/I4 (GTP_LUT5)</data>
+                            <data object_valid="true">u_eeprom/N821_1_1/I2 (GTP_LUT5)</data>
                         </row>
                         <row>
                             <data> </data>
                             <data>td</data>
-                            <data>0.145</data>
-                            <data>6.454</data>
-                            <data>r</data>
-                            <data object_valid="true">u_key/N4_mux16_4/Z (GTP_LUT5)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.464</data>
-                            <data>6.918</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N64</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data object_valid="true">u_key/N4_mux21/I3 (GTP_LUT5)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.145</data>
-                            <data>7.063</data>
-                            <data>r</data>
-                            <data object_valid="true">u_key/N4_mux21/Z (GTP_LUT5)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=23)</data>
-                            <data>0.865</data>
-                            <data>7.928</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/N4</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_1/I2 (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.233</data>
-                            <data>8.161</data>
+                            <data>0.217</data>
+                            <data>6.458</data>
                             <data>f</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_1/COUT (GTP_LUT5CARRY)</data>
+                            <data object_valid="true">u_eeprom/N821_1_1/Z (GTP_LUT5)</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.161</data>
+                            <data>net (fanout=16)</data>
+                            <data>0.641</data>
+                            <data>7.099</data>
                             <data> </data>
-                            <data object_valid="true">u_key/_N118</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_2/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.191</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_2/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.191</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N119</data>
+                            <data object_valid="true">u_eeprom/N821</data>
                         </row>
                         <row>
                             <data> </data>
                             <data/>
                             <data/>
                             <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_3/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.221</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_3/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.221</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N120</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_4/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.251</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_4/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.251</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N121</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_5/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.281</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_5/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.281</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N122</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_6/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.311</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_6/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.311</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N123</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_7/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.341</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_7/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.341</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N124</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_8/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.371</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_8/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.371</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N125</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_9/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.401</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_9/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.401</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N126</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_10/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.431</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_10/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.431</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N127</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_11/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.461</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_11/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.461</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N128</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_12/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.491</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_12/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.491</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N129</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_13/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.521</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_13/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.521</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N130</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_14/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.551</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_14/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.551</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N131</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_15/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.581</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_15/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.581</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N132</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_16/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.611</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_16/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.611</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N133</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_17/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.641</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_17/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.641</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N134</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_18/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.030</data>
-                            <data>8.671</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_18/COUT (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.671</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/_N135</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_19/CIN (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data>td</data>
-                            <data>0.236</data>
-                            <data>8.907</data>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="26">u_key/N20_1_19/Z (GTP_LUT5CARRY)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>8.907</data>
-                            <data> </data>
-                            <data object_valid="true">u_key/N18[19]</data>
-                        </row>
-                        <row>
-                            <data> </data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[19]/D (GTP_DFF_C)</data>
+                            <data>f</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="177">u_eeprom/state_reg[2]/CE (GTP_DFF_CE)</data>
                         </row>
                     </table>
                 </table_container>
                 <table_container>
-                    <table id="require" title="Data required time is 23.239" column_number="6">
+                    <table id="require" title="Data required time is 22.749" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -2540,9 +956,9 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=48)</data>
-                            <data>0.782</data>
-                            <data>23.360</data>
+                            <data>net (fanout=126)</data>
+                            <data>0.938</data>
+                            <data>23.516</data>
                             <data/>
                             <data file_id="../Designs/i2c_eeprom_top.v" line_number="11">pll_clk_50mhz</data>
                         </row>
@@ -2552,13 +968,13 @@
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/key/key.v" line_number="19">u_key/cnt_detect[19]/CLK (GTP_DFF_C)</data>
+                            <data file_id="../Designs/i2c/i2c.v" line_number="177">u_eeprom/state_reg[2]/CLK (GTP_DFF_CE)</data>
                         </row>
                         <row>
                             <data>clock pessimism</data>
                             <data/>
                             <data>0.000</data>
-                            <data>23.360</data>
+                            <data>23.516</data>
                             <data/>
                             <data/>
                         </row>
@@ -2566,15 +982,15 @@
                             <data>clock uncertainty</data>
                             <data/>
                             <data>-0.150</data>
-                            <data>23.210</data>
+                            <data>23.366</data>
                             <data/>
                             <data/>
                         </row>
                         <row>
                             <data>Setup time</data>
                             <data/>
-                            <data>0.029</data>
-                            <data>23.239</data>
+                            <data>-0.617</data>
+                            <data>22.749</data>
                             <data/>
                             <data/>
                         </row>
