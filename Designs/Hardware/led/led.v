@@ -1,5 +1,4 @@
-// led.v
-// led模块，接收数据输入信号并控制led输出
+// LED 模块，接收数据输入信号并控制 LED 输出。
 module led #(
     parameter integer LED_SYSCLK_FREQ = 50_000_000,
     parameter integer LED_WIDTH = 8

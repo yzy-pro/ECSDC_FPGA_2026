@@ -17,7 +17,7 @@ module i2c_driver #(
 
     input wire wr_en,
     input wire rd_en,
-    input wire addr_length,  // 0: 8-bit address, 1: 16-bit address
+    input wire addr_length,  // 0：8 位存储地址，1：16 位存储地址
     input wire [15:0] addr,
     input wire [7:0] wr_data,
     output reg [7:0] rd_data,

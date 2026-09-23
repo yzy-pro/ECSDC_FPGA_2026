@@ -1,5 +1,4 @@
-// key.v
-// 按键模块，接收按键输入信号并消抖处理后转为数据输出
+// 按键模块，接收按键输入信号，消抖后转换为数据输出。
 module key #(
     parameter integer KEY_SYSCLK_FREQ = 50_000_000,
     parameter integer KEY_WIDTH = 8

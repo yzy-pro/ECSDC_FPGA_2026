@@ -1,6 +1,5 @@
-// I2C EEPROM demonstration top level.
-// Keys 1..7 write fixed test bytes to address 0x0000; key 8 reads the byte
-// back and displays it on the LEDs.
+// I2C EEPROM 演示顶层模块。
+// 按键 1~7 将固定测试数据写入地址 0x0000，按键 8 读回数据并显示到 LED。
 module i2c_eeprom_top (
     input  wire       sys_clk_50mhz,
     input  wire       sys_rst_n,
@@ -46,8 +45,8 @@ module i2c_eeprom_top (
         .key_data(key_data)
     );
 
-    // key_data is active high and changes only at the key sampler interval.
-    // Detecting its rising edge makes a held key issue one transaction only.
+    // key_data 为高电平有效，只在按键采样周期更新。
+    // 检测上升沿可保证长按只触发一次事务。
     always @(posedge clk_50mhz or negedge sys_rst_n) begin
         if (!sys_rst_n)
             key_data_d <= 8'd0;
@@ -56,8 +55,7 @@ module i2c_eeprom_top (
     end
     assign key_press = key_data & ~key_data_d;
 
-    // A read request is retained until the EEPROM controller accepts it, so a
-    // key press during a write or the EEPROM write-cycle delay is not lost.
+    // 读请求保持到 EEPROM 控制器接收为止，避免在写操作或写周期等待期间丢失按键事件。
     always @(posedge clk_50mhz or negedge sys_rst_n) begin
         if (!sys_rst_n)
             read_pending <= 1'b0;
@@ -73,7 +71,7 @@ module i2c_eeprom_top (
     assign read_data_rd_en = !eeprom_read_data_empty;
     assign write_req       = (|key_press[6:0]) && !eeprom_write_full;
 
-    // Priority is only relevant if more than one key is pressed at once.
+    // 多个按键同时按下时，按位 0 到位 6 的顺序决定优先级。
     assign write_data = key_press[0] ? 8'h55 :
                         key_press[1] ? 8'hAA :
                         key_press[2] ? 8'hFF :
@@ -82,7 +80,7 @@ module i2c_eeprom_top (
                         key_press[5] ? 8'h5A :
                         key_press[6] ? 8'h0F : 8'h00;
 
-    // Capture each byte removed from the EEPROM result FIFO for display.
+    // 捕获从 EEPROM 结果 FIFO 读出的字节并送往 LED 显示。
     always @(posedge clk_50mhz or negedge sys_rst_n) begin
         if (!sys_rst_n)
             led_data <= 8'd0;

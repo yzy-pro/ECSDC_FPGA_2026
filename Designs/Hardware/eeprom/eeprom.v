@@ -157,7 +157,7 @@ module eeprom #(
                 read_accept        <= 1'b1;
             end
 
-            // RX FIFO 的数据格式为 {13-bit address, 8-bit write data}。
+            // RX FIFO 的数据格式为 {13 位地址，8 位写数据}。
             if (ctrl_state == CTRL_LOAD) begin
                 operation_read     <= 1'b0;
                 operation_addr    <= {3'b000, rx_fifo_rd_data[20:8]};
