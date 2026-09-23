@@ -18,7 +18,286 @@
             <data message="5">ConstraintEditor-4040: [E:/code/PangoWork/Works/i2c/Constraints/io/key.fdc(line number: 32)] Port p:key_in[6] has been placed at location H20, whose type is share pin.</data>
         </row>
         <row>
-            <data message="7">Flow-0002: File 'E:/code/PangoWork/Works/i2c/Constraints/io/eeprom_i2c.fdc' doesn't exist.</data>
+            <data message="5">Adm-4083: [E:/code/PangoWork/Works/i2c/Designs/Hardware/eeprom/eeprom.v(line number: 136)] Removed bmsWIDEDFFCPE inst operation_addr[15:0] at 13 that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="5">Adm-4083: [E:/code/PangoWork/Works/i2c/Designs/Hardware/eeprom/eeprom.v(line number: 136)] Removed bmsWIDEDFFCPE inst operation_addr[15:0] at 14 that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="5">Adm-4083: [E:/code/PangoWork/Works/i2c/Designs/Hardware/eeprom/eeprom.v(line number: 136)] Removed bmsWIDEDFFCPE inst operation_addr[15:0] at 15 that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="4">Constant propagation done on u_eeprom/operation_addr[15:0] (bmsWIDEDFFCPE).</data>
+        </row>
+        <row>
+            <data message="4">Constant propagation done on u_eeprom/i2c_driver_inst/N758 (bmsREDOR).</data>
+        </row>
+        <row>
+            <data message="4">Removed bmsSUB inst u_eeprom/rx_fifo_inst/U_ipml_fifo_eeprom_rx_fifo/U_ipml_fifo_ctrl/N40 that is redundant to u_eeprom/rx_fifo_inst/U_ipml_fifo_eeprom_rx_fifo/U_ipml_fifo_ctrl/N31</data>
+        </row>
+        <row>
+            <data message="4">Removed bmsWIDEDFFCPE inst u_eeprom/rx_fifo_inst/U_ipml_fifo_eeprom_rx_fifo/U_ipml_fifo_ctrl/wr_water_level_i[5:0] that is redundant to u_eeprom/rx_fifo_inst/U_ipml_fifo_eeprom_rx_fifo/U_ipml_fifo_ctrl/rd_water_level_i[5:0]</data>
+        </row>
+        <row>
+            <data message="4">Removed bmsSUB inst u_eeprom/tx_fifo_inst/U_ipml_fifo_eeprom_tx_fifo/U_ipml_fifo_ctrl/N40 that is redundant to u_eeprom/tx_fifo_inst/U_ipml_fifo_eeprom_tx_fifo/U_ipml_fifo_ctrl/N31</data>
+        </row>
+        <row>
+            <data message="4">Removed bmsWIDEDFFCPE inst u_eeprom/tx_fifo_inst/U_ipml_fifo_eeprom_tx_fifo/U_ipml_fifo_ctrl/wr_water_level_i[5:0] that is redundant to u_eeprom/tx_fifo_inst/U_ipml_fifo_eeprom_tx_fifo/U_ipml_fifo_ctrl/rd_water_level_i[5:0]</data>
+        </row>
+        <row>
+            <data message="4">Encoding type of FSM 'ctrl_state_fsm[2:0]' is: onehot.</data>
+        </row>
+        <row>
+            <data message="4">Encoding table of FSM 'ctrl_state_fsm[2:0]':</data>
+        </row>
+        <row>
+            <data message="4">from  u_eeprom/ctrl_state[2] u_eeprom/ctrl_state[1] u_eeprom/ctrl_state[0]</data>
+        </row>
+        <row>
+            <data message="4">to  u_eeprom/ctrl_state_reg[4] u_eeprom/ctrl_state_reg[3] u_eeprom/ctrl_state_reg[2] u_eeprom/ctrl_state_reg[1] u_eeprom/ctrl_state_reg[0]</data>
+        </row>
+        <row>
+            <data message="4">000 =&gt; 00001</data>
+        </row>
+        <row>
+            <data message="4">001 =&gt; 00010</data>
+        </row>
+        <row>
+            <data message="4">010 =&gt; 00100</data>
+        </row>
+        <row>
+            <data message="4">011 =&gt; 01000</data>
+        </row>
+        <row>
+            <data message="4">100 =&gt; 10000</data>
+        </row>
+        <row>
+            <data message="4">Encoding type of FSM 'state_fsm[4:0]' is: onehot.</data>
+        </row>
+        <row>
+            <data message="4">Encoding table of FSM 'state_fsm[4:0]':</data>
+        </row>
+        <row>
+            <data message="4">from  u_eeprom/i2c_driver_inst/state[4] u_eeprom/i2c_driver_inst/state[3] u_eeprom/i2c_driver_inst/state[2] u_eeprom/i2c_driver_inst/state[1] u_eeprom/i2c_driver_inst/state[0]</data>
+        </row>
+        <row>
+            <data message="4">to  u_eeprom/i2c_driver_inst/state_reg[15] u_eeprom/i2c_driver_inst/state_reg[14] u_eeprom/i2c_driver_inst/state_reg[13] u_eeprom/i2c_driver_inst/state_reg[12] u_eeprom/i2c_driver_inst/state_reg[11] u_eeprom/i2c_driver_inst/state_reg[10] u_eeprom/i2c_driver_inst/state_reg[9] u_eeprom/i2c_driver_inst/state_reg[8] u_eeprom/i2c_driver_inst/state_reg[7] u_eeprom/i2c_driver_inst/state_reg[6] u_eeprom/i2c_driver_inst/state_reg[5] u_eeprom/i2c_driver_inst/state_reg[4] u_eeprom/i2c_driver_inst/state_reg[3] u_eeprom/i2c_driver_inst/state_reg[2] u_eeprom/i2c_driver_inst/state_reg[1] u_eeprom/i2c_driver_inst/state_reg[0]</data>
+        </row>
+        <row>
+            <data message="4">00000 =&gt; 0000000000000001</data>
+        </row>
+        <row>
+            <data message="4">00001 =&gt; 0000000000000010</data>
+        </row>
+        <row>
+            <data message="4">00010 =&gt; 0000000000000100</data>
+        </row>
+        <row>
+            <data message="4">00011 =&gt; 0000000000001000</data>
+        </row>
+        <row>
+            <data message="4">00100 =&gt; 0000000000010000</data>
+        </row>
+        <row>
+            <data message="4">00101 =&gt; 0000000000100000</data>
+        </row>
+        <row>
+            <data message="4">00110 =&gt; 0000000001000000</data>
+        </row>
+        <row>
+            <data message="4">00111 =&gt; 0000000010000000</data>
+        </row>
+        <row>
+            <data message="4">01000 =&gt; 0000000100000000</data>
+        </row>
+        <row>
+            <data message="4">01001 =&gt; 0000001000000000</data>
+        </row>
+        <row>
+            <data message="4">01010 =&gt; 0000010000000000</data>
+        </row>
+        <row>
+            <data message="4">01011 =&gt; 0000100000000000</data>
+        </row>
+        <row>
+            <data message="4">01100 =&gt; 0001000000000000</data>
+        </row>
+        <row>
+            <data message="4">01101 =&gt; 0010000000000000</data>
+        </row>
+        <row>
+            <data message="4">01110 =&gt; 0100000000000000</data>
+        </row>
+        <row>
+            <data message="4">01111 =&gt; 1000000000000000</data>
+        </row>
+        <row>
+            <data message="4">CounterOpt reduce bits [31:23] of cnt_detect[31:0] to const.</data>
+        </row>
+        <row>
+            <data message="4">Constant propagation done on u_key/N15 (bmsWIDEMUX).</data>
+        </row>
+        <row>
+            <data message="5">Adm-4083: [E:/code/PangoWork/Works/i2c/Designs/Hardware/key/key.v(line number: 20)] Removed bmsWIDEDFFCPE inst cnt_detect[31:0] at 23 that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="4">Constant propagation done on u_key/cnt_detect[31:0] (bmsWIDEDFFCPE).</data>
+        </row>
+        <row>
+            <data message="4">Constant propagation done on u_key/cnt_detect[23]_inv (bmsINV).</data>
+        </row>
+        <row>
+            <data message="4">Constant propagation done on u_key/N14 (bmsREDAND).</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/ipcore/eeprom_rx_fifo/rtl/ipml_fifo_ctrl_v1_14_eeprom_rx_fifo.v(line number: 834)] Instance 'u_eeprom/rx_fifo_inst/U_ipml_fifo_eeprom_rx_fifo/U_ipml_fifo_ctrl/rd_water_level_i[5:0]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/ipcore/eeprom_rx_fifo/rtl/ipml_fifo_ctrl_v1_14_eeprom_rx_fifo.v(line number: 825)] Instance 'u_eeprom/rx_fifo_inst/U_ipml_fifo_eeprom_rx_fifo/U_ipml_fifo_ctrl/almost_empty' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/ipcore/eeprom_rx_fifo/rtl/ipml_fifo_ctrl_v1_14_eeprom_rx_fifo.v(line number: 801)] Instance 'u_eeprom/rx_fifo_inst/U_ipml_fifo_eeprom_rx_fifo/U_ipml_fifo_ctrl/almost_full' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/ipcore/eeprom_rx_fifo/rtl/ipml_fifo_ctrl_v1_14_eeprom_rx_fifo.v(line number: 463)] Instance 'u_eeprom/rx_fifo_inst/U_ipml_fifo_eeprom_rx_fifo/U_ipml_fifo_ctrl/gen_no_prefetch_ctrl.gen_std_fifo_vld_nor.data_valid' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/ipcore/eeprom_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_eeprom_tx_fifo.v(line number: 834)] Instance 'u_eeprom/tx_fifo_inst/U_ipml_fifo_eeprom_tx_fifo/U_ipml_fifo_ctrl/rd_water_level_i[5:0]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/ipcore/eeprom_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_eeprom_tx_fifo.v(line number: 825)] Instance 'u_eeprom/tx_fifo_inst/U_ipml_fifo_eeprom_tx_fifo/U_ipml_fifo_ctrl/almost_empty' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/ipcore/eeprom_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_eeprom_tx_fifo.v(line number: 801)] Instance 'u_eeprom/tx_fifo_inst/U_ipml_fifo_eeprom_tx_fifo/U_ipml_fifo_ctrl/almost_full' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/ipcore/eeprom_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_eeprom_tx_fifo.v(line number: 463)] Instance 'u_eeprom/tx_fifo_inst/U_ipml_fifo_eeprom_tx_fifo/U_ipml_fifo_ctrl/gen_no_prefetch_ctrl.gen_std_fifo_vld_nor.data_valid' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Adm-4083: [E:/code/PangoWork/Works/i2c/Designs/Driver/i2c/i2c_driver.v(line number: 78)] Removed bmsWIDEDFFCPE inst u_eeprom/i2c_driver_inst/addr_reg[15:0] at 13 that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="4">Constant propagation done on u_eeprom/i2c_driver_inst/addr_reg[15:0] (bmsWIDEDFFCPE).</data>
+        </row>
+        <row>
+            <data message="4">Constant propagation done on u_eeprom/N95 (bmsREDAND).</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/Designs/Hardware/key/key.v(line number: 20)] Instance 'u_key/cnt_detect[23]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/Designs/Hardware/key/key.v(line number: 20)] Instance 'u_key/cnt_detect[24]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/Designs/Hardware/key/key.v(line number: 20)] Instance 'u_key/cnt_detect[25]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/Designs/Hardware/key/key.v(line number: 20)] Instance 'u_key/cnt_detect[26]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/Designs/Hardware/key/key.v(line number: 20)] Instance 'u_key/cnt_detect[27]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/Designs/Hardware/key/key.v(line number: 20)] Instance 'u_key/cnt_detect[28]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/Designs/Hardware/key/key.v(line number: 20)] Instance 'u_key/cnt_detect[29]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/Designs/Hardware/key/key.v(line number: 20)] Instance 'u_key/cnt_detect[30]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/Designs/Hardware/key/key.v(line number: 20)] Instance 'u_key/cnt_detect[31]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/ipcore/eeprom_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_eeprom_tx_fifo.v(line number: 691)] Instance 'u_eeprom/tx_fifo_inst/U_ipml_fifo_eeprom_tx_fifo/U_ipml_fifo_ctrl/SYN_CTRL.wbin[5]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/ipcore/eeprom_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_eeprom_tx_fifo.v(line number: 734)] Instance 'u_eeprom/tx_fifo_inst/U_ipml_fifo_eeprom_tx_fifo/U_ipml_fifo_ctrl/SYN_CTRL.rbin[5]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/Designs/Hardware/eeprom/eeprom.v(line number: 136)] Instance 'u_eeprom/operation_addr[13]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/Designs/Hardware/eeprom/eeprom.v(line number: 136)] Instance 'u_eeprom/operation_addr[14]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/Designs/Hardware/eeprom/eeprom.v(line number: 136)] Instance 'u_eeprom/operation_addr[15]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/Designs/Driver/i2c/i2c_driver.v(line number: 78)] Instance 'u_eeprom/i2c_driver_inst/addr_reg[13]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/Designs/Driver/i2c/i2c_driver.v(line number: 78)] Instance 'u_eeprom/i2c_driver_inst/addr_reg[14]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/Designs/Driver/i2c/i2c_driver.v(line number: 78)] Instance 'u_eeprom/i2c_driver_inst/addr_reg[15]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/ipcore/eeprom_rx_fifo/rtl/ipml_fifo_ctrl_v1_14_eeprom_rx_fifo.v(line number: 734)] Instance 'u_eeprom/rx_fifo_inst/U_ipml_fifo_eeprom_rx_fifo/U_ipml_fifo_ctrl/SYN_CTRL.rbin[5]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Public-4008: [E:/code/PangoWork/Works/i2c/ipcore/eeprom_rx_fifo/rtl/ipml_fifo_ctrl_v1_14_eeprom_rx_fifo.v(line number: 691)] Instance 'u_eeprom/rx_fifo_inst/U_ipml_fifo_eeprom_rx_fifo/U_ipml_fifo_ctrl/SYN_CTRL.wbin[5]' of 'bmsWIDEDFFCPE' unit is dangling and will be cleaned.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4086: Port 'eeprom_i2c_sda' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4087: Port 'eeprom_i2c_sda' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4087: Port 'eeprom_i2c_scl' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4087: Port 'led_out[0]' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4087: Port 'led_out[1]' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4087: Port 'led_out[2]' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4087: Port 'led_out[3]' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4087: Port 'led_out[4]' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4087: Port 'led_out[5]' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4087: Port 'led_out[6]' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4087: Port 'led_out[7]' is not constrained, it is treated as combinational output.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4086: Port 'key_in[0]' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4086: Port 'key_in[1]' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4086: Port 'key_in[2]' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4086: Port 'key_in[3]' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4086: Port 'key_in[4]' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4086: Port 'key_in[5]' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4086: Port 'key_in[6]' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4086: Port 'key_in[7]' is not constrained, it is treated as combinational input.</data>
+        </row>
+        <row>
+            <data message="5">Timing-4086: Port 'sys_rst_n' is not constrained, it is treated as combinational input.</data>
         </row>
     </table>
 </tables>

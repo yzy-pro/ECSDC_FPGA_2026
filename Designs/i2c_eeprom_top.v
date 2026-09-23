@@ -1,11 +1,14 @@
 // I2C EEPROM 演示顶层模块。
 // 按键 1~7 将固定测试数据写入地址 0x0000，按键 8 读回数据并显示到 LED。
 module i2c_eeprom_top (
-    input  wire       sys_clk_50mhz,
-    input  wire       sys_rst_n,
-    inout  wire       eeprom_i2c_sda,
-    output wire       eeprom_i2c_scl,
-    input  wire [7:0] key_in,
+    input wire sys_clk_50mhz,
+    input wire sys_rst_n,
+
+    inout wire eeprom_i2c_sda,
+    output wire eeprom_i2c_scl,
+
+    input wire [7:0] key_in,
+
     output wire [7:0] led_out
 );
 
@@ -14,110 +17,99 @@ module i2c_eeprom_top (
     wire clk_50mhz;
     wire pll_lock;
     wire [7:0] key_data;
-    reg  [7:0] key_data_d;
+    reg [7:0] key_data_d;
     wire [7:0] key_press;
 
-    wire       eeprom_write_full;
-    wire       eeprom_read_ready;
-    wire       eeprom_read_accept;
-    wire [7:0]  eeprom_read_data;
-    wire        eeprom_read_data_empty;
-    wire        eeprom_read_data_full;
-    wire        eeprom_busy;
+    wire eeprom_write_full;
+    wire eeprom_read_ready;
+    wire eeprom_read_accept;
+    wire [7:0] eeprom_read_data;
+    wire eeprom_read_data_empty;
+    wire eeprom_read_data_full;
+    wire eeprom_busy;
 
-    reg         read_pending;
-    reg  [7:0]  led_data;
-    wire        write_req;
-    wire [7:0]  write_data;
-    wire        read_req;
-    wire        read_data_rd_en;
+    reg read_pending;
+    reg [7:0] led_data;
+    wire write_req;
+    wire [7:0] write_data;
+    wire read_req;
+    wire read_data_rd_en;
 
     pll_50mhz u_pll_50mhz (
-        .clkin1  (sys_clk_50mhz),
-        .clkout0 (clk_50mhz),
+        .clkin1(sys_clk_50mhz),
+        .clkout0(clk_50mhz),
         .pll_lock(pll_lock)
     );
 
     key u_key (
-        .clk     (clk_50mhz),
-        .rst_n   (sys_rst_n),
-        .key_in  (key_in),
+        .clk(clk_50mhz),
+        .rst_n(sys_rst_n),
+        .key_in(key_in),
         .key_data(key_data)
     );
 
     // key_data 为高电平有效，只在按键采样周期更新。
     // 检测上升沿可保证长按只触发一次事务。
     always @(posedge clk_50mhz or negedge sys_rst_n) begin
-        if (!sys_rst_n)
-            key_data_d <= 8'd0;
-        else
-            key_data_d <= key_data;
+        if (!sys_rst_n) key_data_d <= 8'd0;
+        else key_data_d <= key_data;
     end
     assign key_press = key_data & ~key_data_d;
 
     // 读请求保持到 EEPROM 控制器接收为止，避免在写操作或写周期等待期间丢失按键事件。
     always @(posedge clk_50mhz or negedge sys_rst_n) begin
-        if (!sys_rst_n)
-            read_pending <= 1'b0;
+        if (!sys_rst_n) read_pending <= 1'b0;
         else begin
-            if (key_press[7])
-                read_pending <= 1'b1;
-            if (eeprom_read_accept)
-                read_pending <= 1'b0;
+            if (key_press[7]) read_pending <= 1'b1;
+            if (eeprom_read_accept) read_pending <= 1'b0;
         end
     end
 
-    assign read_req        = read_pending | key_press[7];
+    assign read_req = read_pending | key_press[7];
     assign read_data_rd_en = !eeprom_read_data_empty;
-    assign write_req       = (|key_press[6:0]) && !eeprom_write_full;
+    assign write_req = (|key_press[6:0]) && !eeprom_write_full;
 
     // 多个按键同时按下时，按位 0 到位 6 的顺序决定优先级。
     assign write_data = key_press[0] ? 8'h55 :
-                        key_press[1] ? 8'hAA :
-                        key_press[2] ? 8'hFF :
-                        key_press[3] ? 8'h00 :
-                        key_press[4] ? 8'hA5 :
-                        key_press[5] ? 8'h5A :
-                        key_press[6] ? 8'h0F : 8'h00;
+        key_press[1] ? 8'hAA : key_press[2] ? 8'hFF : key_press[3] ? 8'h00 :
+        key_press[4] ? 8'hA5 : key_press[5] ? 8'h5A : key_press[6] ? 8'h0F : 8'h00;
 
     // 捕获从 EEPROM 结果 FIFO 读出的字节并送往 LED 显示。
     always @(posedge clk_50mhz or negedge sys_rst_n) begin
-        if (!sys_rst_n)
-            led_data <= 8'd0;
-        else if (!eeprom_read_data_empty)
-            led_data <= eeprom_read_data;
+        if (!sys_rst_n) led_data <= 8'd0;
+        else if (!eeprom_read_data_empty) led_data <= eeprom_read_data;
     end
 
     led u_led (
-        .clk     (clk_50mhz),
-        .rst_n   (sys_rst_n),
+        .clk(clk_50mhz),
+        .rst_n(sys_rst_n),
         .led_data(led_data),
-        .led_out (led_out)
+        .led_out(led_out)
     );
 
     eeprom #(
-        .DEVICE_ADDR         (7'b1010_000),
-        .I2C_CLK_FREQ        (50_000_000),
-        .I2C_SCL_FREQ        (250_000),
-        .WRITE_CYCLE_TIME_US (5_000)
+        .DEVICE_ADDR(7'b1010_000),
+        .I2C_CLK_FREQ(50_000_000),
+        .I2C_SCL_FREQ(250_000),
+        .WRITE_CYCLE_TIME_US(5_000)
     ) u_eeprom (
-        .clk               (clk_50mhz),
-        .rst_n             (sys_rst_n),
-        .write_req         (write_req),
-        .write_addr        (EEPROM_DEBUG_ADDR),
-        .write_data        (write_data),
-        .write_full        (eeprom_write_full),
-        .read_req          (read_req),
-        .read_addr         (EEPROM_DEBUG_ADDR),
-        .read_ready        (eeprom_read_ready),
-        .read_accept       (eeprom_read_accept),
-        .read_data_rd_en   (read_data_rd_en),
-        .read_data         (eeprom_read_data),
-        .read_data_empty   (eeprom_read_data_empty),
-        .read_data_full    (eeprom_read_data_full),
-        .busy              (eeprom_busy),
-        .scl               (eeprom_i2c_scl),
-        .sda               (eeprom_i2c_sda)
+        .clk(clk_50mhz),
+        .rst_n(sys_rst_n),
+        .write_req(write_req),
+        .write_addr(EEPROM_DEBUG_ADDR),
+        .write_data(write_data),
+        .write_full(eeprom_write_full),
+        .read_req(read_req),
+        .read_addr(EEPROM_DEBUG_ADDR),
+        .read_ready(eeprom_read_ready),
+        .read_accept(eeprom_read_accept),
+        .read_data_rd_en(read_data_rd_en),
+        .read_data(eeprom_read_data),
+        .read_data_empty(eeprom_read_data_empty),
+        .read_data_full(eeprom_read_data_full),
+        .busy(eeprom_busy),
+        .scl(eeprom_i2c_scl),
+        .sda(eeprom_i2c_sda)
     );
 
 endmodule
