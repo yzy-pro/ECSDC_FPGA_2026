@@ -476,7 +476,7 @@ Pin
 GRS_N;1
 
 Inst
-N7_0/gateop_perm;gopLUT5
+N7_0/gateop;gopLUT5
 Pin
 Z;2
 L0;1
@@ -733,13 +733,6 @@ O;2
 T;2
 IN;1
 MI;1
-
-Inst
-gopCLKROUTE_S_AB_130_325;gopCLKROUTE
-Pin
-Z;2
-L7in;1
-M;1
 
 Inst
 key_data_d[0]/opit_0_inv;gopQ
@@ -1305,7 +1298,7 @@ MIPI_IN;1
 TS;1
 
 Inst
-u_eeprom/N39_1/gateop_perm;gopLUT5
+u_eeprom/N20_1/gateop_perm;gopLUT5
 Pin
 Z;2
 L0;1
@@ -1315,7 +1308,7 @@ L3;1
 L4;1
 
 Inst
-u_eeprom/N39_7/gateop_perm;gopLUT5
+u_eeprom/N20_2/gateop_perm;gopLUT5
 Pin
 Z;2
 L0;1
@@ -1325,7 +1318,7 @@ L3;1
 L4;1
 
 Inst
-u_eeprom/N47_2/gateop_perm;gopLUT5
+u_eeprom/N87/gateop_perm;gopLUT5
 Pin
 Z;2
 L0;1
@@ -1335,7 +1328,7 @@ L3;1
 L4;1
 
 Inst
-u_eeprom/N114/gateop_perm;gopLUT5
+u_eeprom/N123_4/gateop_perm;gopLUT5
 Pin
 Z;2
 L0;1
@@ -1576,7 +1569,7 @@ L3;1
 L4;1
 
 Inst
-u_eeprom/i2c_driver_inst/N524/gateop_perm;gopLUT5
+u_eeprom/i2c_driver_inst/N522/gateop_perm;gopLUT5
 Pin
 Z;2
 L0;1
@@ -2431,7 +2424,7 @@ D;1
 RS;1
 
 Inst
-u_eeprom/i2c_driver_inst/state_reg[1]/opit_0_inv_L5Q_perm;gopL5Q
+u_eeprom/i2c_driver_inst/state_reg[1]/opit_0_inv_L5Q;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -2615,7 +2608,7 @@ D;1
 RS;1
 
 Inst
-u_eeprom/i2c_driver_inst/state_reg[15]/opit_0_inv_L5Q;gopL5Q
+u_eeprom/i2c_driver_inst/state_reg[15]/opit_0_inv_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -3343,7 +3336,7 @@ D;1
 RS;1
 
 Inst
-u_eeprom/rx_fifo_inst/U_ipml_fifo_eeprom_rx_fifo/U_ipml_fifo_ctrl/SYN_CTRL.syn_wfull/opit_0_inv_AQ;gopAQ
+u_eeprom/rx_fifo_inst/U_ipml_fifo_eeprom_rx_fifo/U_ipml_fifo_ctrl/SYN_CTRL.syn_wfull/opit_0_inv_AQ_perm;gopAQ
 Pin
 CEOUT;2
 Cout;2
@@ -3872,7 +3865,7 @@ D;1
 RS;1
 
 Inst
-u_eeprom/tx_fifo_inst/U_ipml_fifo_eeprom_tx_fifo/U_ipml_fifo_ctrl/SYN_CTRL.syn_wfull/opit_0_inv_AQ;gopAQ
+u_eeprom/tx_fifo_inst/U_ipml_fifo_eeprom_tx_fifo/U_ipml_fifo_ctrl/SYN_CTRL.syn_wfull/opit_0_inv_AQ_perm;gopAQ
 Pin
 CEOUT;2
 Cout;2
@@ -4487,7 +4480,7 @@ L3;1
 L4;1
 
 Inst
-u_key/cnt_detect[0]/opit_0_inv_L5Q_perm;gopL5Q
+u_key/cnt_detect[0]/opit_0_inv_L5Q;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -4583,7 +4576,7 @@ I14;1
 RS;1
 
 Inst
-u_key/cnt_detect[6]/opit_0_inv_L5Q;gopL5Q
+u_key/cnt_detect[6]/opit_0_inv_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -4751,7 +4744,7 @@ I14;1
 RS;1
 
 Inst
-u_key/cnt_detect[14]/opit_0_inv_L5Q;gopL5Q
+u_key/cnt_detect[14]/opit_0_inv_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -4905,7 +4898,7 @@ I14;1
 RS;1
 
 Inst
-u_key/key_data[0]/opit_0_inv_L5Q;gopL5Q
+u_key/key_data[0]/opit_0_inv_L5Q_perm;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -4921,7 +4914,7 @@ L4;1
 RS;1
 
 Inst
-u_key/key_data[1]/opit_0_inv_L5Q_perm;gopL5Q
+u_key/key_data[1]/opit_0_inv_L5Q;gopL5Q
 Pin
 CEOUT;2
 Q;2
@@ -5482,9 +5475,6 @@ ntR50;
 ntR51;
 ntR52;
 ntR53;
-ntR54;
-ntR55;
-ntR56;
 nt_eeprom_i2c_scl;
 nt_eeprom_i2c_sda;
 nt_hard_wire_0;
@@ -5507,8 +5497,8 @@ sys_rst_n_ibuf/ntD;
 u_eeprom.i2c_driver_inst.sda_tri/ntI;
 u_eeprom.i2c_driver_inst.sda_tri/ntO;
 u_eeprom.i2c_driver_inst.sda_tri/ntT;
-u_eeprom/N47;
-u_eeprom/N114;
+u_eeprom/N20;
+u_eeprom/N87;
 u_eeprom/N135;
 u_eeprom/N139;
 u_eeprom/N158_inv;
@@ -5523,7 +5513,7 @@ u_eeprom/i2c_driver_inst/N97;
 u_eeprom/i2c_driver_inst/N440;
 u_eeprom/i2c_driver_inst/N462;
 u_eeprom/i2c_driver_inst/N516;
-u_eeprom/i2c_driver_inst/N524;
+u_eeprom/i2c_driver_inst/N522;
 u_eeprom/i2c_driver_inst/N765;
 u_eeprom/i2c_driver_inst/N773;
 u_eeprom/i2c_driver_inst/N782;
@@ -5660,14 +5650,14 @@ nt_led_out[4];
 nt_led_out[5];
 nt_led_out[6];
 nt_led_out[7];
-u_eeprom/N90_1.co [2];
-u_eeprom/N90_1.co [4];
-u_eeprom/N90_1.co [6];
-u_eeprom/N90_1.co [8];
-u_eeprom/N90_1.co [10];
-u_eeprom/N90_1.co [12];
-u_eeprom/N90_1.co [14];
-u_eeprom/N90_1.co [16];
+u_eeprom/N63_1.co [2];
+u_eeprom/N63_1.co [4];
+u_eeprom/N63_1.co [6];
+u_eeprom/N63_1.co [8];
+u_eeprom/N63_1.co [10];
+u_eeprom/N63_1.co [12];
+u_eeprom/N63_1.co [14];
+u_eeprom/N63_1.co [16];
 u_eeprom/N166 [4];
 u_eeprom/ctrl_state_reg [0];
 u_eeprom/ctrl_state_reg [2];
