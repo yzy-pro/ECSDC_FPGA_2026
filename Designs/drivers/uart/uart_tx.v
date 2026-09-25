@@ -17,7 +17,8 @@ module uart_tx #(
     output wire       sys_uart_tx,
 
     input  wire [7:0] uart_data_tx,
-    input  wire       uart_data_valid_tx
+    input  wire       uart_data_valid_tx,
+    output wire       uart_busy
 );
 
     // 采用四舍五入计算每个串口数据位对应的时钟周期数。
@@ -167,5 +168,7 @@ module uart_tx #(
                          (current_state == ST_DATA)   ? tx_data_latch[bit_index] :
                          (current_state == ST_PARITY) ? parity_bit :
                                                         1'b1;
+
+    assign uart_busy = (current_state != ST_IDLE);
 
 endmodule

@@ -9,22 +9,37 @@
         <row>
             <data>ntclkbufg_0</data>
             <data>clkbufg_0/gopclkbufg</data>
-            <data>89</data>
+            <data>314</data>
         </row>
         <row>
-            <data>u_uart_rx/sys_rst_n_inv</data>
-            <data>u_uart_rx/sys_rst_n_inv</data>
-            <data>87</data>
+            <data>u_cboard_imu/u_uart_rx/sys_rst_n_inv</data>
+            <data>u_cboard_imu/u_uart_rx/sys_rst_n_inv</data>
+            <data>312</data>
         </row>
         <row>
             <data>ntclkbufg_1</data>
             <data>clkbufg_1/gopclkbufg</data>
-            <data>74</data>
+            <data>178</data>
         </row>
         <row>
             <data>sys_domain_rst_n_inv</data>
             <data>sys_domain_rst_n_inv</data>
-            <data>72</data>
+            <data>176</data>
+        </row>
+        <row>
+            <data>u_cp2102/tx_current_state_reg[2]</data>
+            <data>u_cp2102/tx_current_state_reg[2]</data>
+            <data>62</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/N333</data>
+            <data>u_cboard_imu/N333_6/gateop</data>
+            <data>50</data>
+        </row>
+        <row>
+            <data>u_cp2102/N187</data>
+            <data>u_cp2102/xfer_current_state_fsm[1:0]_6/gateop</data>
+            <data>48</data>
         </row>
         <row>
             <data>tx_toggle_sync</data>
@@ -32,23 +47,18 @@
             <data>34</data>
         </row>
         <row>
-            <data>rx_toggle_sync</data>
-            <data>rx_toggle_sync</data>
-            <data>33</data>
-        </row>
-        <row>
             <data>tx_toggle_delay</data>
             <data>tx_toggle_delay</data>
             <data>33</data>
         </row>
         <row>
-            <data>N72</data>
-            <data>N72/gateop</data>
-            <data>32</data>
+            <data>rx_toggle_sync</data>
+            <data>rx_toggle_sync</data>
+            <data>33</data>
         </row>
         <row>
-            <data>N70</data>
-            <data>N70/gateop</data>
+            <data>N61</data>
+            <data>N61/gateop</data>
             <data>32</data>
         </row>
         <row>
@@ -57,128 +67,418 @@
             <data>32</data>
         </row>
         <row>
-            <data>u_uart_rx/_N272_inv</data>
-            <data>u_uart_rx/N127_19_inv/gateop</data>
+            <data>N59</data>
+            <data>N59/gateop</data>
+            <data>32</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_uart_rx/_N557_inv</data>
+            <data>u_cboard_imu/u_uart_rx/N127_19_inv/gateop</data>
             <data>31</data>
         </row>
         <row>
-            <data>u_uart_rx/rx_sync</data>
-            <data>u_uart_rx/rx_sync</data>
+            <data>u_cp2102/byte_index[1]</data>
+            <data>u_cp2102/byte_index[1]</data>
+            <data>30</data>
+        </row>
+        <row>
+            <data>u_cp2102/byte_index[2]</data>
+            <data>u_cp2102/byte_index[2]</data>
+            <data>29</data>
+        </row>
+        <row>
+            <data>u_cp2102/byte_index[0]</data>
+            <data>u_cp2102/byte_index[0]</data>
+            <data>23</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/current_state_reg[2]</data>
+            <data>u_cboard_imu/current_state_reg[2]</data>
+            <data>22</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/fifo_wr_full</data>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.asyn_wfull</data>
+            <data>14</data>
+        </row>
+        <row>
+            <data>u_cp2102/tx_fifo_wr_full</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.asyn_wfull</data>
+            <data>13</data>
+        </row>
+        <row>
+            <data>u_cp2102/tx_fifo_rd_empty</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.asyn_rempty</data>
+            <data>13</data>
+        </row>
+        <row>
+            <data>attitude_empty</data>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.asyn_rempty</data>
+            <data>13</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/payload_index[0]</data>
+            <data>u_cboard_imu/payload_index[0]</data>
             <data>12</data>
         </row>
         <row>
-            <data>u_uart_rx/bit_index[0]</data>
-            <data>u_uart_rx/bit_index[0]</data>
+            <data>u_cboard_imu/payload_index[1]</data>
+            <data>u_cboard_imu/payload_index[1]</data>
             <data>12</data>
         </row>
         <row>
-            <data>u_uart_rx/current_state_reg[1]</data>
-            <data>u_uart_rx/current_state_reg[1]</data>
+            <data>u_cboard_imu/u_uart_rx/rx_sync</data>
+            <data>u_cboard_imu/u_uart_rx/rx_sync</data>
             <data>12</data>
         </row>
         <row>
-            <data>u_uart_rx/bit_index[1]</data>
-            <data>u_uart_rx/bit_index[1]</data>
+            <data>u_cboard_imu/payload_index[2]</data>
+            <data>u_cboard_imu/payload_index[2]</data>
+            <data>12</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_uart_rx/bit_index[0]</data>
+            <data>u_cboard_imu/u_uart_rx/bit_index[0]</data>
+            <data>12</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_uart_rx/current_state_reg[1]</data>
+            <data>u_cboard_imu/u_uart_rx/current_state_reg[1]</data>
+            <data>12</data>
+        </row>
+        <row>
+            <data>u_cp2102/byte_index[3]</data>
+            <data>u_cp2102/byte_index[3]</data>
+            <data>12</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_uart_rx/bit_index[1]</data>
+            <data>u_cboard_imu/u_uart_rx/bit_index[1]</data>
             <data>11</data>
         </row>
         <row>
-            <data>u_uart_tx/current_state_reg[1]</data>
-            <data>u_uart_tx/current_state_reg[1]</data>
+            <data>u_cboard_imu/uart_data_rx[6]</data>
+            <data>u_cboard_imu/u_uart_rx/uart_data_rx[6]</data>
             <data>11</data>
         </row>
         <row>
-            <data>u_uart_rx/bit_index[2]</data>
-            <data>u_uart_rx/bit_index[2]</data>
+            <data>u_cboard_imu/uart_data_valid_rx</data>
+            <data>u_cboard_imu/u_uart_rx/uart_data_valid_rx</data>
+            <data>11</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/uart_data_rx[3]</data>
+            <data>u_cboard_imu/u_uart_rx/uart_data_rx[3]</data>
+            <data>11</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/uart_data_rx[4]</data>
+            <data>u_cboard_imu/u_uart_rx/uart_data_rx[4]</data>
+            <data>11</data>
+        </row>
+        <row>
+            <data>u_cp2102/u_uart_tx/current_state_reg[1]</data>
+            <data>u_cp2102/u_uart_tx/current_state_reg[1]</data>
+            <data>11</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_uart_rx/bit_index[2]</data>
+            <data>u_cboard_imu/u_uart_rx/bit_index[2]</data>
             <data>10</data>
         </row>
         <row>
-            <data>uart_data_valid_rx</data>
-            <data>u_uart_rx/uart_data_valid_rx</data>
+            <data>u_cboard_imu/uart_data_rx[5]</data>
+            <data>u_cboard_imu/u_uart_rx/uart_data_rx[5]</data>
             <data>10</data>
         </row>
         <row>
-            <data>u_uart_rx/current_state_reg[0]</data>
-            <data>u_uart_rx/current_state_reg[0]</data>
+            <data>u_cboard_imu/uart_data_rx[0]</data>
+            <data>u_cboard_imu/u_uart_rx/uart_data_rx[0]</data>
+            <data>10</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/uart_data_rx[1]</data>
+            <data>u_cboard_imu/u_uart_rx/uart_data_rx[1]</data>
+            <data>10</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/uart_data_rx[2]</data>
+            <data>u_cboard_imu/u_uart_rx/uart_data_rx[2]</data>
+            <data>10</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/uart_data_rx[7]</data>
+            <data>u_cboard_imu/u_uart_rx/uart_data_rx[7]</data>
+            <data>10</data>
+        </row>
+        <row>
+            <data>u_cp2102/u_uart_tx/current_state_reg[0]</data>
+            <data>u_cp2102/u_uart_tx/current_state_reg[0]</data>
             <data>9</data>
         </row>
         <row>
-            <data>u_uart_rx/N134</data>
-            <data>u_uart_rx/N134_2_3/gateop</data>
+            <data>u_cboard_imu/u_uart_rx/current_state_reg[0]</data>
+            <data>u_cboard_imu/u_uart_rx/current_state_reg[0]</data>
             <data>9</data>
         </row>
         <row>
-            <data>u_uart_tx/current_state_reg[0]</data>
-            <data>u_uart_tx/current_state_reg[0]</data>
+            <data>u_cboard_imu/u_uart_rx/N134</data>
+            <data>u_cboard_imu/u_uart_rx/N134_2_3/gateop</data>
             <data>9</data>
         </row>
         <row>
-            <data>u_uart_rx/N174</data>
-            <data>u_uart_rx/N174/gateop</data>
+            <data>u_cboard_imu/N248</data>
+            <data>u_cboard_imu/N248/gateop</data>
             <data>8</data>
         </row>
         <row>
-            <data>u_uart_tx/N153</data>
-            <data>u_uart_tx/N153/gateop</data>
+            <data>u_cboard_imu/N264</data>
+            <data>u_cboard_imu/N264/gateop</data>
             <data>8</data>
         </row>
         <row>
-            <data>u_uart_rx/current_state_reg[2]</data>
-            <data>u_uart_rx/current_state_reg[2]</data>
+            <data>u_cboard_imu/u_uart_rx/current_state_reg[2]</data>
+            <data>u_cboard_imu/u_uart_rx/current_state_reg[2]</data>
             <data>8</data>
         </row>
         <row>
-            <data>u_uart_tx/current_state_reg[2]</data>
-            <data>u_uart_tx/current_state_reg[2]</data>
+            <data>u_cboard_imu/N296</data>
+            <data>u_cboard_imu/N296/gateop</data>
+            <data>8</data>
+        </row>
+        <row>
+            <data>u_cp2102/u_uart_tx/N155</data>
+            <data>u_cp2102/u_uart_tx/N155/gateop</data>
+            <data>8</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/N280</data>
+            <data>u_cboard_imu/N280_3/gateop</data>
+            <data>8</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/N309</data>
+            <data>u_cboard_imu/N309/gateop</data>
+            <data>8</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/N216</data>
+            <data>u_cboard_imu/N216/gateop</data>
+            <data>8</data>
+        </row>
+        <row>
+            <data>u_cp2102/xfer_current_state_reg [0]</data>
+            <data>u_cp2102/xfer_current_state_reg[0]</data>
+            <data>8</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_uart_rx/N174</data>
+            <data>u_cboard_imu/u_uart_rx/N174/gateop</data>
+            <data>8</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/N232</data>
+            <data>u_cboard_imu/N232/gateop</data>
+            <data>8</data>
+        </row>
+        <row>
+            <data>u_cp2102/u_uart_tx/current_state_reg[2]</data>
+            <data>u_cp2102/u_uart_tx/current_state_reg[2]</data>
             <data>7</data>
         </row>
         <row>
-            <data>u_uart_tx/clk_count[0]</data>
-            <data>u_uart_tx/clk_count[0]</data>
+            <data>u_cp2102/xfer_current_state_reg [1]</data>
+            <data>u_cp2102/xfer_current_state_reg[1]</data>
+            <data>7</data>
+        </row>
+        <row>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/rd_addr[1]</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rbin[1]</data>
             <data>6</data>
         </row>
         <row>
-            <data>u_uart_rx/bit_sample</data>
-            <data>u_uart_rx/N145/gateop</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/wr_addr[2]</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[2]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/rd_addr[0]</data>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rbin[0]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cp2102/u_uart_tx/clk_count[0]</data>
+            <data>u_cp2102/u_uart_tx/clk_count[0]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/fifo_wr_full_inv_1</data>
+            <data>u_cboard_imu/fifo_wr_full_inv_1</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cp2102/N234_inv</data>
+            <data>u_cp2102/N234_1_2/gateop</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cp2102/N287_0_</data>
+            <data>u_cp2102/tx_fifo_wr_full_inv_1</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cp2102/N288[1]</data>
+            <data>u_cp2102/tx_fifo_rd_empty_inv</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cp2102/tx_current_state_reg[0]</data>
+            <data>u_cp2102/tx_current_state_reg[0]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/rempty_inv</data>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.asyn_rempty_inv</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/rd_addr[1]</data>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rbin[1]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/rd_addr[2]</data>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rbin[2]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/wr_addr[3]</data>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[3]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/rd_addr[2]</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rbin[2]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/wr_addr[3]</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[3]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/wr_addr[1]</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[1]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/wr_addr[0]</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[0]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/wr_addr[4]</data>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[4]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/wr_addr[2]</data>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[2]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/rd_addr[3]</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rbin[3]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/rd_addr[3]</data>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rbin[3]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/rd_addr[4]</data>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rbin[4]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/wr_addr[0]</data>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[0]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/wr_addr[4]</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[4]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/rd_addr[4]</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rbin[4]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/wr_addr[1]</data>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[1]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/rd_addr[0]</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rbin[0]</data>
+            <data>6</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/N360</data>
+            <data>u_cboard_imu/N360_3/gateop</data>
             <data>5</data>
         </row>
         <row>
-            <data>u_uart_tx/bit_index[0]</data>
-            <data>u_uart_tx/bit_index[0]</data>
+            <data>u_cp2102/u_uart_tx/N130</data>
+            <data>u_cp2102/u_uart_tx/N192_2/gateop</data>
             <data>5</data>
         </row>
         <row>
-            <data>u_uart_tx/clk_count[1]</data>
-            <data>u_uart_tx/clk_count[1]</data>
+            <data>u_cboard_imu/N193</data>
+            <data>u_cboard_imu/N193_7/gateop</data>
             <data>5</data>
         </row>
         <row>
-            <data>u_uart_tx/bit_index[1]</data>
-            <data>u_uart_tx/bit_index[1]</data>
+            <data>u_cp2102/u_uart_tx/clk_count[1]</data>
+            <data>u_cp2102/u_uart_tx/clk_count[1]</data>
             <data>5</data>
         </row>
         <row>
-            <data>tx_pending</data>
-            <data>tx_pending</data>
+            <data>u_cp2102/u_uart_tx/bit_index[1]</data>
+            <data>u_cp2102/u_uart_tx/bit_index[1]</data>
             <data>5</data>
         </row>
         <row>
-            <data>pll_reset_n_inv</data>
-            <data>N7_0/gateop</data>
+            <data>u_cp2102/u_uart_tx/bit_index[0]</data>
+            <data>u_cp2102/u_uart_tx/bit_index[0]</data>
+            <data>5</data>
+        </row>
+        <row>
+            <data>u_cboard_imu/u_uart_rx/bit_sample</data>
+            <data>u_cboard_imu/u_uart_rx/N145/gateop</data>
+            <data>5</data>
+        </row>
+        <row>
+            <data>u_cp2102/tx_fifo_rd_en</data>
+            <data>u_cp2102/tx_current_state_reg[1]</data>
+            <data>5</data>
+        </row>
+        <row>
+            <data>u_cp2102/tx_fifo_wr_en</data>
+            <data>u_cp2102/N11/gateop</data>
             <data>4</data>
         </row>
         <row>
-            <data>u_uart_tx/bit_index[2]</data>
-            <data>u_uart_tx/bit_index[2]</data>
+            <data>u_cboard_imu/u_uart_rx/clk_count[0]</data>
+            <data>u_cboard_imu/u_uart_rx/clk_count[0]</data>
             <data>4</data>
         </row>
         <row>
-            <data>u_uart_rx/clk_count[3]</data>
-            <data>u_uart_rx/clk_count[3]</data>
-            <data>4</data>
-        </row>
-        <row>
-            <data>u_uart_rx/clk_count[0]</data>
-            <data>u_uart_rx/clk_count[0]</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/N66[4]</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/N66_5/gateop</data>
             <data>4</data>
         </row>
         <row>
@@ -187,324 +487,24 @@
             <data>4</data>
         </row>
         <row>
-            <data>u_uart_tx/clk_count[2]</data>
-            <data>u_uart_tx/clk_count[2]</data>
+            <data>u_cp2102/uart_data_valid_tx</data>
+            <data>u_cp2102/tx_current_state_reg[3]</data>
             <data>4</data>
         </row>
         <row>
-            <data>tx_led_count[8]</data>
-            <data>tx_led_count[8]</data>
-            <data>3</data>
+            <data>u_cboard_imu/u_uart_rx/clk_count[3]</data>
+            <data>u_cboard_imu/u_uart_rx/clk_count[3]</data>
+            <data>4</data>
         </row>
         <row>
-            <data>tx_led_count[7]</data>
-            <data>tx_led_count[7]</data>
-            <data>3</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/N66[3]</data>
+            <data>u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/N66_4/gateop</data>
+            <data>4</data>
         </row>
         <row>
-            <data>tx_led_count[3]</data>
-            <data>tx_led_count[3]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[4]</data>
-            <data>tx_led_count[4]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[5]</data>
-            <data>tx_led_count[5]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[17]</data>
-            <data>tx_led_count[17]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[6]</data>
-            <data>tx_led_count[6]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[9]</data>
-            <data>tx_led_count[9]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[19]</data>
-            <data>tx_led_count[19]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[15]</data>
-            <data>tx_led_count[15]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[18]</data>
-            <data>tx_led_count[18]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[16]</data>
-            <data>tx_led_count[16]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[20]</data>
-            <data>tx_led_count[20]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[14]</data>
-            <data>tx_led_count[14]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[10]</data>
-            <data>tx_led_count[10]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[11]</data>
-            <data>tx_led_count[11]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[21]</data>
-            <data>tx_led_count[21]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[12]</data>
-            <data>tx_led_count[12]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[2]</data>
-            <data>tx_led_count[2]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[1]</data>
-            <data>tx_led_count[1]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[9]</data>
-            <data>rx_led_count[9]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[10]</data>
-            <data>rx_led_count[10]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[11]</data>
-            <data>rx_led_count[11]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[12]</data>
-            <data>rx_led_count[12]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[13]</data>
-            <data>rx_led_count[13]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[14]</data>
-            <data>rx_led_count[14]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[8]</data>
-            <data>rx_led_count[8]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[7]</data>
-            <data>rx_led_count[7]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[6]</data>
-            <data>rx_led_count[6]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[0]</data>
-            <data>rx_led_count[0]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[1]</data>
-            <data>rx_led_count[1]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[2]</data>
-            <data>rx_led_count[2]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[3]</data>
-            <data>rx_led_count[3]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[4]</data>
-            <data>rx_led_count[4]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[5]</data>
-            <data>rx_led_count[5]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[15]</data>
-            <data>rx_led_count[15]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[16]</data>
-            <data>rx_led_count[16]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[26]</data>
-            <data>rx_led_count[26]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[27]</data>
-            <data>rx_led_count[27]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[28]</data>
-            <data>rx_led_count[28]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[29]</data>
-            <data>rx_led_count[29]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[30]</data>
-            <data>rx_led_count[30]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[0]</data>
-            <data>tx_led_count[0]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[25]</data>
-            <data>rx_led_count[25]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[24]</data>
-            <data>rx_led_count[24]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[23]</data>
-            <data>rx_led_count[23]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[17]</data>
-            <data>rx_led_count[17]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[18]</data>
-            <data>rx_led_count[18]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[19]</data>
-            <data>rx_led_count[19]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[20]</data>
-            <data>rx_led_count[20]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[21]</data>
-            <data>rx_led_count[21]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>rx_led_count[22]</data>
-            <data>rx_led_count[22]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[22]</data>
-            <data>tx_led_count[22]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>tx_led_count[23]</data>
-            <data>tx_led_count[23]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>u_uart_rx/N262_inv</data>
-            <data>u_uart_rx/N262_1_4/gateop</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>u_uart_rx/_N610</data>
-            <data>u_uart_rx/N143_30_31/gateop</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>u_uart_rx/clk_count[1]</data>
-            <data>u_uart_rx/clk_count[1]</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>nt_sys_uart_tx</data>
-            <data>u_uart_tx/sys_uart_tx_2/gateop</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>u_uart_tx/N128</data>
-            <data>u_uart_tx/N190_1/gateop</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>u_uart_tx/N176_inv</data>
-            <data>u_uart_tx/N176_2/gateop</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>u_uart_tx/N210_inv</data>
-            <data>u_uart_tx/N210_1_1_3/gateop</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>u_uart_tx/bit_done</data>
-            <data>u_uart_tx/N126/gateop</data>
-            <data>3</data>
-        </row>
-        <row>
-            <data>u_uart_tx/clk_count[3]</data>
-            <data>u_uart_tx/clk_count[3]</data>
-            <data>3</data>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/wbin[5]</data>
+            <data>u_cboard_imu/u_cboard_imu_rx_fifo/U_ipml_fifo_cboard_imu_rx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[5]</data>
+            <data>4</data>
         </row>
     </table>
 </tables>

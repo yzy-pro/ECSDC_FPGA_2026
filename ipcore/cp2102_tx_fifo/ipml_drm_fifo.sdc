@@ -1,0 +1,6 @@
+set wr_clk [get_clocks -of_object [get_pins {U_ipml_fifo*.wr_clk}]]
+set rd_clk [get_clocks -of_object [get_pins {U_ipml_fifo*.rd_clk}]]
+set period_wr [get_property -min -period $wr_clk]
+set period_rd [get_property -min -period $rd_clk]
+set_max_delay -datapath_only $period_rd -from [get_cells {*U_ipml_fifo*.U_ipml_fifo_ctrl*.ASYN_CTRL.rptr[*]}] -to [get_cells {*U_ipml_fifo*.U_ipml_fifo_ctrl*.ASYN_CTRL.wrptr1[*]}]
+set_max_delay -datapath_only $period_wr -from [get_cells {*U_ipml_fifo*.U_ipml_fifo_ctrl*.ASYN_CTRL.wptr[*]}] -to [get_cells {*U_ipml_fifo*.U_ipml_fifo_ctrl*.ASYN_CTRL.rwptr1[*]}]
