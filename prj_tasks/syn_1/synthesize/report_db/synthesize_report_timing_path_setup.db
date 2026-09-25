@@ -1,0 +1,2776 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="synthesize_report_timing_path_setup" title="Setup Path Summary" column_number="17">
+        <column_headers>
+            <data>Slack</data>
+            <data>Logic Levels</data>
+            <data>High Fanout</data>
+            <data>Start Point</data>
+            <data>End Point</data>
+            <data>Exception</data>
+            <data>Launch Clock</data>
+            <data>Capture Clock</data>
+            <data>Clock Edges</data>
+            <data>Clock Skew</data>
+            <data>Launch Clock Delay</data>
+            <data>Capture Clock Delay</data>
+            <data>Clock Pessimism Removal</data>
+            <data>Requirement</data>
+            <data>Data delay</data>
+            <data>Logic delay</data>
+            <data>Route delay</data>
+        </column_headers>
+        <row>
+            <data>-0.197</data>
+            <data>0</data>
+            <data>2</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="134">rx_activity_toggle/CLK</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">rx_toggle_meta/D</data>
+            <data/>
+            <data>uart_clk_14m7456</data>
+            <data>pll_sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data>-0.018</data>
+            <data>3.437</data>
+            <data>3.419</data>
+            <data>0.000</data>
+            <data>0.870</data>
+            <data>0.928</data>
+            <data>0.375 (40.4%)</data>
+            <data>0.553 (59.6%)</data>
+            <general_container>
+                <data>Path #1: setup slack is -0.197(VIOLATED)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 343.495" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock uart_clk_14m7456 (rising edge)</data>
+                            <data/>
+                            <data>339.130</data>
+                            <data>339.130</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>339.130</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>339.130</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>340.510</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>341.601</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.101</data>
+                            <data>341.702</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=89)</data>
+                            <data>0.865</data>
+                            <data>342.567</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="29">uart_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="134">rx_activity_toggle/CLK (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>tco</data>
+                            <data>0.375</data>
+                            <data>342.942</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="134">rx_activity_toggle/Q (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>343.495</data>
+                            <data> </data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="44">rx_activity_toggle</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">rx_toggle_meta/D (GTP_DFF_C)</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 343.298" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>340.000</data>
+                            <data>340.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>340.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>340.000</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>341.380</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>342.471</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.107</data>
+                            <data>342.578</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=74)</data>
+                            <data>0.841</data>
+                            <data>343.419</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="28">pll_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">rx_toggle_meta/CLK (GTP_DFF_C)</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>343.419</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>343.269</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>0.029</data>
+                            <data>343.298</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>-0.197</data>
+            <data>0</data>
+            <data>2</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="134">tx_activity_toggle/CLK</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_toggle_meta/D</data>
+            <data/>
+            <data>uart_clk_14m7456</data>
+            <data>pll_sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data>-0.018</data>
+            <data>3.437</data>
+            <data>3.419</data>
+            <data>0.000</data>
+            <data>0.870</data>
+            <data>0.928</data>
+            <data>0.375 (40.4%)</data>
+            <data>0.553 (59.6%)</data>
+            <general_container>
+                <data>Path #2: setup slack is -0.197(VIOLATED)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 343.495" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock uart_clk_14m7456 (rising edge)</data>
+                            <data/>
+                            <data>339.130</data>
+                            <data>339.130</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>339.130</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>339.130</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>340.510</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>341.601</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.101</data>
+                            <data>341.702</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=89)</data>
+                            <data>0.865</data>
+                            <data>342.567</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="29">uart_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="134">tx_activity_toggle/CLK (GTP_DFF_C)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>tco</data>
+                            <data>0.375</data>
+                            <data>342.942</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="134">tx_activity_toggle/Q (GTP_DFF_C)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>343.495</data>
+                            <data> </data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="45">tx_activity_toggle</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_toggle_meta/D (GTP_DFF_C)</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 343.298" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>340.000</data>
+                            <data>340.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>340.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>340.000</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>341.380</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>342.471</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.107</data>
+                            <data>342.578</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=74)</data>
+                            <data>0.841</data>
+                            <data>343.419</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="28">pll_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_toggle_meta/CLK (GTP_DFF_C)</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>343.419</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>343.269</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>0.029</data>
+                            <data>343.298</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>15.268</data>
+            <data>4</data>
+            <data>32</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[0]/CLK</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[0]/CE</data>
+            <data/>
+            <data>pll_sys_clk_50mhz</data>
+            <data>pll_sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data>0.000</data>
+            <data>3.419</data>
+            <data>3.419</data>
+            <data>0.000</data>
+            <data>20.000</data>
+            <data>3.965</data>
+            <data>1.149 (29.0%)</data>
+            <data>2.816 (71.0%)</data>
+            <general_container>
+                <data>Path #3: setup slack is 15.268(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 7.384" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>1.380</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>2.471</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.107</data>
+                            <data>2.578</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=74)</data>
+                            <data>0.841</data>
+                            <data>3.419</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="28">pll_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[0]/CLK (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>tco</data>
+                            <data>0.375</data>
+                            <data>3.794</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[0]/Q (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.605</data>
+                            <data>4.399</data>
+                            <data> </data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="53">tx_led_count[0]</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">N45_mux30_5/I0 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.267</data>
+                            <data>4.666</data>
+                            <data>r</data>
+                            <data object_valid="true">N45_mux30_5/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>5.130</data>
+                            <data> </data>
+                            <data object_valid="true">_N738</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">N45_mux30_29/I1 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.230</data>
+                            <data>5.360</data>
+                            <data>r</data>
+                            <data object_valid="true">N45_mux30_29/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>5.824</data>
+                            <data> </data>
+                            <data object_valid="true">_N762</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">N45_mux31/I3 (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>5.969</data>
+                            <data>r</data>
+                            <data object_valid="true">N45_mux31/Z (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>6.522</data>
+                            <data> </data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="54">led_cmd[6]</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">N72/I2 (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.132</data>
+                            <data>6.654</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">N72/Z (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=32)</data>
+                            <data>0.730</data>
+                            <data>7.384</data>
+                            <data> </data>
+                            <data object_valid="true">N72</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[0]/CE (GTP_DFF_CE)</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 22.652" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>20.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>20.000</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>21.380</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>22.471</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.107</data>
+                            <data>22.578</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=74)</data>
+                            <data>0.841</data>
+                            <data>23.419</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="28">pll_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[0]/CLK (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>23.419</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>23.269</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.617</data>
+                            <data>22.652</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>15.268</data>
+            <data>4</data>
+            <data>32</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[0]/CLK</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[1]/CE</data>
+            <data/>
+            <data>pll_sys_clk_50mhz</data>
+            <data>pll_sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data>0.000</data>
+            <data>3.419</data>
+            <data>3.419</data>
+            <data>0.000</data>
+            <data>20.000</data>
+            <data>3.965</data>
+            <data>1.149 (29.0%)</data>
+            <data>2.816 (71.0%)</data>
+            <general_container>
+                <data>Path #4: setup slack is 15.268(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 7.384" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>1.380</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>2.471</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.107</data>
+                            <data>2.578</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=74)</data>
+                            <data>0.841</data>
+                            <data>3.419</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="28">pll_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[0]/CLK (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>tco</data>
+                            <data>0.375</data>
+                            <data>3.794</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[0]/Q (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.605</data>
+                            <data>4.399</data>
+                            <data> </data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="53">tx_led_count[0]</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">N45_mux30_5/I0 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.267</data>
+                            <data>4.666</data>
+                            <data>r</data>
+                            <data object_valid="true">N45_mux30_5/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>5.130</data>
+                            <data> </data>
+                            <data object_valid="true">_N738</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">N45_mux30_29/I1 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.230</data>
+                            <data>5.360</data>
+                            <data>r</data>
+                            <data object_valid="true">N45_mux30_29/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>5.824</data>
+                            <data> </data>
+                            <data object_valid="true">_N762</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">N45_mux31/I3 (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>5.969</data>
+                            <data>r</data>
+                            <data object_valid="true">N45_mux31/Z (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>6.522</data>
+                            <data> </data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="54">led_cmd[6]</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">N72/I2 (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.132</data>
+                            <data>6.654</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">N72/Z (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=32)</data>
+                            <data>0.730</data>
+                            <data>7.384</data>
+                            <data> </data>
+                            <data object_valid="true">N72</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[1]/CE (GTP_DFF_CE)</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 22.652" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>20.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>20.000</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>21.380</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>22.471</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.107</data>
+                            <data>22.578</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=74)</data>
+                            <data>0.841</data>
+                            <data>23.419</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="28">pll_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[1]/CLK (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>23.419</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>23.269</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.617</data>
+                            <data>22.652</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>15.268</data>
+            <data>4</data>
+            <data>32</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[0]/CLK</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[2]/CE</data>
+            <data/>
+            <data>pll_sys_clk_50mhz</data>
+            <data>pll_sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data>0.000</data>
+            <data>3.419</data>
+            <data>3.419</data>
+            <data>0.000</data>
+            <data>20.000</data>
+            <data>3.965</data>
+            <data>1.149 (29.0%)</data>
+            <data>2.816 (71.0%)</data>
+            <general_container>
+                <data>Path #5: setup slack is 15.268(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 7.384" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>1.380</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>2.471</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.107</data>
+                            <data>2.578</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=74)</data>
+                            <data>0.841</data>
+                            <data>3.419</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="28">pll_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[0]/CLK (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>tco</data>
+                            <data>0.375</data>
+                            <data>3.794</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[0]/Q (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.605</data>
+                            <data>4.399</data>
+                            <data> </data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="53">tx_led_count[0]</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">N45_mux30_5/I0 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.267</data>
+                            <data>4.666</data>
+                            <data>r</data>
+                            <data object_valid="true">N45_mux30_5/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>5.130</data>
+                            <data> </data>
+                            <data object_valid="true">_N738</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">N45_mux30_29/I1 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.230</data>
+                            <data>5.360</data>
+                            <data>r</data>
+                            <data object_valid="true">N45_mux30_29/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>5.824</data>
+                            <data> </data>
+                            <data object_valid="true">_N762</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">N45_mux31/I3 (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>5.969</data>
+                            <data>r</data>
+                            <data object_valid="true">N45_mux31/Z (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>6.522</data>
+                            <data> </data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="54">led_cmd[6]</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">N72/I2 (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.132</data>
+                            <data>6.654</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">N72/Z (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=32)</data>
+                            <data>0.730</data>
+                            <data>7.384</data>
+                            <data> </data>
+                            <data object_valid="true">N72</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[2]/CE (GTP_DFF_CE)</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 22.652" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>20.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>20.000</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>21.380</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>22.471</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.107</data>
+                            <data>22.578</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=74)</data>
+                            <data>0.841</data>
+                            <data>23.419</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="28">pll_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[2]/CLK (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>23.419</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>23.269</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.617</data>
+                            <data>22.652</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>61.925</data>
+            <data>6</data>
+            <data>9</data>
+            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[12]/CLK</data>
+            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/uart_data_rx[0]/CE</data>
+            <data/>
+            <data>uart_clk_14m7456</data>
+            <data>uart_clk_14m7456</data>
+            <data>rise-rise</data>
+            <data>0.000</data>
+            <data>3.437</data>
+            <data>3.437</data>
+            <data>0.000</data>
+            <data>67.826</data>
+            <data>5.134</data>
+            <data>1.309 (25.5%)</data>
+            <data>3.825 (74.5%)</data>
+            <general_container>
+                <data>Path #6: setup slack is 61.925(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 8.571" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock uart_clk_14m7456 (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>1.380</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>2.471</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.101</data>
+                            <data>2.572</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=89)</data>
+                            <data>0.865</data>
+                            <data>3.437</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="29">uart_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[12]/CLK (GTP_DFF_C)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>tco</data>
+                            <data>0.375</data>
+                            <data>3.812</data>
+                            <data>r</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[12]/Q (GTP_DFF_C)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>4.365</data>
+                            <data> </data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="43">u_uart_rx/clk_count[12]</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">u_uart_rx/N143_30_20/I0 (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.222</data>
+                            <data>4.587</data>
+                            <data>r</data>
+                            <data object_valid="true">u_uart_rx/N143_30_20/Z (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>5.051</data>
+                            <data> </data>
+                            <data object_valid="true">u_uart_rx/_N817</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">u_uart_rx/N143_30_26/I4 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>5.196</data>
+                            <data>r</data>
+                            <data object_valid="true">u_uart_rx/N143_30_26/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>5.660</data>
+                            <data> </data>
+                            <data object_valid="true">u_uart_rx/_N823</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">u_uart_rx/N143_30_29/I4 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>5.805</data>
+                            <data>r</data>
+                            <data object_valid="true">u_uart_rx/N143_30_29/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>6.269</data>
+                            <data> </data>
+                            <data object_valid="true">u_uart_rx/_N826</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">u_uart_rx/N143_30_31/I2 (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>6.414</data>
+                            <data>r</data>
+                            <data object_valid="true">u_uart_rx/N143_30_31/Z (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.605</data>
+                            <data>7.019</data>
+                            <data> </data>
+                            <data object_valid="true">u_uart_rx/_N610</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="48">u_uart_rx/N145/I1 (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>7.164</data>
+                            <data>r</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="48">u_uart_rx/N145/Z (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=5)</data>
+                            <data>0.670</data>
+                            <data>7.834</data>
+                            <data> </data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="48">u_uart_rx/bit_sample</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">u_uart_rx/N134_2_3/I0 (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.132</data>
+                            <data>7.966</data>
+                            <data>f</data>
+                            <data object_valid="true">u_uart_rx/N134_2_3/Z (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=9)</data>
+                            <data>0.605</data>
+                            <data>8.571</data>
+                            <data> </data>
+                            <data object_valid="true">u_uart_rx/N134</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/uart_data_rx[0]/CE (GTP_DFF_CE)</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 70.496" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock uart_clk_14m7456 (rising edge)</data>
+                            <data/>
+                            <data>67.826</data>
+                            <data>67.826</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>67.826</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>67.826</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>69.206</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>70.297</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.101</data>
+                            <data>70.398</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=89)</data>
+                            <data>0.865</data>
+                            <data>71.263</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="29">uart_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/uart_data_rx[0]/CLK (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>71.263</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>71.113</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.617</data>
+                            <data>70.496</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>61.925</data>
+            <data>6</data>
+            <data>9</data>
+            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[12]/CLK</data>
+            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/uart_data_rx[1]/CE</data>
+            <data/>
+            <data>uart_clk_14m7456</data>
+            <data>uart_clk_14m7456</data>
+            <data>rise-rise</data>
+            <data>0.000</data>
+            <data>3.437</data>
+            <data>3.437</data>
+            <data>0.000</data>
+            <data>67.826</data>
+            <data>5.134</data>
+            <data>1.309 (25.5%)</data>
+            <data>3.825 (74.5%)</data>
+            <general_container>
+                <data>Path #7: setup slack is 61.925(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 8.571" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock uart_clk_14m7456 (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>1.380</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>2.471</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.101</data>
+                            <data>2.572</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=89)</data>
+                            <data>0.865</data>
+                            <data>3.437</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="29">uart_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[12]/CLK (GTP_DFF_C)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>tco</data>
+                            <data>0.375</data>
+                            <data>3.812</data>
+                            <data>r</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[12]/Q (GTP_DFF_C)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>4.365</data>
+                            <data> </data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="43">u_uart_rx/clk_count[12]</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">u_uart_rx/N143_30_20/I0 (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.222</data>
+                            <data>4.587</data>
+                            <data>r</data>
+                            <data object_valid="true">u_uart_rx/N143_30_20/Z (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>5.051</data>
+                            <data> </data>
+                            <data object_valid="true">u_uart_rx/_N817</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">u_uart_rx/N143_30_26/I4 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>5.196</data>
+                            <data>r</data>
+                            <data object_valid="true">u_uart_rx/N143_30_26/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>5.660</data>
+                            <data> </data>
+                            <data object_valid="true">u_uart_rx/_N823</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">u_uart_rx/N143_30_29/I4 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>5.805</data>
+                            <data>r</data>
+                            <data object_valid="true">u_uart_rx/N143_30_29/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>6.269</data>
+                            <data> </data>
+                            <data object_valid="true">u_uart_rx/_N826</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">u_uart_rx/N143_30_31/I2 (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>6.414</data>
+                            <data>r</data>
+                            <data object_valid="true">u_uart_rx/N143_30_31/Z (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.605</data>
+                            <data>7.019</data>
+                            <data> </data>
+                            <data object_valid="true">u_uart_rx/_N610</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="48">u_uart_rx/N145/I1 (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>7.164</data>
+                            <data>r</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="48">u_uart_rx/N145/Z (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=5)</data>
+                            <data>0.670</data>
+                            <data>7.834</data>
+                            <data> </data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="48">u_uart_rx/bit_sample</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">u_uart_rx/N134_2_3/I0 (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.132</data>
+                            <data>7.966</data>
+                            <data>f</data>
+                            <data object_valid="true">u_uart_rx/N134_2_3/Z (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=9)</data>
+                            <data>0.605</data>
+                            <data>8.571</data>
+                            <data> </data>
+                            <data object_valid="true">u_uart_rx/N134</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/uart_data_rx[1]/CE (GTP_DFF_CE)</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 70.496" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock uart_clk_14m7456 (rising edge)</data>
+                            <data/>
+                            <data>67.826</data>
+                            <data>67.826</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>67.826</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>67.826</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>69.206</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>70.297</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.101</data>
+                            <data>70.398</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=89)</data>
+                            <data>0.865</data>
+                            <data>71.263</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="29">uart_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/uart_data_rx[1]/CLK (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>71.263</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>71.113</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.617</data>
+                            <data>70.496</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>61.925</data>
+            <data>6</data>
+            <data>9</data>
+            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[12]/CLK</data>
+            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/uart_data_rx[2]/CE</data>
+            <data/>
+            <data>uart_clk_14m7456</data>
+            <data>uart_clk_14m7456</data>
+            <data>rise-rise</data>
+            <data>0.000</data>
+            <data>3.437</data>
+            <data>3.437</data>
+            <data>0.000</data>
+            <data>67.826</data>
+            <data>5.134</data>
+            <data>1.309 (25.5%)</data>
+            <data>3.825 (74.5%)</data>
+            <general_container>
+                <data>Path #8: setup slack is 61.925(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 8.571" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock uart_clk_14m7456 (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>1.380</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>2.471</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.101</data>
+                            <data>2.572</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=89)</data>
+                            <data>0.865</data>
+                            <data>3.437</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="29">uart_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[12]/CLK (GTP_DFF_C)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>tco</data>
+                            <data>0.375</data>
+                            <data>3.812</data>
+                            <data>r</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[12]/Q (GTP_DFF_C)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>4.365</data>
+                            <data> </data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="43">u_uart_rx/clk_count[12]</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">u_uart_rx/N143_30_20/I0 (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.222</data>
+                            <data>4.587</data>
+                            <data>r</data>
+                            <data object_valid="true">u_uart_rx/N143_30_20/Z (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>5.051</data>
+                            <data> </data>
+                            <data object_valid="true">u_uart_rx/_N817</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">u_uart_rx/N143_30_26/I4 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>5.196</data>
+                            <data>r</data>
+                            <data object_valid="true">u_uart_rx/N143_30_26/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>5.660</data>
+                            <data> </data>
+                            <data object_valid="true">u_uart_rx/_N823</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">u_uart_rx/N143_30_29/I4 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>5.805</data>
+                            <data>r</data>
+                            <data object_valid="true">u_uart_rx/N143_30_29/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>6.269</data>
+                            <data> </data>
+                            <data object_valid="true">u_uart_rx/_N826</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">u_uart_rx/N143_30_31/I2 (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>6.414</data>
+                            <data>r</data>
+                            <data object_valid="true">u_uart_rx/N143_30_31/Z (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.605</data>
+                            <data>7.019</data>
+                            <data> </data>
+                            <data object_valid="true">u_uart_rx/_N610</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="48">u_uart_rx/N145/I1 (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>7.164</data>
+                            <data>r</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="48">u_uart_rx/N145/Z (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=5)</data>
+                            <data>0.670</data>
+                            <data>7.834</data>
+                            <data> </data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="48">u_uart_rx/bit_sample</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">u_uart_rx/N134_2_3/I0 (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.132</data>
+                            <data>7.966</data>
+                            <data>f</data>
+                            <data object_valid="true">u_uart_rx/N134_2_3/Z (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=9)</data>
+                            <data>0.605</data>
+                            <data>8.571</data>
+                            <data> </data>
+                            <data object_valid="true">u_uart_rx/N134</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/uart_data_rx[2]/CE (GTP_DFF_CE)</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 70.496" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock uart_clk_14m7456 (rising edge)</data>
+                            <data/>
+                            <data>67.826</data>
+                            <data>67.826</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>sys_clk_50mhz</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>67.826</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>67.826</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/I (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>1.380</data>
+                            <data>69.206</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/O (GTP_INBUF)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.091</data>
+                            <data>70.297</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">nt_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKIN1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data>td</data>
+                            <data>0.101</data>
+                            <data>70.398</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/CLKOUT1 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=89)</data>
+                            <data>0.865</data>
+                            <data>71.263</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="29">uart_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/uart_data_rx[2]/CLK (GTP_DFF_CE)</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>71.263</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>71.113</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.617</data>
+                            <data>70.496</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+    </table>
+</tables>

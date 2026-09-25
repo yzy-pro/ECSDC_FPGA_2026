@@ -1,0 +1,2348 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="report_timing_slow_path_recovery" title="Recovery Path Summary" column_number="17">
+        <column_headers>
+            <data>Slack</data>
+            <data>Logic Levels</data>
+            <data>High Fanout</data>
+            <data>Start Point</data>
+            <data>End Point</data>
+            <data>Exception</data>
+            <data>Launch Clock</data>
+            <data>Capture Clock</data>
+            <data>Clock Edges</data>
+            <data>Clock Skew</data>
+            <data>Launch Clock Delay</data>
+            <data>Capture Clock Delay</data>
+            <data>Clock Pessimism Removal</data>
+            <data>Requirement</data>
+            <data>Data delay</data>
+            <data>Logic delay</data>
+            <data>Route delay</data>
+        </column_headers>
+        <row>
+            <data>17.368</data>
+            <data>7</data>
+            <data>12</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="67">sys_reset_sync[1]/opit_0/CLK</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[29]/opit_0_inv_A2Q21/RS</data>
+            <data/>
+            <data>pll_sys_clk_50mhz</data>
+            <data>pll_sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data>-0.016</data>
+            <data>4.984</data>
+            <data>4.660</data>
+            <data>0.308</data>
+            <data>20.000</data>
+            <data>1.904</data>
+            <data>1.320 (69.3%)</data>
+            <data>0.584 (30.7%)</data>
+            <general_container>
+                <data>Path #1: recovery slack is 17.368(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 6.888" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>0.074</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.254</data>
+                            <data>1.328</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>1.328</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.076</data>
+                            <data>1.404</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.787</data>
+                            <data>2.191</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>PLL_158_55/CLK_OUT0</data>
+                            <data>td</data>
+                            <data>0.107</data>
+                            <data>2.298</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/goppll/CLKOUT0</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.078</data>
+                            <data>3.376</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="28">pll_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_109/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>3.376</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">clkbufg_1/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=44)</data>
+                            <data>1.608</data>
+                            <data>4.984</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_1</data>
+                        </row>
+                        <row>
+                            <data>CLMS_62_61/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="67">sys_reset_sync[1]/opit_0/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMS_62_61/Q1</data>
+                            <data>tco</data>
+                            <data>0.291</data>
+                            <data>5.275</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="67">sys_reset_sync[1]/opit_0/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=12)</data>
+                            <data>0.584</data>
+                            <data>5.859</data>
+                            <data> </data>
+                            <data object_valid="true">sys_reset_sync[1]</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_57/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.006</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[3]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.006</data>
+                            <data> </data>
+                            <data object_valid="true">ntR14</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_61/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.153</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[7]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.153</data>
+                            <data> </data>
+                            <data object_valid="true">ntR13</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_69/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.300</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[11]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.300</data>
+                            <data> </data>
+                            <data object_valid="true">ntR12</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_73/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.447</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[15]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.447</data>
+                            <data> </data>
+                            <data object_valid="true">ntR11</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_77/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.594</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[19]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.594</data>
+                            <data> </data>
+                            <data object_valid="true">ntR10</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_81/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.741</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[23]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.741</data>
+                            <data> </data>
+                            <data object_valid="true">ntR9</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_85/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.888</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[27]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.888</data>
+                            <data> </data>
+                            <data object_valid="true">ntR8</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_89/RSCI</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[29]/opit_0_inv_A2Q21/RS</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 24.256" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>20.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>20.074</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.047</data>
+                            <data>21.121</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>21.121</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.048</data>
+                            <data>21.169</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.758</data>
+                            <data>21.927</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>PLL_158_55/CLK_OUT0</data>
+                            <data>td</data>
+                            <data>0.100</data>
+                            <data>22.027</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/goppll/CLKOUT0</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.059</data>
+                            <data>23.086</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="28">pll_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_109/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>23.086</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">clkbufg_1/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=44)</data>
+                            <data>1.574</data>
+                            <data>24.660</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_1</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_89/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[29]/opit_0_inv_A2Q21/CLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.308</data>
+                            <data>24.968</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>24.818</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Recovery time</data>
+                            <data/>
+                            <data>-0.562</data>
+                            <data>24.256</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>17.368</data>
+            <data>7</data>
+            <data>12</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="67">sys_reset_sync[1]/opit_0/CLK</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[31]/opit_0_inv_A2Q21/RS</data>
+            <data/>
+            <data>pll_sys_clk_50mhz</data>
+            <data>pll_sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data>-0.016</data>
+            <data>4.984</data>
+            <data>4.660</data>
+            <data>0.308</data>
+            <data>20.000</data>
+            <data>1.904</data>
+            <data>1.320 (69.3%)</data>
+            <data>0.584 (30.7%)</data>
+            <general_container>
+                <data>Path #2: recovery slack is 17.368(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 6.888" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>0.074</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.254</data>
+                            <data>1.328</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>1.328</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.076</data>
+                            <data>1.404</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.787</data>
+                            <data>2.191</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>PLL_158_55/CLK_OUT0</data>
+                            <data>td</data>
+                            <data>0.107</data>
+                            <data>2.298</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/goppll/CLKOUT0</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.078</data>
+                            <data>3.376</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="28">pll_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_109/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>3.376</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">clkbufg_1/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=44)</data>
+                            <data>1.608</data>
+                            <data>4.984</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_1</data>
+                        </row>
+                        <row>
+                            <data>CLMS_62_61/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="67">sys_reset_sync[1]/opit_0/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMS_62_61/Q1</data>
+                            <data>tco</data>
+                            <data>0.291</data>
+                            <data>5.275</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="67">sys_reset_sync[1]/opit_0/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=12)</data>
+                            <data>0.584</data>
+                            <data>5.859</data>
+                            <data> </data>
+                            <data object_valid="true">sys_reset_sync[1]</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_57/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.006</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[3]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.006</data>
+                            <data> </data>
+                            <data object_valid="true">ntR14</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_61/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.153</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[7]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.153</data>
+                            <data> </data>
+                            <data object_valid="true">ntR13</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_69/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.300</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[11]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.300</data>
+                            <data> </data>
+                            <data object_valid="true">ntR12</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_73/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.447</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[15]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.447</data>
+                            <data> </data>
+                            <data object_valid="true">ntR11</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_77/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.594</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[19]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.594</data>
+                            <data> </data>
+                            <data object_valid="true">ntR10</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_81/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.741</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[23]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.741</data>
+                            <data> </data>
+                            <data object_valid="true">ntR9</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_85/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.888</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[27]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.888</data>
+                            <data> </data>
+                            <data object_valid="true">ntR8</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_89/RSCI</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[31]/opit_0_inv_A2Q21/RS</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 24.256" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>20.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>20.074</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.047</data>
+                            <data>21.121</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>21.121</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.048</data>
+                            <data>21.169</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.758</data>
+                            <data>21.927</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>PLL_158_55/CLK_OUT0</data>
+                            <data>td</data>
+                            <data>0.100</data>
+                            <data>22.027</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/goppll/CLKOUT0</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.059</data>
+                            <data>23.086</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="28">pll_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_109/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>23.086</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">clkbufg_1/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=44)</data>
+                            <data>1.574</data>
+                            <data>24.660</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_1</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_89/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[31]/opit_0_inv_A2Q21/CLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.308</data>
+                            <data>24.968</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>24.818</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Recovery time</data>
+                            <data/>
+                            <data>-0.562</data>
+                            <data>24.256</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>17.510</data>
+            <data>6</data>
+            <data>12</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="67">sys_reset_sync[1]/opit_0/CLK</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[25]/opit_0_inv_A2Q21/RS</data>
+            <data/>
+            <data>pll_sys_clk_50mhz</data>
+            <data>pll_sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data>-0.021</data>
+            <data>4.984</data>
+            <data>4.655</data>
+            <data>0.308</data>
+            <data>20.000</data>
+            <data>1.757</data>
+            <data>1.173 (66.8%)</data>
+            <data>0.584 (33.2%)</data>
+            <general_container>
+                <data>Path #3: recovery slack is 17.510(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 6.741" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>0.074</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.254</data>
+                            <data>1.328</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>1.328</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.076</data>
+                            <data>1.404</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.787</data>
+                            <data>2.191</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>PLL_158_55/CLK_OUT0</data>
+                            <data>td</data>
+                            <data>0.107</data>
+                            <data>2.298</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/goppll/CLKOUT0</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.078</data>
+                            <data>3.376</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="28">pll_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_109/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>3.376</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">clkbufg_1/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=44)</data>
+                            <data>1.608</data>
+                            <data>4.984</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_1</data>
+                        </row>
+                        <row>
+                            <data>CLMS_62_61/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="67">sys_reset_sync[1]/opit_0/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMS_62_61/Q1</data>
+                            <data>tco</data>
+                            <data>0.291</data>
+                            <data>5.275</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="67">sys_reset_sync[1]/opit_0/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=12)</data>
+                            <data>0.584</data>
+                            <data>5.859</data>
+                            <data> </data>
+                            <data object_valid="true">sys_reset_sync[1]</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_57/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.006</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[3]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.006</data>
+                            <data> </data>
+                            <data object_valid="true">ntR14</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_61/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.153</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[7]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.153</data>
+                            <data> </data>
+                            <data object_valid="true">ntR13</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_69/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.300</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[11]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.300</data>
+                            <data> </data>
+                            <data object_valid="true">ntR12</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_73/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.447</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[15]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.447</data>
+                            <data> </data>
+                            <data object_valid="true">ntR11</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_77/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.594</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[19]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.594</data>
+                            <data> </data>
+                            <data object_valid="true">ntR10</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_81/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.741</data>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[23]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.741</data>
+                            <data> </data>
+                            <data object_valid="true">ntR9</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_85/RSCI</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[25]/opit_0_inv_A2Q21/RS</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 24.251" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pll_sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>20.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>20.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>20.074</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.047</data>
+                            <data>21.121</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>21.121</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.048</data>
+                            <data>21.169</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.758</data>
+                            <data>21.927</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>PLL_158_55/CLK_OUT0</data>
+                            <data>td</data>
+                            <data>0.100</data>
+                            <data>22.027</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/goppll/CLKOUT0</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.059</data>
+                            <data>23.086</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="28">pll_sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_109/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>23.086</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">clkbufg_1/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=44)</data>
+                            <data>1.569</data>
+                            <data>24.655</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_1</data>
+                        </row>
+                        <row>
+                            <data>CLMS_50_85/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="145">tx_led_count[25]/opit_0_inv_A2Q21/CLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.308</data>
+                            <data>24.963</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>24.813</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Recovery time</data>
+                            <data/>
+                            <data>-0.562</data>
+                            <data>24.251</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>65.100</data>
+            <data>6</data>
+            <data>42</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="72">uart_reset_sync[1]/opit_0/CLK</data>
+            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[30]/opit_0_inv_A2Q21/RS</data>
+            <data/>
+            <data>uart_clk_14m7456</data>
+            <data>uart_clk_14m7456</data>
+            <data>rise-rise</data>
+            <data>-0.058</data>
+            <data>4.991</data>
+            <data>4.627</data>
+            <data>0.306</data>
+            <data>67.826</data>
+            <data>1.956</data>
+            <data>1.173 (60.0%)</data>
+            <data>0.783 (40.0%)</data>
+            <general_container>
+                <data>Path #4: recovery slack is 65.100(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 6.947" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock uart_clk_14m7456 (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>0.074</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.254</data>
+                            <data>1.328</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>1.328</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.076</data>
+                            <data>1.404</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.787</data>
+                            <data>2.191</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>PLL_158_55/CLK_OUT1</data>
+                            <data>td</data>
+                            <data>0.101</data>
+                            <data>2.292</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/goppll/CLKOUT1</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.078</data>
+                            <data>3.370</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="29">uart_clk</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>3.370</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=76)</data>
+                            <data>1.621</data>
+                            <data>4.991</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMA_70_56/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="72">uart_reset_sync[1]/opit_0/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMA_70_56/Q1</data>
+                            <data>tco</data>
+                            <data>0.291</data>
+                            <data>5.282</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="72">uart_reset_sync[1]/opit_0/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=42)</data>
+                            <data>0.783</data>
+                            <data>6.065</data>
+                            <data> </data>
+                            <data object_valid="true">uart_reset_sync[1]</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_45/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.212</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[8]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.212</data>
+                            <data> </data>
+                            <data object_valid="true">ntR27</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_49/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.359</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[12]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.359</data>
+                            <data> </data>
+                            <data object_valid="true">ntR26</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_53/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.506</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[16]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.506</data>
+                            <data> </data>
+                            <data object_valid="true">ntR25</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_57/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.653</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[20]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.653</data>
+                            <data> </data>
+                            <data object_valid="true">ntR24</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_61/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.800</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[24]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.800</data>
+                            <data> </data>
+                            <data object_valid="true">ntR23</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_69/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.947</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[28]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.000</data>
+                            <data>6.947</data>
+                            <data> </data>
+                            <data object_valid="true">ntR22</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_73/RSCI</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[30]/opit_0_inv_A2Q21/RS</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 72.047" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock uart_clk_14m7456 (rising edge)</data>
+                            <data/>
+                            <data>67.826</data>
+                            <data>67.826</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>67.826</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>67.900</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.047</data>
+                            <data>68.947</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>68.947</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.048</data>
+                            <data>68.995</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.758</data>
+                            <data>69.753</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>PLL_158_55/CLK_OUT1</data>
+                            <data>td</data>
+                            <data>0.096</data>
+                            <data>69.849</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/goppll/CLKOUT1</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.059</data>
+                            <data>70.908</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="29">uart_clk</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>70.908</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=76)</data>
+                            <data>1.545</data>
+                            <data>72.453</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_73/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[30]/opit_0_inv_A2Q21/CLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.306</data>
+                            <data>72.759</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>72.609</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Recovery time</data>
+                            <data/>
+                            <data>-0.562</data>
+                            <data>72.047</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>65.100</data>
+            <data>6</data>
+            <data>42</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="72">uart_reset_sync[1]/opit_0/CLK</data>
+            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[31]/opit_0_inv_AQ_perm/RS</data>
+            <data/>
+            <data>uart_clk_14m7456</data>
+            <data>uart_clk_14m7456</data>
+            <data>rise-rise</data>
+            <data>-0.058</data>
+            <data>4.991</data>
+            <data>4.627</data>
+            <data>0.306</data>
+            <data>67.826</data>
+            <data>1.956</data>
+            <data>1.173 (60.0%)</data>
+            <data>0.783 (40.0%)</data>
+            <general_container>
+                <data>Path #5: recovery slack is 65.100(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 6.947" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock uart_clk_14m7456 (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>0.074</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.254</data>
+                            <data>1.328</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>1.328</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.076</data>
+                            <data>1.404</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.787</data>
+                            <data>2.191</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>PLL_158_55/CLK_OUT1</data>
+                            <data>td</data>
+                            <data>0.101</data>
+                            <data>2.292</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/goppll/CLKOUT1</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.078</data>
+                            <data>3.370</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="29">uart_clk</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>3.370</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=76)</data>
+                            <data>1.621</data>
+                            <data>4.991</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMA_70_56/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="72">uart_reset_sync[1]/opit_0/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMA_70_56/Q1</data>
+                            <data>tco</data>
+                            <data>0.291</data>
+                            <data>5.282</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="72">uart_reset_sync[1]/opit_0/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=42)</data>
+                            <data>0.783</data>
+                            <data>6.065</data>
+                            <data> </data>
+                            <data object_valid="true">uart_reset_sync[1]</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_45/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.212</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[8]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.212</data>
+                            <data> </data>
+                            <data object_valid="true">ntR27</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_49/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.359</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[12]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.359</data>
+                            <data> </data>
+                            <data object_valid="true">ntR26</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_53/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.506</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[16]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.506</data>
+                            <data> </data>
+                            <data object_valid="true">ntR25</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_57/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.653</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[20]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.653</data>
+                            <data> </data>
+                            <data object_valid="true">ntR24</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_61/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.800</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[24]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.800</data>
+                            <data> </data>
+                            <data object_valid="true">ntR23</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_69/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.947</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[28]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.000</data>
+                            <data>6.947</data>
+                            <data> </data>
+                            <data object_valid="true">ntR22</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_73/RSCI</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[31]/opit_0_inv_AQ_perm/RS</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 72.047" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock uart_clk_14m7456 (rising edge)</data>
+                            <data/>
+                            <data>67.826</data>
+                            <data>67.826</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>67.826</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>67.900</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.047</data>
+                            <data>68.947</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>68.947</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.048</data>
+                            <data>68.995</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.758</data>
+                            <data>69.753</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>PLL_158_55/CLK_OUT1</data>
+                            <data>td</data>
+                            <data>0.096</data>
+                            <data>69.849</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/goppll/CLKOUT1</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.059</data>
+                            <data>70.908</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="29">uart_clk</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>70.908</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=76)</data>
+                            <data>1.545</data>
+                            <data>72.453</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_73/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[31]/opit_0_inv_AQ_perm/CLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.306</data>
+                            <data>72.759</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>72.609</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Recovery time</data>
+                            <data/>
+                            <data>-0.562</data>
+                            <data>72.047</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>65.100</data>
+            <data>6</data>
+            <data>42</data>
+            <data file_id="../Designs/uart_loop_test_top.v" line_number="72">uart_reset_sync[1]/opit_0/CLK</data>
+            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="55">u_uart_rx/rx_meta/opit_0_inv/RS</data>
+            <data/>
+            <data>uart_clk_14m7456</data>
+            <data>uart_clk_14m7456</data>
+            <data>rise-rise</data>
+            <data>-0.058</data>
+            <data>4.991</data>
+            <data>4.627</data>
+            <data>0.306</data>
+            <data>67.826</data>
+            <data>1.956</data>
+            <data>1.173 (60.0%)</data>
+            <data>0.783 (40.0%)</data>
+            <general_container>
+                <data>Path #6: recovery slack is 65.100(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 6.947" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock uart_clk_14m7456 (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>0.074</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.254</data>
+                            <data>1.328</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>1.328</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.076</data>
+                            <data>1.404</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.787</data>
+                            <data>2.191</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>PLL_158_55/CLK_OUT1</data>
+                            <data>td</data>
+                            <data>0.101</data>
+                            <data>2.292</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/goppll/CLKOUT1</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.078</data>
+                            <data>3.370</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="29">uart_clk</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>3.370</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=76)</data>
+                            <data>1.621</data>
+                            <data>4.991</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMA_70_56/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="72">uart_reset_sync[1]/opit_0/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMA_70_56/Q1</data>
+                            <data>tco</data>
+                            <data>0.291</data>
+                            <data>5.282</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="72">uart_reset_sync[1]/opit_0/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=42)</data>
+                            <data>0.783</data>
+                            <data>6.065</data>
+                            <data> </data>
+                            <data object_valid="true">uart_reset_sync[1]</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_45/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.212</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[8]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.212</data>
+                            <data> </data>
+                            <data object_valid="true">ntR27</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_49/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.359</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[12]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.359</data>
+                            <data> </data>
+                            <data object_valid="true">ntR26</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_53/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.506</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[16]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.506</data>
+                            <data> </data>
+                            <data object_valid="true">ntR25</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_57/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.653</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[20]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.653</data>
+                            <data> </data>
+                            <data object_valid="true">ntR24</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_61/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.800</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[24]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.000</data>
+                            <data>6.800</data>
+                            <data> </data>
+                            <data object_valid="true">ntR23</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_69/RSCO</data>
+                            <data>td</data>
+                            <data>0.147</data>
+                            <data>6.947</data>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="116">u_uart_rx/clk_count[28]/opit_0_inv_A2Q21/RSOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.000</data>
+                            <data>6.947</data>
+                            <data> </data>
+                            <data object_valid="true">ntR22</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_73/RSCI</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="55">u_uart_rx/rx_meta/opit_0_inv/RS</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 72.047" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock uart_clk_14m7456 (rising edge)</data>
+                            <data/>
+                            <data>67.826</data>
+                            <data>67.826</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>67.826</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>67.900</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.047</data>
+                            <data>68.947</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>68.947</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.048</data>
+                            <data>68.995</data>
+                            <data>r</data>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="16">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.758</data>
+                            <data>69.753</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>PLL_158_55/CLK_OUT1</data>
+                            <data>td</data>
+                            <data>0.096</data>
+                            <data>69.849</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">u_pll_50mhz/u_pll_e3/goppll/CLKOUT1</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.059</data>
+                            <data>70.908</data>
+                            <data/>
+                            <data file_id="../Designs/uart_loop_test_top.v" line_number="29">uart_clk</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>70.908</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/pll_50mhz/pll_50mhz.v" line_number="230">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=76)</data>
+                            <data>1.545</data>
+                            <data>72.453</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMA_58_73/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/drivers/uart/uart_rx.v" line_number="55">u_uart_rx/rx_meta/opit_0_inv/CLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.306</data>
+                            <data>72.759</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>72.609</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Recovery time</data>
+                            <data/>
+                            <data>-0.562</data>
+                            <data>72.047</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+    </table>
+</tables>
