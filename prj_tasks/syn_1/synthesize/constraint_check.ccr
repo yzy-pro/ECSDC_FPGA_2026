@@ -1,4 +1,4 @@
-##### Written on 2026/09/25 16:01:28 ################################################
+##### Written on 2026/09/25 16:39:37 ################################################
 
 ##### INFO ##########################################################################
 
@@ -9,20 +9,23 @@ Top Module:
     uart_loop_test_top
 
 Constraint File(s):
-    E:/code/PangoWork/Works/cp2102/Constraints/io/clk.fdc
-    E:/code/PangoWork/Works/cp2102/Constraints/io/led.fdc
-    E:/code/PangoWork/Works/cp2102/Constraints/io/uart.fdc
-    E:/code/PangoWork/Works/cp2102/Constraints/clock/clocks.fdc
+    E:/code/PangoWork/Works/cboard_imu/Constraints/io/clk.fdc
+    E:/code/PangoWork/Works/cboard_imu/Constraints/io/led.fdc
+    E:/code/PangoWork/Works/cboard_imu/Constraints/clock/clocks.fdc
+    E:/code/PangoWork/Works/cboard_imu/Constraints/io/cboard_imu.fdc
 
 ##### SUMMARY #######################################################################
 
-Found 0 error(s), 0 critical warning(s), 27 warning(s), out of 55 constraint(s)
+Found 0 error(s), 0 critical warning(s), 28 warning(s), out of 55 constraint(s)
 
 Constraints With Issues(infos):
 ********************************************
 
 define_attribute {p:sys_rst_n} {PAP_IO_LOC} {AB13}
-    W: ConstraintEditor-4040: [E:/code/PangoWork/Works/cp2102/Constraints/io/clk.fdc(line number: 8)] Port p:sys_rst_n has been placed at location AB13, whose type is share pin.
+    W: ConstraintEditor-4040: [E:/code/PangoWork/Works/cboard_imu/Constraints/io/clk.fdc(line number: 8)] Port p:sys_rst_n has been placed at location AB13, whose type is share pin.
+
+define_attribute {p:sys_uart_tx} {PAP_IO_LOC} {AB5}
+    W: ConstraintEditor-4040: [E:/code/PangoWork/Works/cboard_imu/Constraints/io/cboard_imu.fdc(line number: 8)] Port p:sys_uart_tx has been placed at location AB5, whose type is share pin.
 
 Other Issues(infos):
 ********************************************

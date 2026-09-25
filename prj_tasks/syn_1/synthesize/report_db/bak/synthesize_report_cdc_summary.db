@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="synthesize_report_cdc_summary" title="Report CDC Summary" column_number="7" tree="">
+        <column_headers>
+            <data>Severity</data>
+            <data>CDC ID</data>
+            <data>Description</data>
+            <data>Exception</data>
+            <data>Startpoint</data>
+            <data>Endpoint</data>
+            <data>Category</data>
+        </column_headers>
+        <row>
+            <data>From  input port clock  To  pll_sys_clk_50mhz  (1 CDC Path)</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <row>
+                <data>Warning</data>
+                <data>CDC-8</data>
+                <data>An asynchronous signal(clear or preset) is synchronized but the ASYNC_REG property is missing on all or some of the synchronizer flip-flops</data>
+                <data>None</data>
+                <data>sys_rst_n</data>
+                <data>sys_reset_sync[0]/C</data>
+                <data>Safe</data>
+            </row>
+        </row>
+        <row>
+            <data>From  input port clock  To  uart_clk_14m7456  (2 CDC Path)</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <row>
+                <data>Warning</data>
+                <data>CDC-2</data>
+                <data>Single-bit synchronized without ASYNC_REG property</data>
+                <data>None</data>
+                <data>sys_uart_rx</data>
+                <data>u_uart_rx/rx_meta/D</data>
+                <data>Safe</data>
+            </row>
+            <row>
+                <data>Warning</data>
+                <data>CDC-8</data>
+                <data>An asynchronous signal(clear or preset) is synchronized but the ASYNC_REG property is missing on all or some of the synchronizer flip-flops</data>
+                <data>None</data>
+                <data>sys_rst_n</data>
+                <data>uart_reset_sync[0]/C</data>
+                <data>Safe</data>
+            </row>
+        </row>
+    </table>
+</tables>
