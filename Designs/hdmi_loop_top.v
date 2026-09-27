@@ -66,7 +66,7 @@ module hdmi_loop_top (
     ms7210_top ms7210_top_inst (
         .sys_clk(pll_clk_50mhz),
         .sys_rstn(sys_rstn),
-        .ms7200_rstn(sys_ms7210_rstn),
+        .ms7210_rstn(sys_ms7210_rstn),
         .iic_clk(iic_clk_1m6hz),
         .sys_ms7210_iic_scl(sys_ms7210_iic_scl),
         .sys_ms7210_iic_sda(sys_ms7210_iic_sda),
