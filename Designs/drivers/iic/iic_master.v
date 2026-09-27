@@ -191,10 +191,11 @@ module iic_master #(
             end
 
             ST_ACK_DEV_W: begin
-                // 器件未应答则直接 STOP；应答后按地址宽度选择高字节或低字节。
+                // 器件未应答则直接 STOP；应答后先发送寄存器地址低字节。
+                // MS7200/MS7210 的 16 位寄存器地址协议为低字节在前、高字节在后；
+                // 8 位地址模式同样只需要发送该低字节。
                 if (phase == 2'd3) begin
                     if (ack_seen) state_next = ST_STOP;
-                    else if (addr_length_reg) state_next = ST_ADDR_H;
                     else state_next = ST_ADDR_L;
                 end
             end
@@ -205,22 +206,24 @@ module iic_master #(
             end
 
             ST_ACK_ADDR_H: begin
-                // 高地址字节未应答则结束，否则继续发送低地址字节。
+                // 16 位地址的高字节未应答则结束；应答后进入读或写数据阶段。
                 if (phase == 2'd3) begin
                     if (ack_seen) state_next = ST_STOP;
-                    else state_next = ST_ADDR_L;
+                    else if (op_read) state_next = ST_RESTART;
+                    else state_next = ST_WR_DATA;
                 end
             end
 
             ST_ADDR_L: begin
-                // 8 位地址模式下该字节就是完整地址；16 位模式下是低地址字节。
+                // 8 位地址模式下该字节就是完整地址；16 位模式下先发送低地址字节。
                 if ((phase == 2'd3) && (bit_cnt == 3'd7)) state_next = ST_ACK_ADDR_L;
             end
 
             ST_ACK_ADDR_L: begin
-                // 地址 ACK 后，写事务发送数据；读事务先发 RESTART 再切换到读地址。
+                // 16 位地址模式继续发送高字节；8 位地址模式直接进入读或写数据阶段。
                 if (phase == 2'd3) begin
                     if (ack_seen) state_next = ST_STOP;
+                    else if (addr_length_reg) state_next = ST_ADDR_H;
                     else if (op_read) state_next = ST_RESTART;
                     else state_next = ST_WR_DATA;
                 end
