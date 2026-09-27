@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="synthesize_report_timing_path_recovery" title="Recovery Path Summary" column_number="17">
+        <column_headers>
+            <data>Slack</data>
+            <data>Logic Levels</data>
+            <data>High Fanout</data>
+            <data>Start Point</data>
+            <data>End Point</data>
+            <data>Exception</data>
+            <data>Launch Clock</data>
+            <data>Capture Clock</data>
+            <data>Clock Edges</data>
+            <data>Clock Skew</data>
+            <data>Launch Clock Delay</data>
+            <data>Capture Clock Delay</data>
+            <data>Clock Pessimism Removal</data>
+            <data>Requirement</data>
+            <data>Data delay</data>
+            <data>Logic delay</data>
+            <data>Route delay</data>
+        </column_headers>
+        <row>
+            <data>996.189</data>
+            <data>3</data>
+            <data>3</data>
+            <data file_id="../src/hdmi_loop.v" line_number="88">rstn_1ms[3]/CLK</data>
+            <data file_id="../src/ms72xx_ctl.v" line_number="34">ms72xx_ctl/rstn_temp1/C</data>
+            <data/>
+            <data>PLL|u_pll/u_pll_e3/CLKOUT0</data>
+            <data>PLL|u_pll/u_pll_e3/CLKOUT0</data>
+            <data>rise-rise</data>
+            <data>0.000</data>
+            <data>1.109</data>
+            <data>1.109</data>
+            <data>0.000</data>
+            <data>1000.000</data>
+            <data>3.044</data>
+            <data>0.958 (31.5%)</data>
+            <data>2.086 (68.5%)</data>
+            <general_container>
+                <data>Path #1: recovery slack is 996.189(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 4.153" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock PLL|u_pll/u_pll_e3/CLKOUT0 (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/PLL/PLL.v" line_number="228">u_pll/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=250)</data>
+                            <data>1.109</data>
+                            <data>1.109</data>
+                            <data/>
+                            <data file_id="../src/hdmi_loop.v" line_number="66">cfg_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_loop.v" line_number="88">rstn_1ms[3]/CLK (GTP_DFF_R)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>tco</data>
+                            <data>0.375</data>
+                            <data>1.484</data>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_loop.v" line_number="88">rstn_1ms[3]/Q (GTP_DFF_R)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>2.037</data>
+                            <data> </data>
+                            <data file_id="../src/hdmi_loop.v" line_number="64">rstn_1ms[3]</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">N31_10/I0 (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.222</data>
+                            <data>2.259</data>
+                            <data>r</data>
+                            <data object_valid="true">N31_10/Z (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>2.723</data>
+                            <data> </data>
+                            <data object_valid="true">_N2868</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">N31_14/I3 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.229</data>
+                            <data>2.952</data>
+                            <data>r</data>
+                            <data object_valid="true">N31_14/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.605</data>
+                            <data>3.557</data>
+                            <data> </data>
+                            <data object_valid="true">_N2540</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/rst_n_inv/I1 (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.132</data>
+                            <data>3.689</data>
+                            <data>f</data>
+                            <data object_valid="true">ms72xx_ctl/rst_n_inv/Z (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>4.153</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/rst_n_inv</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../src/ms72xx_ctl.v" line_number="34">ms72xx_ctl/rstn_temp1/C (GTP_DFF_C)</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 1000.342" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock PLL|u_pll/u_pll_e3/CLKOUT0 (rising edge)</data>
+                            <data/>
+                            <data>1000.000</data>
+                            <data>1000.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>1000.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/PLL/PLL.v" line_number="228">u_pll/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=250)</data>
+                            <data>1.109</data>
+                            <data>1001.109</data>
+                            <data/>
+                            <data file_id="../src/hdmi_loop.v" line_number="66">cfg_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/ms72xx_ctl.v" line_number="34">ms72xx_ctl/rstn_temp1/CLK (GTP_DFF_C)</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>1001.109</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>1000.959</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Recovery time</data>
+                            <data/>
+                            <data>-0.617</data>
+                            <data>1000.342</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+    </table>
+</tables>

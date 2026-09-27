@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="report_timing_slow_path_removal" title=" Removal Path Summary" column_number="17">
+        <column_headers>
+            <data>Slack</data>
+            <data>Logic Levels</data>
+            <data>High Fanout</data>
+            <data>Start Point</data>
+            <data>End Point</data>
+            <data>Exception</data>
+            <data>Launch Clock</data>
+            <data>Capture Clock</data>
+            <data>Clock Edges</data>
+            <data>Clock Skew</data>
+            <data>Launch Clock Delay</data>
+            <data>Capture Clock Delay</data>
+            <data>Clock Pessimism Removal</data>
+            <data>Requirement</data>
+            <data>Data delay</data>
+            <data>Logic delay</data>
+            <data>Route delay</data>
+        </column_headers>
+        <row>
+            <data>1.196</data>
+            <data>1</data>
+            <data>5</data>
+            <data file_id="../src/hdmi_loop.v" line_number="88">rstn_1ms[0]/opit_0_inv_L5Q_perm/CLK</data>
+            <data file_id="../src/ms72xx_ctl.v" line_number="34">ms72xx_ctl/rstn_temp1/opit_0/RS</data>
+            <data/>
+            <data>PLL|u_pll/u_pll_e3/CLKOUT0</data>
+            <data>PLL|u_pll/u_pll_e3/CLKOUT0</data>
+            <data>rise-rise</data>
+            <data>0.036</data>
+            <data>2.590</data>
+            <data>2.663</data>
+            <data>-0.037</data>
+            <data>0.000</data>
+            <data>1.012</data>
+            <data>0.378 (37.4%)</data>
+            <data>0.634 (62.6%)</data>
+            <general_container>
+                <data>Path #1: removal slack is 1.196(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 3.602" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock PLL|u_pll/u_pll_e3/CLKOUT0 (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>PLL_158_55/CLK_OUT0</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/PLL/PLL.v" line_number="228">u_pll/u_pll_e3/goppll/CLKOUT0</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.059</data>
+                            <data>1.059</data>
+                            <data/>
+                            <data file_id="../src/hdmi_loop.v" line_number="66">cfg_clk</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>1.059</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/PLL/PLL.v" line_number="228">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=229)</data>
+                            <data>1.531</data>
+                            <data>2.590</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMS_282_53/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_loop.v" line_number="88">rstn_1ms[0]/opit_0_inv_L5Q_perm/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMS_282_53/Q0</data>
+                            <data>tco</data>
+                            <data>0.222</data>
+                            <data>2.812</data>
+                            <data>f</data>
+                            <data file_id="../src/hdmi_loop.v" line_number="88">rstn_1ms[0]/opit_0_inv_L5Q_perm/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=5)</data>
+                            <data>0.329</data>
+                            <data>3.141</data>
+                            <data> </data>
+                            <data object_valid="true">rstn_1ms[0]</data>
+                        </row>
+                        <row>
+                            <data>CLMA_286_49/Y1</data>
+                            <data>td</data>
+                            <data>0.156</data>
+                            <data>3.297</data>
+                            <data>f</data>
+                            <data object_valid="true">ms72xx_ctl/rst_n_inv/gateop_perm/Z</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.305</data>
+                            <data>3.602</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/rst_n_inv</data>
+                        </row>
+                        <row>
+                            <data>CLMA_290_52/RS</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../src/ms72xx_ctl.v" line_number="34">ms72xx_ctl/rstn_temp1/opit_0/RS</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 2.406" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock PLL|u_pll/u_pll_e3/CLKOUT0 (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>PLL_158_55/CLK_OUT0</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/PLL/PLL.v" line_number="228">u_pll/u_pll_e3/goppll/CLKOUT0</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.078</data>
+                            <data>1.078</data>
+                            <data/>
+                            <data file_id="../src/hdmi_loop.v" line_number="66">cfg_clk</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>1.078</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/PLL/PLL.v" line_number="228">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=229)</data>
+                            <data>1.585</data>
+                            <data>2.663</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMA_290_52/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/ms72xx_ctl.v" line_number="34">ms72xx_ctl/rstn_temp1/opit_0/CLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>-0.037</data>
+                            <data>2.626</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>2.626</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Removal time</data>
+                            <data/>
+                            <data>-0.220</data>
+                            <data>2.406</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+    </table>
+</tables>

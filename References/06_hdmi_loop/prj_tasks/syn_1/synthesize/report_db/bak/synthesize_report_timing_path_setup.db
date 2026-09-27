@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="synthesize_report_timing_path_setup" title="Setup Path Summary" column_number="17">
+        <column_headers>
+            <data>Slack</data>
+            <data>Logic Levels</data>
+            <data>High Fanout</data>
+            <data>Start Point</data>
+            <data>End Point</data>
+            <data>Exception</data>
+            <data>Launch Clock</data>
+            <data>Capture Clock</data>
+            <data>Clock Edges</data>
+            <data>Clock Skew</data>
+            <data>Launch Clock Delay</data>
+            <data>Capture Clock Delay</data>
+            <data>Clock Pessimism Removal</data>
+            <data>Requirement</data>
+            <data>Data delay</data>
+            <data>Logic delay</data>
+            <data>Route delay</data>
+        </column_headers>
+        <row>
+            <data>992.870</data>
+            <data>7</data>
+            <data>16</data>
+            <data file_id="../src/ms7200_ctl.v" line_number="472">ms72xx_ctl/ms7200_ctl/dri_cnt[4]/CLK</data>
+            <data file_id="../src/ms7200_ctl.v" line_number="380">ms72xx_ctl/ms7200_ctl/freq_rec_2d[16]/CE</data>
+            <data/>
+            <data>PLL|u_pll/u_pll_e3/CLKOUT0</data>
+            <data>PLL|u_pll/u_pll_e3/CLKOUT0</data>
+            <data>rise-rise</data>
+            <data>0.000</data>
+            <data>1.109</data>
+            <data>1.109</data>
+            <data>0.000</data>
+            <data>1000.000</data>
+            <data>6.363</data>
+            <data>1.433 (22.5%)</data>
+            <data>4.930 (77.5%)</data>
+            <general_container>
+                <data>Path #1: setup slack is 992.870(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 7.472" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock PLL|u_pll/u_pll_e3/CLKOUT0 (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/PLL/PLL.v" line_number="228">u_pll/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=250)</data>
+                            <data>1.109</data>
+                            <data>1.109</data>
+                            <data/>
+                            <data file_id="../src/hdmi_loop.v" line_number="66">cfg_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="472">ms72xx_ctl/ms7200_ctl/dri_cnt[4]/CLK (GTP_DFF_RE)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>tco</data>
+                            <data>0.375</data>
+                            <data>1.484</data>
+                            <data>r</data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="472">ms72xx_ctl/ms7200_ctl/dri_cnt[4]/Q (GTP_DFF_RE)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.605</data>
+                            <data>2.089</data>
+                            <data> </data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="369">ms72xx_ctl/ms7200_ctl/dri_cnt[4]</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_91_3/I0 (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.201</data>
+                            <data>2.290</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_91_3/Z (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>2.754</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/_N2496</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_94_4/I3 (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>2.899</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_94_4/Z (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=7)</data>
+                            <data>0.713</data>
+                            <data>3.612</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/_N2499</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_95/I1 (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>3.757</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_95/Z (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=16)</data>
+                            <data>0.819</data>
+                            <data>4.576</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/_N2500</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_102/I2 (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>4.721</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_102/Z (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=5)</data>
+                            <data>0.670</data>
+                            <data>5.391</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N1704</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../src/ms7200_ctl.v" line_number="424">ms72xx_ctl/ms7200_ctl/N99_20/I1 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>5.536</data>
+                            <data>r</data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="424">ms72xx_ctl/ms7200_ctl/N99_20/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>6.089</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2090</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/state_fsm[6:0]_10_1/I1 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>6.234</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/state_fsm[6:0]_10_1/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>6.787</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/_N13</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N7_4/I2 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.132</data>
+                            <data>6.919</data>
+                            <data>f</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N7_4/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.553</data>
+                            <data>7.472</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N7</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="380">ms72xx_ctl/ms7200_ctl/freq_rec_2d[16]/CE (GTP_DFF_E)</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 1000.342" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock PLL|u_pll/u_pll_e3/CLKOUT0 (rising edge)</data>
+                            <data/>
+                            <data>1000.000</data>
+                            <data>1000.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>1000.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/PLL/PLL.v" line_number="228">u_pll/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=250)</data>
+                            <data>1.109</data>
+                            <data>1001.109</data>
+                            <data/>
+                            <data file_id="../src/hdmi_loop.v" line_number="66">cfg_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="380">ms72xx_ctl/ms7200_ctl/freq_rec_2d[16]/CLK (GTP_DFF_E)</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>1001.109</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>1000.959</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.617</data>
+                            <data>1000.342</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>992.870</data>
+            <data>7</data>
+            <data>16</data>
+            <data file_id="../src/ms7200_ctl.v" line_number="472">ms72xx_ctl/ms7200_ctl/dri_cnt[4]/CLK</data>
+            <data file_id="../src/ms7200_ctl.v" line_number="380">ms72xx_ctl/ms7200_ctl/freq_rec_2d[17]/CE</data>
+            <data/>
+            <data>PLL|u_pll/u_pll_e3/CLKOUT0</data>
+            <data>PLL|u_pll/u_pll_e3/CLKOUT0</data>
+            <data>rise-rise</data>
+            <data>0.000</data>
+            <data>1.109</data>
+            <data>1.109</data>
+            <data>0.000</data>
+            <data>1000.000</data>
+            <data>6.363</data>
+            <data>1.433 (22.5%)</data>
+            <data>4.930 (77.5%)</data>
+            <general_container>
+                <data>Path #2: setup slack is 992.870(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 7.472" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock PLL|u_pll/u_pll_e3/CLKOUT0 (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/PLL/PLL.v" line_number="228">u_pll/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=250)</data>
+                            <data>1.109</data>
+                            <data>1.109</data>
+                            <data/>
+                            <data file_id="../src/hdmi_loop.v" line_number="66">cfg_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="472">ms72xx_ctl/ms7200_ctl/dri_cnt[4]/CLK (GTP_DFF_RE)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>tco</data>
+                            <data>0.375</data>
+                            <data>1.484</data>
+                            <data>r</data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="472">ms72xx_ctl/ms7200_ctl/dri_cnt[4]/Q (GTP_DFF_RE)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.605</data>
+                            <data>2.089</data>
+                            <data> </data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="369">ms72xx_ctl/ms7200_ctl/dri_cnt[4]</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_91_3/I0 (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.201</data>
+                            <data>2.290</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_91_3/Z (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>2.754</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/_N2496</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_94_4/I3 (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>2.899</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_94_4/Z (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=7)</data>
+                            <data>0.713</data>
+                            <data>3.612</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/_N2499</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_95/I1 (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>3.757</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_95/Z (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=16)</data>
+                            <data>0.819</data>
+                            <data>4.576</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/_N2500</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_102/I2 (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>4.721</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_102/Z (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=5)</data>
+                            <data>0.670</data>
+                            <data>5.391</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N1704</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../src/ms7200_ctl.v" line_number="424">ms72xx_ctl/ms7200_ctl/N99_20/I1 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>5.536</data>
+                            <data>r</data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="424">ms72xx_ctl/ms7200_ctl/N99_20/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>6.089</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2090</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/state_fsm[6:0]_10_1/I1 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>6.234</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/state_fsm[6:0]_10_1/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>6.787</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/_N13</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N7_4/I2 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.132</data>
+                            <data>6.919</data>
+                            <data>f</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N7_4/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.553</data>
+                            <data>7.472</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N7</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="380">ms72xx_ctl/ms7200_ctl/freq_rec_2d[17]/CE (GTP_DFF_E)</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 1000.342" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock PLL|u_pll/u_pll_e3/CLKOUT0 (rising edge)</data>
+                            <data/>
+                            <data>1000.000</data>
+                            <data>1000.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>1000.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/PLL/PLL.v" line_number="228">u_pll/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=250)</data>
+                            <data>1.109</data>
+                            <data>1001.109</data>
+                            <data/>
+                            <data file_id="../src/hdmi_loop.v" line_number="66">cfg_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="380">ms72xx_ctl/ms7200_ctl/freq_rec_2d[17]/CLK (GTP_DFF_E)</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>1001.109</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>1000.959</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.617</data>
+                            <data>1000.342</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>993.358</data>
+            <data>8</data>
+            <data>16</data>
+            <data file_id="../src/ms7200_ctl.v" line_number="472">ms72xx_ctl/ms7200_ctl/dri_cnt[4]/CLK</data>
+            <data file_id="../src/ms7200_ctl.v" line_number="398">ms72xx_ctl/ms7200_ctl/freq_ensure/D</data>
+            <data/>
+            <data>PLL|u_pll/u_pll_e3/CLKOUT0</data>
+            <data>PLL|u_pll/u_pll_e3/CLKOUT0</data>
+            <data>rise-rise</data>
+            <data>0.000</data>
+            <data>1.109</data>
+            <data>1.109</data>
+            <data>0.000</data>
+            <data>1000.000</data>
+            <data>6.521</data>
+            <data>1.591 (24.4%)</data>
+            <data>4.930 (75.6%)</data>
+            <general_container>
+                <data>Path #3: setup slack is 993.358(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 7.630" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock PLL|u_pll/u_pll_e3/CLKOUT0 (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/PLL/PLL.v" line_number="228">u_pll/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=250)</data>
+                            <data>1.109</data>
+                            <data>1.109</data>
+                            <data/>
+                            <data file_id="../src/hdmi_loop.v" line_number="66">cfg_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="472">ms72xx_ctl/ms7200_ctl/dri_cnt[4]/CLK (GTP_DFF_RE)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>tco</data>
+                            <data>0.375</data>
+                            <data>1.484</data>
+                            <data>r</data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="472">ms72xx_ctl/ms7200_ctl/dri_cnt[4]/Q (GTP_DFF_RE)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.605</data>
+                            <data>2.089</data>
+                            <data> </data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="369">ms72xx_ctl/ms7200_ctl/dri_cnt[4]</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_91_3/I0 (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.201</data>
+                            <data>2.290</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_91_3/Z (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>2.754</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/_N2496</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_94_4/I3 (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>2.899</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_94_4/Z (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=7)</data>
+                            <data>0.713</data>
+                            <data>3.612</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/_N2499</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_95/I1 (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>3.757</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_95/Z (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=16)</data>
+                            <data>0.819</data>
+                            <data>4.576</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/_N2500</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_102/I2 (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>4.721</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2068_102/Z (GTP_LUT3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=5)</data>
+                            <data>0.670</data>
+                            <data>5.391</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N1704</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data file_id="../src/ms7200_ctl.v" line_number="424">ms72xx_ctl/ms7200_ctl/N99_20/I1 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>5.536</data>
+                            <data>r</data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="424">ms72xx_ctl/ms7200_ctl/N99_20/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>6.089</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N2090</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/state_fsm[6:0]_10_1/I1 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>6.234</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/state_fsm[6:0]_10_1/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=2)</data>
+                            <data>0.553</data>
+                            <data>6.787</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/_N13</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N7_4/I2 (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>6.932</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N7_4/Z (GTP_LUT5)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=3)</data>
+                            <data>0.553</data>
+                            <data>7.485</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/N7</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/freq_ensure_rs_2/I0 (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.145</data>
+                            <data>7.630</data>
+                            <data>r</data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/freq_ensure_rs_2/Z (GTP_LUT4)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>7.630</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/ms7200_ctl/_N2833</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="398">ms72xx_ctl/ms7200_ctl/freq_ensure/D (GTP_DFF)</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 1000.988" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock PLL|u_pll/u_pll_e3/CLKOUT0 (rising edge)</data>
+                            <data/>
+                            <data>1000.000</data>
+                            <data>1000.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>1000.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/PLL/PLL.v" line_number="228">u_pll/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=250)</data>
+                            <data>1.109</data>
+                            <data>1001.109</data>
+                            <data/>
+                            <data file_id="../src/hdmi_loop.v" line_number="66">cfg_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/ms7200_ctl.v" line_number="398">ms72xx_ctl/ms7200_ctl/freq_ensure/CLK (GTP_DFF)</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>1001.109</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>-0.150</data>
+                            <data>1000.959</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>0.029</data>
+                            <data>1000.988</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+    </table>
+</tables>

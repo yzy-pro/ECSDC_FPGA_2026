@@ -1,0 +1,2133 @@
+//
+// Generated (version 2022.2<build 117120>) at Fri Aug 11 16:59:20 2023
+//
+
+module hdmi_cfg
+(
+    input cfg_end,
+    input sys_clk,
+    input sys_rst_n,
+    output [1:0] N75,
+    output [1:0] N80,
+    output [1:0] N85,
+    output [31:0] cfg_data,
+    output [31:0] \hdmi_i2c_inst/cfg_data ,
+    output N57,
+    output N73,
+    output N82,
+    output N88,
+    output N91,
+    output cfg_done,
+    output cfg_start
+);
+    wire N3;
+    wire [9:0] N5;
+    wire [6:0] N12;
+    wire N58;
+    wire N69;
+    wire _N99;
+    wire _N136;
+    wire _N137;
+    wire _N138;
+    wire _N139;
+    wire _N140;
+    wire _N141;
+    wire _N142;
+    wire _N143;
+    wire _N372;
+    wire _N377;
+    wire _N412;
+    wire _N427;
+    wire [9:0] cnt_wait;
+    wire [6:0] reg_num;
+
+    GTP_LUT6 /* N3_inv */ #(
+            .INIT(64'b0111111111111111111111111111111111111111111111111111111111111111))
+        N3_inv (
+            .Z (N3),
+            .I0 (cnt_wait[0]),
+            .I1 (cnt_wait[3]),
+            .I2 (cnt_wait[4]),
+            .I3 (cnt_wait[5]),
+            .I4 (cnt_wait[6]),
+            .I5 (_N427));
+	// LUT = (~I5)|(~I4)|(~I3)|(~I2)|(~I1)|(~I0) ;
+
+    GTP_LUT6CARRY /* N5_1_1 */ #(
+            .INIT(64'b0110011001100110011001100110011000000000000000000000000000000000), 
+            .I5_TO_CARRY("TRUE"), 
+            .I5_TO_LUT("TRUE"))
+        N5_1_1 (
+            .COUT (_N136),
+            .Z (N5[1]),
+            .CIN (),
+            .I0 (cnt_wait[0]),
+            .I1 (cnt_wait[1]),
+            .I2 (),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b1));
+	// LUT = I1^I0 ;
+	// CARRY = (1'b0) ? CIN : I5 ;
+	// ../source/new/hdmi_cfg.v:45
+
+    GTP_LUT6CARRY /* N5_1_2 */ #(
+            .INIT(64'b0111100001111000011110000111100010000000100000001000000010000000), 
+            .I5_TO_CARRY("TRUE"), 
+            .I5_TO_LUT("FALSE"))
+        N5_1_2 (
+            .COUT (_N137),
+            .Z (N5[2]),
+            .CIN (_N136),
+            .I0 (cnt_wait[0]),
+            .I1 (cnt_wait[1]),
+            .I2 (cnt_wait[2]),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b0));
+	// LUT = (I0&I1&I2&~CIN)|(I0&I1&~I2&CIN)|(~I1&I2&CIN)|(~I0&I2&CIN) ;
+	// CARRY = (I0&I1&I2) ? CIN : I5 ;
+	// ../source/new/hdmi_cfg.v:45
+
+    GTP_LUT6CARRY /* N5_1_3 */ #(
+            .INIT(64'b0101010101010101010101010101010110101010101010101010101010101010), 
+            .I5_TO_CARRY("TRUE"), 
+            .I5_TO_LUT("FALSE"))
+        N5_1_3 (
+            .COUT (_N138),
+            .Z (N5[3]),
+            .CIN (_N137),
+            .I0 (cnt_wait[3]),
+            .I1 (),
+            .I2 (),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b0));
+	// LUT = CIN^I0 ;
+	// CARRY = (I0) ? CIN : I5 ;
+	// ../source/new/hdmi_cfg.v:45
+
+    GTP_LUT6CARRY /* N5_1_4 */ #(
+            .INIT(64'b0101010101010101010101010101010110101010101010101010101010101010), 
+            .I5_TO_CARRY("TRUE"), 
+            .I5_TO_LUT("FALSE"))
+        N5_1_4 (
+            .COUT (_N139),
+            .Z (N5[4]),
+            .CIN (_N138),
+            .I0 (cnt_wait[4]),
+            .I1 (),
+            .I2 (),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b0));
+	// LUT = CIN^I0 ;
+	// CARRY = (I0) ? CIN : I5 ;
+	// ../source/new/hdmi_cfg.v:45
+
+    GTP_LUT6CARRY /* N5_1_5 */ #(
+            .INIT(64'b0101010101010101010101010101010110101010101010101010101010101010), 
+            .I5_TO_CARRY("TRUE"), 
+            .I5_TO_LUT("FALSE"))
+        N5_1_5 (
+            .COUT (_N140),
+            .Z (N5[5]),
+            .CIN (_N139),
+            .I0 (cnt_wait[5]),
+            .I1 (),
+            .I2 (),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b0));
+	// LUT = CIN^I0 ;
+	// CARRY = (I0) ? CIN : I5 ;
+	// ../source/new/hdmi_cfg.v:45
+
+    GTP_LUT6CARRY /* N5_1_6 */ #(
+            .INIT(64'b0101010101010101010101010101010110101010101010101010101010101010), 
+            .I5_TO_CARRY("TRUE"), 
+            .I5_TO_LUT("FALSE"))
+        N5_1_6 (
+            .COUT (_N141),
+            .Z (N5[6]),
+            .CIN (_N140),
+            .I0 (cnt_wait[6]),
+            .I1 (),
+            .I2 (),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b0));
+	// LUT = CIN^I0 ;
+	// CARRY = (I0) ? CIN : I5 ;
+	// ../source/new/hdmi_cfg.v:45
+
+    GTP_LUT6CARRY /* N5_1_7 */ #(
+            .INIT(64'b0101010101010101010101010101010110101010101010101010101010101010), 
+            .I5_TO_CARRY("TRUE"), 
+            .I5_TO_LUT("FALSE"))
+        N5_1_7 (
+            .COUT (_N142),
+            .Z (N5[7]),
+            .CIN (_N141),
+            .I0 (cnt_wait[7]),
+            .I1 (),
+            .I2 (),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b0));
+	// LUT = CIN^I0 ;
+	// CARRY = (I0) ? CIN : I5 ;
+	// ../source/new/hdmi_cfg.v:45
+
+    GTP_LUT6CARRY /* N5_1_8 */ #(
+            .INIT(64'b0101010101010101010101010101010110101010101010101010101010101010), 
+            .I5_TO_CARRY("TRUE"), 
+            .I5_TO_LUT("FALSE"))
+        N5_1_8 (
+            .COUT (_N143),
+            .Z (N5[8]),
+            .CIN (_N142),
+            .I0 (cnt_wait[8]),
+            .I1 (),
+            .I2 (),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b0));
+	// LUT = CIN^I0 ;
+	// CARRY = (I0) ? CIN : I5 ;
+	// ../source/new/hdmi_cfg.v:45
+
+    GTP_LUT6CARRY /* N5_1_9 */ #(
+            .INIT(64'b0101010101010101010101010101010110101010101010101010101010101010), 
+            .I5_TO_CARRY("TRUE"), 
+            .I5_TO_LUT("FALSE"))
+        N5_1_9 (
+            .COUT (),
+            .Z (N5[9]),
+            .CIN (_N143),
+            .I0 (cnt_wait[9]),
+            .I1 (),
+            .I2 (),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b0));
+	// LUT = CIN^I0 ;
+	// CARRY = (I0) ? CIN : I5 ;
+	// ../source/new/hdmi_cfg.v:45
+
+    GTP_LUT6D /* N12_sum3 */ #(
+            .INIT(64'b0111111110000000011111111000000001111111111111111000000000000000))
+        N12_sum3 (
+            .Z (N12[3]),
+            .Z5 (N12[4]),
+            .I0 (reg_num[0]),
+            .I1 (reg_num[1]),
+            .I2 (reg_num[2]),
+            .I3 (reg_num[3]),
+            .I4 (reg_num[4]),
+            .I5 (1'b1));
+	// LUT = (I0&I1&I2&~I3)|(~I2&I3)|(~I1&I3)|(~I0&I3) ;
+	// Z5 = (I0&I1&I2&I3&~I4)|(~I3&I4)|(~I2&I4)|(~I1&I4)|(~I0&I4) ;
+
+    GTP_LUT6D /* N12_sum5 */ #(
+            .INIT(64'b0111111111111111111111111111111110000000000000000000000000000000))
+        N12_sum5 (
+            .Z (N12[5]),
+            .Z5 (_N99),
+            .I0 (reg_num[0]),
+            .I1 (reg_num[1]),
+            .I2 (reg_num[2]),
+            .I3 (reg_num[3]),
+            .I4 (reg_num[4]),
+            .I5 (reg_num[5]));
+	// LUT = (I0&I1&I2&I3&I4&~I5)|(~I4&I5)|(~I3&I5)|(~I2&I5)|(~I1&I5)|(~I0&I5) ;
+	// Z5 = I0&I1&I2&I3&I4 ;
+
+    GTP_LUT3 /* N12_sum6 */ #(
+            .INIT(8'b01101100))
+        N12_sum6 (
+            .Z (N12[6]),
+            .I0 (reg_num[5]),
+            .I1 (reg_num[6]),
+            .I2 (_N99));
+	// LUT = (I1&~I2)|(~I0&I1)|(I0&~I1&I2) ;
+
+    GTP_LUT5 /* N37_8 */ #(
+            .INIT(32'b00000000000000000000000000000010))
+        N37_8 (
+            .Z (_N372),
+            .I0 (cfg_end),
+            .I1 (reg_num[3]),
+            .I2 (reg_num[4]),
+            .I3 (reg_num[5]),
+            .I4 (reg_num[6]));
+	// LUT = I0&~I1&~I2&~I3&~I4 ;
+
+    GTP_LUT6D /* \N43[0]  */ #(
+            .INIT(64'b1111101011111010111110101111101011101110111011101110111011101110))
+        \N43[0]  (
+            .Z (cfg_data[0]),
+            .Z5 (cfg_data[2]),
+            .I0 (cfg_done),
+            .I1 (N88),
+            .I2 (N91),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b1));
+	// LUT = (I2)|(I0) ;
+	// Z5 = (I1)|(I0) ;
+	// ../source/new/hdmi_cfg.v:73
+
+    GTP_LUT6D /* \N43[3]  */ #(
+            .INIT(64'b1110111011101110111011101110111011111010111110101111101011111010))
+        \N43[3]  (
+            .Z (cfg_data[4]),
+            .Z5 (cfg_data[5]),
+            .I0 (cfg_done),
+            .I1 (N85[0]),
+            .I2 (N85[1]),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b1));
+	// LUT = (I1)|(I0) ;
+	// Z5 = (I2)|(I0) ;
+	// ../source/new/hdmi_cfg.v:73
+
+    GTP_LUT6D /* \N43[5]  */ #(
+            .INIT(64'b1110111011101110111011101110111011111010111110101111101011111010))
+        \N43[5]  (
+            .Z (cfg_data[8]),
+            .Z5 (\hdmi_i2c_inst/cfg_data [9] ),
+            .I0 (cfg_done),
+            .I1 (N82),
+            .I2 (N75[0]),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b1));
+	// LUT = (I1)|(I0) ;
+	// Z5 = (I2)|(I0) ;
+	// ../source/new/hdmi_cfg.v:73
+
+    GTP_LUT6D /* \N43[7]  */ #(
+            .INIT(64'b1110111011101110111011101110111011111010111110101111101011111010))
+        \N43[7]  (
+            .Z (cfg_data[10]),
+            .Z5 (cfg_data[11]),
+            .I0 (cfg_done),
+            .I1 (N80[0]),
+            .I2 (N80[1]),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b1));
+	// LUT = (I1)|(I0) ;
+	// Z5 = (I2)|(I0) ;
+	// ../source/new/hdmi_cfg.v:73
+
+    GTP_LUT6D /* \N43[9]  */ #(
+            .INIT(64'b1111101011111010111110101111101011101110111011101110111011101110))
+        \N43[9]  (
+            .Z (\hdmi_i2c_inst/cfg_data [25] ),
+            .Z5 (\hdmi_i2c_inst/cfg_data [29] ),
+            .I0 (cfg_done),
+            .I1 (N73),
+            .I2 (N75[1]),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b1));
+	// LUT = (I2)|(I0) ;
+	// Z5 = (I1)|(I0) ;
+	// ../source/new/hdmi_cfg.v:73
+
+    GTP_INV N57_vname (
+            .Z (N57),
+            .I (sys_rst_n));
+    // defparam N57_vname.orig_name = N57;
+
+    GTP_LUT1 /* N58 */ #(
+            .INIT(2'b01))
+        N58_vname (
+            .Z (N58),
+            .I0 (cnt_wait[0]));
+    // defparam N58_vname.orig_name = N58;
+	// LUT = ~I0 ;
+
+    GTP_LUT5 /* N59_15 */ #(
+            .INIT(32'b10000000000000000000000000000000))
+        N59_15 (
+            .Z (_N427),
+            .I0 (cnt_wait[1]),
+            .I1 (cnt_wait[2]),
+            .I2 (cnt_wait[7]),
+            .I3 (cnt_wait[8]),
+            .I4 (cnt_wait[9]));
+	// LUT = I0&I1&I2&I3&I4 ;
+
+    GTP_LUT5 /* N59_16 */ #(
+            .INIT(32'b10000000000000000000000000000000))
+        N59_16 (
+            .Z (_N377),
+            .I0 (cnt_wait[3]),
+            .I1 (cnt_wait[4]),
+            .I2 (cnt_wait[5]),
+            .I3 (cnt_wait[6]),
+            .I4 (_N427));
+	// LUT = I0&I1&I2&I3&I4 ;
+
+    GTP_LUT6 /* N69 */ #(
+            .INIT(64'b0101011111111111010101010101010100000011111111110000000000000000))
+        N69_vname (
+            .Z (N69),
+            .I0 (cnt_wait[0]),
+            .I1 (reg_num[0]),
+            .I2 (reg_num[1]),
+            .I3 (reg_num[2]),
+            .I4 (_N372),
+            .I5 (_N377));
+    // defparam N69_vname.orig_name = N69;
+	// LUT = (~I3&I4)|(~I0&I5)|(~I1&~I2&I4) ;
+	// ../source/new/hdmi_cfg.v:55
+
+    GTP_ROM32X2 /* cfg_data_reg_2 */ #(
+            .INIT_0(32'b00000000000000000000000000000010), 
+            .INIT_1(32'b00000000000000000000000000000011))
+        cfg_data_reg_2 (
+            .Z (N75),
+            .I0 (reg_num[0]),
+            .I1 (reg_num[1]),
+            .I2 (reg_num[2]),
+            .I3 (1'b0),
+            .I4 (1'b0));
+	// ../source/new/hdmi_cfg.v:30
+
+    GTP_ROM32X2 /* cfg_data_reg_3 */ #(
+            .INIT_0(32'b00000000000000000000000000100110), 
+            .INIT_1(32'b00000000000000000000000000011011))
+        cfg_data_reg_3 (
+            .Z (N80),
+            .I0 (reg_num[0]),
+            .I1 (reg_num[1]),
+            .I2 (reg_num[2]),
+            .I3 (1'b0),
+            .I4 (1'b0));
+	// ../source/new/hdmi_cfg.v:30
+
+    GTP_LUT6D /* cfg_data_reg_4 */ #(
+            .INIT(64'b0011011000110110001101100011011000111111001111110011111100111111))
+        cfg_data_reg_4 (
+            .Z (N82),
+            .Z5 (N73),
+            .I0 (reg_num[0]),
+            .I1 (reg_num[1]),
+            .I2 (reg_num[2]),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b1));
+	// LUT = (~I0&I1&~I2)|(~I1&I2)|(I0&~I1) ;
+	// Z5 = (~I2)|(~I1) ;
+
+    GTP_ROM32X2 /* cfg_data_reg_5 */ #(
+            .INIT_0(32'b00000000000000000000000000000101), 
+            .INIT_1(32'b00000000000000000000000000000001))
+        cfg_data_reg_5 (
+            .Z (N85),
+            .I0 (reg_num[0]),
+            .I1 (reg_num[1]),
+            .I2 (reg_num[2]),
+            .I3 (1'b0),
+            .I4 (1'b0));
+	// ../source/new/hdmi_cfg.v:30
+
+    GTP_LUT6D /* cfg_data_reg_6 */ #(
+            .INIT(64'b0010100100101001001010010010100101100110011001100110011001100110))
+        cfg_data_reg_6 (
+            .Z (N88),
+            .Z5 (N12[1]),
+            .I0 (reg_num[0]),
+            .I1 (reg_num[1]),
+            .I2 (reg_num[2]),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b1));
+	// LUT = (~I0&~I1&~I2)|(I0&I1&~I2)|(I0&~I1&I2) ;
+	// Z5 = I1^I0 ;
+
+    GTP_LUT6D /* cfg_data_reg_7 */ #(
+            .INIT(64'b0000001111000011000000111100001110101110101010101010101010101010))
+        cfg_data_reg_7 (
+            .Z (N91),
+            .Z5 (_N412),
+            .I0 (cfg_done),
+            .I1 (reg_num[0]),
+            .I2 (reg_num[1]),
+            .I3 (reg_num[2]),
+            .I4 (_N372),
+            .I5 (1'b1));
+	// LUT = (I1&I2&~I3)|(~I1&~I2) ;
+	// Z5 = (I1&~I2&I3&I4)|(I0) ;
+
+    GTP_DFF_C /* cfg_done */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        cfg_done_vname (
+            .Q (cfg_done),
+            .C (N57),
+            .CLK (sys_clk),
+            .D (_N412));
+    // defparam cfg_done_vname.orig_name = cfg_done;
+	// ../source/new/hdmi_cfg.v:66
+
+    GTP_DFF_C /* cfg_start */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        cfg_start_vname (
+            .Q (cfg_start),
+            .C (N57),
+            .CLK (sys_clk),
+            .D (N69));
+    // defparam cfg_start_vname.orig_name = cfg_start;
+	// ../source/new/hdmi_cfg.v:55
+
+    GTP_DFF_CE /* \cnt_wait[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_wait[0]  (
+            .Q (cnt_wait[0]),
+            .C (N57),
+            .CE (N3),
+            .CLK (sys_clk),
+            .D (N58));
+	// ../source/new/hdmi_cfg.v:41
+
+    GTP_DFF_CE /* \cnt_wait[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_wait[1]  (
+            .Q (cnt_wait[1]),
+            .C (N57),
+            .CE (N3),
+            .CLK (sys_clk),
+            .D (N5[1]));
+	// ../source/new/hdmi_cfg.v:41
+
+    GTP_DFF_CE /* \cnt_wait[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_wait[2]  (
+            .Q (cnt_wait[2]),
+            .C (N57),
+            .CE (N3),
+            .CLK (sys_clk),
+            .D (N5[2]));
+	// ../source/new/hdmi_cfg.v:41
+
+    GTP_DFF_CE /* \cnt_wait[3]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_wait[3]  (
+            .Q (cnt_wait[3]),
+            .C (N57),
+            .CE (N3),
+            .CLK (sys_clk),
+            .D (N5[3]));
+	// ../source/new/hdmi_cfg.v:41
+
+    GTP_DFF_CE /* \cnt_wait[4]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_wait[4]  (
+            .Q (cnt_wait[4]),
+            .C (N57),
+            .CE (N3),
+            .CLK (sys_clk),
+            .D (N5[4]));
+	// ../source/new/hdmi_cfg.v:41
+
+    GTP_DFF_CE /* \cnt_wait[5]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_wait[5]  (
+            .Q (cnt_wait[5]),
+            .C (N57),
+            .CE (N3),
+            .CLK (sys_clk),
+            .D (N5[5]));
+	// ../source/new/hdmi_cfg.v:41
+
+    GTP_DFF_CE /* \cnt_wait[6]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_wait[6]  (
+            .Q (cnt_wait[6]),
+            .C (N57),
+            .CE (N3),
+            .CLK (sys_clk),
+            .D (N5[6]));
+	// ../source/new/hdmi_cfg.v:41
+
+    GTP_DFF_CE /* \cnt_wait[7]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_wait[7]  (
+            .Q (cnt_wait[7]),
+            .C (N57),
+            .CE (N3),
+            .CLK (sys_clk),
+            .D (N5[7]));
+	// ../source/new/hdmi_cfg.v:41
+
+    GTP_DFF_CE /* \cnt_wait[8]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_wait[8]  (
+            .Q (cnt_wait[8]),
+            .C (N57),
+            .CE (N3),
+            .CLK (sys_clk),
+            .D (N5[8]));
+	// ../source/new/hdmi_cfg.v:41
+
+    GTP_DFF_CE /* \cnt_wait[9]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_wait[9]  (
+            .Q (cnt_wait[9]),
+            .C (N57),
+            .CE (N3),
+            .CLK (sys_clk),
+            .D (N5[9]));
+	// ../source/new/hdmi_cfg.v:41
+
+    GTP_DFF_CE /* \reg_num[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \reg_num[0]  (
+            .Q (reg_num[0]),
+            .C (N57),
+            .CE (cfg_end),
+            .CLK (sys_clk),
+            .D (N12[0]));
+	// ../source/new/hdmi_cfg.v:48
+
+    GTP_DFF_CE /* \reg_num[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \reg_num[1]  (
+            .Q (reg_num[1]),
+            .C (N57),
+            .CE (cfg_end),
+            .CLK (sys_clk),
+            .D (N12[1]));
+	// ../source/new/hdmi_cfg.v:48
+
+    GTP_DFF_CE /* \reg_num[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \reg_num[2]  (
+            .Q (reg_num[2]),
+            .C (N57),
+            .CE (cfg_end),
+            .CLK (sys_clk),
+            .D (N12[2]));
+	// ../source/new/hdmi_cfg.v:48
+
+    GTP_DFF_CE /* \reg_num[3]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \reg_num[3]  (
+            .Q (reg_num[3]),
+            .C (N57),
+            .CE (cfg_end),
+            .CLK (sys_clk),
+            .D (N12[3]));
+	// ../source/new/hdmi_cfg.v:48
+
+    GTP_DFF_CE /* \reg_num[4]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \reg_num[4]  (
+            .Q (reg_num[4]),
+            .C (N57),
+            .CE (cfg_end),
+            .CLK (sys_clk),
+            .D (N12[4]));
+	// ../source/new/hdmi_cfg.v:48
+
+    GTP_DFF_CE /* \reg_num[5]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \reg_num[5]  (
+            .Q (reg_num[5]),
+            .C (N57),
+            .CE (cfg_end),
+            .CLK (sys_clk),
+            .D (N12[5]));
+	// ../source/new/hdmi_cfg.v:48
+
+    GTP_LUT6D /* \reg_num[6:0]_inv  */ #(
+            .INIT(64'b0101010101010101010101010101010101111000011110000111100001111000))
+        \reg_num[6:0]_inv  (
+            .Z (N12[0]),
+            .Z5 (N12[2]),
+            .I0 (reg_num[0]),
+            .I1 (reg_num[1]),
+            .I2 (reg_num[2]),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b1));
+	// LUT = ~I0 ;
+	// Z5 = (I0&I1&~I2)|(~I1&I2)|(~I0&I2) ;
+
+    GTP_DFF_CE /* \reg_num[6]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \reg_num[6]  (
+            .Q (reg_num[6]),
+            .C (N57),
+            .CE (cfg_end),
+            .CLK (sys_clk),
+            .D (N12[6]));
+	// ../source/new/hdmi_cfg.v:48
+
+
+endmodule
+
+
+module i2c_ctrl
+(
+    input [15:0] byte_addr,
+    input [7:0] device_addr,
+    input [1:0] \hdmi_i2c_inst/hdmi_cfg_inst/N75 ,
+    input [1:0] \hdmi_i2c_inst/hdmi_cfg_inst/N80 ,
+    input [1:0] \hdmi_i2c_inst/hdmi_cfg_inst/N85 ,
+    input [7:0] wr_data,
+    input N548,
+    input _N0,
+    input \hdmi_i2c_inst/hdmi_cfg_inst/N73 ,
+    input \hdmi_i2c_inst/hdmi_cfg_inst/N82 ,
+    input \hdmi_i2c_inst/hdmi_cfg_inst/N88 ,
+    input \hdmi_i2c_inst/hdmi_cfg_inst/N91 ,
+    input i2c_start,
+    input sys_clk,
+    output N542,
+    output i2c_clk,
+    output i2c_end,
+    output i2c_scl,
+    output i2c_sda_reg
+);
+    wire [7:0] N8;
+    wire N29;
+    wire [1:0] N42;
+    wire N433;
+    wire [7:0] N886;
+    wire N895;
+    wire [2:0] N896;
+    wire N982;
+    wire N983;
+    wire [7:0] N1001;
+    wire _N2;
+    wire _N8;
+    wire _N11;
+    wire _N17;
+    wire _N32;
+    wire _N40;
+    wire _N44;
+    wire _N50;
+    wire _N76;
+    wire _N78;
+    wire _N164;
+    wire _N167;
+    wire _N210;
+    wire _N365;
+    wire _N403_2;
+    wire _N403_3;
+    wire _N407_2;
+    wire _N407_3;
+    wire _N410;
+    wire _N411;
+    wire _N419;
+    wire _N452;
+    wire ack;
+    wire [2:0] cnt_bit;
+    wire [7:0] cnt_clk;
+    wire [1:0] cnt_i2c_clk;
+    wire cnt_i2c_clk_en;
+    wire [3:0] state;
+    wire [15:0] state_reg;
+
+    GTP_LUT6D /* N8_sum1 */ #(
+            .INIT(64'b0110011001100110011001100110011001111000011110000111100001111000))
+        N8_sum1 (
+            .Z (N8[1]),
+            .Z5 (N8[2]),
+            .I0 (cnt_clk[0]),
+            .I1 (cnt_clk[1]),
+            .I2 (cnt_clk[2]),
+            .I3 (),
+            .I4 (),
+            .I5 (1'b1));
+	// LUT = I1^I0 ;
+	// Z5 = (I0&I1&~I2)|(~I1&I2)|(~I0&I2) ;
+
+    GTP_LUT6D /* N72_0 */ #(
+            .INIT(64'b1111111111111111111111111110111000000000000000010000000000000001))
+        N72_0 (
+            .Z (_N78),
+            .Z5 (state[0]),
+            .I0 (state_reg[2]),
+            .I1 (state_reg[6]),
+            .I2 (state_reg[0]),
+            .I3 (state_reg[8]),
+            .I4 (state_reg[15]),
+            .I5 (1'b1));
+	// LUT = (I4)|(I3)|(I1)|(I0) ;
+	// Z5 = ~I0&~I1&~I2&~I3 ;
+	// ../source/new/i2c_ctrl.v:123
+
+    GTP_LUT6D /* N80 */ #(
+            .INIT(64'b1000000000000000000000000000000000000000111111110000000011111111))
+        N80 (
+            .Z (N1001[7]),
+            .Z5 (N42[0]),
+            .I0 (cnt_bit[0]),
+            .I1 (cnt_bit[1]),
+            .I2 (cnt_bit[2]),
+            .I3 (cnt_i2c_clk[0]),
+            .I4 (cnt_i2c_clk[1]),
+            .I5 (1'b1));
+	// LUT = I0&I1&I2&I3&I4 ;
+	// Z5 = ~I3 ;
+	// ../source/new/i2c_ctrl.v:117
+
+    GTP_LUT6D /* N291_4 */ #(
+            .INIT(64'b0000000011000000000000001100000000000000000000100000000000000010))
+        N291_4 (
+            .Z (_N419),
+            .Z5 (_N365),
+            .I0 (state_reg[15]),
+            .I1 (cnt_bit[0]),
+            .I2 (cnt_bit[1]),
+            .I3 (cnt_bit[2]),
+            .I4 (),
+            .I5 (1'b1));
+	// LUT = I1&I2&~I3 ;
+	// Z5 = I0&~I1&~I2&~I3 ;
+
+    GTP_LUT5 /* N420_7 */ #(
+            .INIT(32'b11101111111011101010101110101010))
+        N420_7 (
+            .Z (_N164),
+            .I0 (wr_data[1]),
+            .I1 (cnt_bit[1]),
+            .I2 (cnt_bit[2]),
+            .I3 (\hdmi_i2c_inst/hdmi_cfg_inst/N73 ),
+            .I4 (\hdmi_i2c_inst/hdmi_cfg_inst/N75 [1] ));
+	// LUT = (I0)|(I1&I4)|(~I1&~I2&I3) ;
+
+    GTP_LUT6 /* N420_10 */ #(
+            .INIT(64'b1111111011111010111011101110101010111110101110101010111010101010))
+        N420_10 (
+            .Z (_N167),
+            .I0 (wr_data[1]),
+            .I1 (cnt_bit[1]),
+            .I2 (cnt_bit[2]),
+            .I3 (\hdmi_i2c_inst/hdmi_cfg_inst/N73 ),
+            .I4 (\hdmi_i2c_inst/hdmi_cfg_inst/N75 [0] ),
+            .I5 (\hdmi_i2c_inst/hdmi_cfg_inst/N75 [1] ));
+	// LUT = (I0)|(I1&~I2&I3)|(~I1&I2&I4)|(I1&I2&I5) ;
+
+    GTP_MUX2LUT7 N433_11 (
+            .Z (N433),
+            .I0 (_N407_3),
+            .I1 (_N407_2),
+            .S (cnt_bit[0]));
+
+    GTP_LUT5 /* N433_12 */ #(
+            .INIT(32'b11111010101110101110101010101010))
+        N433_12 (
+            .Z (_N407_2),
+            .I0 (wr_data[1]),
+            .I1 (cnt_bit[1]),
+            .I2 (cnt_bit[2]),
+            .I3 (\hdmi_i2c_inst/hdmi_cfg_inst/N82 ),
+            .I4 (\hdmi_i2c_inst/hdmi_cfg_inst/N80 [0] ));
+	// LUT = (I0)|(~I1&I2&I4)|(I1&I2&I3) ;
+
+    GTP_LUT5 /* N433_13 */ #(
+            .INIT(32'b11111110101110101110111010101010))
+        N433_13 (
+            .Z (_N407_3),
+            .I0 (wr_data[1]),
+            .I1 (cnt_bit[1]),
+            .I2 (cnt_bit[2]),
+            .I3 (\hdmi_i2c_inst/hdmi_cfg_inst/N75 [0] ),
+            .I4 (\hdmi_i2c_inst/hdmi_cfg_inst/N80 [1] ));
+	// LUT = (I0)|(I1&I3)|(~I1&I2&I4) ;
+
+    GTP_LUT5 /* N439_14 */ #(
+            .INIT(32'b11111010101110101110101010101010))
+        N439_14 (
+            .Z (_N403_2),
+            .I0 (wr_data[1]),
+            .I1 (cnt_bit[0]),
+            .I2 (cnt_bit[1]),
+            .I3 (\hdmi_i2c_inst/hdmi_cfg_inst/N85 [0] ),
+            .I4 (\hdmi_i2c_inst/hdmi_cfg_inst/N85 [1] ));
+	// LUT = (I0)|(~I1&I2&I4)|(I1&I2&I3) ;
+
+    GTP_LUT5 /* N439_15 */ #(
+            .INIT(32'b11101110111010101010111010101010))
+        N439_15 (
+            .Z (_N403_3),
+            .I0 (wr_data[1]),
+            .I1 (cnt_bit[0]),
+            .I2 (cnt_bit[1]),
+            .I3 (\hdmi_i2c_inst/hdmi_cfg_inst/N88 ),
+            .I4 (\hdmi_i2c_inst/hdmi_cfg_inst/N91 ));
+	// LUT = (I0)|(I1&~I2&I3)|(I1&I2&I4) ;
+
+    GTP_LUT6D /* N542_0_3 */ #(
+            .INIT(64'b1111111111111010111111111111101011111111111111111111110011111100))
+        N542_0_3 (
+            .Z (N542),
+            .Z5 (state[2]),
+            .I0 (state_reg[3]),
+            .I1 (state_reg[6]),
+            .I2 (state_reg[7]),
+            .I3 (state_reg[9]),
+            .I4 (state_reg[15]),
+            .I5 (1'b1));
+	// LUT = (I3)|(I2)|(I0) ;
+	// Z5 = (I4)|(I2)|(I1) ;
+
+    GTP_LUT6D /* \N886[0]  */ #(
+            .INIT(64'b0101010001010101010101010101010101111110100000000111111110000000))
+        \N886[0]  (
+            .Z (N886[0]),
+            .Z5 (N886[3]),
+            .I0 (cnt_clk[0]),
+            .I1 (cnt_clk[1]),
+            .I2 (cnt_clk[2]),
+            .I3 (cnt_clk[3]),
+            .I4 (cnt_clk[4]),
+            .I5 (1'b1));
+	// LUT = (~I0&~I4)|(~I0&~I3)|(~I0&I2)|(~I0&I1) ;
+	// Z5 = (~I0&I3&~I4)|(I0&I1&I2&~I3)|(I0&~I2&I3)|(~I0&I2&I3)|(I0&~I1&I3)|(~I0&I1&I3) ;
+	// ../source/new/i2c_ctrl.v:78
+
+    GTP_LUT5 /* \N886[2]  */ #(
+            .INIT(32'b01111110111111111000000000000000))
+        \N886[2]  (
+            .Z (N886[4]),
+            .I0 (cnt_clk[0]),
+            .I1 (cnt_clk[1]),
+            .I2 (cnt_clk[2]),
+            .I3 (cnt_clk[3]),
+            .I4 (cnt_clk[4]));
+	// LUT = (~I3&I4)|(I0&~I2&I4)|(~I1&I2&I4)|(~I0&I1&I4)|(I0&I1&I2&I3&~I4) ;
+	// ../source/new/i2c_ctrl.v:78
+
+    GTP_LUT6D /* N895 */ #(
+            .INIT(64'b1111011111110101111101011111010100000000111111111111111100000000))
+        N895_vname (
+            .Z (N895),
+            .Z5 (N42[1]),
+            .I0 (_N78),
+            .I1 (state_reg[0]),
+            .I2 (N1001[7]),
+            .I3 (cnt_i2c_clk[0]),
+            .I4 (cnt_i2c_clk[1]),
+            .I5 (1'b1));
+    // defparam N895_vname.orig_name = N895;
+	// LUT = (~I1&I3&I4)|(I2)|(~I0) ;
+	// Z5 = I4^I3 ;
+	// ../source/new/i2c_ctrl.v:110
+
+    GTP_LUT5 /* \N896_1[0]  */ #(
+            .INIT(32'b00000000000000001111111111111110))
+        \N896_1[0]  (
+            .Z (N896[0]),
+            .I0 (state_reg[2]),
+            .I1 (state_reg[6]),
+            .I2 (state_reg[8]),
+            .I3 (state_reg[15]),
+            .I4 (cnt_bit[0]));
+	// LUT = (I0&~I4)|(I1&~I4)|(I2&~I4)|(I3&~I4) ;
+	// ../source/new/i2c_ctrl.v:110
+
+    GTP_LUT6D /* \N896_1[2]  */ #(
+            .INIT(64'b0010101010000000001010101000000000101000001010000010100000101000))
+        \N896_1[2]  (
+            .Z (N896[2]),
+            .Z5 (N896[1]),
+            .I0 (_N78),
+            .I1 (cnt_bit[0]),
+            .I2 (cnt_bit[1]),
+            .I3 (cnt_bit[2]),
+            .I4 (),
+            .I5 (1'b1));
+	// LUT = (I0&I1&I2&~I3)|(I0&~I2&I3)|(I0&~I1&I3) ;
+	// Z5 = (I0&I1&~I2)|(I0&~I1&I2) ;
+
+    GTP_LUT6 /* \N957_and[0]_3  */ #(
+            .INIT(64'b0100010001000100010001001111010011110100010001001111010011110100))
+        \N957_and[0]_3  (
+            .Z (_N452),
+            .I0 (N433),
+            .I1 (state_reg[6]),
+            .I2 (state_reg[8]),
+            .I3 (cnt_bit[2]),
+            .I4 (_N403_2),
+            .I5 (_N403_3));
+	// LUT = (~I0&I1)|(I2&I3&~I5)|(I2&~I3&~I4) ;
+
+    GTP_LUT6 /* \N957_inv[0]  */ #(
+            .INIT(64'b0000000000000000000000000000000000000000010000000000000001010111))
+        \N957_inv[0]  (
+            .Z (i2c_sda_reg),
+            .I0 (state_reg[1]),
+            .I1 (cnt_i2c_clk[0]),
+            .I2 (cnt_i2c_clk[1]),
+            .I3 (_N210),
+            .I4 (_N365),
+            .I5 (_N452));
+	// LUT = (~I0&~I3&~I4&~I5)|(~I1&~I2&~I3&~I4&~I5)|(~I0&I1&I2&~I3&~I5) ;
+
+    GTP_LUT6 /* \N957_or[0][2]  */ #(
+            .INIT(64'b1000000000000000100010001000100010100010001000101010101010101010))
+        \N957_or[0][2]  (
+            .Z (_N210),
+            .I0 (state_reg[2]),
+            .I1 (cnt_bit[0]),
+            .I2 (cnt_bit[1]),
+            .I3 (cnt_bit[2]),
+            .I4 (_N164),
+            .I5 (_N167));
+	// LUT = (I0&~I1&~I5)|(I0&I1&~I4)|(I0&I1&I2&I3) ;
+
+    GTP_LUT5 /* N982_1_3 */ #(
+            .INIT(32'b11111111111111111111111100000001))
+        N982_1_3 (
+            .Z (N982),
+            .I0 (state_reg[3]),
+            .I1 (state_reg[7]),
+            .I2 (state_reg[9]),
+            .I3 (state_reg[15]),
+            .I4 (_N0));
+	// LUT = (I3)|(I4)|(~I0&~I1&~I2) ;
+
+    GTP_LUT5 /* N983_1 */ #(
+            .INIT(32'b00000001000000010000000111111111))
+        N983_1 (
+            .Z (N983),
+            .I0 (state_reg[3]),
+            .I1 (state_reg[7]),
+            .I2 (state_reg[9]),
+            .I3 (cnt_i2c_clk[0]),
+            .I4 (cnt_i2c_clk[1]));
+	// LUT = (~I3&~I4)|(~I0&~I1&~I2) ;
+
+    GTP_DLATCH /* ack */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        ack_vname (
+            .Q (ack),
+            .D (N982),
+            .G (N983));
+    // defparam ack_vname.orig_name = ack;
+	// ../source/new/i2c_ctrl.v:68
+
+    GTP_DFF_CE /* \cnt_bit[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_bit[0]  (
+            .Q (cnt_bit[0]),
+            .C (N548),
+            .CE (N895),
+            .CLK (i2c_clk),
+            .D (N896[0]));
+	// ../source/new/i2c_ctrl.v:110
+
+    GTP_DFF_CE /* \cnt_bit[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_bit[1]  (
+            .Q (cnt_bit[1]),
+            .C (N548),
+            .CE (N895),
+            .CLK (i2c_clk),
+            .D (N896[1]));
+	// ../source/new/i2c_ctrl.v:110
+
+    GTP_DFF_CE /* \cnt_bit[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_bit[2]  (
+            .Q (cnt_bit[2]),
+            .C (N548),
+            .CE (N895),
+            .CLK (i2c_clk),
+            .D (N896[2]));
+	// ../source/new/i2c_ctrl.v:110
+
+    GTP_DFF_C /* \cnt_clk[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_clk[0]  (
+            .Q (cnt_clk[0]),
+            .C (N548),
+            .CLK (sys_clk),
+            .D (N886[0]));
+	// ../source/new/i2c_ctrl.v:78
+
+    GTP_DFF_C /* \cnt_clk[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_clk[1]  (
+            .Q (cnt_clk[1]),
+            .C (N548),
+            .CLK (sys_clk),
+            .D (N8[1]));
+	// ../source/new/i2c_ctrl.v:78
+
+    GTP_DFF_C /* \cnt_clk[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_clk[2]  (
+            .Q (cnt_clk[2]),
+            .C (N548),
+            .CLK (sys_clk),
+            .D (N8[2]));
+	// ../source/new/i2c_ctrl.v:78
+
+    GTP_DFF_C /* \cnt_clk[3]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_clk[3]  (
+            .Q (cnt_clk[3]),
+            .C (N548),
+            .CLK (sys_clk),
+            .D (N886[3]));
+	// ../source/new/i2c_ctrl.v:78
+
+    GTP_DFF_C /* \cnt_clk[4]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_clk[4]  (
+            .Q (cnt_clk[4]),
+            .C (N548),
+            .CLK (sys_clk),
+            .D (N886[4]));
+	// ../source/new/i2c_ctrl.v:78
+
+    GTP_DFF_CE /* \cnt_i2c_clk[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_i2c_clk[0]  (
+            .Q (cnt_i2c_clk[0]),
+            .C (N548),
+            .CE (cnt_i2c_clk_en),
+            .CLK (i2c_clk),
+            .D (N42[0]));
+	// ../source/new/i2c_ctrl.v:103
+
+    GTP_DFF_CE /* \cnt_i2c_clk[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \cnt_i2c_clk[1]  (
+            .Q (cnt_i2c_clk[1]),
+            .C (N548),
+            .CE (cnt_i2c_clk_en),
+            .CLK (i2c_clk),
+            .D (N42[1]));
+	// ../source/new/i2c_ctrl.v:103
+
+    GTP_DFF_C /* cnt_i2c_clk_en */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        cnt_i2c_clk_en_vname (
+            .Q (cnt_i2c_clk_en),
+            .C (N548),
+            .CLK (i2c_clk),
+            .D (_N411));
+    // defparam cnt_i2c_clk_en_vname.orig_name = cnt_i2c_clk_en;
+	// ../source/new/i2c_ctrl.v:94
+
+    GTP_DFF_P /* i2c_clk */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b1))
+        i2c_clk_vname (
+            .Q (i2c_clk),
+            .CLK (sys_clk),
+            .D (_N410),
+            .P (N548));
+    // defparam i2c_clk_vname.orig_name = i2c_clk;
+	// ../source/new/i2c_ctrl.v:87
+
+    GTP_LUT6 /* i2c_clk_ce_mux */ #(
+            .INIT(64'b1010101010101001101010101010101010101010101010101010101010101010))
+        i2c_clk_ce_mux (
+            .Z (_N410),
+            .I0 (i2c_clk),
+            .I1 (cnt_clk[0]),
+            .I2 (cnt_clk[1]),
+            .I3 (cnt_clk[2]),
+            .I4 (cnt_clk[3]),
+            .I5 (cnt_clk[4]));
+	// LUT = (I0&~I5)|(I0&~I4)|(I0&I1)|(I0&I2)|(I0&I3)|(~I0&~I1&~I2&~I3&I4&I5) ;
+
+    GTP_DFF_C /* i2c_end */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        i2c_end_vname (
+            .Q (i2c_end),
+            .C (N548),
+            .CLK (i2c_clk),
+            .D (N29));
+    // defparam i2c_end_vname.orig_name = i2c_end;
+	// ../source/new/i2c_ctrl.v:331
+
+    GTP_LUT6 /* \i2c_scl_inv[0]  */ #(
+            .INIT(64'b0101010011111111111111110000000001010100111111111111111111111110))
+        \i2c_scl_inv[0]  (
+            .Z (i2c_scl),
+            .I0 (state_reg[1]),
+            .I1 (state_reg[0]),
+            .I2 (state_reg[15]),
+            .I3 (cnt_i2c_clk[0]),
+            .I4 (cnt_i2c_clk[1]),
+            .I5 (_N365));
+	// LUT = (I3&~I4)|(~I3&I4)|(I0&~I3&~I5)|(~I0&I1&~I5)|(~I0&I2&~I5)|(~I0&I1&I4)|(~I0&I2&I4) ;
+
+    GTP_LUT6 /* \state_fsm[3:0]_2  */ #(
+            .INIT(64'b0000000010000000000000000000000000000000000000000000000000000000))
+        \state_fsm[3:0]_2  (
+            .Z (N29),
+            .I0 (state_reg[15]),
+            .I1 (cnt_bit[0]),
+            .I2 (cnt_bit[1]),
+            .I3 (cnt_bit[2]),
+            .I4 (cnt_i2c_clk[0]),
+            .I5 (cnt_i2c_clk[1]));
+	// LUT = I0&I1&I2&~I3&I4&I5 ;
+	// ../source/new/i2c_ctrl.v:123
+
+    GTP_LUT6D /* \state_fsm[3:0]_3  */ #(
+            .INIT(64'b1101110011011100110111001101110000110011001000100011001100100010))
+        \state_fsm[3:0]_3  (
+            .Z (_N2),
+            .Z5 (_N411),
+            .I0 (i2c_start),
+            .I1 (N29),
+            .I2 (state_reg[0]),
+            .I3 (cnt_i2c_clk_en),
+            .I4 (),
+            .I5 (1'b1));
+	// LUT = (~I0&I2)|(I1) ;
+	// Z5 = (~I1&I3)|(I0&~I1) ;
+	// ../source/new/i2c_ctrl.v:123
+
+    GTP_LUT5 /* \state_fsm[3:0]_12  */ #(
+            .INIT(32'b10101110000011000000110000001100))
+        \state_fsm[3:0]_12  (
+            .Z (_N11),
+            .I0 (state_reg[1]),
+            .I1 (state_reg[2]),
+            .I2 (N1001[7]),
+            .I3 (cnt_i2c_clk[0]),
+            .I4 (cnt_i2c_clk[1]));
+	// LUT = (I1&~I2)|(I0&I3&I4) ;
+	// ../source/new/i2c_ctrl.v:123
+
+    GTP_LUT5 /* \state_fsm[3:0]_15  */ #(
+            .INIT(32'b10100000111011001110110011101100))
+        \state_fsm[3:0]_15  (
+            .Z (_N8),
+            .I0 (i2c_start),
+            .I1 (state_reg[1]),
+            .I2 (state_reg[0]),
+            .I3 (cnt_i2c_clk[0]),
+            .I4 (cnt_i2c_clk[1]));
+	// LUT = (I1&~I4)|(I1&~I3)|(I0&I2) ;
+
+    GTP_LUT6 /* \state_fsm[3:0]_18_2  */ #(
+            .INIT(64'b1110101011000000111011101100110011101110110011001110111011001100))
+        \state_fsm[3:0]_18_2  (
+            .Z (_N17),
+            .I0 (state_reg[2]),
+            .I1 (state_reg[3]),
+            .I2 (ack),
+            .I3 (N1001[7]),
+            .I4 (cnt_i2c_clk[0]),
+            .I5 (cnt_i2c_clk[1]));
+	// LUT = (I1&~I5)|(I1&~I4)|(I0&I3)|(I1&I2) ;
+
+    GTP_LUT6 /* \state_fsm[3:0]_33  */ #(
+            .INIT(64'b0000101011001110000000001100110000000000110011000000000011001100))
+        \state_fsm[3:0]_33  (
+            .Z (_N32),
+            .I0 (state_reg[3]),
+            .I1 (state_reg[6]),
+            .I2 (ack),
+            .I3 (N1001[7]),
+            .I4 (cnt_i2c_clk[0]),
+            .I5 (cnt_i2c_clk[1]));
+	// LUT = (I1&~I3)|(I0&~I2&I4&I5) ;
+	// ../source/new/i2c_ctrl.v:123
+
+    GTP_LUT6 /* \state_fsm[3:0]_41_2  */ #(
+            .INIT(64'b1110101011000000111011101100110011101110110011001110111011001100))
+        \state_fsm[3:0]_41_2  (
+            .Z (_N40),
+            .I0 (state_reg[6]),
+            .I1 (state_reg[7]),
+            .I2 (ack),
+            .I3 (N1001[7]),
+            .I4 (cnt_i2c_clk[0]),
+            .I5 (cnt_i2c_clk[1]));
+	// LUT = (I1&~I5)|(I1&~I4)|(I0&I3)|(I1&I2) ;
+
+    GTP_LUT6 /* \state_fsm[3:0]_45  */ #(
+            .INIT(64'b0000101011001110000000001100110000000000110011000000000011001100))
+        \state_fsm[3:0]_45  (
+            .Z (_N44),
+            .I0 (state_reg[7]),
+            .I1 (state_reg[8]),
+            .I2 (ack),
+            .I3 (N1001[7]),
+            .I4 (cnt_i2c_clk[0]),
+            .I5 (cnt_i2c_clk[1]));
+	// LUT = (I1&~I3)|(I0&~I2&I4&I5) ;
+	// ../source/new/i2c_ctrl.v:123
+
+    GTP_LUT6 /* \state_fsm[3:0]_51_2  */ #(
+            .INIT(64'b1110101011000000111011101100110011101110110011001110111011001100))
+        \state_fsm[3:0]_51_2  (
+            .Z (_N50),
+            .I0 (state_reg[8]),
+            .I1 (state_reg[9]),
+            .I2 (ack),
+            .I3 (N1001[7]),
+            .I4 (cnt_i2c_clk[0]),
+            .I5 (cnt_i2c_clk[1]));
+	// LUT = (I1&~I5)|(I1&~I4)|(I0&I3)|(I1&I2) ;
+
+    GTP_LUT6 /* \state_fsm[3:0]_77  */ #(
+            .INIT(64'b0000101011001100110011001100110011001110110011001100110011001100))
+        \state_fsm[3:0]_77  (
+            .Z (_N76),
+            .I0 (state_reg[9]),
+            .I1 (state_reg[15]),
+            .I2 (ack),
+            .I3 (cnt_i2c_clk[0]),
+            .I4 (cnt_i2c_clk[1]),
+            .I5 (_N419));
+	// LUT = (I1&~I5)|(I1&~I4)|(I1&~I3)|(I0&~I2&I3&I4) ;
+	// ../source/new/i2c_ctrl.v:123
+
+    GTP_LUT6D /* \state_fsm[3:0]_78_or[3]  */ #(
+            .INIT(64'b1111111111111111111111111111000000000000000000010000000000000001))
+        \state_fsm[3:0]_78_or[3]  (
+            .Z (state[3]),
+            .Z5 (state[1]),
+            .I0 (state_reg[1]),
+            .I1 (state_reg[0]),
+            .I2 (state_reg[8]),
+            .I3 (state_reg[9]),
+            .I4 (state_reg[15]),
+            .I5 (1'b1));
+	// LUT = (I4)|(I3)|(I2) ;
+	// Z5 = ~I0&~I1&~I2&~I3 ;
+
+(* syn_encoding="onehot" *)    GTP_DFF_P /* \state_reg[0]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b1))
+        \state_reg[0]  (
+            .Q (state_reg[0]),
+            .CLK (i2c_clk),
+            .D (_N2),
+            .P (N548));
+	// ../source/new/i2c_ctrl.v:123
+
+(* syn_encoding="onehot" *)    GTP_DFF_C /* \state_reg[1]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \state_reg[1]  (
+            .Q (state_reg[1]),
+            .C (N548),
+            .CLK (i2c_clk),
+            .D (_N8));
+	// ../source/new/i2c_ctrl.v:123
+
+(* syn_encoding="onehot" *)    GTP_DFF_C /* \state_reg[2]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \state_reg[2]  (
+            .Q (state_reg[2]),
+            .C (N548),
+            .CLK (i2c_clk),
+            .D (_N11));
+	// ../source/new/i2c_ctrl.v:123
+
+(* syn_encoding="onehot" *)    GTP_DFF_C /* \state_reg[3]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \state_reg[3]  (
+            .Q (state_reg[3]),
+            .C (N548),
+            .CLK (i2c_clk),
+            .D (_N17));
+	// ../source/new/i2c_ctrl.v:123
+
+(* syn_encoding="onehot" *)    GTP_DFF_C /* \state_reg[6]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \state_reg[6]  (
+            .Q (state_reg[6]),
+            .C (N548),
+            .CLK (i2c_clk),
+            .D (_N32));
+	// ../source/new/i2c_ctrl.v:123
+
+(* syn_encoding="onehot" *)    GTP_DFF_C /* \state_reg[7]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \state_reg[7]  (
+            .Q (state_reg[7]),
+            .C (N548),
+            .CLK (i2c_clk),
+            .D (_N40));
+	// ../source/new/i2c_ctrl.v:123
+
+(* syn_encoding="onehot" *)    GTP_DFF_C /* \state_reg[8]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \state_reg[8]  (
+            .Q (state_reg[8]),
+            .C (N548),
+            .CLK (i2c_clk),
+            .D (_N44));
+	// ../source/new/i2c_ctrl.v:123
+
+(* syn_encoding="onehot" *)    GTP_DFF_C /* \state_reg[9]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \state_reg[9]  (
+            .Q (state_reg[9]),
+            .C (N548),
+            .CLK (i2c_clk),
+            .D (_N50));
+	// ../source/new/i2c_ctrl.v:123
+
+(* syn_encoding="onehot" *)    GTP_DFF_C /* \state_reg[15]  */ #(
+            .GRS_EN("TRUE"), 
+            .INIT(1'b0))
+        \state_reg[15]  (
+            .Q (state_reg[15]),
+            .C (N548),
+            .CLK (i2c_clk),
+            .D (_N76));
+	// ../source/new/i2c_ctrl.v:123
+
+
+endmodule
+
+
+module hdmi_i2c
+(
+    input _N0,
+    input sys_clk,
+    input sys_rst_n,
+    output \i2c_ctrl_inst/N542 ,
+    output \i2c_ctrl_inst/i2c_sda_reg ,
+    output sccb_scl
+);
+(* PAP_MARK_DEBUG="1" *)    wire cfg_clk;
+    wire [31:0] cfg_data;
+(* PAP_MARK_DEBUG="1" *)    wire cfg_done;
+(* PAP_MARK_DEBUG="1" *)    wire cfg_end;
+(* PAP_MARK_DEBUG="1" *)    wire cfg_start;
+    wire \hdmi_cfg_inst/N57 ;
+    wire \hdmi_cfg_inst/N73 ;
+    wire [1:0] \hdmi_cfg_inst/N75 ;
+    wire [1:0] \hdmi_cfg_inst/N80 ;
+    wire \hdmi_cfg_inst/N82 ;
+    wire [1:0] \hdmi_cfg_inst/N85 ;
+    wire \hdmi_cfg_inst/N88 ;
+    wire \hdmi_cfg_inst/N91 ;
+    wire \hdmi_cfg_inst_cfg_data[1]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[3]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[6]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[7]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[9]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[12]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[13]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[14]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[15]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[16]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[17]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[18]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[19]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[20]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[21]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[22]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[23]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[24]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[25]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[26]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[27]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[28]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[29]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[30]_floating ;
+    wire \hdmi_cfg_inst_cfg_data[31]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[0]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[1]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[2]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[3]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[4]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[5]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[6]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[7]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[8]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[10]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[11]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[12]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[13]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[14]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[15]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[16]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[17]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[18]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[19]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[20]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[21]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[22]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[23]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[24]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[26]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[27]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[28]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[30]_floating ;
+    wire \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[31]_floating ;
+
+    hdmi_cfg hdmi_cfg_inst (
+            .N75 ({\hdmi_cfg_inst/N75 [1] , \hdmi_cfg_inst/N75 [0] }),
+            .N80 ({\hdmi_cfg_inst/N80 [1] , \hdmi_cfg_inst/N80 [0] }),
+            .N85 ({\hdmi_cfg_inst/N85 [1] , \hdmi_cfg_inst/N85 [0] }),
+            .cfg_data ({\hdmi_cfg_inst_cfg_data[31]_floating , \hdmi_cfg_inst_cfg_data[30]_floating , \hdmi_cfg_inst_cfg_data[29]_floating , \hdmi_cfg_inst_cfg_data[28]_floating , \hdmi_cfg_inst_cfg_data[27]_floating , \hdmi_cfg_inst_cfg_data[26]_floating , \hdmi_cfg_inst_cfg_data[25]_floating , \hdmi_cfg_inst_cfg_data[24]_floating , \hdmi_cfg_inst_cfg_data[23]_floating , \hdmi_cfg_inst_cfg_data[22]_floating , \hdmi_cfg_inst_cfg_data[21]_floating , \hdmi_cfg_inst_cfg_data[20]_floating , \hdmi_cfg_inst_cfg_data[19]_floating , \hdmi_cfg_inst_cfg_data[18]_floating , \hdmi_cfg_inst_cfg_data[17]_floating , \hdmi_cfg_inst_cfg_data[16]_floating , \hdmi_cfg_inst_cfg_data[15]_floating , \hdmi_cfg_inst_cfg_data[14]_floating , \hdmi_cfg_inst_cfg_data[13]_floating , \hdmi_cfg_inst_cfg_data[12]_floating , cfg_data[11], cfg_data[10], \hdmi_cfg_inst_cfg_data[9]_floating , cfg_data[8], \hdmi_cfg_inst_cfg_data[7]_floating , \hdmi_cfg_inst_cfg_data[6]_floating , cfg_data[5], cfg_data[4], \hdmi_cfg_inst_cfg_data[3]_floating , cfg_data[2], \hdmi_cfg_inst_cfg_data[1]_floating , cfg_data[0]}),
+            .\hdmi_i2c_inst/cfg_data  ({\hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[31]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[30]_floating , cfg_data[29], \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[28]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[27]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[26]_floating , cfg_data[25], \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[24]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[23]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[22]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[21]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[20]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[19]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[18]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[17]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[16]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[15]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[14]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[13]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[12]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[11]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[10]_floating , cfg_data[9], \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[8]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[7]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[6]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[5]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[4]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[3]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[2]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[1]_floating , \hdmi_cfg_inst_hdmi_i2c_inst/cfg_data[0]_floating }),
+            .N57 (\hdmi_cfg_inst/N57 ),
+            .N73 (\hdmi_cfg_inst/N73 ),
+            .N82 (\hdmi_cfg_inst/N82 ),
+            .N88 (\hdmi_cfg_inst/N88 ),
+            .N91 (\hdmi_cfg_inst/N91 ),
+            .cfg_done (cfg_done),
+            .cfg_start (cfg_start),
+            .cfg_end (cfg_end),
+            .sys_clk (cfg_clk),
+            .sys_rst_n (sys_rst_n));
+	// ../source/new/hdmi_i2c.v:59
+
+    i2c_ctrl i2c_ctrl_inst (
+            .byte_addr ({1'bx, 1'bx, 1'bx, 1'bx, 1'bx, 1'bx, 1'bx, 1'bx, 1'bx, 1'bx, 1'bx, 1'bx, cfg_data[11], cfg_data[10], cfg_data[9], cfg_data[8]}),
+            .device_addr ({1'bx, 1'bx, cfg_data[29], 1'bx, 1'bx, 1'bx, cfg_data[25], 1'bx}),
+            .\hdmi_i2c_inst/hdmi_cfg_inst/N75  ({\hdmi_cfg_inst/N75 [1] , \hdmi_cfg_inst/N75 [0] }),
+            .\hdmi_i2c_inst/hdmi_cfg_inst/N80  ({\hdmi_cfg_inst/N80 [1] , \hdmi_cfg_inst/N80 [0] }),
+            .\hdmi_i2c_inst/hdmi_cfg_inst/N85  ({\hdmi_cfg_inst/N85 [1] , \hdmi_cfg_inst/N85 [0] }),
+            .wr_data ({1'bx, 1'bx, cfg_data[5], cfg_data[4], 1'bx, cfg_data[2], cfg_done, cfg_data[0]}),
+            .N542 (\i2c_ctrl_inst/N542 ),
+            .i2c_clk (cfg_clk),
+            .i2c_end (cfg_end),
+            .i2c_scl (sccb_scl),
+            .i2c_sda_reg (\i2c_ctrl_inst/i2c_sda_reg ),
+            .N548 (\hdmi_cfg_inst/N57 ),
+            ._N0 (_N0),
+            .\hdmi_i2c_inst/hdmi_cfg_inst/N73  (\hdmi_cfg_inst/N73 ),
+            .\hdmi_i2c_inst/hdmi_cfg_inst/N82  (\hdmi_cfg_inst/N82 ),
+            .\hdmi_i2c_inst/hdmi_cfg_inst/N88  (\hdmi_cfg_inst/N88 ),
+            .\hdmi_i2c_inst/hdmi_cfg_inst/N91  (\hdmi_cfg_inst/N91 ),
+            .i2c_start (cfg_start),
+            .sys_clk (sys_clk));
+	// ../source/new/hdmi_i2c.v:39
+
+
+endmodule
+
+
+module hdmi_loop
+(
+    input [23:0] hdmi_in_rgb,
+    input hdmi_in_clk,
+    input hdmi_in_de,
+    input hdmi_in_hsync,
+    input hdmi_in_vsync,
+    input sys_clk,
+    input sys_rst_n,
+    output [23:0] hdmi_out_rgb,
+    output ddc_scl,
+    output hdmi_in_rst_n,
+    output hdmi_out_clk,
+    output hdmi_out_de,
+    output hdmi_out_hsync,
+    output hdmi_out_rst_n,
+    output hdmi_out_vsync,
+    inout ddc_sda
+);
+	// SDC constraint : (object sys_clk) (id 1000) (clock sys_clk) (2 : D:/pango_fire/PG2L100H/9_hdmi_loop/hdmi_loop_pango/hdmi_loop.fdc)
+(* PAP_MARK_DEBUG="1" *)    wire _N0;
+    wire \hdmi_i2c_inst/i2c_ctrl_inst/N542_rnmt ;
+    wire \hdmi_i2c_inst/i2c_ctrl_inst/i2c_sda_reg_rnmt ;
+(* PAP_MARK_DEBUG="1" *)    wire nt_ddc_scl;
+(* PAP_MARK_DEBUG="1" *)    wire nt_hdmi_in_clk;
+(* PAP_MARK_DEBUG="1" *)    wire nt_hdmi_in_de;
+(* PAP_MARK_DEBUG="1" *)    wire nt_hdmi_in_hsync;
+    wire [23:0] nt_hdmi_in_rgb;
+(* PAP_MARK_DEBUG="1" *)    wire nt_hdmi_in_vsync;
+    wire nt_sys_clk;
+(* PAP_MARK_DEBUG="1" *)    wire nt_sys_rst_n;
+
+    GTP_GRS GRS_INST (
+            .GRS_N (1'b1));
+
+(* PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="L22", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* ddc_scl_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        ddc_scl_obuf (
+            .O (ddc_scl),
+            .I (nt_ddc_scl));
+	// ../source/new/hdmi_loop.v:15
+
+    hdmi_i2c hdmi_i2c_inst (
+            .\i2c_ctrl_inst/N542  (\hdmi_i2c_inst/i2c_ctrl_inst/N542_rnmt ),
+            .\i2c_ctrl_inst/i2c_sda_reg  (\hdmi_i2c_inst/i2c_ctrl_inst/i2c_sda_reg_rnmt ),
+            .sccb_scl (nt_ddc_scl),
+            ._N0 (_N0),
+            .sys_clk (nt_sys_clk),
+            .sys_rst_n (nt_sys_rst_n));
+	// ../source/new/hdmi_loop.v:69
+
+(* PAP_IO_DIRECTION="INOUT", PAP_IO_LOC="L23", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="FAST" *)    GTP_IOBUF /* \hdmi_i2c_inst.i2c_ctrl_inst.i2c_sda_tri  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"), 
+            .TERM_DDR("ON"))
+        \hdmi_i2c_inst.i2c_ctrl_inst.i2c_sda_tri  (
+            .IO (ddc_sda),
+            .O (_N0),
+            .I (\hdmi_i2c_inst/i2c_ctrl_inst/i2c_sda_reg_rnmt ),
+            .T (\hdmi_i2c_inst/i2c_ctrl_inst/N542_rnmt ));
+	// ../source/new/hdmi_loop.v:16
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="M16", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* hdmi_in_clk_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        hdmi_in_clk_ibuf (
+            .O (nt_hdmi_in_clk),
+            .I (hdmi_in_clk));
+	// ../source/new/hdmi_loop.v:18
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="M17", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* hdmi_in_de_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        hdmi_in_de_ibuf (
+            .O (nt_hdmi_in_de),
+            .I (hdmi_in_de));
+	// ../source/new/hdmi_loop.v:23
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="N21", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* hdmi_in_hsync_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        hdmi_in_hsync_ibuf (
+            .O (nt_hdmi_in_hsync),
+            .I (hdmi_in_hsync));
+	// ../source/new/hdmi_loop.v:20
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="J15", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[0]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[0]  (
+            .O (nt_hdmi_in_rgb[0]),
+            .I (hdmi_in_rgb[0]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="J14", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[1]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[1]  (
+            .O (nt_hdmi_in_rgb[1]),
+            .I (hdmi_in_rgb[1]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="K15", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[2]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[2]  (
+            .O (nt_hdmi_in_rgb[2]),
+            .I (hdmi_in_rgb[2]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="J16", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[3]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[3]  (
+            .O (nt_hdmi_in_rgb[3]),
+            .I (hdmi_in_rgb[3]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="J20", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[4]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[4]  (
+            .O (nt_hdmi_in_rgb[4]),
+            .I (hdmi_in_rgb[4]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="K20", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[5]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[5]  (
+            .O (nt_hdmi_in_rgb[5]),
+            .I (hdmi_in_rgb[5]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="K21", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[6]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[6]  (
+            .O (nt_hdmi_in_rgb[6]),
+            .I (hdmi_in_rgb[6]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="J21", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[7]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[7]  (
+            .O (nt_hdmi_in_rgb[7]),
+            .I (hdmi_in_rgb[7]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="H18", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[8]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[8]  (
+            .O (nt_hdmi_in_rgb[8]),
+            .I (hdmi_in_rgb[8]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="J18", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[9]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[9]  (
+            .O (nt_hdmi_in_rgb[9]),
+            .I (hdmi_in_rgb[9]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="H19", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[10]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[10]  (
+            .O (nt_hdmi_in_rgb[10]),
+            .I (hdmi_in_rgb[10]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="J19", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[11]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[11]  (
+            .O (nt_hdmi_in_rgb[11]),
+            .I (hdmi_in_rgb[11]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="H21", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[12]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[12]  (
+            .O (nt_hdmi_in_rgb[12]),
+            .I (hdmi_in_rgb[12]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="H22", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[13]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[13]  (
+            .O (nt_hdmi_in_rgb[13]),
+            .I (hdmi_in_rgb[13]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="G20", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[14]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[14]  (
+            .O (nt_hdmi_in_rgb[14]),
+            .I (hdmi_in_rgb[14]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="G21", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[15]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[15]  (
+            .O (nt_hdmi_in_rgb[15]),
+            .I (hdmi_in_rgb[15]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="G22", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[16]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[16]  (
+            .O (nt_hdmi_in_rgb[16]),
+            .I (hdmi_in_rgb[16]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="F22", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[17]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[17]  (
+            .O (nt_hdmi_in_rgb[17]),
+            .I (hdmi_in_rgb[17]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="E23", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[18]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[18]  (
+            .O (nt_hdmi_in_rgb[18]),
+            .I (hdmi_in_rgb[18]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="F23", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[19]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[19]  (
+            .O (nt_hdmi_in_rgb[19]),
+            .I (hdmi_in_rgb[19]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="D24", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[20]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[20]  (
+            .O (nt_hdmi_in_rgb[20]),
+            .I (hdmi_in_rgb[20]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="D23", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[21]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[21]  (
+            .O (nt_hdmi_in_rgb[21]),
+            .I (hdmi_in_rgb[21]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="F20", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[22]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[22]  (
+            .O (nt_hdmi_in_rgb[22]),
+            .I (hdmi_in_rgb[22]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="G19", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* \hdmi_in_rgb_ibuf[23]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        \hdmi_in_rgb_ibuf[23]  (
+            .O (nt_hdmi_in_rgb[23]),
+            .I (hdmi_in_rgb[23]));
+	// ../source/new/hdmi_loop.v:22
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="K18", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* hdmi_in_rst_n_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        hdmi_in_rst_n_obuf (
+            .O (hdmi_in_rst_n),
+            .I (nt_sys_rst_n));
+	// ../source/new/hdmi_loop.v:19
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="N22", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* hdmi_in_vsync_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        hdmi_in_vsync_ibuf (
+            .O (nt_hdmi_in_vsync),
+            .I (hdmi_in_vsync));
+	// ../source/new/hdmi_loop.v:21
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="K16", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="12", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* hdmi_out_clk_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        hdmi_out_clk_obuf (
+            .O (hdmi_out_clk),
+            .I (nt_hdmi_in_clk));
+	// ../source/new/hdmi_loop.v:25
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="K17", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* hdmi_out_de_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        hdmi_out_de_obuf (
+            .O (hdmi_out_de),
+            .I (nt_hdmi_in_de));
+	// ../source/new/hdmi_loop.v:30
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="L17", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* hdmi_out_hsync_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        hdmi_out_hsync_obuf (
+            .O (hdmi_out_hsync),
+            .I (nt_hdmi_in_hsync));
+	// ../source/new/hdmi_loop.v:27
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="L14", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[0]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[0]  (
+            .O (hdmi_out_rgb[0]),
+            .I (nt_hdmi_in_rgb[0]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="M14", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[1]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[1]  (
+            .O (hdmi_out_rgb[1]),
+            .I (nt_hdmi_in_rgb[1]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="L15", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[2]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[2]  (
+            .O (hdmi_out_rgb[2]),
+            .I (nt_hdmi_in_rgb[2]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="M15", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[3]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[3]  (
+            .O (hdmi_out_rgb[3]),
+            .I (nt_hdmi_in_rgb[3]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="K22", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[4]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[4]  (
+            .O (hdmi_out_rgb[4]),
+            .I (nt_hdmi_in_rgb[4]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="K23", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[5]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[5]  (
+            .O (hdmi_out_rgb[5]),
+            .I (nt_hdmi_in_rgb[5]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="J23", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[6]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[6]  (
+            .O (hdmi_out_rgb[6]),
+            .I (nt_hdmi_in_rgb[6]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="H23", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[7]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[7]  (
+            .O (hdmi_out_rgb[7]),
+            .I (nt_hdmi_in_rgb[7]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="J24", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[8]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[8]  (
+            .O (hdmi_out_rgb[8]),
+            .I (nt_hdmi_in_rgb[8]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="H24", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[9]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[9]  (
+            .O (hdmi_out_rgb[9]),
+            .I (nt_hdmi_in_rgb[9]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="J26", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[10]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[10]  (
+            .O (hdmi_out_rgb[10]),
+            .I (nt_hdmi_in_rgb[10]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="J25", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[11]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[11]  (
+            .O (hdmi_out_rgb[11]),
+            .I (nt_hdmi_in_rgb[11]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="H26", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[12]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[12]  (
+            .O (hdmi_out_rgb[12]),
+            .I (nt_hdmi_in_rgb[12]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="G26", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[13]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[13]  (
+            .O (hdmi_out_rgb[13]),
+            .I (nt_hdmi_in_rgb[13]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="G24", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[14]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[14]  (
+            .O (hdmi_out_rgb[14]),
+            .I (nt_hdmi_in_rgb[14]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="F24", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[15]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[15]  (
+            .O (hdmi_out_rgb[15]),
+            .I (nt_hdmi_in_rgb[15]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="E26", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[16]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[16]  (
+            .O (hdmi_out_rgb[16]),
+            .I (nt_hdmi_in_rgb[16]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="D26", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[17]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[17]  (
+            .O (hdmi_out_rgb[17]),
+            .I (nt_hdmi_in_rgb[17]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="E25", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[18]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[18]  (
+            .O (hdmi_out_rgb[18]),
+            .I (nt_hdmi_in_rgb[18]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="D25", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[19]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[19]  (
+            .O (hdmi_out_rgb[19]),
+            .I (nt_hdmi_in_rgb[19]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="C26", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[20]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[20]  (
+            .O (hdmi_out_rgb[20]),
+            .I (nt_hdmi_in_rgb[20]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="B26", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[21]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[21]  (
+            .O (hdmi_out_rgb[21]),
+            .I (nt_hdmi_in_rgb[21]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="B25", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[22]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[22]  (
+            .O (hdmi_out_rgb[22]),
+            .I (nt_hdmi_in_rgb[22]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="A25", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* \hdmi_out_rgb_obuf[23]  */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        \hdmi_out_rgb_obuf[23]  (
+            .O (hdmi_out_rgb[23]),
+            .I (nt_hdmi_in_rgb[23]));
+	// ../source/new/hdmi_loop.v:29
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="L19", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="4", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* hdmi_out_rst_n_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        hdmi_out_rst_n_obuf (
+            .O (hdmi_out_rst_n),
+            .I (nt_sys_rst_n));
+	// ../source/new/hdmi_loop.v:26
+
+(* PAP_MARK_DEBUG="1", PAP_IO_DIRECTION="OUTPUT", PAP_IO_LOC="L18", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33", PAP_IO_DRIVE="8", PAP_IO_SLEW="FAST" *)    GTP_OUTBUF /* hdmi_out_vsync_obuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .SLEW_RATE("SLOW"), 
+            .DRIVE_STRENGTH("8"))
+        hdmi_out_vsync_obuf (
+            .O (hdmi_out_vsync),
+            .I (nt_hdmi_in_vsync));
+	// ../source/new/hdmi_loop.v:28
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="R3", PAP_IO_VCCIO="1.5", PAP_IO_STANDARD="LVCMOS15" *)    GTP_INBUF /* sys_clk_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        sys_clk_ibuf (
+            .O (nt_sys_clk),
+            .I (sys_clk));
+	// ../source/new/hdmi_loop.v:12
+
+(* PAP_IO_DIRECTION="INPUT", PAP_IO_LOC="G25", PAP_IO_VCCIO="3.3", PAP_IO_STANDARD="LVCMOS33" *)    GTP_INBUF /* sys_rst_n_ibuf */ #(
+            .IOSTANDARD("DEFAULT"), 
+            .TERM_DDR("ON"))
+        sys_rst_n_ibuf (
+            .O (nt_sys_rst_n),
+            .I (sys_rst_n));
+	// ../source/new/hdmi_loop.v:13
+
+
+endmodule
+

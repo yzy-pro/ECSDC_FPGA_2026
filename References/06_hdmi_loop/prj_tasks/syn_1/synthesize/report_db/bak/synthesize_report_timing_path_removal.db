@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="synthesize_report_timing_path_removal" title=" Removal Path Summary" column_number="17">
+        <column_headers>
+            <data>Slack</data>
+            <data>Logic Levels</data>
+            <data>High Fanout</data>
+            <data>Start Point</data>
+            <data>End Point</data>
+            <data>Exception</data>
+            <data>Launch Clock</data>
+            <data>Capture Clock</data>
+            <data>Clock Edges</data>
+            <data>Clock Skew</data>
+            <data>Launch Clock Delay</data>
+            <data>Capture Clock Delay</data>
+            <data>Clock Pessimism Removal</data>
+            <data>Requirement</data>
+            <data>Data delay</data>
+            <data>Logic delay</data>
+            <data>Route delay</data>
+        </column_headers>
+        <row>
+            <data>1.903</data>
+            <data>1</data>
+            <data>5</data>
+            <data file_id="../src/hdmi_loop.v" line_number="88">rstn_1ms[0]/CLK</data>
+            <data file_id="../src/ms72xx_ctl.v" line_number="34">ms72xx_ctl/rstn_temp1/C</data>
+            <data/>
+            <data>PLL|u_pll/u_pll_e3/CLKOUT0</data>
+            <data>PLL|u_pll/u_pll_e3/CLKOUT0</data>
+            <data>rise-rise</data>
+            <data>0.000</data>
+            <data>1.109</data>
+            <data>1.109</data>
+            <data>0.000</data>
+            <data>0.000</data>
+            <data>1.683</data>
+            <data>0.549 (32.6%)</data>
+            <data>1.134 (67.4%)</data>
+            <general_container>
+                <data>Path #1: removal slack is 1.903(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 2.792" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock PLL|u_pll/u_pll_e3/CLKOUT0 (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/PLL/PLL.v" line_number="228">u_pll/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=250)</data>
+                            <data>1.109</data>
+                            <data>1.109</data>
+                            <data/>
+                            <data file_id="../src/hdmi_loop.v" line_number="66">cfg_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_loop.v" line_number="88">rstn_1ms[0]/CLK (GTP_DFF_R)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>tco</data>
+                            <data>0.368</data>
+                            <data>1.477</data>
+                            <data>f</data>
+                            <data file_id="../src/hdmi_loop.v" line_number="88">rstn_1ms[0]/Q (GTP_DFF_R)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=5)</data>
+                            <data>0.670</data>
+                            <data>2.147</data>
+                            <data> </data>
+                            <data file_id="../src/hdmi_loop.v" line_number="64">rstn_1ms[0]</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data object_valid="true">ms72xx_ctl/rst_n_inv/I0 (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data>td</data>
+                            <data>0.181</data>
+                            <data>2.328</data>
+                            <data>f</data>
+                            <data object_valid="true">ms72xx_ctl/rst_n_inv/Z (GTP_LUT2)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.464</data>
+                            <data>2.792</data>
+                            <data> </data>
+                            <data object_valid="true">ms72xx_ctl/rst_n_inv</data>
+                        </row>
+                        <row>
+                            <data> </data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../src/ms72xx_ctl.v" line_number="34">ms72xx_ctl/rstn_temp1/C (GTP_DFF_C)</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 0.889" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock PLL|u_pll/u_pll_e3/CLKOUT0 (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/PLL/PLL.v" line_number="228">u_pll/u_pll_e3/CLKOUT0 (GTP_PLL_E3)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=250)</data>
+                            <data>1.109</data>
+                            <data>1.109</data>
+                            <data/>
+                            <data file_id="../src/hdmi_loop.v" line_number="66">cfg_clk</data>
+                        </row>
+                        <row>
+                            <data></data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/ms72xx_ctl.v" line_number="34">ms72xx_ctl/rstn_temp1/CLK (GTP_DFF_C)</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>1.109</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>1.109</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Removal time</data>
+                            <data/>
+                            <data>-0.220</data>
+                            <data>0.889</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+    </table>
+</tables>
