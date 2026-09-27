@@ -10,4 +10,13 @@ define_attribute {p:sys_rstn} {PAP_IO_VCCIO} {3.3}
 define_attribute {p:sys_rstn} {PAP_IO_STANDARD} {LVCMOS33}
 define_attribute {p:sys_rstn} {PAP_IO_NONE} {TRUE}
 
+# ms7210与ms7200硬件复位使用同一路引脚
+define_attribute {p:sys_ms72xx_rstn} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:sys_ms72xx_rstn} {PAP_IO_LOC} {R17}
+define_attribute {p:sys_ms72xx_rstn} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:sys_ms72xx_rstn} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:sys_ms72xx_rstn} {PAP_IO_DRIVE} {8}
+define_attribute {p:sys_ms72xx_rstn} {PAP_IO_NONE} {TRUE}
+define_attribute {p:sys_ms72xx_rstn} {PAP_IO_SLEW} {FAST}
+
 

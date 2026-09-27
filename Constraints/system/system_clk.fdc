@@ -8,10 +8,9 @@ create_generated_clock -name {pll_sys_clk_50mhz} \
     -multiply_by 1 -divide_by 1 \
     [get_nets {u_pll_50mhz/clkout0}]
 
-# clkout1: output_divider = 78, Fout = 50 MHz * 23 / 78
-#          = 14.7435897 MHz (67.826087 ns).
-create_generated_clock -name {uart_clk_14m7456} \
+# clkout1: PLL 配置输出 1.6 MHz，作为 I2C 四相节拍时钟。
+create_generated_clock -name {pll_iic_clk_1m6hz} \
     -source [get_ports {sys_clk_50mhz}] \
     -master_clock {sys_clk_50mhz} \
-    -multiply_by 23 -divide_by 78 \
+    -multiply_by 4 -divide_by 125 \
     [get_nets {u_pll_50mhz/clkout1}]
