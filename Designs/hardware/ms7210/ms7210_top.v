@@ -7,17 +7,17 @@ module ms7210_top #(
     parameter integer STARTUP_WAIT_MS = 320
 ) (
     // 系统控制时钟与低有效异步复位
-    input  wire sys_clk,
-    input  wire sys_rstn,
+    input wire sys_clk,
+    input wire sys_rstn,
 
     // MS7210 硬件复位与 I2C 引脚
-    output reg  ms7210_rstn,
-    input  wire iic_clk,
+    output reg ms7210_rstn,
+    input wire iic_clk,
     output wire sys_ms7210_iic_scl,
-    inout  wire sys_ms7210_iic_sda,
+    inout wire sys_ms7210_iic_sda,
 
     // MS7210 配置完成标志
-    output reg  sys_ms7210_done
+    output reg sys_ms7210_done
 );
 
     localparam [1:0] ST_RESET_HOLD = 2'd0;
@@ -25,14 +25,10 @@ module ms7210_top #(
     localparam [1:0] ST_CONFIG     = 2'd2;
     localparam [1:0] ST_DONE       = 2'd3;
 
-    localparam integer RESET_HOLD_CYCLES_RAW =
-        (SYS_CLK_FREQ_HZ / 1000) * RESET_HOLD_MS;
-    localparam integer RESET_WAIT_CYCLES_RAW =
-        (SYS_CLK_FREQ_HZ / 1000) * RESET_RELEASE_MS;
-    localparam integer RESET_HOLD_CYCLES =
-        (RESET_HOLD_CYCLES_RAW < 1) ? 1 : RESET_HOLD_CYCLES_RAW;
-    localparam integer RESET_WAIT_CYCLES =
-        (RESET_WAIT_CYCLES_RAW < 1) ? 1 : RESET_WAIT_CYCLES_RAW;
+    localparam integer RESET_HOLD_CYCLES_RAW = (SYS_CLK_FREQ_HZ / 1000) * RESET_HOLD_MS;
+    localparam integer RESET_WAIT_CYCLES_RAW = (SYS_CLK_FREQ_HZ / 1000) * RESET_RELEASE_MS;
+    localparam integer RESET_HOLD_CYCLES = (RESET_HOLD_CYCLES_RAW < 1) ? 1 : RESET_HOLD_CYCLES_RAW;
+    localparam integer RESET_WAIT_CYCLES = (RESET_WAIT_CYCLES_RAW < 1) ? 1 : RESET_WAIT_CYCLES_RAW;
 
     reg [1:0] state_current;
     reg [1:0] state_next;
@@ -40,20 +36,20 @@ module ms7210_top #(
     reg config_enable;
 
     // 配置驱动输出的 I2C 事务信息，均在 sys_clk 时钟域产生。
-    wire [7:0]  driver_device_id;
-    wire        driver_iic_start;
-    wire        driver_iic_dir;
+    wire [7:0] driver_device_id;
+    wire driver_iic_start;
+    wire driver_iic_dir;
     wire [15:0] driver_iic_addr;
-    wire [7:0]  driver_iic_wr_data;
-    wire [7:0]  iic_rd_data;
-    wire        iic_done;
-    wire        iic_busy;
-    wire        iic_error;
-    wire        driver_done;
+    wire [7:0] driver_iic_wr_data;
+    wire [7:0] iic_rd_data;
+    wire iic_done;
+    wire iic_busy;
+    wire iic_error;
+    wire driver_done;
 
     wire driver_rstn;
-    reg  iic_reset_meta;
-    reg  iic_reset_sync;
+    reg iic_reset_meta;
+    reg iic_reset_sync;
     wire iic_master_rstn;
 
     assign driver_rstn = sys_rstn && config_enable;
@@ -83,13 +79,11 @@ module ms7210_top #(
 
         case (state_current)
             ST_RESET_HOLD: begin
-                if (delay_counter >= RESET_HOLD_CYCLES - 1)
-                    state_next = ST_RESET_WAIT;
+                if (delay_counter >= RESET_HOLD_CYCLES - 1) state_next = ST_RESET_WAIT;
             end
 
             ST_RESET_WAIT: begin
-                if (delay_counter >= RESET_WAIT_CYCLES - 1)
-                    state_next = ST_CONFIG;
+                if (delay_counter >= RESET_WAIT_CYCLES - 1) state_next = ST_CONFIG;
             end
 
             ST_CONFIG: begin
@@ -116,10 +110,8 @@ module ms7210_top #(
                     config_enable <= 1'b0;
                     sys_ms7210_done <= 1'b0;
 
-                    if (state_next != ST_RESET_HOLD)
-                        delay_counter <= 32'd0;
-                    else
-                        delay_counter <= delay_counter + 1'b1;
+                    if (state_next != ST_RESET_HOLD) delay_counter <= 32'd0;
+                    else delay_counter <= delay_counter + 1'b1;
                 end
 
                 ST_RESET_WAIT: begin
@@ -127,10 +119,8 @@ module ms7210_top #(
                     config_enable <= 1'b0;
                     sys_ms7210_done <= 1'b0;
 
-                    if (state_next != ST_RESET_WAIT)
-                        delay_counter <= 32'd0;
-                    else
-                        delay_counter <= delay_counter + 1'b1;
+                    if (state_next != ST_RESET_WAIT) delay_counter <= 32'd0;
+                    else delay_counter <= delay_counter + 1'b1;
                 end
 
                 ST_CONFIG: begin
@@ -163,39 +153,39 @@ module ms7210_top #(
         .SYS_CLK_FREQ_HZ(SYS_CLK_FREQ_HZ),
         .STARTUP_WAIT_MS(STARTUP_WAIT_MS)
     ) ms7210_driver_instance (
-        .sys_clk    (sys_clk),
-        .sys_rstn   (driver_rstn),
-        .device_id  (driver_device_id),
-        .iic_start  (driver_iic_start),
-        .iic_dir    (driver_iic_dir),
-        .iic_addr   (driver_iic_addr),
+        .sys_clk(sys_clk),
+        .sys_rstn(driver_rstn),
+        .device_id(driver_device_id),
+        .iic_start(driver_iic_start),
+        .iic_dir(driver_iic_dir),
+        .iic_addr(driver_iic_addr),
         .iic_wr_data(driver_iic_wr_data),
         .iic_rd_data(iic_rd_data),
-        .iic_done   (iic_done),
-        .iic_busy   (iic_busy),
+        .iic_done(iic_done),
+        .iic_busy(iic_busy),
         .ms7210_done(driver_done)
     );
 
     // MS7210 的 8 位地址字节为 8'hB2，对应 7 位设备地址 7'h59。
     iic_master #(
-        .DEVICE_ADDR (7'h59),
+        .DEVICE_ADDR(7'h59),
         .IIC_CLK_FREQ(IIC_CLK_FREQ_HZ),
         .IIC_SCL_FREQ(IIC_SCL_FREQ_HZ)
     ) ms7210_iic_instance (
-        .clk        (iic_clk),
-        .sys_rstn   (iic_master_rstn),
-        .wr_en      (driver_iic_dir),
-        .rd_en      (!driver_iic_dir),
+        .clk(iic_clk),
+        .sys_rstn(iic_master_rstn),
+        .wr_en(driver_iic_dir),
+        .rd_en(!driver_iic_dir),
         .addr_length(1'b1),
-        .addr       (driver_iic_addr),
-        .wr_data    (driver_iic_wr_data),
-        .rd_data    (iic_rd_data),
-        .iic_start  (driver_iic_start),
-        .iic_done   (iic_done),
-        .iic_busy   (iic_busy),
-        .iic_error  (iic_error),
-        .scl        (sys_ms7210_iic_scl),
-        .sda        (sys_ms7210_iic_sda)
+        .addr(driver_iic_addr),
+        .wr_data(driver_iic_wr_data),
+        .rd_data(iic_rd_data),
+        .iic_start(driver_iic_start),
+        .iic_done(iic_done),
+        .iic_busy(iic_busy),
+        .iic_error(iic_error),
+        .scl(sys_ms7210_iic_scl),
+        .sda(sys_ms7210_iic_sda)
     );
 
 endmodule

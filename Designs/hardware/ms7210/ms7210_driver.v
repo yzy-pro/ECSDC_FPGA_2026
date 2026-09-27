@@ -3,21 +3,21 @@ module ms7210_driver #(
     parameter integer STARTUP_WAIT_MS = 320
 ) (
     // 系统时钟与低有效异步复位
-    input  wire        sys_clk,
-    input  wire        sys_rstn,
+    input wire sys_clk,
+    input wire sys_rstn,
 
     // MS7210 I2C 寄存器访问接口
-    output wire [7:0]  device_id,
-    output reg         iic_start,
-    output reg         iic_dir,       // 1：写寄存器；0：读寄存器
-    output reg  [15:0] iic_addr,
-    output reg  [7:0]  iic_wr_data,
-    input  wire [7:0]  iic_rd_data,
-    input  wire        iic_done,
-    input  wire        iic_busy,
+    output wire [7:0] device_id,
+    output reg iic_start,
+    output reg iic_dir,  // 1：写寄存器；0：读寄存器
+    output reg [15:0] iic_addr,
+    output reg [7:0] iic_wr_data,
+    input wire [7:0] iic_rd_data,
+    input wire iic_done,
+    input wire iic_busy,
 
     // MS7210 初始化完成标志
-    output reg         ms7210_done
+    output reg ms7210_done
 );
     assign device_id = 8'hB2;
     function [23:0] cmd_data;
@@ -92,7 +92,7 @@ module ms7210_driver #(
 
     reg [2:0] state_current;
     reg [2:0] state_next;
-    reg       check_step;
+    reg check_step;
     reg [5:0] command_index;
     reg [31:0] wait_counter;
 
@@ -108,8 +108,8 @@ module ms7210_driver #(
     wire wait_finished;
     wire [23:0] selected_command;
 
-    assign transaction_complete = transaction_active && !iic_start &&
-                                  iic_done_sync && !iic_done_sync_d;
+    assign transaction_complete = transaction_active && !iic_start && iic_done_sync &&
+        !iic_done_sync_d;
     assign wait_finished = (wait_counter >= WAIT_CYCLES - 1);
     assign selected_command = cmd_data(command_index);
 
@@ -182,8 +182,7 @@ module ms7210_driver #(
         end
         else begin
             // 请求保持为高，直到下层 I2C 主机用 busy 确认已经接收。
-            if (transaction_active && iic_start && iic_busy_sync)
-                iic_start <= 1'b0;
+            if (transaction_active && iic_start && iic_busy_sync) iic_start <= 1'b0;
 
             if (transaction_complete) begin
                 transaction_active <= 1'b0;
@@ -205,10 +204,8 @@ module ms7210_driver #(
                     end
 
                     ST_INIT: begin
-                        if (command_index != INIT_LAST_INDEX)
-                            command_index <= command_index + 1'b1;
-                        else
-                            command_index <= 6'd19;
+                        if (command_index != INIT_LAST_INDEX) command_index <= command_index + 1'b1;
+                        else command_index <= 6'd19;
                     end
 
                     ST_CONFIG: begin
@@ -241,8 +238,7 @@ module ms7210_driver #(
                         iic_wr_data <= 8'h5A;
                     end
 
-                    ST_INIT,
-                    ST_CONFIG: begin
+                    ST_INIT, ST_CONFIG: begin
                         transaction_active <= 1'b1;
                         iic_start <= 1'b1;
                         iic_dir <= 1'b1;

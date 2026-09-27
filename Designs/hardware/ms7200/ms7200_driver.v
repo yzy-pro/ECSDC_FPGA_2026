@@ -1,20 +1,20 @@
 module ms7200_driver (
     // 系统时钟与低有效异步复位
-    input  wire        sys_clk,
-    input  wire        sys_rstn,
+    input wire sys_clk,
+    input wire sys_rstn,
 
     // MS7200 I2C 寄存器访问接口
-    output wire [7:0]  device_id,
-    output reg         iic_start,
-    output reg         iic_dir,       // 1：写寄存器；0：读寄存器
-    output reg  [15:0] iic_addr,
-    output reg  [7:0]  iic_wr_data,
-    input  wire [7:0]  iic_rd_data,
-    input  wire        iic_done,
-    input  wire        iic_busy,
+    output wire [7:0] device_id,
+    output reg iic_start,
+    output reg iic_dir,  // 1：写寄存器；0：读寄存器
+    output reg [15:0] iic_addr,
+    output reg [7:0] iic_wr_data,
+    input wire [7:0] iic_rd_data,
+    input wire iic_done,
+    input wire iic_busy,
 
     // 完成首次输入状态配置后置位，并保持为高
-    output reg         ms7200_done
+    output reg ms7200_done
 );
     assign device_id = 8'h56;
     function [23:0] cmd_data;
@@ -351,7 +351,7 @@ module ms7200_driver (
 
     reg [2:0] state_current;
     reg [2:0] state_next;
-    reg       check_step;
+    reg check_step;
     reg [8:0] command_index;
     reg [1:0] monitor_index;
     reg [2:0] config_step;
@@ -371,14 +371,16 @@ module ms7200_driver (
     wire frequency_event;
     wire [23:0] selected_command;
 
-    assign transaction_complete = transaction_active && !iic_start &&
-                                  iic_done_sync && !iic_done_sync_d;
+    assign transaction_complete = transaction_active && !iic_start && iic_done_sync &&
+        !iic_done_sync_d;
     assign completed_frequency = {iic_rd_data, frequency_sample[23:0]};
     assign frequency_event = (frequency_previous[17:16] == 2'b00) &&
-                             (completed_frequency[17:16] == 2'b10);
-    assign selected_command = (state_current == ST_CONFIG) ?
-                              cmd_data(CONFIG_BASE_INDEX + config_step) :
-                              cmd_data(command_index);
+        (completed_frequency[17:16] == 2'b10);
+    assign selected_command = (state_current == ST_CONFIG) ? cmd_data(
+        CONFIG_BASE_INDEX + config_step
+    ) : cmd_data(
+        command_index
+    );
 
     always @(posedge sys_clk or negedge sys_rstn) begin
         if (!sys_rstn) begin
@@ -452,8 +454,7 @@ module ms7200_driver (
         end
         else begin
             // 请求保持为高，直到下层 I2C 主机用 busy 确认已经接收。
-            if (transaction_active && iic_start && iic_busy_sync)
-                iic_start <= 1'b0;
+            if (transaction_active && iic_start && iic_busy_sync) iic_start <= 1'b0;
 
             if (transaction_complete) begin
                 transaction_active <= 1'b0;
@@ -475,8 +476,7 @@ module ms7200_driver (
                     end
 
                     ST_INIT: begin
-                        if (command_index != INIT_LAST_INDEX)
-                            command_index <= command_index + 1'b1;
+                        if (command_index != INIT_LAST_INDEX) command_index <= command_index + 1'b1;
                         else begin
                             command_index <= 9'd0;
                             monitor_index <= 2'd0;
@@ -485,8 +485,8 @@ module ms7200_driver (
 
                     ST_MONITOR: begin
                         case (monitor_index)
-                            2'd0: frequency_sample[7:0]   <= iic_rd_data;
-                            2'd1: frequency_sample[15:8]  <= iic_rd_data;
+                            2'd0: frequency_sample[7:0] <= iic_rd_data;
+                            2'd1: frequency_sample[15:8] <= iic_rd_data;
                             2'd2: frequency_sample[23:16] <= iic_rd_data;
                             2'd3: begin
                                 frequency_sample[31:24] <= iic_rd_data;
