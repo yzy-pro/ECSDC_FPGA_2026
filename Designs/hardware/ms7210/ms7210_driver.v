@@ -1,20 +1,23 @@
-module ms7210_driver (
-    // 系统时钟与复位信号
-    input              sys_clk,        // 模块工作时钟，用于驱动初始化及状态控制逻辑
-    input              sys_rstn,       // 同步低电平有效复位信号
+module ms7210_driver #(
+    parameter integer SYS_CLK_FREQ_HZ = 50_000_000,
+    parameter integer STARTUP_WAIT_MS = 320
+) (
+    // 系统时钟与低有效异步复位
+    input  wire        sys_clk,
+    input  wire        sys_rstn,
 
-    // MS7200 I2C 接口信号
-    output      [7:0]  device_id,  // MS7200 I2C 设备地址字节，bit[7:1]有效，读写位由 I2C 驱动生成
-    output reg         iic_start,   // I2C 传输触发脉冲，高电平启动一次寄存器访问
-    output reg         iic_dir,        // I2C 访问方向：1=写寄存器，0=读寄存器
-    output reg [15:0]  iic_addr,       // MS7200 16位寄存器地址
-    output reg [7:0]   iic_wr_data,    // 写入 MS7200 寄存器的8位数据
-    input       [7:0]  iic_rd_data,   // 从 MS7200 寄存器读取的8位数据
-    input              iic_done,  // I2C 单字节传输完成指示脉冲
-    input              iic_busy,       // I2C 驱动忙标志，高电平表示传输正在进行
+    // MS7210 I2C 寄存器访问接口
+    output wire [7:0]  device_id,
+    output reg         iic_start,
+    output reg         iic_dir,       // 1：写寄存器；0：读寄存器
+    output reg  [15:0] iic_addr,
+    output reg  [7:0]  iic_wr_data,
+    input  wire [7:0]  iic_rd_data,
+    input  wire        iic_done,
+    input  wire        iic_busy,
 
-    // MS7200 初始化完成标志
-    output reg         ms7200_done  // MS7200 初始化完成标志，高电平表示初始化完成
+    // MS7210 初始化完成标志
+    output reg         ms7210_done
 );
     assign device_id = 8'hB2;
     function [23:0] cmd_data;
@@ -37,10 +40,10 @@ module ms7210_driver (
                 6'd13: cmd_data = {16'h0925, 8'h44};  //
                 6'd14: cmd_data = {16'h090F, 8'h80};  //
                 6'd15: cmd_data = {16'h091F, 8'h07};  //
-                6'd16: cmd_data = {16'h0920, 8'h1E};  //  INT EN
+                6'd16: cmd_data = {16'h0920, 8'h1E};  // 使能相关中断
                 6'd17: cmd_data = {16'h0018, 8'h20};  //
                 6'd18: cmd_data = {16'h05c0, 8'hFE};  //
-                6'd19: cmd_data = {16'h000B, 8'h00};  //  seting
+                6'd19: cmd_data = {16'h000B, 8'h00};  // 开始输出参数配置
                 6'd20: cmd_data = {16'h0507, 8'h06};
                 6'd21: cmd_data = {16'h0906, 8'h04};  //
                 6'd22: cmd_data = {16'h0920, 8'h5E};  //
@@ -70,209 +73,188 @@ module ms7210_driver (
                 6'd46: cmd_data = {16'h050D, 8'h00};  //
                 6'd47: cmd_data = {16'h050E, 8'h40};  //
                 6'd48: cmd_data = {16'h0507, 8'h00};  //
+                default: cmd_data = 24'h000000;
             endcase
         end
     endfunction
 
-    //  MS7210 driver control FSM
-    parameter IDLE   = 6'b00_0001;
-    parameter CONECT = 6'b00_0010;
-    parameter INIT   = 6'b00_0100;
-    parameter WAIT   = 6'b00_1000;
-    parameter SETING = 6'b01_0000;
-    parameter STA_RD = 6'b10_0000;
-    reg [5:0] state;
-    reg [5:0] state_n;
-    reg [4:0] dri_cnt;
-    reg [21:0] delay_cnt;
-    reg [5:0] cmd_index;
+    localparam [2:0] ST_IDLE   = 3'd0;
+    localparam [2:0] ST_CHECK  = 3'd1;
+    localparam [2:0] ST_INIT   = 3'd2;
+    localparam [2:0] ST_WAIT   = 3'd3;
+    localparam [2:0] ST_CONFIG = 3'd4;
+    localparam [2:0] ST_DONE   = 3'd5;
 
-    reg busy_1d;
-    wire busy_falling;
+    localparam integer INIT_LAST_INDEX   = 18;
+    localparam integer CONFIG_LAST_INDEX = 48;
+    localparam integer WAIT_CYCLES_RAW   = (SYS_CLK_FREQ_HZ / 1000) * STARTUP_WAIT_MS;
+    localparam integer WAIT_CYCLES       = (WAIT_CYCLES_RAW < 1) ? 1 : WAIT_CYCLES_RAW;
 
-    assign busy_falling = ((~busy) & busy_1d);
-    always @(posedge clk) begin
-        busy_1d <= busy;
+    reg [2:0] state_current;
+    reg [2:0] state_next;
+    reg       check_step;
+    reg [5:0] command_index;
+    reg [31:0] wait_counter;
+
+    // I2C 完成和忙信号可能来自较慢时钟域，先进行两级同步。
+    reg iic_busy_meta;
+    reg iic_busy_sync;
+    reg iic_done_meta;
+    reg iic_done_sync;
+    reg iic_done_sync_d;
+    reg transaction_active;
+
+    wire transaction_complete;
+    wire wait_finished;
+    wire [23:0] selected_command;
+
+    assign transaction_complete = transaction_active && !iic_start &&
+                                  iic_done_sync && !iic_done_sync_d;
+    assign wait_finished = (wait_counter >= WAIT_CYCLES - 1);
+    assign selected_command = cmd_data(command_index);
+
+    always @(posedge sys_clk or negedge sys_rstn) begin
+        if (!sys_rstn) begin
+            iic_busy_meta <= 1'b0;
+            iic_busy_sync <= 1'b0;
+            iic_done_meta <= 1'b0;
+            iic_done_sync <= 1'b0;
+            iic_done_sync_d <= 1'b0;
+        end
+        else begin
+            iic_busy_meta <= iic_busy;
+            iic_busy_sync <= iic_busy_meta;
+            iic_done_meta <= iic_done;
+            iic_done_sync <= iic_done_meta;
+            iic_done_sync_d <= iic_done_sync;
+        end
     end
 
-    //  MS7210 driver control FSM    First Step
-    always @(posedge clk) begin
-        if (!rstn) state <= IDLE;
-        else state <= state_n;
+    // 第一段：状态寄存器。
+    always @(posedge sys_clk or negedge sys_rstn) begin
+        if (!sys_rstn) state_current <= ST_IDLE;
+        else state_current <= state_next;
     end
 
-
-    //  MS7210 driver control FSM    Second Step
+    // 第二段：次态组合逻辑。
     always @(*) begin
-        state_n = state;
-        case (state)
-            IDLE: begin
-                state_n = CONECT;
+        state_next = state_current;
+
+        case (state_current)
+            ST_IDLE: state_next = ST_CHECK;
+
+            ST_CHECK: begin
+                if (transaction_complete && check_step && (iic_rd_data == 8'h5A))
+                    state_next = ST_INIT;
             end
-            CONECT: begin
-                if (dri_cnt == 5'd1 && busy_falling && data_out == 8'h5A) state_n = INIT;
-                else state_n = state;
+
+            ST_INIT: begin
+                if (transaction_complete && (command_index == INIT_LAST_INDEX))
+                    state_next = ST_WAIT;
             end
-            INIT: begin
-                if (dri_cnt == 5'd18 && busy_falling) state_n = WAIT;
-                else state_n = state;
+
+            ST_WAIT: begin
+                if (wait_finished) state_next = ST_CONFIG;
             end
-            WAIT: begin
-                if (delay_cnt == 22'h30D399)  //)//
-                    state_n = SETING;
-                else state_n = state;
+
+            ST_CONFIG: begin
+                if (transaction_complete && (command_index == CONFIG_LAST_INDEX))
+                    state_next = ST_DONE;
             end
-            SETING: begin
-                if (dri_cnt == 5'd29 && busy_falling) state_n = STA_RD;
-                else state_n = state;
-            end
-            STA_RD: begin
-                state_n = state;
-            end
-            default: begin
-                state_n = IDLE;
-            end
+
+            ST_DONE: state_next = ST_DONE;
+            default: state_next = ST_IDLE;
         endcase
     end
 
-
-    //  MS7210 driver control FSM    Third Step
-    always @(posedge clk) begin
-        if (!rstn) dri_cnt <= 5'd0;
-        else begin
-            case (state)
-                IDLE, WAIT, STA_RD: dri_cnt <= 5'd0;
-                CONECT: begin
-                    if (busy_falling) begin
-                        if (dri_cnt == 5'd1) dri_cnt <= 5'd0;
-                        else dri_cnt <= dri_cnt + 5'd1;
-                    end
-                    else dri_cnt <= dri_cnt;
-                end
-                INIT: begin
-                    if (busy_falling) begin
-                        if (dri_cnt == 5'd18) dri_cnt <= 5'd0;
-                        else dri_cnt <= dri_cnt + 5'd1;
-                    end
-                    else dri_cnt <= dri_cnt;
-                end
-                SETING: begin
-                    if (busy_falling) begin
-                        if (dri_cnt == 5'd29) dri_cnt <= 5'd0;
-                        else dri_cnt <= dri_cnt + 5'd1;
-                    end
-                    else dri_cnt <= dri_cnt;
-                end
-                default: dri_cnt <= 5'd0;
-            endcase
-        end
-    end
-
-    always @(posedge clk) begin
-        if (state == WAIT) begin
-            if (delay_cnt == 22'h30D399) delay_cnt <= 22'd0;
-            else delay_cnt <= delay_cnt + 22'd1;
-        end
-        else delay_cnt <= 22'd0;
-    end
-
-    always @(posedge clk) begin
-        if (!rstn) iic_trig <= 1'd0;
-        else begin
-            case (state)
-                IDLE: iic_trig <= 1'b1;
-                WAIT: iic_trig <= (delay_cnt == 22'h30D399);
-                CONECT, INIT, SETING, STA_RD: iic_trig <= busy_falling;
-                default: iic_trig <= 1'd0;
-            endcase
-        end
-    end
-
-    always @(posedge clk) begin
-        if (!rstn) w_r <= 1'd1;
-        else begin
-            case (state)
-                IDLE: w_r <= 1'b1;
-                CONECT: begin
-                    if (dri_cnt == 5'd0 && busy_falling) w_r <= 1'b0;
-                    else if (dri_cnt == 5'd1 && busy_falling) w_r <= 1'b1;
-                    else w_r <= w_r;
-                end
-                INIT, STA_RD, WAIT: w_r <= w_r;
-                SETING: begin
-                    if (dri_cnt == 5'd29 && busy_falling) w_r <= 1'b0;
-                    else w_r <= w_r;
-                end
-                default: w_r <= 1'b1;
-            endcase
-        end
-    end
-
-    always @(posedge clk) begin
-        if (!rstn) cmd_index <= 6'd0;
-        else begin
-            case (state)
-                IDLE: cmd_index <= 6'd0;
-                CONECT: cmd_index <= 6'd0;
-                INIT, SETING: begin
-                    if (byte_over) cmd_index <= cmd_index + 1'b1;
-                    else cmd_index <= cmd_index;
-                end
-                WAIT, STA_RD: cmd_index <= cmd_index;
-                default: cmd_index <= 6'd0;
-            endcase
-        end
-    end
-
-    reg [23:0] cmd_iic;
-    always @(posedge clk) begin
-        if (~rstn) cmd_iic <= 0;
-        else if (state == IDLE) cmd_iic <= 24'd0;
-        else  //if(state == WAIT || state == SETING)
-            cmd_iic <= cmd_data(cmd_index);
-    end
-
-    always @(posedge clk) begin
-        if (!rstn) begin
-            addr <= 16'd0;
-            data_in <= 8'd0;
+    // 第三段：状态输出、计数器和 I2C 事务控制。
+    always @(posedge sys_clk or negedge sys_rstn) begin
+        if (!sys_rstn) begin
+            check_step <= 1'b0;
+            command_index <= 6'd0;
+            wait_counter <= 32'd0;
+            transaction_active <= 1'b0;
+            iic_start <= 1'b0;
+            iic_dir <= 1'b1;
+            iic_addr <= 16'd0;
+            iic_wr_data <= 8'd0;
+            ms7210_done <= 1'b0;
         end
         else begin
-            case (state)
-                IDLE: begin
-                    addr <= 16'h0003;
-                    data_in <= 8'h5A;
-                end
-                CONECT: begin
-                    if (dri_cnt == 5'd1 && busy_falling && data_out == 8'h5A) begin
-                        addr <= cmd_iic[23:8];
-                        data_in <= cmd_iic[7:0];
-                    end
-                    else begin
-                        addr <= addr;
-                        data_in <= data_in;
-                    end
-                end
-                INIT, WAIT, SETING: begin
-                    addr <= cmd_iic[23:8];
-                    data_in <= cmd_iic[7:0];
-                end
-                STA_RD: begin
-                    addr <= 16'h0502;
-                    data_in <= 8'd0;
-                end
-                default: begin
-                    addr <= 0;
-                    data_in <= 0;
-                end
-            endcase
-        end
-    end
+            // 请求保持为高，直到下层 I2C 主机用 busy 确认已经接收。
+            if (transaction_active && iic_start && iic_busy_sync)
+                iic_start <= 1'b0;
 
-    always @(posedge clk) begin
-        if (!rstn) init_over <= 1'b0;
-        else if (state == STA_RD)  // && busy_falling)
-            init_over <= 1'b1;
+            if (transaction_complete) begin
+                transaction_active <= 1'b0;
+                iic_start <= 1'b0;
+
+                case (state_current)
+                    ST_CHECK: begin
+                        if (!check_step) begin
+                            check_step <= 1'b1;
+                        end
+                        else if (iic_rd_data == 8'h5A) begin
+                            check_step <= 1'b0;
+                            command_index <= 6'd0;
+                        end
+                        else begin
+                            // 设备标识不正确时重新执行写入、读回检测。
+                            check_step <= 1'b0;
+                        end
+                    end
+
+                    ST_INIT: begin
+                        if (command_index != INIT_LAST_INDEX)
+                            command_index <= command_index + 1'b1;
+                        else
+                            command_index <= 6'd19;
+                    end
+
+                    ST_CONFIG: begin
+                        if (command_index != CONFIG_LAST_INDEX)
+                            command_index <= command_index + 1'b1;
+                    end
+
+                    default: begin
+                    end
+                endcase
+            end
+
+            if (state_current == ST_WAIT) begin
+                if (!wait_finished) wait_counter <= wait_counter + 1'b1;
+            end
+            else begin
+                wait_counter <= 32'd0;
+            end
+
+            if (state_current == ST_DONE) ms7210_done <= 1'b1;
+
+            // 当前没有事务时，根据状态准备并发起下一次寄存器访问。
+            if (!transaction_active && !iic_busy_sync) begin
+                case (state_current)
+                    ST_CHECK: begin
+                        transaction_active <= 1'b1;
+                        iic_start <= 1'b1;
+                        iic_dir <= !check_step;
+                        iic_addr <= 16'h0003;
+                        iic_wr_data <= 8'h5A;
+                    end
+
+                    ST_INIT,
+                    ST_CONFIG: begin
+                        transaction_active <= 1'b1;
+                        iic_start <= 1'b1;
+                        iic_dir <= 1'b1;
+                        iic_addr <= selected_command[23:8];
+                        iic_wr_data <= selected_command[7:0];
+                    end
+
+                    default: begin
+                    end
+                endcase
+            end
+        end
     end
 
 endmodule
