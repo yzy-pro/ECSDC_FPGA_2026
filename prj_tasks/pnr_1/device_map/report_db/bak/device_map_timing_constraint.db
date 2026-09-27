@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <general_container id="device_map_timing_constraint">
+        <table_container>
+            <table id="device_map_timing_constraint" title="Timing Constraint" column_number="1">
+                <column_headers>
+                    <data>Command</data>
+                </column_headers>
+                <row>
+                    <data>create_clock -name sys_clk_50mhz [get_ports sys_clk_50mhz] -period 20.0 -waveform {0 10.0}</data>
+                </row>
+                <row>
+                    <data>create_generated_clock -name pll_sys_clk_50mhz -source [get_ports sys_clk_50mhz] -master_clock sys_clk_50mhz -multiply_by 1 -divide_by 1 [get_nets u_pll_50mhz/clkout0]</data>
+                </row>
+                <row>
+                    <data>create_generated_clock -name pll_iic_clk_1m6hz -source [get_ports sys_clk_50mhz] -master_clock sys_clk_50mhz -multiply_by 4 -divide_by 125 [get_nets u_pll_50mhz/clkout1]</data>
+                </row>
+            </table>
+        </table_container>
+        <table_container>
+            <table id="device_map_timing_constraint" title="Inferred clocks commands" column_number="1">
+                <column_headers>
+                    <data>Command</data>
+                </column_headers>
+                <row>
+                    <data>create_clock -period {1000} -waveform {0 500} -name {hdmi_loop_top|sys_hdmi_in_pixclk} [get_ports {sys_hdmi_in_pixclk}] -add</data>
+                </row>
+                <row>
+                    <data>set_clock_groups -name {hdmi_loop_top|Inferred_clock_group_0} -asynchronous -group [get_clocks {hdmi_loop_top|sys_hdmi_in_pixclk}]</data>
+                </row>
+            </table>
+        </table_container>
+    </general_container>
+</tables>

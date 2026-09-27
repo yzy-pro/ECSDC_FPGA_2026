@@ -1,0 +1,24 @@
+add_design "E:/code/PangoWork/Works/hdmi/ipcore/pll_50mhz/pll_50mhz.v"
+add_design "E:/code/PangoWork/Works/hdmi/Designs/drivers/iic/iic_master.v"
+add_design "E:/code/PangoWork/Works/hdmi/Designs/hardware/ms7200/ms7200_driver.v"
+add_design "E:/code/PangoWork/Works/hdmi/Designs/hardware/ms7200/ms7200_top.v"
+add_design "E:/code/PangoWork/Works/hdmi/Designs/hardware/ms7210/ms7210_driver.v"
+add_design "E:/code/PangoWork/Works/hdmi/Designs/hardware/ms7210/ms7210_top.v"
+add_design "E:/code/PangoWork/Works/hdmi/Designs/hardware/led/led.v"
+add_design "E:/code/PangoWork/Works/hdmi/Designs/hdmi_loop_top.v"
+
+add_constraint "E:/code/PangoWork/Works/hdmi/Constraints/hdmi/hdmi_in.fdc"
+add_constraint "E:/code/PangoWork/Works/hdmi/Constraints/hdmi/hdmi_out.fdc"
+add_constraint "E:/code/PangoWork/Works/hdmi/Constraints/hdmi/ms7200.fdc"
+add_constraint "E:/code/PangoWork/Works/hdmi/Constraints/hdmi/ms7210.fdc"
+add_constraint "E:/code/PangoWork/Works/hdmi/Constraints/led/led.fdc"
+add_constraint "E:/code/PangoWork/Works/hdmi/Constraints/system/system.fdc"
+add_constraint "E:/code/PangoWork/Works/hdmi/Constraints/system/system_clk.fdc"
+
+set_option max_threads 0
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+set_option -options {top_module {hdmi_loop_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
