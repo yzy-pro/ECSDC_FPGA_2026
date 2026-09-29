@@ -1,0 +1,18 @@
+# hdmi输出芯片ms7210 i2c控制
+define_attribute {p:sys_ms7210_iic_sda} {PAP_IO_DIRECTION} {INOUT}
+define_attribute {p:sys_ms7210_iic_sda} {PAP_IO_LOC} {P18}
+define_attribute {p:sys_ms7210_iic_sda} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:sys_ms7210_iic_sda} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:sys_ms7210_iic_sda} {PAP_IO_DRIVE} {8}
+define_attribute {p:sys_ms7210_iic_sda} {PAP_IO_NONE} {TRUE}
+define_attribute {p:sys_ms7210_iic_sda} {PAP_IO_SLEW} {FAST}
+
+define_attribute {p:sys_ms7210_iic_scl} {PAP_IO_DIRECTION} {OUTPUT}
+define_attribute {p:sys_ms7210_iic_scl} {PAP_IO_LOC} {P17}
+define_attribute {p:sys_ms7210_iic_scl} {PAP_IO_VCCIO} {3.3}
+define_attribute {p:sys_ms7210_iic_scl} {PAP_IO_STANDARD} {LVCMOS33}
+define_attribute {p:sys_ms7210_iic_scl} {PAP_IO_DRIVE} {8}
+define_attribute {p:sys_ms7210_iic_scl} {PAP_IO_NONE} {TRUE}
+define_attribute {p:sys_ms7210_iic_scl} {PAP_IO_SLEW} {FAST}
+
+# MS7200 与 MS7210 的共享复位引脚统一在 Constraints/io/system.fdc 中约束。
