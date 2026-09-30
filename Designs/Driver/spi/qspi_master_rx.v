@@ -52,6 +52,8 @@ module qspi_master_rx #(
     reg [4:0] address_count;
     reg [DUMMY_CNT_W-1:0] dummy_count;
     reg data_nibble;
+    reg [2:0] data_bit_count;
+    reg single_data_reg;
     reg [7:0] data_shift;
     reg [7:0] rx_data_reg;
     reg rx_data_valid_reg;
@@ -100,7 +102,7 @@ module qspi_master_rx #(
     assign sck_tick = (div_count == SCK_DIV - 1);
     assign sample_edge = sck_tick && (sck_reg == SAMPLE_LEVEL);
 
-    // 0x6B 协议格式：串行指令、串行 24 位地址，随后为四线数据。
+    // 0x0B reads data on IO1; 0x6B reads data on all four IO lines.
     // 指令和地址阶段只驱动 IO0，IO1~IO3 保持高阻，避免影响
     // Flash 的 MISO、WP# 和 HOLD# 信号。
     assign sys_qspi_dq[0] = dq_oe_reg ? dq_out_reg[0] : 1'bz;
@@ -155,6 +157,8 @@ module qspi_master_rx #(
             address_count <= 5'd0;
             dummy_count <= {DUMMY_CNT_W{1'b0}};
             data_nibble <= 1'b0;
+            data_bit_count <= 3'd0;
+            single_data_reg <= 1'b0;
             data_shift <= 8'd0;
             rx_data_reg <= 8'd0;
             rx_data_valid_reg <= 1'b0;
@@ -173,6 +177,8 @@ module qspi_master_rx #(
                 address_count <= 5'd0;
                 dummy_count <= {DUMMY_CNT_W{1'b0}};
                 data_nibble <= 1'b0;
+                data_bit_count <= 3'd0;
+                single_data_reg <= (opcode_config == 8'h0B) || (opcode_config == 8'h03);
                 data_shift <= 8'd0;
                 dq_out_reg <= {3'b000, opcode_config[7]};
                 dq_oe_reg <= 1'b1;
@@ -193,12 +199,23 @@ module qspi_master_rx #(
                             dummy_count <= dummy_count + 1'b1;
                         end
                         ST_DATA: begin
-                            data_shift <= {data_shift[3:0], sys_qspi_dq};
-                            if (!data_nibble) data_nibble <= 1'b1;
-                            else begin
-                                rx_data_reg <= {data_shift[3:0], sys_qspi_dq};
-                                rx_data_valid_reg <= 1'b1;
-                                data_nibble <= 1'b0;
+                            if (single_data_reg) begin
+                                data_shift <= {data_shift[6:0], sys_qspi_dq[1]};
+                                if (data_bit_count == 3'd7) begin
+                                    rx_data_reg <= {data_shift[6:0], sys_qspi_dq[1]};
+                                    rx_data_valid_reg <= 1'b1;
+                                    data_bit_count <= 3'd0;
+                                end else begin
+                                    data_bit_count <= data_bit_count + 1'b1;
+                                end
+                            end else begin
+                                data_shift <= {data_shift[3:0], sys_qspi_dq};
+                                if (!data_nibble) data_nibble <= 1'b1;
+                                else begin
+                                    rx_data_reg <= {data_shift[3:0], sys_qspi_dq};
+                                    rx_data_valid_reg <= 1'b1;
+                                    data_nibble <= 1'b0;
+                                end
                             end
                         end
                         default: begin

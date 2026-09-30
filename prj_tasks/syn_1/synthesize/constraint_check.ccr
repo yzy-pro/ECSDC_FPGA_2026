@@ -1,0 +1,93 @@
+##### Written on 2026/09/30 22:21:43 ################################################
+
+##### INFO ##########################################################################
+
+Current Device:
+    PGL50H-6FBG484
+
+Top Module:
+    flash_read_top
+
+Constraint File(s):
+    D:/pango/works/ECSDC_FPGA_2026/Constraints/flash/flash.fdc
+    D:/pango/works/ECSDC_FPGA_2026/Constraints/system/system.fdc
+    D:/pango/works/ECSDC_FPGA_2026/Constraints/system/system_clk.fdc
+    D:/pango/works/ECSDC_FPGA_2026/Constraints/cp2102/cp2102.fdc
+    D:/pango/works/ECSDC_FPGA_2026/Constraints/led/led.fdc
+
+##### SUMMARY #######################################################################
+
+Found 0 error(s), 0 critical warning(s), 51 warning(s), out of 72 constraint(s)
+
+Constraints With Issues(infos):
+********************************************
+
+define_attribute {p:sys_qspi_csn} {PAP_IO_LOC} {AA3}
+    W: ConstraintEditor-4040: [D:/pango/works/ECSDC_FPGA_2026/Constraints/flash/flash.fdc(line number: 5)] Port p:sys_qspi_csn has been placed at location AA3, whose type is share pin.
+
+define_attribute {p:sys_qspi_dq[0]} {PAP_IO_LOC} {AB20}
+    W: ConstraintEditor-4040: [D:/pango/works/ECSDC_FPGA_2026/Constraints/flash/flash.fdc(line number: 13)] Port p:sys_qspi_dq[0] has been placed at location AB20, whose type is share pin.
+
+define_attribute {p:sys_qspi_dq[1]} {PAP_IO_LOC} {AA20}
+    W: ConstraintEditor-4040: [D:/pango/works/ECSDC_FPGA_2026/Constraints/flash/flash.fdc(line number: 17)] Port p:sys_qspi_dq[1] has been placed at location AA20, whose type is share pin.
+
+define_attribute {p:sys_qspi_dq[2]} {PAP_IO_LOC} {R13}
+    W: ConstraintEditor-4040: [D:/pango/works/ECSDC_FPGA_2026/Constraints/flash/flash.fdc(line number: 21)] Port p:sys_qspi_dq[2] has been placed at location R13, whose type is share pin.
+
+define_attribute {p:sys_qspi_dq[3]} {PAP_IO_LOC} {T14}
+    W: ConstraintEditor-4040: [D:/pango/works/ECSDC_FPGA_2026/Constraints/flash/flash.fdc(line number: 25)] Port p:sys_qspi_dq[3] has been placed at location T14, whose type is share pin.
+
+define_attribute {p:sys_qspi_sck} {PAP_IO_LOC} {Y20}
+    W: ConstraintEditor-4040: [D:/pango/works/ECSDC_FPGA_2026/Constraints/flash/flash.fdc(line number: 9)] Port p:sys_qspi_sck has been placed at location Y20, whose type is share pin.
+
+define_attribute {p:sys_rstn} {PAP_IO_LOC} {AB13}
+    W: ConstraintEditor-4040: [D:/pango/works/ECSDC_FPGA_2026/Constraints/system/system.fdc(line number: 8)] Port p:sys_rstn has been placed at location AB13, whose type is share pin.
+
+Other Issues(infos):
+********************************************
+
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_csn' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_csn' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_csn' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_sck' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_sck' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_sck' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_dq[0]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_dq[0]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_dq[0]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_dq[1]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_dq[1]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_dq[1]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_dq[2]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_dq[2]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_dq[2]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_dq[3]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_dq[3]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_qspi_dq[3]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_cp2102_tx' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_cp2102_tx' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[0]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[0]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[0]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[1]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[1]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[1]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[2]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[2]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[2]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[3]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[3]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[3]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[4]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[4]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[4]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[5]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[5]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[5]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[6]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[6]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[6]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[7]' lacks attribute 'PAP_IO_DRIVE', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[7]' lacks attribute 'PAP_IO_SLEW', it's better to set the attribute for port.
+    W: ConstraintEditor-4042: Port 'p:sys_led[7]' lacks attribute 'BUS_KEEPER', it's better to set the attribute for port.
+

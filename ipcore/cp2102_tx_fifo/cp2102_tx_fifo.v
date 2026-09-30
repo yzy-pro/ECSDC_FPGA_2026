@@ -38,11 +38,11 @@ module cp2102_tx_fifo
    );
 
 
-localparam WR_DEPTH_WIDTH = 5 ; // @IPC int 9,20
+localparam WR_DEPTH_WIDTH = 9 ; // @IPC int 9,20
 
 localparam WR_DATA_WIDTH = 32 ; // @IPC int 1,1152
 
-localparam RD_DEPTH_WIDTH = 5 ; // @IPC int 9,20
+localparam RD_DEPTH_WIDTH = 9 ; // @IPC int 9,20
 
 localparam RD_DATA_WIDTH = 32 ; // @IPC int 1,1152
 

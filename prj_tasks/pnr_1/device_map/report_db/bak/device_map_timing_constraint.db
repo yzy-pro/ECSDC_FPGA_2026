@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="device_map_timing_constraint" title="Timing Constraint" column_number="1">
+        <column_headers>
+            <data>Command</data>
+        </column_headers>
+        <row>
+            <data>create_clock -name sys_clk_50mhz [get_ports sys_clk_50mhz] -period 20.0 -waveform {0 10.0}</data>
+        </row>
+        <row>
+            <data>set_max_delay -datapath_only [get_property -min -period [get_clocks -of_object [get_pins U_ipml_fifo*.rd_clk]]] -from [get_cells {*U_ipml_fifo*.U_ipml_fifo_ctrl*.ASYN_CTRL.rptr[*]}] -to [get_cells {*U_ipml_fifo*.U_ipml_fifo_ctrl*.ASYN_CTRL.wrptr1[*]}]</data>
+        </row>
+        <row>
+            <data>set_max_delay -datapath_only [get_property -min -period [get_clocks -of_object [get_pins U_ipml_fifo*.wr_clk]]] -from [get_cells {*U_ipml_fifo*.U_ipml_fifo_ctrl*.ASYN_CTRL.wptr[*]}] -to [get_cells {*U_ipml_fifo*.U_ipml_fifo_ctrl*.ASYN_CTRL.rwptr1[*]}]</data>
+        </row>
+    </table>
+</tables>

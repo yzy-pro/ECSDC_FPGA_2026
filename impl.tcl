@@ -3,3 +3,209 @@
 add_design E:/code/PangoWork/Works/flash/ipcore/pll_50mhz/pll_50mhz.idf
 add_design E:/code/PangoWork/Works/flash/ipcore/flash_rx_fifo/flash_rx_fifo.idf
 add_design E:/code/PangoWork/Works/flash/ipcore/cp2102_tx_fifo/cp2102_tx_fifo.idf
+add_design "D:/pango/works/ECSDC_FPGA_2026/Designs/flash_read_top.v"
+add_design "D:/pango/works/ECSDC_FPGA_2026/Designs/Hardware/cp2102/cp2102_driver.v"
+add_design "D:/pango/works/ECSDC_FPGA_2026/Designs/Hardware/cp2102/cp2102_top.v"
+add_design "D:/pango/works/ECSDC_FPGA_2026/Designs/Hardware/flash/flash_driver.v"
+add_design "D:/pango/works/ECSDC_FPGA_2026/Designs/Hardware/flash/flash_top.v"
+add_design "D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v"
+add_design "D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/uart/uart_tx.v"
+add_design "D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/uart/uart_rx.v"
+add_design "D:/pango/works/ECSDC_FPGA_2026/ipcore/cp2102_tx_fifo/cp2102_tx_fifo.idf"
+add_design "D:/pango/works/ECSDC_FPGA_2026/ipcore/flash_rx_fifo/flash_rx_fifo.idf"
+add_design "D:/pango/works/ECSDC_FPGA_2026/ipcore/pll_50mhz/pll_50mhz.idf"
+set_option max_threads 0
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+set_option -options { top_module {flash_read_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+add_constraint "D:/pango/works/ECSDC_FPGA_2026/Constraints/flash/flash.fdc"
+add_constraint "D:/pango/works/ECSDC_FPGA_2026/Constraints/hdmi/hdmi_in.fdc"
+add_constraint "D:/pango/works/ECSDC_FPGA_2026/Constraints/hdmi/hdmi_out.fdc"
+add_constraint "D:/pango/works/ECSDC_FPGA_2026/Constraints/hdmi/ms7200.fdc"
+add_constraint "D:/pango/works/ECSDC_FPGA_2026/Constraints/hdmi/ms7210.fdc"
+add_constraint "D:/pango/works/ECSDC_FPGA_2026/Constraints/system/system.fdc"
+add_constraint "D:/pango/works/ECSDC_FPGA_2026/Constraints/system/system_clk.fdc"
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+remove_constraint  -logic -fdc "D:/pango/works/ECSDC_FPGA_2026/Constraints/hdmi/hdmi_in.fdc"
+remove_constraint  -logic -fdc "D:/pango/works/ECSDC_FPGA_2026/Constraints/hdmi/hdmi_out.fdc"
+remove_constraint  -logic -fdc "D:/pango/works/ECSDC_FPGA_2026/Constraints/hdmi/ms7200.fdc"
+remove_constraint  -logic -fdc "D:/pango/works/ECSDC_FPGA_2026/Constraints/hdmi/ms7210.fdc"
+set_option max_threads 0
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+set_option -options { top_module {flash_read_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+add_constraint "D:/pango/works/ECSDC_FPGA_2026/Constraints/cp2102/cp2102.fdc"
+set_option max_threads 0
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+set_option -options { top_module {flash_read_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+set_option max_threads 0
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+set_option -options { top_module {flash_read_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+set_option max_threads 0
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+set_option -options { top_module {flash_read_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+set_option max_threads 0
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+set_option -options { top_module {flash_read_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+set_option max_threads 0
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+set_option -options { top_module {flash_read_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+add_design "D:/pango/works/ECSDC_FPGA_2026/Designs/Hardware/led/led_top.v"
+set_option max_threads 0
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+set_option -options { top_module {flash_read_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+add_constraint "D:/pango/works/ECSDC_FPGA_2026/Constraints/led/led.fdc"
+set_option max_threads 0
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+set_option -options { top_module {flash_read_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+set_option max_threads 0
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+set_option -options { top_module {flash_read_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+set_option max_threads 0
+set_arch -family Logos -device PGL50H -speedgrade -6 -package FBG484
+set_option -options { top_module {flash_read_top} top_library {work}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action compile
+wait_on_tasks [get_tasks {syn_1}] -to_action compile
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize
+launch_tasks [get_tasks {pnr_1}] -to_action dev_map
+wait_on_tasks [get_tasks {pnr_1}] -to_action dev_map
+launch_tasks [get_tasks {pnr_1}] -to_action place
+wait_on_tasks [get_tasks {pnr_1}] -to_action place
+launch_tasks [get_tasks {pnr_1}] -to_action route
+wait_on_tasks [get_tasks {pnr_1}] -to_action route
+launch_tasks [get_tasks {pnr_1}] -to_action route_optimize
+wait_on_tasks [get_tasks {pnr_1}] -to_action route_optimize
+launch_tasks [get_tasks {pnr_1}] -to_action report_timing
+wait_on_tasks [get_tasks {pnr_1}] -to_action report_timing
+launch_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream
+wait_on_tasks [get_tasks {pnr_1}] -to_action gen_bit_stream

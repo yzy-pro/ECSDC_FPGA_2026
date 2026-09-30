@@ -6,9 +6,9 @@ module flash_driver #(
     parameter integer QSPI_SCK_FREQ      = 12_500_000,
     parameter integer QSPI_MODE          = 0,
     parameter [7:0]  FLASH_READ_OPCODE   = 8'h6B,
-    parameter [23:0] FLASH_START_ADDRESS = 24'h20_2000,
+    parameter [23:0] FLASH_START_ADDRESS = 24'h02_0200,
     parameter [7:0]  FLASH_DUMMY_CYCLES  = 8'd8,
-    parameter integer FLASH_BYTE_COUNT   = 8_294_400
+    parameter integer FLASH_BYTE_COUNT   = 32
 ) (
     input  wire        qspi_clk,
     input  wire        sys_rst_n,
@@ -24,6 +24,8 @@ module flash_driver #(
     output wire [31:0] word_count
 );
     localparam integer BYTE_COUNT_WIDTH = (FLASH_BYTE_COUNT < 2) ? 1 : $clog2(FLASH_BYTE_COUNT + 1);
+    wire qspi_csn;
+    wire qspi_sck;
     wire rx_data_valid;
     wire [7:0] rx_data;
     reg [1:0] byte_index;
@@ -37,13 +39,17 @@ module flash_driver #(
         .READ_OPCODE(FLASH_READ_OPCODE), .READ_START_ADDRESS(FLASH_START_ADDRESS),
         .READ_DUMMY_CYCLES(FLASH_DUMMY_CYCLES)
     ) u_qspi_master_rx (
-        .qspi_clk(qspi_clk), .sys_rstn(sys_rst_n), .sys_qspi_csn(sys_qspi_csn),
-        .sys_qspi_dq(sys_qspi_dq), .sys_qspi_sck(sys_qspi_sck),
+        .qspi_clk(qspi_clk), .sys_rstn(sys_rst_n), .sys_qspi_csn(qspi_csn),
+        .sys_qspi_dq(sys_qspi_dq), .sys_qspi_sck(qspi_sck),
         .rx_data_valid(rx_data_valid), .rx_data(rx_data),
-        .read_opcode(8'bz), .read_start_address(24'bz), .read_dummy_cycles(8'bz)
+        .read_opcode(FLASH_READ_OPCODE),
+        .read_start_address(FLASH_START_ADDRESS),
+        .read_dummy_cycles(FLASH_DUMMY_CYCLES)
     );
 
     // rx_data_valid 拉高期间数据保持稳定，FIFO 在随后的 qspi_clk 上升沿采样。
+    assign sys_qspi_csn = done_reg ? 1'b1 : qspi_csn;
+    assign sys_qspi_sck = qspi_sck;
     assign fifo_wr_en = rx_data_valid && !done_reg && (byte_index == 2'd3) && !fifo_wr_full;
     assign fifo_wr_data = {rx_data, byte2_reg, byte1_reg, byte0_reg};
     assign busy = !done_reg;

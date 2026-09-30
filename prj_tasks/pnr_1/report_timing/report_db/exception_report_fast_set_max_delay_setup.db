@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="exception_report_fast_set_max_delay_setup" title="Setup Path Summary" column_number="18">
+        <column_headers>
+            <data>Slack</data>
+            <data>Logic Levels</data>
+            <data>High Fanout</data>
+            <data>Start Point</data>
+            <data>End Point</data>
+            <data>Exception</data>
+            <data>Line Num</data>
+            <data>Launch Clock</data>
+            <data>Capture Clock</data>
+            <data>Clock Edges</data>
+            <data>Clock Skew</data>
+            <data>Launch Clock Delay</data>
+            <data>Capture Clock Delay</data>
+            <data>Clock Pessimism Removal</data>
+            <data>Requirement</data>
+            <data>Data delay</data>
+            <data>Logic delay</data>
+            <data>Route delay</data>
+        </column_headers>
+        <row>
+            <data>19.253</data>
+            <data>0</data>
+            <data>1</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="612">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[6]/opit_0_inv/CLK</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="582">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[6]/opit_0_inv/D</data>
+            <data>MaxDelay Path 20.000ns -datapath_only</data>
+            <data>5</data>
+            <data>sys_clk_50mhz</data>
+            <data>sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data>20.000</data>
+            <data>0.679</data>
+            <data>0.221 (32.5%)</data>
+            <data>0.458 (67.5%)</data>
+            <general_container>
+                <data>Path #1: setup slack is 19.253(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 0.679" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>CLMA_138_44/CLK</data>
+                            <data> </data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="612">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[6]/opit_0_inv/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMA_138_44/Q0</data>
+                            <data>tco</data>
+                            <data>0.221</data>
+                            <data>0.221</data>
+                            <data>f</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="612">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[6]/opit_0_inv/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.458</data>
+                            <data>0.679</data>
+                            <data> </data>
+                            <data object_valid="true">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/rptr [6]</data>
+                        </row>
+                        <row>
+                            <data>CLMS_134_45/M1</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="582">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[6]/opit_0_inv/D</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 19.932" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>max_delay</data>
+                            <data/>
+                            <data>20.000</data>
+                            <data>20.000</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.068</data>
+                            <data>19.932</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>19.313</data>
+            <data>0</data>
+            <data>1</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="612">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[0]/opit_0_inv/CLK</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="582">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[0]/opit_0_inv/D</data>
+            <data>MaxDelay Path 20.000ns -datapath_only</data>
+            <data>5</data>
+            <data>sys_clk_50mhz</data>
+            <data>sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data>20.000</data>
+            <data>0.619</data>
+            <data>0.221 (35.7%)</data>
+            <data>0.398 (64.3%)</data>
+            <general_container>
+                <data>Path #2: setup slack is 19.313(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 0.619" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>CLMS_134_37/CLK</data>
+                            <data> </data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="612">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[0]/opit_0_inv/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMS_134_37/Q0</data>
+                            <data>tco</data>
+                            <data>0.221</data>
+                            <data>0.221</data>
+                            <data>f</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="612">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[0]/opit_0_inv/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.398</data>
+                            <data>0.619</data>
+                            <data> </data>
+                            <data object_valid="true">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/rptr [0]</data>
+                        </row>
+                        <row>
+                            <data>CLMA_134_36/M1</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="582">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[0]/opit_0_inv/D</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 19.932" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>max_delay</data>
+                            <data/>
+                            <data>20.000</data>
+                            <data>20.000</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.068</data>
+                            <data>19.932</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>19.318</data>
+            <data>0</data>
+            <data>1</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="612">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[4]/opit_0_inv/CLK</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="582">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[4]/opit_0_inv/D</data>
+            <data>MaxDelay Path 20.000ns -datapath_only</data>
+            <data>5</data>
+            <data>sys_clk_50mhz</data>
+            <data>sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data>20.000</data>
+            <data>0.614</data>
+            <data>0.223 (36.3%)</data>
+            <data>0.391 (63.7%)</data>
+            <general_container>
+                <data>Path #3: setup slack is 19.318(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 0.614" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>CLMA_138_40/CLK</data>
+                            <data> </data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="612">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[4]/opit_0_inv/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMA_138_40/Q2</data>
+                            <data>tco</data>
+                            <data>0.223</data>
+                            <data>0.223</data>
+                            <data>f</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="612">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[4]/opit_0_inv/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.391</data>
+                            <data>0.614</data>
+                            <data> </data>
+                            <data object_valid="true">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/rptr [4]</data>
+                        </row>
+                        <row>
+                            <data>CLMS_134_45/M2</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="582">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[4]/opit_0_inv/D</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 19.932" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>max_delay</data>
+                            <data/>
+                            <data>20.000</data>
+                            <data>20.000</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.068</data>
+                            <data>19.932</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>19.335</data>
+            <data>0</data>
+            <data>1</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[5]/opit_0_inv/CLK</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="627">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[5]/opit_0_inv/D</data>
+            <data>MaxDelay Path 20.000ns -datapath_only</data>
+            <data>6</data>
+            <data>sys_clk_50mhz</data>
+            <data>sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data>20.000</data>
+            <data>0.597</data>
+            <data>0.223 (37.4%)</data>
+            <data>0.374 (62.6%)</data>
+            <general_container>
+                <data>Path #4: setup slack is 19.335(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 0.597" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>CLMS_122_45/CLK</data>
+                            <data> </data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[5]/opit_0_inv/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMS_122_45/Q1</data>
+                            <data>tco</data>
+                            <data>0.223</data>
+                            <data>0.223</data>
+                            <data>f</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[5]/opit_0_inv/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.374</data>
+                            <data>0.597</data>
+                            <data> </data>
+                            <data object_valid="true">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/wptr [5]</data>
+                        </row>
+                        <row>
+                            <data>CLMS_122_45/M0</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="627">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[5]/opit_0_inv/D</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 19.932" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>max_delay</data>
+                            <data/>
+                            <data>20.000</data>
+                            <data>20.000</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.068</data>
+                            <data>19.932</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>19.340</data>
+            <data>0</data>
+            <data>1</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[7]/opit_0_inv/CLK</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="627">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[7]/opit_0_inv/D</data>
+            <data>MaxDelay Path 20.000ns -datapath_only</data>
+            <data>6</data>
+            <data>sys_clk_50mhz</data>
+            <data>sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data>20.000</data>
+            <data>0.592</data>
+            <data>0.220 (37.2%)</data>
+            <data>0.372 (62.8%)</data>
+            <general_container>
+                <data>Path #5: setup slack is 19.340(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 0.592" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>CLMA_130_44/CLK</data>
+                            <data> </data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[7]/opit_0_inv/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMA_130_44/Q3</data>
+                            <data>tco</data>
+                            <data>0.220</data>
+                            <data>0.220</data>
+                            <data>f</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[7]/opit_0_inv/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.372</data>
+                            <data>0.592</data>
+                            <data> </data>
+                            <data object_valid="true">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/wptr [7]</data>
+                        </row>
+                        <row>
+                            <data>CLMA_130_44/M1</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="627">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[7]/opit_0_inv/D</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 19.932" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>max_delay</data>
+                            <data/>
+                            <data>20.000</data>
+                            <data>20.000</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.068</data>
+                            <data>19.932</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>19.353</data>
+            <data>0</data>
+            <data>1</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[1]/opit_0_inv/CLK</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="627">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[1]/opit_0_inv/D</data>
+            <data>MaxDelay Path 20.000ns -datapath_only</data>
+            <data>6</data>
+            <data>sys_clk_50mhz</data>
+            <data>sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data>20.000</data>
+            <data>0.579</data>
+            <data>0.223 (38.5%)</data>
+            <data>0.356 (61.5%)</data>
+            <general_container>
+                <data>Path #6: setup slack is 19.353(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 0.579" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>CLMA_122_24/CLK</data>
+                            <data> </data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[1]/opit_0_inv/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMA_122_24/Q2</data>
+                            <data>tco</data>
+                            <data>0.223</data>
+                            <data>0.223</data>
+                            <data>f</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[1]/opit_0_inv/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.356</data>
+                            <data>0.579</data>
+                            <data> </data>
+                            <data object_valid="true">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/wptr [1]</data>
+                        </row>
+                        <row>
+                            <data>CLMA_126_33/M0</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="627">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[1]/opit_0_inv/D</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 19.932" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>max_delay</data>
+                            <data/>
+                            <data>20.000</data>
+                            <data>20.000</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.068</data>
+                            <data>19.932</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+    </table>
+</tables>

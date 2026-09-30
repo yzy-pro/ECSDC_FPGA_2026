@@ -1,5 +1,5 @@
-# vsim -c -do "run 20 us; quit -f" tb_flash_top 
-# Start time: 21:09:06 on Sep 29,2026
+# vsim -c -lib .tmp_modelsim_work tb_flash_read_top -do "run -all; quit -f" 
+# Start time: 22:21:13 on Sep 30,2026
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # //  ModelSim SE-64 10.6e Jun 23 2018
 # //
@@ -14,32 +14,19 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# Loading sv_std.std
-# Loading work.tb_flash_top
-# Loading work.flash_top
-# Loading work.flash_driver
-# Loading work.qspi_master_rx
-# Loading work.flash_rx_fifo
-# run 20 us
-# TX t=0 v=1 shift=1111111111 busy=0 div=0 bit=0
-# HASHREG t=0 hash=00000000 req=0
-# BIT t=0 idx=0 shift=1111111111 div=0
-# HASH=11112143
-# TX t=4010000 v=0 shift=1000000000 busy=1 div=0 bit=0
-# UART start candidate t=4010000
-# BIT t=5010000 idx=1 shift=1100000000 div=0
-# BIT t=6010000 idx=2 shift=1110000000 div=0
-# BIT t=7010000 idx=3 shift=1111000000 div=0
-# BIT t=8010000 idx=4 shift=1111100000 div=0
-# BIT t=9010000 idx=5 shift=1111110000 div=0
-# BIT t=10010000 idx=6 shift=1111111000 div=0
-# BIT t=11010000 idx=7 shift=1111111100 div=0
-# BIT t=12010000 idx=8 shift=1111111110 div=0
-# TX t=13010000 v=1 shift=1111111111 busy=1 div=0 bit=9
-# BIT t=13010000 idx=9 shift=1111111111 div=0
-# ** Fatal: UART byte 0 mismatch: got 00 expected 43
-#    Time: 13510 ns  Scope: tb_flash_top File: .tmp_qspi_compile/tb_flash_top.v Line: 55
-# ** Note: $finish    : .tmp_qspi_compile/tb_flash_top.v(55)
-#    Time: 13510 ns  Iteration: 0  Instance: /tb_flash_top
-# End time: 21:09:07 on Sep 29,2026, Elapsed time: 0:00:01
-# Errors: 1, Warnings: 1
+# Loading .tmp_modelsim_work.tb_flash_read_top
+# Loading .tmp_modelsim_work.flash_read_top
+# Loading .tmp_modelsim_work.flash_top
+# Loading .tmp_modelsim_work.flash_driver
+# Loading .tmp_modelsim_work.qspi_master_rx
+# Loading .tmp_modelsim_work.cp2102_top
+# Loading .tmp_modelsim_work.cp2102
+# Loading .tmp_modelsim_work.cp2102_tx_fifo
+# Loading .tmp_modelsim_work.cp2102_uart_tx
+# Loading .tmp_modelsim_work.led_top
+# run -all
+# PASS flash_read_top: QSPI 32B, UART 36B, XOR=be
+# ** Note: $finish    : Tests/tb_flash_read_top.v(104)
+#    Time: 414391 ns  Iteration: 0  Instance: /tb_flash_read_top
+# End time: 22:21:14 on Sep 30,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 1
