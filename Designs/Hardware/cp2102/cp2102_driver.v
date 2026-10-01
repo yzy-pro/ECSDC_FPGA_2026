@@ -32,10 +32,7 @@ module cp2102 #(
     wire [31:0] tx_fifo_rd_data;
     wire tx_fifo_wr_en;
     wire tx_fifo_rd_en;
-    reg [WORD_COUNT_WIDTH-1:0] payload_word_count;
-    reg frame_ready_sys;
-
-    assign tx_fifo_wr_en = fifo_wr_en && !tx_fifo_full && !frame_ready_sys;
+    assign tx_fifo_wr_en = fifo_wr_en && !tx_fifo_full;
     assign fifo_wr_full = tx_fifo_full;
 
     cp2102_tx_fifo u_cp2102_tx_fifo (
@@ -52,31 +49,6 @@ module cp2102 #(
         .rd_empty(tx_fifo_rd_empty),
         .almost_empty(tx_fifo_almost_empty)
     );
-
-    always @(posedge sys_clk_50mhz or negedge sys_rst_n) begin
-        if (!sys_rst_n) begin
-            payload_word_count <= {WORD_COUNT_WIDTH{1'b0}};
-            frame_ready_sys <= 1'b0;
-        end else if (tx_fifo_wr_en) begin
-            if (payload_word_count == PAYLOAD_WORDS - 1) begin
-                frame_ready_sys <= 1'b1;
-            end else begin
-                payload_word_count <= payload_word_count + 1'b1;
-            end
-        end
-    end
-
-    reg frame_ready_meta;
-    reg frame_ready_uart;
-    always @(posedge uart_clk or negedge uart_rst_n) begin
-        if (!uart_rst_n) begin
-            frame_ready_meta <= 1'b0;
-            frame_ready_uart <= 1'b0;
-        end else begin
-            frame_ready_meta <= frame_ready_sys;
-            frame_ready_uart <= frame_ready_meta;
-        end
-    end
 
     localparam [3:0] TX_IDLE        = 4'd0;
     localparam [3:0] TX_HEADER      = 4'd1;
@@ -150,7 +122,9 @@ module cp2102 #(
         end else begin
             case (tx_state)
                 TX_IDLE: begin
-                    if (frame_ready_uart && !frame_sent) begin
+                    // Start once the first word arrives. Later words are
+                    // consumed while the Flash reader continues filling FIFO.
+                    if (!tx_fifo_rd_empty && !frame_sent) begin
                         tx_mode <= MODE_HEADER;
                         header_byte_index <= 1'b0;
                         payload_word_index <= {WORD_COUNT_WIDTH{1'b0}};

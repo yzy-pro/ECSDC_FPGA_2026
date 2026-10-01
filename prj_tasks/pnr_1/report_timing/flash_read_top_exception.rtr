@@ -5,8 +5,8 @@
 
 ====================================================================================================
 
-Startpoint  : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[6]/opit_0_inv/CLK
-Endpoint    : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[6]/opit_0_inv/D
+Startpoint  : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[8]/opit_0_inv/CLK
+Endpoint    : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[8]/opit_0_inv/D
 Path Group  : sys_clk_50mhz
 Path Type   : max (slow corner)
 Path Class  : sequential timing path
@@ -16,13 +16,13 @@ Exception constraint line number: 5
  Location                          Delay Type             Incr        Path         Logical Resource 
 ----------------------------------------------------------------------------------------------------
 
- CLMA_138_44/CLK                                         0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[6]/opit_0_inv/CLK
- CLMA_138_44/Q0                    tco                   0.289       0.289 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[6]/opit_0_inv/Q
-                                   net (fanout=1)        0.705       0.994         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/rptr [6]
- CLMS_134_45/M1                                                            r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[6]/opit_0_inv/D
+ CLMA_138_172/CLK                                        0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[8]/opit_0_inv/CLK
+ CLMA_138_172/Q1                   tco                   0.291       0.291 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[8]/opit_0_inv/Q
+                                   net (fanout=1)        0.607       0.898         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/rptr [8]
+ CLMA_138_172/M1                                                           r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[8]/opit_0_inv/D
 
- Data arrival time                                                   0.994         Logic Levels: 0  
-                                                                                   Logic: 0.289ns(29.074%), Route: 0.705ns(70.926%)
+ Data arrival time                                                   0.898         Logic Levels: 0  
+                                                                                   Logic: 0.291ns(32.405%), Route: 0.607ns(67.595%)
 ----------------------------------------------------------------------------------------------------
 
  max_delay                                              20.000      20.000                          
@@ -32,43 +32,9 @@ Exception constraint line number: 5
  Data required time                                                 19.921                          
 ----------------------------------------------------------------------------------------------------
  Data required time                                                 19.921                          
- Data arrival time                                                   0.994                          
+ Data arrival time                                                   0.898                          
 ----------------------------------------------------------------------------------------------------
- Slack (MET)                                                        18.927                          
-====================================================================================================
-
-====================================================================================================
-
-Startpoint  : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[0]/opit_0_inv/CLK
-Endpoint    : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[0]/opit_0_inv/D
-Path Group  : sys_clk_50mhz
-Path Type   : max (slow corner)
-Path Class  : sequential timing path
-Timing Exception  :  MaxDelay Path 20.000ns -datapath_only
-Exception constraint line number: 5
-
- Location                          Delay Type             Incr        Path         Logical Resource 
-----------------------------------------------------------------------------------------------------
-
- CLMS_134_37/CLK                                         0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[0]/opit_0_inv/CLK
- CLMS_134_37/Q0                    tco                   0.287       0.287 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[0]/opit_0_inv/Q
-                                   net (fanout=1)        0.601       0.888         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/rptr [0]
- CLMA_134_36/M1                                                            f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[0]/opit_0_inv/D
-
- Data arrival time                                                   0.888         Logic Levels: 0  
-                                                                                   Logic: 0.287ns(32.320%), Route: 0.601ns(67.680%)
-----------------------------------------------------------------------------------------------------
-
- max_delay                                              20.000      20.000                          
-
- Setup time                                             -0.088      19.912                          
-
- Data required time                                                 19.912                          
-----------------------------------------------------------------------------------------------------
- Data required time                                                 19.912                          
- Data arrival time                                                   0.888                          
-----------------------------------------------------------------------------------------------------
- Slack (MET)                                                        19.024                          
+ Slack (MET)                                                        19.023                          
 ====================================================================================================
 
 ====================================================================================================
@@ -84,25 +50,93 @@ Exception constraint line number: 5
  Location                          Delay Type             Incr        Path         Logical Resource 
 ----------------------------------------------------------------------------------------------------
 
- CLMA_138_40/CLK                                         0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[4]/opit_0_inv/CLK
- CLMA_138_40/Q2                    tco                   0.290       0.290 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[4]/opit_0_inv/Q
-                                   net (fanout=1)        0.603       0.893         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/rptr [4]
- CLMS_134_45/M2                                                            r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[4]/opit_0_inv/D
+ CLMA_134_160/CLK                                        0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[4]/opit_0_inv/CLK
+ CLMA_134_160/Q2                   tco                   0.289       0.289 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[4]/opit_0_inv/Q
+                                   net (fanout=1)        0.564       0.853         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/rptr [4]
+ CLMA_138_168/M2                                                           f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[4]/opit_0_inv/D
 
- Data arrival time                                                   0.893         Logic Levels: 0  
-                                                                                   Logic: 0.290ns(32.475%), Route: 0.603ns(67.525%)
+ Data arrival time                                                   0.853         Logic Levels: 0  
+                                                                                   Logic: 0.289ns(33.880%), Route: 0.564ns(66.120%)
 ----------------------------------------------------------------------------------------------------
 
  max_delay                                              20.000      20.000                          
 
- Setup time                                             -0.079      19.921                          
+ Setup time                                             -0.088      19.912                          
 
- Data required time                                                 19.921                          
+ Data required time                                                 19.912                          
 ----------------------------------------------------------------------------------------------------
- Data required time                                                 19.921                          
- Data arrival time                                                   0.893                          
+ Data required time                                                 19.912                          
+ Data arrival time                                                   0.853                          
 ----------------------------------------------------------------------------------------------------
- Slack (MET)                                                        19.028                          
+ Slack (MET)                                                        19.059                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[9]/opit_0_inv/CLK
+Endpoint    : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[9]/opit_0_inv/D
+Path Group  : sys_clk_50mhz
+Path Type   : max (slow corner)
+Path Class  : sequential timing path
+Timing Exception  :  MaxDelay Path 20.000ns -datapath_only
+Exception constraint line number: 5
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ CLMS_134_169/CLK                                        0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[9]/opit_0_inv/CLK
+ CLMS_134_169/Q3                   tco                   0.286       0.286 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[9]/opit_0_inv/Q
+                                   net (fanout=1)        0.565       0.851         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/rptr [9]
+ CLMS_134_169/M2                                                           f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[9]/opit_0_inv/D
+
+ Data arrival time                                                   0.851         Logic Levels: 0  
+                                                                                   Logic: 0.286ns(33.608%), Route: 0.565ns(66.392%)
+----------------------------------------------------------------------------------------------------
+
+ max_delay                                              20.000      20.000                          
+
+ Setup time                                             -0.088      19.912                          
+
+ Data required time                                                 19.912                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                 19.912                          
+ Data arrival time                                                   0.851                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                        19.061                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[0]/opit_0_inv/CLK
+Endpoint    : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[0]/opit_0_inv/D
+Path Group  : sys_clk_50mhz
+Path Type   : max (slow corner)
+Path Class  : sequential timing path
+Timing Exception  :  MaxDelay Path 20.000ns -datapath_only
+Exception constraint line number: 6
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ CLMA_130_152/CLK                                        0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[0]/opit_0_inv/CLK
+ CLMA_130_152/Q2                   tco                   0.289       0.289 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[0]/opit_0_inv/Q
+                                   net (fanout=1)        0.711       1.000         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/wptr [0]
+ CLMA_138_161/M0                                                           f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[0]/opit_0_inv/D
+
+ Data arrival time                                                   1.000         Logic Levels: 0  
+                                                                                   Logic: 0.289ns(28.900%), Route: 0.711ns(71.100%)
+----------------------------------------------------------------------------------------------------
+
+ max_delay                                              20.000      20.000                          
+
+ Setup time                                             -0.088      19.912                          
+
+ Data required time                                                 19.912                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                 19.912                          
+ Data arrival time                                                   1.000                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                        18.912                          
 ====================================================================================================
 
 ====================================================================================================
@@ -118,13 +152,13 @@ Exception constraint line number: 6
  Location                          Delay Type             Incr        Path         Logical Resource 
 ----------------------------------------------------------------------------------------------------
 
- CLMS_122_45/CLK                                         0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[5]/opit_0_inv/CLK
- CLMS_122_45/Q1                    tco                   0.289       0.289 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[5]/opit_0_inv/Q
-                                   net (fanout=1)        0.563       0.852         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/wptr [5]
- CLMS_122_45/M0                                                            f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[5]/opit_0_inv/D
+ CLMS_150_165/CLK                                        0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[5]/opit_0_inv/CLK
+ CLMS_150_165/Y0                   tco                   0.368       0.368 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[5]/opit_0_inv/Q
+                                   net (fanout=1)        0.564       0.932         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/wptr [5]
+ CLMS_150_165/M3                                                           f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[5]/opit_0_inv/D
 
- Data arrival time                                                   0.852         Logic Levels: 0  
-                                                                                   Logic: 0.289ns(33.920%), Route: 0.563ns(66.080%)
+ Data arrival time                                                   0.932         Logic Levels: 0  
+                                                                                   Logic: 0.368ns(39.485%), Route: 0.564ns(60.515%)
 ----------------------------------------------------------------------------------------------------
 
  max_delay                                              20.000      20.000                          
@@ -134,43 +168,9 @@ Exception constraint line number: 6
  Data required time                                                 19.912                          
 ----------------------------------------------------------------------------------------------------
  Data required time                                                 19.912                          
- Data arrival time                                                   0.852                          
+ Data arrival time                                                   0.932                          
 ----------------------------------------------------------------------------------------------------
- Slack (MET)                                                        19.060                          
-====================================================================================================
-
-====================================================================================================
-
-Startpoint  : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[7]/opit_0_inv/CLK
-Endpoint    : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[7]/opit_0_inv/D
-Path Group  : sys_clk_50mhz
-Path Type   : max (slow corner)
-Path Class  : sequential timing path
-Timing Exception  :  MaxDelay Path 20.000ns -datapath_only
-Exception constraint line number: 6
-
- Location                          Delay Type             Incr        Path         Logical Resource 
-----------------------------------------------------------------------------------------------------
-
- CLMA_130_44/CLK                                         0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[7]/opit_0_inv/CLK
- CLMA_130_44/Q3                    tco                   0.286       0.286 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[7]/opit_0_inv/Q
-                                   net (fanout=1)        0.562       0.848         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/wptr [7]
- CLMA_130_44/M1                                                            f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[7]/opit_0_inv/D
-
- Data arrival time                                                   0.848         Logic Levels: 0  
-                                                                                   Logic: 0.286ns(33.726%), Route: 0.562ns(66.274%)
-----------------------------------------------------------------------------------------------------
-
- max_delay                                              20.000      20.000                          
-
- Setup time                                             -0.088      19.912                          
-
- Data required time                                                 19.912                          
-----------------------------------------------------------------------------------------------------
- Data required time                                                 19.912                          
- Data arrival time                                                   0.848                          
-----------------------------------------------------------------------------------------------------
- Slack (MET)                                                        19.064                          
+ Slack (MET)                                                        18.980                          
 ====================================================================================================
 
 ====================================================================================================
@@ -186,25 +186,25 @@ Exception constraint line number: 6
  Location                          Delay Type             Incr        Path         Logical Resource 
 ----------------------------------------------------------------------------------------------------
 
- CLMA_122_24/CLK                                         0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[1]/opit_0_inv/CLK
- CLMA_122_24/Q2                    tco                   0.290       0.290 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[1]/opit_0_inv/Q
-                                   net (fanout=1)        0.564       0.854         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/wptr [1]
- CLMA_126_33/M0                                                            r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[1]/opit_0_inv/D
+ CLMA_154_160/CLK                                        0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[1]/opit_0_inv/CLK
+ CLMA_154_160/Q0                   tco                   0.287       0.287 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[1]/opit_0_inv/Q
+                                   net (fanout=1)        0.567       0.854         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/wptr [1]
+ CLMA_146_160/M3                                                           f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[1]/opit_0_inv/D
 
  Data arrival time                                                   0.854         Logic Levels: 0  
-                                                                                   Logic: 0.290ns(33.958%), Route: 0.564ns(66.042%)
+                                                                                   Logic: 0.287ns(33.607%), Route: 0.567ns(66.393%)
 ----------------------------------------------------------------------------------------------------
 
  max_delay                                              20.000      20.000                          
 
- Setup time                                             -0.079      19.921                          
+ Setup time                                             -0.088      19.912                          
 
- Data required time                                                 19.921                          
+ Data required time                                                 19.912                          
 ----------------------------------------------------------------------------------------------------
- Data required time                                                 19.921                          
+ Data required time                                                 19.912                          
  Data arrival time                                                   0.854                          
 ----------------------------------------------------------------------------------------------------
- Slack (MET)                                                        19.067                          
+ Slack (MET)                                                        19.058                          
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------
@@ -302,8 +302,8 @@ No such exception path.
 
 ====================================================================================================
 
-Startpoint  : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[6]/opit_0_inv/CLK
-Endpoint    : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[6]/opit_0_inv/D
+Startpoint  : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[8]/opit_0_inv/CLK
+Endpoint    : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[8]/opit_0_inv/D
 Path Group  : sys_clk_50mhz
 Path Type   : max (fast corner)
 Path Class  : sequential timing path
@@ -313,13 +313,13 @@ Exception constraint line number: 5
  Location                          Delay Type             Incr        Path         Logical Resource 
 ----------------------------------------------------------------------------------------------------
 
- CLMA_138_44/CLK                                         0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[6]/opit_0_inv/CLK
- CLMA_138_44/Q0                    tco                   0.221       0.221 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[6]/opit_0_inv/Q
-                                   net (fanout=1)        0.458       0.679         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/rptr [6]
- CLMS_134_45/M1                                                            f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[6]/opit_0_inv/D
+ CLMA_138_172/CLK                                        0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[8]/opit_0_inv/CLK
+ CLMA_138_172/Q1                   tco                   0.223       0.223 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[8]/opit_0_inv/Q
+                                   net (fanout=1)        0.394       0.617         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/rptr [8]
+ CLMA_138_172/M1                                                           f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[8]/opit_0_inv/D
 
- Data arrival time                                                   0.679         Logic Levels: 0  
-                                                                                   Logic: 0.221ns(32.548%), Route: 0.458ns(67.452%)
+ Data arrival time                                                   0.617         Logic Levels: 0  
+                                                                                   Logic: 0.223ns(36.143%), Route: 0.394ns(63.857%)
 ----------------------------------------------------------------------------------------------------
 
  max_delay                                              20.000      20.000                          
@@ -329,43 +329,9 @@ Exception constraint line number: 5
  Data required time                                                 19.932                          
 ----------------------------------------------------------------------------------------------------
  Data required time                                                 19.932                          
- Data arrival time                                                   0.679                          
+ Data arrival time                                                   0.617                          
 ----------------------------------------------------------------------------------------------------
- Slack (MET)                                                        19.253                          
-====================================================================================================
-
-====================================================================================================
-
-Startpoint  : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[0]/opit_0_inv/CLK
-Endpoint    : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[0]/opit_0_inv/D
-Path Group  : sys_clk_50mhz
-Path Type   : max (fast corner)
-Path Class  : sequential timing path
-Timing Exception  :  MaxDelay Path 20.000ns -datapath_only
-Exception constraint line number: 5
-
- Location                          Delay Type             Incr        Path         Logical Resource 
-----------------------------------------------------------------------------------------------------
-
- CLMS_134_37/CLK                                         0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[0]/opit_0_inv/CLK
- CLMS_134_37/Q0                    tco                   0.221       0.221 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[0]/opit_0_inv/Q
-                                   net (fanout=1)        0.398       0.619         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/rptr [0]
- CLMA_134_36/M1                                                            f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[0]/opit_0_inv/D
-
- Data arrival time                                                   0.619         Logic Levels: 0  
-                                                                                   Logic: 0.221ns(35.703%), Route: 0.398ns(64.297%)
-----------------------------------------------------------------------------------------------------
-
- max_delay                                              20.000      20.000                          
-
- Setup time                                             -0.068      19.932                          
-
- Data required time                                                 19.932                          
-----------------------------------------------------------------------------------------------------
- Data required time                                                 19.932                          
- Data arrival time                                                   0.619                          
-----------------------------------------------------------------------------------------------------
- Slack (MET)                                                        19.313                          
+ Slack (MET)                                                        19.315                          
 ====================================================================================================
 
 ====================================================================================================
@@ -381,13 +347,13 @@ Exception constraint line number: 5
  Location                          Delay Type             Incr        Path         Logical Resource 
 ----------------------------------------------------------------------------------------------------
 
- CLMA_138_40/CLK                                         0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[4]/opit_0_inv/CLK
- CLMA_138_40/Q2                    tco                   0.223       0.223 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[4]/opit_0_inv/Q
-                                   net (fanout=1)        0.391       0.614         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/rptr [4]
- CLMS_134_45/M2                                                            f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[4]/opit_0_inv/D
+ CLMA_134_160/CLK                                        0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[4]/opit_0_inv/CLK
+ CLMA_134_160/Q2                   tco                   0.223       0.223 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[4]/opit_0_inv/Q
+                                   net (fanout=1)        0.376       0.599         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/rptr [4]
+ CLMA_138_168/M2                                                           f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[4]/opit_0_inv/D
 
- Data arrival time                                                   0.614         Logic Levels: 0  
-                                                                                   Logic: 0.223ns(36.319%), Route: 0.391ns(63.681%)
+ Data arrival time                                                   0.599         Logic Levels: 0  
+                                                                                   Logic: 0.223ns(37.229%), Route: 0.376ns(62.771%)
 ----------------------------------------------------------------------------------------------------
 
  max_delay                                              20.000      20.000                          
@@ -397,9 +363,77 @@ Exception constraint line number: 5
  Data required time                                                 19.932                          
 ----------------------------------------------------------------------------------------------------
  Data required time                                                 19.932                          
- Data arrival time                                                   0.614                          
+ Data arrival time                                                   0.599                          
 ----------------------------------------------------------------------------------------------------
- Slack (MET)                                                        19.318                          
+ Slack (MET)                                                        19.333                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[9]/opit_0_inv/CLK
+Endpoint    : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[9]/opit_0_inv/D
+Path Group  : sys_clk_50mhz
+Path Type   : max (fast corner)
+Path Class  : sequential timing path
+Timing Exception  :  MaxDelay Path 20.000ns -datapath_only
+Exception constraint line number: 5
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ CLMS_134_169/CLK                                        0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[9]/opit_0_inv/CLK
+ CLMS_134_169/Q3                   tco                   0.220       0.220 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rptr[9]/opit_0_inv/Q
+                                   net (fanout=1)        0.367       0.587         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/rptr [9]
+ CLMS_134_169/M2                                                           f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wrptr1[9]/opit_0_inv/D
+
+ Data arrival time                                                   0.587         Logic Levels: 0  
+                                                                                   Logic: 0.220ns(37.479%), Route: 0.367ns(62.521%)
+----------------------------------------------------------------------------------------------------
+
+ max_delay                                              20.000      20.000                          
+
+ Setup time                                             -0.068      19.932                          
+
+ Data required time                                                 19.932                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                 19.932                          
+ Data arrival time                                                   0.587                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                        19.345                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[0]/opit_0_inv/CLK
+Endpoint    : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[0]/opit_0_inv/D
+Path Group  : sys_clk_50mhz
+Path Type   : max (fast corner)
+Path Class  : sequential timing path
+Timing Exception  :  MaxDelay Path 20.000ns -datapath_only
+Exception constraint line number: 6
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ CLMA_130_152/CLK                                        0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[0]/opit_0_inv/CLK
+ CLMA_130_152/Q2                   tco                   0.223       0.223 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[0]/opit_0_inv/Q
+                                   net (fanout=1)        0.474       0.697         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/wptr [0]
+ CLMA_138_161/M0                                                           f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[0]/opit_0_inv/D
+
+ Data arrival time                                                   0.697         Logic Levels: 0  
+                                                                                   Logic: 0.223ns(31.994%), Route: 0.474ns(68.006%)
+----------------------------------------------------------------------------------------------------
+
+ max_delay                                              20.000      20.000                          
+
+ Setup time                                             -0.068      19.932                          
+
+ Data required time                                                 19.932                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                 19.932                          
+ Data arrival time                                                   0.697                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                        19.235                          
 ====================================================================================================
 
 ====================================================================================================
@@ -415,13 +449,13 @@ Exception constraint line number: 6
  Location                          Delay Type             Incr        Path         Logical Resource 
 ----------------------------------------------------------------------------------------------------
 
- CLMS_122_45/CLK                                         0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[5]/opit_0_inv/CLK
- CLMS_122_45/Q1                    tco                   0.223       0.223 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[5]/opit_0_inv/Q
-                                   net (fanout=1)        0.374       0.597         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/wptr [5]
- CLMS_122_45/M0                                                            f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[5]/opit_0_inv/D
+ CLMS_150_165/CLK                                        0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[5]/opit_0_inv/CLK
+ CLMS_150_165/Y0                   tco                   0.283       0.283 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[5]/opit_0_inv/Q
+                                   net (fanout=1)        0.367       0.650         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/wptr [5]
+ CLMS_150_165/M3                                                           f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[5]/opit_0_inv/D
 
- Data arrival time                                                   0.597         Logic Levels: 0  
-                                                                                   Logic: 0.223ns(37.353%), Route: 0.374ns(62.647%)
+ Data arrival time                                                   0.650         Logic Levels: 0  
+                                                                                   Logic: 0.283ns(43.538%), Route: 0.367ns(56.462%)
 ----------------------------------------------------------------------------------------------------
 
  max_delay                                              20.000      20.000                          
@@ -431,15 +465,15 @@ Exception constraint line number: 6
  Data required time                                                 19.932                          
 ----------------------------------------------------------------------------------------------------
  Data required time                                                 19.932                          
- Data arrival time                                                   0.597                          
+ Data arrival time                                                   0.650                          
 ----------------------------------------------------------------------------------------------------
- Slack (MET)                                                        19.335                          
+ Slack (MET)                                                        19.282                          
 ====================================================================================================
 
 ====================================================================================================
 
-Startpoint  : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[7]/opit_0_inv/CLK
-Endpoint    : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[7]/opit_0_inv/D
+Startpoint  : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[4]/opit_0_inv/CLK
+Endpoint    : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[4]/opit_0_inv/D
 Path Group  : sys_clk_50mhz
 Path Type   : max (fast corner)
 Path Class  : sequential timing path
@@ -449,13 +483,13 @@ Exception constraint line number: 6
  Location                          Delay Type             Incr        Path         Logical Resource 
 ----------------------------------------------------------------------------------------------------
 
- CLMA_130_44/CLK                                         0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[7]/opit_0_inv/CLK
- CLMA_130_44/Q3                    tco                   0.220       0.220 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[7]/opit_0_inv/Q
-                                   net (fanout=1)        0.372       0.592         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/wptr [7]
- CLMA_130_44/M1                                                            f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[7]/opit_0_inv/D
+ CLMS_150_165/CLK                                        0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[4]/opit_0_inv/CLK
+ CLMS_150_165/Q1                   tco                   0.223       0.223 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[4]/opit_0_inv/Q
+                                   net (fanout=1)        0.378       0.601         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/wptr [4]
+ CLMS_150_165/M0                                                           f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[4]/opit_0_inv/D
 
- Data arrival time                                                   0.592         Logic Levels: 0  
-                                                                                   Logic: 0.220ns(37.162%), Route: 0.372ns(62.838%)
+ Data arrival time                                                   0.601         Logic Levels: 0  
+                                                                                   Logic: 0.223ns(37.105%), Route: 0.378ns(62.895%)
 ----------------------------------------------------------------------------------------------------
 
  max_delay                                              20.000      20.000                          
@@ -465,43 +499,9 @@ Exception constraint line number: 6
  Data required time                                                 19.932                          
 ----------------------------------------------------------------------------------------------------
  Data required time                                                 19.932                          
- Data arrival time                                                   0.592                          
+ Data arrival time                                                   0.601                          
 ----------------------------------------------------------------------------------------------------
- Slack (MET)                                                        19.340                          
-====================================================================================================
-
-====================================================================================================
-
-Startpoint  : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[1]/opit_0_inv/CLK
-Endpoint    : u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[1]/opit_0_inv/D
-Path Group  : sys_clk_50mhz
-Path Type   : max (fast corner)
-Path Class  : sequential timing path
-Timing Exception  :  MaxDelay Path 20.000ns -datapath_only
-Exception constraint line number: 6
-
- Location                          Delay Type             Incr        Path         Logical Resource 
-----------------------------------------------------------------------------------------------------
-
- CLMA_122_24/CLK                                         0.000       0.000 r       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[1]/opit_0_inv/CLK
- CLMA_122_24/Q2                    tco                   0.223       0.223 f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wptr[1]/opit_0_inv/Q
-                                   net (fanout=1)        0.356       0.579         u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/wptr [1]
- CLMA_126_33/M0                                                            f       u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.rwptr1[1]/opit_0_inv/D
-
- Data arrival time                                                   0.579         Logic Levels: 0  
-                                                                                   Logic: 0.223ns(38.515%), Route: 0.356ns(61.485%)
-----------------------------------------------------------------------------------------------------
-
- max_delay                                              20.000      20.000                          
-
- Setup time                                             -0.068      19.932                          
-
- Data required time                                                 19.932                          
-----------------------------------------------------------------------------------------------------
- Data required time                                                 19.932                          
- Data arrival time                                                   0.579                          
-----------------------------------------------------------------------------------------------------
- Slack (MET)                                                        19.353                          
+ Slack (MET)                                                        19.331                          
 ====================================================================================================
 
 ----------------------------------------------------------------------------------------------------

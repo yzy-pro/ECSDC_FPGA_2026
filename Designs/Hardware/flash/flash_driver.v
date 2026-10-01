@@ -42,6 +42,7 @@ module flash_driver #(
         .qspi_clk(qspi_clk), .sys_rstn(sys_rst_n), .sys_qspi_csn(qspi_csn),
         .sys_qspi_dq(sys_qspi_dq), .sys_qspi_sck(qspi_sck),
         .rx_data_valid(rx_data_valid), .rx_data(rx_data),
+        .rx_data_ready(!fifo_wr_full && !done_reg),
         .read_opcode(FLASH_READ_OPCODE),
         .read_start_address(FLASH_START_ADDRESS),
         .read_dummy_cycles(FLASH_DUMMY_CYCLES)
@@ -57,7 +58,7 @@ module flash_driver #(
     assign overflow = overflow_reg;
     assign word_count = word_count_reg;
 
-    // qspi_master_rx 没有 ready/暂停接口，因此 FIFO 满时记录溢出状态。
+    // QSPI 在 FIFO 满时暂停数据相位；溢出仍保留为诊断状态。
     always @(posedge qspi_clk or negedge sys_rst_n) begin
         if (!sys_rst_n) begin
             byte_index <= 2'd0;

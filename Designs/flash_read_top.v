@@ -25,7 +25,7 @@ module flash_read_top (
     wire frame_done;
 
     flash_top #(
-        .FLASH_READ_OPCODE(8'h0B),
+        .FLASH_READ_OPCODE(8'h6B),
         .HASH_ADDRESS(24'h20_2000),
         .FLASH_BYTE_COUNT(FLASH_BYTE_COUNT)
     ) u_flash_top (

@@ -1,5 +1,5 @@
-# vsim -c -lib .tmp_modelsim_work tb_flash_read_top -do "run -all; quit -f" 
-# Start time: 22:21:13 on Sep 30,2026
+# vsim -c -t 1ps -lib .tmp_modelsim_verify tb_flash_read_top -do "run -all; quit -f" 
+# Start time: 18:41:10 on Oct 01,2026
 # ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
 # //  ModelSim SE-64 10.6e Jun 23 2018
 # //
@@ -14,19 +14,23 @@
 # //  is prohibited from disclosure under the Trade Secrets Act,
 # //  18 U.S.C. Section 1905.
 # //
-# Loading .tmp_modelsim_work.tb_flash_read_top
-# Loading .tmp_modelsim_work.flash_read_top
-# Loading .tmp_modelsim_work.flash_top
-# Loading .tmp_modelsim_work.flash_driver
-# Loading .tmp_modelsim_work.qspi_master_rx
-# Loading .tmp_modelsim_work.cp2102_top
-# Loading .tmp_modelsim_work.cp2102
-# Loading .tmp_modelsim_work.cp2102_tx_fifo
-# Loading .tmp_modelsim_work.cp2102_uart_tx
-# Loading .tmp_modelsim_work.led_top
+# Loading sv_std.std
+# Loading .tmp_modelsim_verify.tb_flash_read_top
+# Loading .tmp_modelsim_verify.flash_read_top
+# Loading .tmp_modelsim_verify.flash_top
+# Loading .tmp_modelsim_verify.flash_driver
+# Loading .tmp_modelsim_verify.qspi_master_rx
+# Loading .tmp_modelsim_verify.cp2102_top
+# Loading .tmp_modelsim_verify.cp2102
+# Loading .tmp_modelsim_verify.cp2102_tx_fifo
+# Loading .tmp_modelsim_verify.cp2102_uart_tx
+# Loading .tmp_modelsim_verify.led_top
 # run -all
+# QSPI transaction command=03 edges=7
+# QSPI transaction command=31 edges=15
+# QSPI transaction command=6b edges=104
 # PASS flash_read_top: QSPI 32B, UART 36B, XOR=be
-# ** Note: $finish    : Tests/tb_flash_read_top.v(104)
-#    Time: 414391 ns  Iteration: 0  Instance: /tb_flash_read_top
-# End time: 22:21:14 on Sep 30,2026, Elapsed time: 0:00:01
+# ** Note: $finish    : Tests/tb_flash_read_top.v(120)
+#    Time: 20396451 ns  Iteration: 0  Instance: /tb_flash_read_top
+# End time: 18:41:11 on Oct 01,2026, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1

@@ -168,7 +168,7 @@
             <data message="4">Verilog-0003: [D:/pango/works/ECSDC_FPGA_2026/Designs/flash_read_top.v(line number: 2)] Elaborating module flash_read_top.</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [D:/pango/works/ECSDC_FPGA_2026/Designs/flash_read_top.v(line number: 49)] Elaborating instance u_cp2102_top.</data>
+            <data message="4">Verilog-0004: [D:/pango/works/ECSDC_FPGA_2026/Designs/flash_read_top.v(line number: 50)] Elaborating instance u_cp2102_top.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [D:/pango/works/ECSDC_FPGA_2026/Designs/Hardware/cp2102/cp2102_top.v(line number: 2)] Elaborating module cp2102_top.</data>
@@ -387,13 +387,13 @@
     STOP_BITS = 32'sh1 | 1 | 32'sb00000000000000000000000000000001</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [D:/pango/works/ECSDC_FPGA_2026/Designs/flash_read_top.v(line number: 60)] Elaborating instance u_led_top.</data>
+            <data message="4">Verilog-0004: [D:/pango/works/ECSDC_FPGA_2026/Designs/flash_read_top.v(line number: 61)] Elaborating instance u_led_top.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [D:/pango/works/ECSDC_FPGA_2026/Designs/Hardware/led/led_top.v(line number: 2)] Elaborating module led_top.</data>
         </row>
         <row>
-            <data message="4">Verilog-0004: [D:/pango/works/ECSDC_FPGA_2026/Designs/flash_read_top.v(line number: 30)] Elaborating instance u_flash_top.</data>
+            <data message="4">Verilog-0004: [D:/pango/works/ECSDC_FPGA_2026/Designs/flash_read_top.v(line number: 31)] Elaborating instance u_flash_top.</data>
         </row>
         <row>
             <data message="4">Verilog-0003: [D:/pango/works/ECSDC_FPGA_2026/Designs/Hardware/flash/flash_top.v(line number: 2)] Elaborating module flash_top.</data>
@@ -437,16 +437,19 @@
     QSPI_MODE = 32'sh0 | 0 | 32'sb00000000000000000000000000000000
     READ_OPCODE = 8'h6B | 8'd107 | 8'b01101011
     READ_START_ADDRESS = 24'h202000 | 24'd2105344 | 24'b001000000010000000000000
-    READ_DUMMY_CYCLES = 8'h8 | 8'd8 | 8'b00001000</data>
+    READ_DUMMY_CYCLES = 8'h8 | 8'd8 | 8'b00001000
+    INIT_QUAD_ENABLE = 32'sh1 | 1 | 32'sb00000000000000000000000000000001
+    INIT_CS_HIGH_CYCLES = 32'sh4 | 4 | 32'sb00000000000000000000000000000100
+    QE_INIT_DELAY_CYCLES = 32'shF4240 | 1000000 | 32'sb00000000000011110100001001000000</data>
         </row>
         <row>
-            <data message="5">Verilog-2038: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 70)] This case item expression '8'bzzzzzzzz' never match with the case expression 'value'.</data>
+            <data message="5">Verilog-2038: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 93)] This case item expression '8'bzzzzzzzz' never match with the case expression 'value'.</data>
         </row>
         <row>
-            <data message="5">Verilog-2038: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 80)] This case item expression '24'bzzzzzzzzzzzzzzzzzzzzzzzz' never match with the case expression 'value'.</data>
+            <data message="5">Verilog-2038: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 103)] This case item expression '24'bzzzzzzzzzzzzzzzzzzzzzzzz' never match with the case expression 'value'.</data>
         </row>
         <row>
-            <data message="5">Verilog-2038: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 90)] This case item expression '8'bzzzzzzzz' never match with the case expression 'value'.</data>
+            <data message="5">Verilog-2038: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 113)] This case item expression '8'bzzzzzzzz' never match with the case expression 'value'.</data>
         </row>
         <row>
             <data message="5">Sdm-2020: [D:/pango/works/ECSDC_FPGA_2026/ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v(line number: 627)] Unused register rd_addr_bsel_rd_ce was removed.</data>
@@ -459,6 +462,45 @@
         </row>
         <row>
             <data message="5">Sdm-2020: [D:/pango/works/ECSDC_FPGA_2026/ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v(line number: 1061)] Unused register addr_bus_rd_invt was removed.</data>
+        </row>
+        <row>
+            <data message="6">Sdm-3003: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 196)] Reduce accumulator init_wait_count size from 32 to 20.</data>
+        </row>
+        <row>
+            <data message="5">Sdm-2000: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 196)] Removed register node u_flash_top/u_flash_driver/u_qspi_master_rx/init_wait_count[31] that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="5">Sdm-2000: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 196)] Removed register node u_flash_top/u_flash_driver/u_qspi_master_rx/init_wait_count[30] that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="5">Sdm-2000: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 196)] Removed register node u_flash_top/u_flash_driver/u_qspi_master_rx/init_wait_count[29] that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="5">Sdm-2000: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 196)] Removed register node u_flash_top/u_flash_driver/u_qspi_master_rx/init_wait_count[28] that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="5">Sdm-2000: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 196)] Removed register node u_flash_top/u_flash_driver/u_qspi_master_rx/init_wait_count[27] that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="5">Sdm-2000: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 196)] Removed register node u_flash_top/u_flash_driver/u_qspi_master_rx/init_wait_count[26] that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="5">Sdm-2000: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 196)] Removed register node u_flash_top/u_flash_driver/u_qspi_master_rx/init_wait_count[25] that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="5">Sdm-2000: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 196)] Removed register node u_flash_top/u_flash_driver/u_qspi_master_rx/init_wait_count[24] that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="5">Sdm-2000: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 196)] Removed register node u_flash_top/u_flash_driver/u_qspi_master_rx/init_wait_count[23] that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="5">Sdm-2000: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 196)] Removed register node u_flash_top/u_flash_driver/u_qspi_master_rx/init_wait_count[22] that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="5">Sdm-2000: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 196)] Removed register node u_flash_top/u_flash_driver/u_qspi_master_rx/init_wait_count[21] that is stuck at constant 0.</data>
+        </row>
+        <row>
+            <data message="5">Sdm-2000: [D:/pango/works/ECSDC_FPGA_2026/Designs/Driver/spi/qspi_master_rx.v(line number: 196)] Removed register node u_flash_top/u_flash_driver/u_qspi_master_rx/init_wait_count[20] that is stuck at constant 0.</data>
         </row>
         <row>
             <data message="5">Sdm-2000: [D:/pango/works/ECSDC_FPGA_2026/ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v(line number: 556)] Removed register node u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/wr_cs_bit2_bus_ff[0] that is stuck at constant 0.</data>
@@ -494,37 +536,37 @@
             <data message="4">FSM uart_state_fsm[2:0] inferred.</data>
         </row>
         <row>
-            <data message="4">FSM state_current_fsm[2:0] inferred.</data>
+            <data message="4">FSM state_current_fsm[3:0] inferred.</data>
         </row>
         <row>
-            <data message="4">Constant propagation done on N222 (bmsWIDEMUX).</data>
+            <data message="4">Constant propagation done on N491 (bmsWIDEMUX).</data>
         </row>
         <row>
-            <data message="4">Constant propagation done on N224 (bmsWIDEMUX).</data>
+            <data message="4">Constant propagation done on N943 (bmsREDOR).</data>
         </row>
         <row>
-            <data message="4">Constant propagation done on N143 (bmsWIDEMUX).</data>
+            <data message="4">Constant propagation done on N300 (bmsWIDEMUX).</data>
         </row>
         <row>
-            <data message="4">Constant propagation done on N364 (bmsWIDEMUX).</data>
+            <data message="4">Constant propagation done on N330 (bmsWIDEMUX).</data>
         </row>
         <row>
-            <data message="4">Constant propagation done on N328 (bmsWIDEMUX).</data>
+            <data message="4">Constant propagation done on N331 (bmsWIDEMUX).</data>
         </row>
         <row>
-            <data message="4">Constant propagation done on N63 (bmsWIDEMUX).</data>
+            <data message="4">Constant propagation done on N643 (bmsWIDEMUX).</data>
         </row>
         <row>
-            <data message="4">Constant propagation done on N0 (bmsWIDEMUX).</data>
+            <data message="4">Constant propagation done on N732 (bmsWIDEMUX).</data>
         </row>
         <row>
-            <data message="4">Constant propagation done on N99_9 (bmsREDXOR).</data>
+            <data message="4">Constant propagation done on N331 (bmsWIDEMUX).</data>
         </row>
         <row>
-            <data message="4">Constant propagation done on N33 (bmsREDXOR).</data>
+            <data message="4">Constant propagation done on N248 (bmsWIDEMUX).</data>
         </row>
         <row>
-            <data message="4">Constant propagation done on N40 (bmsREDXOR).</data>
+            <data message="4">Constant propagation done on N330 (bmsWIDEMUX).</data>
         </row>
     </table>
 </tables>

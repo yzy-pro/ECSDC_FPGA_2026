@@ -1,6 +1,9 @@
 `timescale 1ns/1ps
 
 module tb_flash_read_top;
+`ifdef USE_REAL_FIFO
+    GTP_GRS GRS_INST (.GRS_N(1'b1));
+`endif
     reg clk = 1'b0;
     reg rstn = 1'b0;
     tri [3:0] dq;
@@ -19,7 +22,7 @@ module tb_flash_read_top;
     integer rx_count = 0;
     integer i;
     integer bit_index;
-    integer data_bit_index;
+    integer data_nibble_index;
 
     always #10 clk = ~clk;
     assign dq = flash_oe ? flash_dq : 4'bz;
@@ -36,17 +39,30 @@ module tb_flash_read_top;
         flash_oe = 1'b0;
     end
 
+    always @(posedge csn) begin
+        if (qspi_edges != 0)
+            $display("QSPI transaction command=%02h edges=%0d", command, qspi_edges);
+    end
+
     always @(posedge sck) begin
         if (!csn) begin
             if (qspi_edges < 8) command = {command[6:0], dq[0]};
             else if (qspi_edges < 32) address = {address[22:0], dq[0]};
 
-            if (qspi_edges >= 39 && qspi_edges < 295) begin
-                data_bit_index = qspi_edges - 39;
-                flash_oe = 1'b1;
-                flash_dq = {2'b11, digest[data_bit_index / 8][7 - (data_bit_index % 8)], 1'bz};
-            end
             qspi_edges = qspi_edges + 1;
+        end
+    end
+
+    // The flash presents each nibble on the falling edge before FPGA sampling.
+    always @(negedge sck) begin
+        if (!csn && qspi_edges >= 40 && qspi_edges < 104) begin
+            data_nibble_index = qspi_edges - 40;
+            flash_oe = 1'b1;
+            flash_dq = data_nibble_index % 2 == 0 ?
+                       digest[data_nibble_index / 2][7:4] :
+                       digest[data_nibble_index / 2][3:0];
+        end else begin
+            flash_oe = 1'b0;
         end
     end
 
@@ -93,7 +109,7 @@ module tb_flash_read_top;
         #100 rstn = 1'b1;
         wait (leds[5]);
         #1;
-        if (command !== 8'h0B || address !== 24'h20_2000)
+        if (command !== 8'h6B || address !== 24'h20_2000)
             $fatal(1, "QSPI command/address %02h/%06h", command, address);
         if (rx_count !== 36) $fatal(1, "UART frame length %0d", rx_count);
         if (xor_checksum !== 8'hBE) $fatal(1, "test digest XOR mismatch");
@@ -105,12 +121,15 @@ module tb_flash_read_top;
     end
 
     initial begin
-        #500_000;
+        // QE initialization waits for the W25Q status-register program
+        // cycle before starting the 6Bh read.
+        #30_000_000;
         $fatal(1, "end-to-end timeout: UART bytes=%0d", rx_count);
     end
 endmodule
 
 // Behavioral stand-in for the generated 32-bit FIFO IP during RTL simulation.
+`ifndef USE_REAL_FIFO
 module cp2102_tx_fifo (
     input wire wr_clk, input wire wr_rst, input wire wr_en,
     input wire [31:0] wr_data, output wire wr_full, output wire almost_full,
@@ -143,3 +162,4 @@ module cp2102_tx_fifo (
         end
     end
 endmodule
+`endif

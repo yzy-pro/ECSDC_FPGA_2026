@@ -21,11 +21,11 @@
             <data>Route delay</data>
         </column_headers>
         <row>
-            <data>0.209</data>
+            <data>0.206</data>
             <data>0</data>
-            <data>1</data>
-            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte0_reg[0]/opit_0_inv/CLK</data>
-            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/DIA[0]</data>
+            <data>6</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[1]/opit_0_inv_A2Q21/CLK</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/ADDRA[4]</data>
             <data/>
             <data>sys_clk_50mhz</data>
             <data>sys_clk_50mhz</data>
@@ -35,13 +35,13 @@
             <data>3.367</data>
             <data>-0.183</data>
             <data>0.000</data>
-            <data>0.342</data>
-            <data>0.179 (52.3%)</data>
-            <data>0.163 (47.7%)</data>
+            <data>0.391</data>
+            <data>0.182 (46.5%)</data>
+            <data>0.209 (53.5%)</data>
             <general_container>
-                <data>Path #1: hold slack is 0.209(MET)</data>
+                <data>Path #1: hold slack is 0.206(MET)</data>
                 <table_container>
-                    <table id="arrival" title="Data arrival time is 3.507" column_number="6">
+                    <table id="arrival" title="Data arrival time is 3.556" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -116,48 +116,48 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=258)</data>
+                            <data>net (fanout=289)</data>
                             <data>0.895</data>
                             <data>3.165</data>
                             <data/>
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>CLMA_146_24/CLK</data>
+                            <data>CLMA_138_125/CLK</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte0_reg[0]/opit_0_inv/CLK</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[1]/opit_0_inv_A2Q21/CLK</data>
                         </row>
                         <row>
-                            <data>CLMA_146_24/Q0</data>
+                            <data>CLMA_138_125/Q0</data>
                             <data>tco</data>
-                            <data>0.179</data>
-                            <data>3.344</data>
-                            <data>f</data>
-                            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte0_reg[0]/opit_0_inv/Q</data>
+                            <data>0.182</data>
+                            <data>3.347</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[1]/opit_0_inv_A2Q21/Q0</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.163</data>
-                            <data>3.507</data>
+                            <data>net (fanout=6)</data>
+                            <data>0.209</data>
+                            <data>3.556</data>
                             <data> </data>
-                            <data object_valid="true">flash_fifo_wr_data[0]</data>
+                            <data object_valid="true">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/wr_addr [0]</data>
                         </row>
                         <row>
-                            <data>DRM_142_24/DA0[0]</data>
+                            <data>DRM_142_108/ADA0[4]</data>
                             <data/>
                             <data/>
                             <data/>
-                            <data>f</data>
-                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/DIA[0]</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/ADDRA[4]</data>
                         </row>
                     </table>
                 </table_container>
                 <table_container>
-                    <table id="require" title="Data required time is 3.298" column_number="6">
+                    <table id="require" title="Data required time is 3.350" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -232,14 +232,14 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=258)</data>
+                            <data>net (fanout=289)</data>
                             <data>0.925</data>
                             <data>3.367</data>
                             <data/>
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>DRM_142_24/CLKA[0]</data>
+                            <data>DRM_142_108/CLKA[0]</data>
                             <data/>
                             <data/>
                             <data/>
@@ -265,8 +265,8 @@
                         <row>
                             <data>Hold time</data>
                             <data/>
-                            <data>0.114</data>
-                            <data>3.298</data>
+                            <data>0.166</data>
+                            <data>3.350</data>
                             <data/>
                             <data/>
                         </row>
@@ -275,11 +275,11 @@
             </general_container>
         </row>
         <row>
-            <data>0.209</data>
+            <data>0.215</data>
             <data>0</data>
-            <data>1</data>
-            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte1_reg[1]/opit_0_inv/CLK</data>
-            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/DIA[10]</data>
+            <data>6</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[1]/opit_0_inv_A2Q21/CLK</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/ADDRA[5]</data>
             <data/>
             <data>sys_clk_50mhz</data>
             <data>sys_clk_50mhz</data>
@@ -289,13 +289,13 @@
             <data>3.367</data>
             <data>-0.183</data>
             <data>0.000</data>
-            <data>0.342</data>
-            <data>0.179 (52.3%)</data>
-            <data>0.163 (47.7%)</data>
+            <data>0.400</data>
+            <data>0.184 (46.0%)</data>
+            <data>0.216 (54.0%)</data>
             <general_container>
-                <data>Path #2: hold slack is 0.209(MET)</data>
+                <data>Path #2: hold slack is 0.215(MET)</data>
                 <table_container>
-                    <table id="arrival" title="Data arrival time is 3.507" column_number="6">
+                    <table id="arrival" title="Data arrival time is 3.565" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -370,48 +370,48 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=258)</data>
+                            <data>net (fanout=289)</data>
                             <data>0.895</data>
                             <data>3.165</data>
                             <data/>
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>CLMA_146_28/CLK</data>
+                            <data>CLMA_138_125/CLK</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte1_reg[1]/opit_0_inv/CLK</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[1]/opit_0_inv_A2Q21/CLK</data>
                         </row>
                         <row>
-                            <data>CLMA_146_28/Q0</data>
+                            <data>CLMA_138_125/Q1</data>
                             <data>tco</data>
-                            <data>0.179</data>
-                            <data>3.344</data>
-                            <data>f</data>
-                            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte1_reg[1]/opit_0_inv/Q</data>
+                            <data>0.184</data>
+                            <data>3.349</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[1]/opit_0_inv_A2Q21/Q1</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.163</data>
-                            <data>3.507</data>
+                            <data>net (fanout=6)</data>
+                            <data>0.216</data>
+                            <data>3.565</data>
                             <data> </data>
-                            <data object_valid="true">flash_fifo_wr_data[9]</data>
+                            <data object_valid="true">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/wr_addr [1]</data>
                         </row>
                         <row>
-                            <data>DRM_142_24/DA0[10]</data>
+                            <data>DRM_142_108/ADA0[5]</data>
                             <data/>
                             <data/>
                             <data/>
-                            <data>f</data>
-                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/DIA[10]</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/ADDRA[5]</data>
                         </row>
                     </table>
                 </table_container>
                 <table_container>
-                    <table id="require" title="Data required time is 3.298" column_number="6">
+                    <table id="require" title="Data required time is 3.350" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -486,14 +486,14 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=258)</data>
+                            <data>net (fanout=289)</data>
                             <data>0.925</data>
                             <data>3.367</data>
                             <data/>
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>DRM_142_24/CLKA[0]</data>
+                            <data>DRM_142_108/CLKA[0]</data>
                             <data/>
                             <data/>
                             <data/>
@@ -519,8 +519,8 @@
                         <row>
                             <data>Hold time</data>
                             <data/>
-                            <data>0.114</data>
-                            <data>3.298</data>
+                            <data>0.166</data>
+                            <data>3.350</data>
                             <data/>
                             <data/>
                         </row>
@@ -529,11 +529,11 @@
             </general_container>
         </row>
         <row>
-            <data>0.212</data>
+            <data>0.215</data>
             <data>0</data>
-            <data>1</data>
-            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte0_reg[3]/opit_0_inv/CLK</data>
-            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/DIA[3]</data>
+            <data>6</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[1]/opit_0_inv_A2Q21/CLK</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[1].U_GTP_DRM9K/iGopDrm_inv/ADDRA[4]</data>
             <data/>
             <data>sys_clk_50mhz</data>
             <data>sys_clk_50mhz</data>
@@ -543,13 +543,13 @@
             <data>3.367</data>
             <data>-0.183</data>
             <data>0.000</data>
-            <data>0.345</data>
-            <data>0.180 (52.2%)</data>
-            <data>0.165 (47.8%)</data>
+            <data>0.400</data>
+            <data>0.182 (45.5%)</data>
+            <data>0.218 (54.5%)</data>
             <general_container>
-                <data>Path #3: hold slack is 0.212(MET)</data>
+                <data>Path #3: hold slack is 0.215(MET)</data>
                 <table_container>
-                    <table id="arrival" title="Data arrival time is 3.510" column_number="6">
+                    <table id="arrival" title="Data arrival time is 3.565" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -624,48 +624,48 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=258)</data>
+                            <data>net (fanout=289)</data>
                             <data>0.895</data>
                             <data>3.165</data>
                             <data/>
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>CLMA_146_24/CLK</data>
+                            <data>CLMA_138_125/CLK</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte0_reg[3]/opit_0_inv/CLK</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[1]/opit_0_inv_A2Q21/CLK</data>
                         </row>
                         <row>
-                            <data>CLMA_146_24/Q1</data>
+                            <data>CLMA_138_125/Q0</data>
                             <data>tco</data>
-                            <data>0.180</data>
-                            <data>3.345</data>
-                            <data>f</data>
-                            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte0_reg[3]/opit_0_inv/Q</data>
+                            <data>0.182</data>
+                            <data>3.347</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[1]/opit_0_inv_A2Q21/Q0</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.165</data>
-                            <data>3.510</data>
+                            <data>net (fanout=6)</data>
+                            <data>0.218</data>
+                            <data>3.565</data>
                             <data> </data>
-                            <data object_valid="true">flash_fifo_wr_data[3]</data>
+                            <data object_valid="true">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/wr_addr [0]</data>
                         </row>
                         <row>
-                            <data>DRM_142_24/DA0[3]</data>
+                            <data>DRM_142_108/ADA1[4]</data>
                             <data/>
                             <data/>
                             <data/>
-                            <data>f</data>
-                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/DIA[3]</data>
+                            <data>r</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[1].U_GTP_DRM9K/iGopDrm_inv/ADDRA[4]</data>
                         </row>
                     </table>
                 </table_container>
                 <table_container>
-                    <table id="require" title="Data required time is 3.298" column_number="6">
+                    <table id="require" title="Data required time is 3.350" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -740,19 +740,19 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=258)</data>
+                            <data>net (fanout=289)</data>
                             <data>0.925</data>
                             <data>3.367</data>
                             <data/>
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>DRM_142_24/CLKA[0]</data>
+                            <data>DRM_142_108/CLKA[1]</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/CLKA</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[1].U_GTP_DRM9K/iGopDrm_inv/CLKA</data>
                         </row>
                         <row>
                             <data>clock pessimism</data>
@@ -773,8 +773,8 @@
                         <row>
                             <data>Hold time</data>
                             <data/>
-                            <data>0.114</data>
-                            <data>3.298</data>
+                            <data>0.166</data>
+                            <data>3.350</data>
                             <data/>
                             <data/>
                         </row>

@@ -21,11 +21,11 @@
             <data>Route delay</data>
         </column_headers>
         <row>
-            <data>0.268</data>
+            <data>0.213</data>
             <data>0</data>
-            <data>1</data>
-            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte0_reg[2]/opit_0_inv/CLK</data>
-            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/DIA[2]</data>
+            <data>6</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[3]/opit_0_inv_A2Q21/CLK</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[1].U_GTP_DRM9K/iGopDrm_inv/ADDRA[7]</data>
             <data/>
             <data>sys_clk_50mhz</data>
             <data>sys_clk_50mhz</data>
@@ -35,13 +35,13 @@
             <data>5.427</data>
             <data>-0.296</data>
             <data>0.000</data>
-            <data>0.453</data>
-            <data>0.222 (49.0%)</data>
-            <data>0.231 (51.0%)</data>
+            <data>0.459</data>
+            <data>0.221 (48.1%)</data>
+            <data>0.238 (51.9%)</data>
             <general_container>
-                <data>Path #1: hold slack is 0.268(MET)</data>
+                <data>Path #1: hold slack is 0.213(MET)</data>
                 <table_container>
-                    <table id="arrival" title="Data arrival time is 5.548" column_number="6">
+                    <table id="arrival" title="Data arrival time is 5.554" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -116,48 +116,48 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=264)</data>
+                            <data>net (fanout=283)</data>
                             <data>1.531</data>
                             <data>5.095</data>
                             <data/>
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>CLMA_146_24/CLK</data>
+                            <data>CLMS_146_157/CLK</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte0_reg[2]/opit_0_inv/CLK</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[3]/opit_0_inv_A2Q21/CLK</data>
                         </row>
                         <row>
-                            <data>CLMA_146_24/Q0</data>
+                            <data>CLMS_146_157/Q3</data>
                             <data>tco</data>
-                            <data>0.222</data>
-                            <data>5.317</data>
+                            <data>0.221</data>
+                            <data>5.316</data>
                             <data>f</data>
-                            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte0_reg[2]/opit_0_inv/Q</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[3]/opit_0_inv_A2Q21/Q1</data>
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.231</data>
-                            <data>5.548</data>
+                            <data>net (fanout=6)</data>
+                            <data>0.238</data>
+                            <data>5.554</data>
                             <data> </data>
-                            <data object_valid="true">flash_fifo_wr_data[2]</data>
+                            <data object_valid="true">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/wr_addr [3]</data>
                         </row>
                         <row>
-                            <data>DRM_142_24/DA0[2]</data>
+                            <data>DRM_142_148/ADA1[7]</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>f</data>
-                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/DIA[2]</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[1].U_GTP_DRM9K/iGopDrm_inv/ADDRA[7]</data>
                         </row>
                     </table>
                 </table_container>
                 <table_container>
-                    <table id="require" title="Data required time is 5.280" column_number="6">
+                    <table id="require" title="Data required time is 5.341" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -232,19 +232,19 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=264)</data>
+                            <data>net (fanout=283)</data>
                             <data>1.585</data>
                             <data>5.427</data>
                             <data/>
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>DRM_142_24/CLKA[0]</data>
+                            <data>DRM_142_148/CLKA[1]</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/CLKA</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[1].U_GTP_DRM9K/iGopDrm_inv/CLKA</data>
                         </row>
                         <row>
                             <data>clock pessimism</data>
@@ -265,8 +265,8 @@
                         <row>
                             <data>Hold time</data>
                             <data/>
-                            <data>0.149</data>
-                            <data>5.280</data>
+                            <data>0.210</data>
+                            <data>5.341</data>
                             <data/>
                             <data/>
                         </row>
@@ -275,11 +275,11 @@
             </general_container>
         </row>
         <row>
-            <data>0.271</data>
+            <data>0.218</data>
             <data>0</data>
-            <data>1</data>
-            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte0_reg[0]/opit_0_inv/CLK</data>
-            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/DIA[0]</data>
+            <data>6</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[3]/opit_0_inv_A2Q21/CLK</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/ADDRA[6]</data>
             <data/>
             <data>sys_clk_50mhz</data>
             <data>sys_clk_50mhz</data>
@@ -289,13 +289,13 @@
             <data>5.427</data>
             <data>-0.296</data>
             <data>0.000</data>
-            <data>0.456</data>
-            <data>0.222 (48.7%)</data>
-            <data>0.234 (51.3%)</data>
+            <data>0.464</data>
+            <data>0.224 (48.3%)</data>
+            <data>0.240 (51.7%)</data>
             <general_container>
-                <data>Path #2: hold slack is 0.271(MET)</data>
+                <data>Path #2: hold slack is 0.218(MET)</data>
                 <table_container>
-                    <table id="arrival" title="Data arrival time is 5.551" column_number="6">
+                    <table id="arrival" title="Data arrival time is 5.559" column_number="6">
                         <column_headers>
                             <data>Location</data>
                             <data>Delay Type</data>
@@ -370,38 +370,292 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=264)</data>
+                            <data>net (fanout=283)</data>
                             <data>1.531</data>
                             <data>5.095</data>
                             <data/>
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>CLMS_146_25/CLK</data>
+                            <data>CLMS_146_157/CLK</data>
                             <data/>
                             <data/>
                             <data/>
                             <data>r</data>
-                            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte0_reg[0]/opit_0_inv/CLK</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[3]/opit_0_inv_A2Q21/CLK</data>
                         </row>
                         <row>
-                            <data>CLMS_146_25/Q0</data>
+                            <data>CLMS_146_157/Q2</data>
                             <data>tco</data>
-                            <data>0.222</data>
-                            <data>5.317</data>
+                            <data>0.224</data>
+                            <data>5.319</data>
                             <data>f</data>
-                            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte0_reg[0]/opit_0_inv/Q</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_fifo_ctrl_v1_14_cp2102_tx_fifo.v" line_number="567">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_fifo_ctrl/ASYN_CTRL.wbin[3]/opit_0_inv_A2Q21/Q0</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=6)</data>
+                            <data>0.240</data>
+                            <data>5.559</data>
+                            <data> </data>
+                            <data object_valid="true">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/wr_addr [2]</data>
+                        </row>
+                        <row>
+                            <data>DRM_142_148/ADA0[6]</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/ADDRA[6]</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 5.341" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz (port)</data>
                         </row>
                         <row>
                             <data/>
                             <data>net (fanout=1)</data>
-                            <data>0.234</data>
-                            <data>5.551</data>
+                            <data>0.074</data>
+                            <data>0.074</data>
+                            <data/>
+                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.254</data>
+                            <data>1.328</data>
+                            <data>r</data>
+                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>1.328</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.076</data>
+                            <data>1.404</data>
+                            <data>r</data>
+                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>2.438</data>
+                            <data>3.842</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>3.842</data>
+                            <data>r</data>
+                            <data file_id="../Designs/flash_read_top.v" line_number="3">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=283)</data>
+                            <data>1.585</data>
+                            <data>5.427</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>DRM_142_148/CLKA[0]</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/CLKA</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>-0.296</data>
+                            <data>5.131</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>5.131</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Hold time</data>
+                            <data/>
+                            <data>0.210</data>
+                            <data>5.341</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>0.270</data>
+            <data>0</data>
+            <data>1</data>
+            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="62">u_flash_top/u_flash_driver/byte0_reg[0]/opit_0_inv/CLK</data>
+            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/DIA[0]</data>
+            <data/>
+            <data>sys_clk_50mhz</data>
+            <data>sys_clk_50mhz</data>
+            <data>rise-rise</data>
+            <data>0.036</data>
+            <data>5.095</data>
+            <data>5.427</data>
+            <data>-0.296</data>
+            <data>0.000</data>
+            <data>0.455</data>
+            <data>0.224 (49.2%)</data>
+            <data>0.231 (50.8%)</data>
+            <general_container>
+                <data>Path #3: hold slack is 0.270(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 5.550" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock sys_clk_50mhz (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>P20</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.074</data>
+                            <data>0.074</data>
+                            <data/>
+                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz</data>
+                        </row>
+                        <row>
+                            <data>IOBS_LR_328_209/DIN</data>
+                            <data>td</data>
+                            <data>1.047</data>
+                            <data>1.121</data>
+                            <data>r</data>
+                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>1.121</data>
+                            <data/>
+                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_327_210/INCK</data>
+                            <data>td</data>
+                            <data>0.048</data>
+                            <data>1.169</data>
+                            <data>r</data>
+                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>2.395</data>
+                            <data>3.564</data>
+                            <data/>
+                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_108/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>3.564</data>
+                            <data>r</data>
+                            <data file_id="../Designs/flash_read_top.v" line_number="3">clkbufg_0/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=283)</data>
+                            <data>1.531</data>
+                            <data>5.095</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_0</data>
+                        </row>
+                        <row>
+                            <data>CLMS_146_149/CLK</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="62">u_flash_top/u_flash_driver/byte0_reg[0]/opit_0_inv/CLK</data>
+                        </row>
+                        <row>
+                            <data>CLMS_146_149/Q1</data>
+                            <data>tco</data>
+                            <data>0.224</data>
+                            <data>5.319</data>
+                            <data>f</data>
+                            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="62">u_flash_top/u_flash_driver/byte0_reg[0]/opit_0_inv/Q</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.231</data>
+                            <data>5.550</data>
                             <data> </data>
                             <data object_valid="true">flash_fifo_wr_data[0]</data>
                         </row>
                         <row>
-                            <data>DRM_142_24/DA0[0]</data>
+                            <data>DRM_142_148/DA0[0]</data>
                             <data/>
                             <data/>
                             <data/>
@@ -486,268 +740,14 @@
                         </row>
                         <row>
                             <data/>
-                            <data>net (fanout=264)</data>
+                            <data>net (fanout=283)</data>
                             <data>1.585</data>
                             <data>5.427</data>
                             <data/>
                             <data object_valid="true">ntclkbufg_0</data>
                         </row>
                         <row>
-                            <data>DRM_142_24/CLKA[0]</data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data>r</data>
-                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/CLKA</data>
-                        </row>
-                        <row>
-                            <data>clock pessimism</data>
-                            <data/>
-                            <data>-0.296</data>
-                            <data>5.131</data>
-                            <data/>
-                            <data/>
-                        </row>
-                        <row>
-                            <data>clock uncertainty</data>
-                            <data/>
-                            <data>0.000</data>
-                            <data>5.131</data>
-                            <data/>
-                            <data/>
-                        </row>
-                        <row>
-                            <data>Hold time</data>
-                            <data/>
-                            <data>0.149</data>
-                            <data>5.280</data>
-                            <data/>
-                            <data/>
-                        </row>
-                    </table>
-                </table_container>
-            </general_container>
-        </row>
-        <row>
-            <data>0.271</data>
-            <data>0</data>
-            <data>1</data>
-            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte0_reg[5]/opit_0_inv/CLK</data>
-            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/DIA[5]</data>
-            <data/>
-            <data>sys_clk_50mhz</data>
-            <data>sys_clk_50mhz</data>
-            <data>rise-rise</data>
-            <data>0.036</data>
-            <data>5.095</data>
-            <data>5.427</data>
-            <data>-0.296</data>
-            <data>0.000</data>
-            <data>0.456</data>
-            <data>0.224 (49.1%)</data>
-            <data>0.232 (50.9%)</data>
-            <general_container>
-                <data>Path #3: hold slack is 0.271(MET)</data>
-                <table_container>
-                    <table id="arrival" title="Data arrival time is 5.551" column_number="6">
-                        <column_headers>
-                            <data>Location</data>
-                            <data>Delay Type</data>
-                            <data>Incr</data>
-                            <data>Path</data>
-                            <data>Trans</data>
-                            <data>Logical Resource</data>
-                        </column_headers>
-                        <row>
-                            <data>Clock sys_clk_50mhz (rising edge)</data>
-                            <data/>
-                            <data>0.000</data>
-                            <data>0.000</data>
-                            <data>r</data>
-                            <data/>
-                        </row>
-                        <row>
-                            <data>P20</data>
-                            <data></data>
-                            <data>0.000</data>
-                            <data>0.000</data>
-                            <data>r</data>
-                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz (port)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.074</data>
-                            <data>0.074</data>
-                            <data/>
-                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz</data>
-                        </row>
-                        <row>
-                            <data>IOBS_LR_328_209/DIN</data>
-                            <data>td</data>
-                            <data>1.047</data>
-                            <data>1.121</data>
-                            <data>r</data>
-                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz_ibuf/opit_0/O</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>1.121</data>
-                            <data/>
-                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
-                        </row>
-                        <row>
-                            <data>IOL_327_210/INCK</data>
-                            <data>td</data>
-                            <data>0.048</data>
-                            <data>1.169</data>
-                            <data>r</data>
-                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz_ibuf/opit_1/INCK</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>2.395</data>
-                            <data>3.564</data>
-                            <data/>
-                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
-                        </row>
-                        <row>
-                            <data>USCM_84_108/CLK_USCM</data>
-                            <data>td</data>
-                            <data>0.000</data>
-                            <data>3.564</data>
-                            <data>r</data>
-                            <data file_id="../Designs/flash_read_top.v" line_number="3">clkbufg_0/gopclkbufg/CLKOUT</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=264)</data>
-                            <data>1.531</data>
-                            <data>5.095</data>
-                            <data/>
-                            <data object_valid="true">ntclkbufg_0</data>
-                        </row>
-                        <row>
-                            <data>CLMA_146_24/CLK</data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data>r</data>
-                            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte0_reg[5]/opit_0_inv/CLK</data>
-                        </row>
-                        <row>
-                            <data>CLMA_146_24/Q2</data>
-                            <data>tco</data>
-                            <data>0.224</data>
-                            <data>5.319</data>
-                            <data>f</data>
-                            <data file_id="../Designs/Hardware/flash/flash_driver.v" line_number="61">u_flash_top/u_flash_driver/byte0_reg[5]/opit_0_inv/Q</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.232</data>
-                            <data>5.551</data>
-                            <data> </data>
-                            <data object_valid="true">flash_fifo_wr_data[5]</data>
-                        </row>
-                        <row>
-                            <data>DRM_142_24/DA0[5]</data>
-                            <data/>
-                            <data/>
-                            <data/>
-                            <data>f</data>
-                            <data file_id="../ipcore/cp2102_tx_fifo/rtl/ipml_sdpram_v1_13_cp2102_tx_fifo.v" line_number="839">u_cp2102_top/u_cp2102/u_cp2102_tx_fifo/U_ipml_fifo_cp2102_tx_fifo/U_ipml_sdpram/ADDR_LOOP[0].DATA_LOOP[0].U_GTP_DRM9K/iGopDrm_inv/DIA[5]</data>
-                        </row>
-                    </table>
-                </table_container>
-                <table_container>
-                    <table id="require" title="Data required time is 5.280" column_number="6">
-                        <column_headers>
-                            <data>Location</data>
-                            <data>Delay Type</data>
-                            <data>Incr</data>
-                            <data>Path</data>
-                            <data>Trans</data>
-                            <data>Logical Resource</data>
-                        </column_headers>
-                        <row>
-                            <data>Clock sys_clk_50mhz (rising edge)</data>
-                            <data/>
-                            <data>0.000</data>
-                            <data>0.000</data>
-                            <data>r</data>
-                            <data/>
-                        </row>
-                        <row>
-                            <data>P20</data>
-                            <data></data>
-                            <data>0.000</data>
-                            <data>0.000</data>
-                            <data>r</data>
-                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz (port)</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.074</data>
-                            <data>0.074</data>
-                            <data/>
-                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz</data>
-                        </row>
-                        <row>
-                            <data>IOBS_LR_328_209/DIN</data>
-                            <data>td</data>
-                            <data>1.254</data>
-                            <data>1.328</data>
-                            <data>r</data>
-                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz_ibuf/opit_0/O</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>0.000</data>
-                            <data>1.328</data>
-                            <data/>
-                            <data object_valid="true">sys_clk_50mhz_ibuf/ntD</data>
-                        </row>
-                        <row>
-                            <data>IOL_327_210/INCK</data>
-                            <data>td</data>
-                            <data>0.076</data>
-                            <data>1.404</data>
-                            <data>r</data>
-                            <data file_id="../Designs/flash_read_top.v" line_number="3">sys_clk_50mhz_ibuf/opit_1/INCK</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=1)</data>
-                            <data>2.438</data>
-                            <data>3.842</data>
-                            <data/>
-                            <data object_valid="true">nt_sys_clk_50mhz_rt_0</data>
-                        </row>
-                        <row>
-                            <data>USCM_84_108/CLK_USCM</data>
-                            <data>td</data>
-                            <data>0.000</data>
-                            <data>3.842</data>
-                            <data>r</data>
-                            <data file_id="../Designs/flash_read_top.v" line_number="3">clkbufg_0/gopclkbufg/CLKOUT</data>
-                        </row>
-                        <row>
-                            <data/>
-                            <data>net (fanout=264)</data>
-                            <data>1.585</data>
-                            <data>5.427</data>
-                            <data/>
-                            <data object_valid="true">ntclkbufg_0</data>
-                        </row>
-                        <row>
-                            <data>DRM_142_24/CLKA[0]</data>
+                            <data>DRM_142_148/CLKA[0]</data>
                             <data/>
                             <data/>
                             <data/>
