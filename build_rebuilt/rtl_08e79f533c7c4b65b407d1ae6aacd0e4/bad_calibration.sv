@@ -1,1 +1,0 @@
-module bad_calibration; undistort_rd_buf #(.P1_Q14(1234)) dut(); endmodule

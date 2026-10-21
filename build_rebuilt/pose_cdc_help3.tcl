@@ -1,5 +1,0 @@
-puts "OPEN [info commands *open*]"
-puts "READ [info commands *read*]"
-puts "LOAD [info commands *load*]"
-puts "DESIGN [info commands *design*]"
-puts "LIBRARY [info commands *lib*]"
