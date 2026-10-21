@@ -1,0 +1,30 @@
+# vsim -c -quiet -vopt -lib verification/pose_tiled_20261010/source_bounds/contended_128x64/work tb_fram_buf_pose_tiled -l D:\pango\works\EmbFPGA\test\verification\pose_tiled_20261010\source_bounds\contended_128x64\result.log -do "onerror {quit -code 1}; run -all; quit -f" -gSHARED_PAYLOAD=1 -gH=1920 -gDDR_LATENCY=32 -gREFRESH_CYCLES=35 -gPREPROCESS=0 -gFRAMES=10 -gV=1080 -gREFRESH_INTERVAL=780 -gFULL=1 
+# Start time: 21:11:22 on Oct 10,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# //  ModelSim SE-64 10.6e Jun 23 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# onerror {quit -code 1}
+#  Warning: onerror command for use within macro
+#  run -all
+# MODEL latency=32 shared_payload=1 refresh_cycles=35 refresh_interval=780 payload_bubble_percent=25 preprocess=0
+# RENDER frame=1 gen=2 pose=0 yaw=-179 pitch=0 curve=3 clocks=2918570
+# PUBLISH frame=1 gen=2 clock=6666758
+# RENDER frame=2 gen=3 pose=0 yaw=-179 pitch=0 curve=3 clocks=3237356
+# PUBLISH frame=2 gen=3 clock=10000088
+# RENDER frame=3 gen=6 pose=0 yaw=-179 pitch=0 curve=3 clocks=3238912
+# PASS three-render candidate: max_render_clocks=3238912 max_publication_clocks=3333330 checked_display_pixels=8172116
+# ** Note: $finish    : D:/pango/works/EmbFPGA/test/verification/pose_tiled_20261010/source_bounds/contended_128x64/tb_fram_buf_pose_tiled.sv(191)
+#    Time: 132390075 ns  Iteration: 1  Instance: /tb_fram_buf_pose_tiled
+# End time: 21:14:45 on Oct 10,2026, Elapsed time: 0:03:23
+# Errors: 0, Warnings: 0

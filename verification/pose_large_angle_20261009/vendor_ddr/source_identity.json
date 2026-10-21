@@ -1,0 +1,292 @@
+{
+  "description": "Test pose_ddr_arbiter against the generated vendor DDR controller/PHY model.\n\nThe application arbiter and unencrypted DDR RTL come from this workspace.\nThe matching encrypted ModelSim library and Micron memory model come from\nthe original DDR3_50H example (not shipped in this workspace). A source hash\nmanifest records the exact provenance; this is a functional simulation, not\na board throughput or timing guarantee.\n",
+  "sources": [
+    {
+      "path": "D:\\pango\\PDS_2025.2-ads\\arch\\vendor\\pango\\verilog\\simulation\\GTP_GRS.v",
+      "sha256": "dae720bcc467ddb4ff99f2753368934e2649b87f6ac63b8a0d7219699bac1dec"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\test\\tests\\tb_pose_vendor_ddr.sv",
+      "sha256": "a1c941bcc999d0ff24f5062c266a15c528907a1eea318c0871b1312dc92b4ab6"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\test\\src\\video\\pose_ddr_arbiter.v",
+      "sha256": "688c28f7cd35206f494f129f4e4296b3d7d45e3d4e435f3522bebcd2dbbdedb7"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\example_design\\bench\\mem\\ddr3.v",
+      "sha256": "5031176dba7f113c96031de5d8fb81faddde229005a79c6ace987ed11ef0868f"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\test\\DDR3_50H\\rtl\\ipsxb_rst_sync_v1_1.v",
+      "sha256": "6a2bed550881e00a4343af4628a3047f0852cb8d28dd03ff1d3bbbd64c2c72e9"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_calib_mux_v1_3.vp",
+      "sha256": "c09156139968f80167b8e4b2559ae28e6d3d8ec38b785592030955eee5b22105"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_calib_top_v1_3.vp",
+      "sha256": "15da63950bfc9a84da27e2726fa614e7b1d3826b6c86b320def435aa5eb9a63e"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_control_path_adj_v1_0.vp",
+      "sha256": "b0168c924bcc2c75e1086f42d1d4071e6095b1a0358412406accc08fdaeaa1f5"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_data_slice_v1_4.vp",
+      "sha256": "743838445470ddeee9d764f518169f3af01e6eca20cc83ea6d9978c50d0a263a"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_data_slice_dqs_gate_cal_v1_3.vp",
+      "sha256": "42ec8bf6b49137bf75cd81fb7db920053172ec2d22cb7576f86cfb2e4faabd67"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_data_slice_wrlvl_v1_4.vp",
+      "sha256": "fef06608e18de50e7c5c0797b88830cc1914fd2131dccf808cb2e36522eefae3"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_dfi_v1_4.vp",
+      "sha256": "73130e4d53dfd548141f203e06fd4aee51f481bfdd5fdbff64e10abcc79b5af9"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_dll_update_ctrl_v1_0.vp",
+      "sha256": "f5e85c41b1192da9e87eef4fedc5e8587c169b60cffb0f60fe83509f7a83cddb"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_dqsi_rdel_cal_v1_2.vp",
+      "sha256": "b3a4f5c26ff96b6732e0b5ddd71aa9c22a6edc2d968b45e93fb1f477e2f9daad"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_dqs_gate_coarse_cal_v1_3.vp",
+      "sha256": "28440163909ec431c898d83faf244e33ba0959de68b5931ca870aedc8af4abae"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_dqs_rddata_align_v1_3.vp",
+      "sha256": "fcbcbff087bcd939d55c5202b2f538c85406f48a910b4f2875886c6bf0c2e289"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_drift_ctrl_v1_3.vp",
+      "sha256": "c61e8059ecf549edcab1614b30ca90fb3bf127f0f77c1e48229086b76a9993dc"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_gate_update_ctrl_v1_3.vp",
+      "sha256": "8b4fcc1a377ce6d501cdff8e41e4241da064bacccd7d121301e010ed1cfeec5f"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_gatecal_v1_3.vp",
+      "sha256": "332ba6dd74ad1e9c05efe02fe7c3df1e697f17f83e4ece0e02887d0928a2fdca"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_info_v1_0.vp",
+      "sha256": "19e51e9c6252390d98fabbbe3fa30f131c7f88644faf57aee6506cb8ea085736"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_init_v1_0.vp",
+      "sha256": "d45e6e274f3c695433e851f47c278982b8d87ff4c53b3731eb1c0e086952de09"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_main_ctrl_v1_3.vp",
+      "sha256": "13e1af0e7d904ddd2cd2401078d86c38433c3f76fbeec3d28dfd067745f598ec"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_rdcal_v1_2.vp",
+      "sha256": "c249db57672e7f03f744241405954da8f2f43f7cc66ebb7d5752bafd56263876"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_reset_ctrl_v1_4.vp",
+      "sha256": "a09eae1031aa4c081b5b315acfcb6493fc443f5ab675e9bb31e632d0cff9b297"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_rst_debounce_v1_0.vp",
+      "sha256": "f263c5813c787818354140091dc55119f9a6229aaae8832dab915a70c9fce0c4"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_slice_rddata_align_v1_0.vp",
+      "sha256": "35bc96e2b7952dd700e5f1163a8103ecdd43cf15315bffa1efe19410cfe72a8b"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_training_ctrl_v1_0.vp",
+      "sha256": "3a4a7a41b43385be76626c8dcb4d21cbdc363e14fc6312acdd9f409921fc45df"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_upcal_v1_4.vp",
+      "sha256": "12a135808993f594b9d3b167535ccb53a787ebb362ff92391ff8ab1fdf0f8503"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_wdata_path_adj_v1_0.vp",
+      "sha256": "ecb3d7a5df6451e4b53e897043800be19ffae9b012888ddd890faca5fb29db05"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\ddrphy\\ipsxb_ddrphy_wrlvl_v1_0.vp",
+      "sha256": "3e65b28910e87f2f6fd76d6063089803b6b9e22a59f82d8f3a6c62cfec84af73"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\test\\DDR3_50H\\rtl\\ddrphy\\ipsxb_ddrphy_slice_top_v1_4.v",
+      "sha256": "674603e7131ec40d10bb16665c93585174b132139bcdf6dc846aa16da6171783"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\test\\DDR3_50H\\rtl\\pll\\ipsxb_ddrphy_pll_v1_0.v",
+      "sha256": "0a47f7f471e89f5f3c32c6de7f46debb5c3ec522cf3d2593bebf2530a63ba866"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_apb_cross_v1_2.vp",
+      "sha256": "82009811784c2b3e6adb071084d36ba0efaaa8b8fe6cc9f58a4adbe24d1b8048"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_calib_delay_v1_2.vp",
+      "sha256": "85f5e20b6f0d9b4cee2d38276b7da43455b864f033ca72169e4ee8353ce37991"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_cfg_apb_v1_2.vp",
+      "sha256": "0bee6b79a886e6abadf46f1d0ab195bb7d7dcdf7d3447d4e824fa09771c98615"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_dcd_bm_v1_2.vp",
+      "sha256": "e55ea95eb90dd7aa2accf3fa0ed8332063b867fc0d613c10b6e99827b0c3f393"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_dcd_rowaddr_v1_2.vp",
+      "sha256": "c509f43be3c78595ea055216cbf1720744ef883ea10efe21f6969e0a208958ed"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_dcd_sm_v1_2.vp",
+      "sha256": "a5cb84b619370601e83bcbcc18b4ed52785334a1d85cbd97d1b0a9a5155ae1d9"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_dcd_top_v1_2.vp",
+      "sha256": "276dc92dd8a222ff37417bbdf42d92a99492f73555a0a244c37374a02096d744"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_dcp_back_ctrl_v1_2.vp",
+      "sha256": "966dccb2d05d9cdbc585fa42915063271413bdebe0b64d40bb27d5c073d611e9"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_dcp_buf_v1_2.vp",
+      "sha256": "7bc7192d8b6de409a5298d13f3da96becc2328cf729f1b5948f306fa024cfb47"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_dcp_out_v1_2.vp",
+      "sha256": "257bb65a04b816610c7c55a8449bb1e75d0ff3797c4e90a9d559ecc204503035"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_dcp_top_v1_2.vp",
+      "sha256": "261e2c84cba8ab6f3237be4c267001c9613009d70809adb6a0d303ab4a3e838e"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_dfi_v1_2.vp",
+      "sha256": "c277a55c83c6b61c5055a4d8c21bfe082daec19d453690ec17e19be0beec7e7f"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_lp_v1_2.vp",
+      "sha256": "f43c7fbafa6edadef1a64489ae0893cc88bc49ec80395b3010525aa60c13fb4a"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_mrs_v1_2.vp",
+      "sha256": "bf92f13b1edbebd2a94bef1d3f68f5a6bf8e35656da4eb764fe0630d3051eb34"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_prefetch_fifo_v1_2.vp",
+      "sha256": "15a8d14b6e34741c088883f9eef3fec16271b905a1e9f8250e41f2d89158edaa"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_rdatapath_v1_2.vp",
+      "sha256": "da82cf099bd7d8d5e071959edd03f1cbb747ab2cfd1902e9fe03e9a5586f2536"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_reg_fifo2_v1_2.vp",
+      "sha256": "7327943eb13a83e3c1f1fc6d7cb99465fd516671112425c6c151541e23094686"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_ui_axi_v1_2.vp",
+      "sha256": "14724154f2f96a92a45d8be371f259e0837c7727fcca5e0d5cbc8b6cf90b999e"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_wdatapath_v1_2.vp",
+      "sha256": "e34991cb4bd58130fba3af02bbc60898b3ad7d9aec0cf23d5d918e7b3506985b"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_wdp_align_v1_2.vp",
+      "sha256": "24257d5c367854f48bda084dd2142810cad1bb420f931f7719cd3fc34c2f4ecf"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_wdp_dcp_v1_2.vp",
+      "sha256": "d1b4f08ebe6c5bf3f4a9e5ae62c520d584ed61374fcfcdb3e91b37976cb63d72"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\ipsxb_mcdq_wrapper_v1_2a.vp",
+      "sha256": "fcaa5f9e858b94ae92b44bc6aae0e31970c85e3a3cb3432bd6a4800985e5e8fb"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\syn_mod\\ipsxb_mcdq_com_timing_v1_2.vp",
+      "sha256": "c9231a19dd63e1d5470e063180d8f2c1221fd78db2050f3cd7fd247b56afb729"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\syn_mod\\ipsxb_mcdq_tfaw_timing_v1_2.vp",
+      "sha256": "ac0108cab9e58da68c56f6157baf62dfcc81fb04d6c3e820327b136942a58e83"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\syn_mod\\ipsxb_mcdq_tfaw_v1_2.vp",
+      "sha256": "148101bebbe083a2f8475d4e5229ca665d4fd54f7749bc0192a6260e460e92e9"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\syn_mod\\ipsxb_mcdq_timing_act2wr_pass_v1_2.vp",
+      "sha256": "01447c8fb075a6e43cc0a8b3c636a54b2de0cc9b5bbaf8f4b650bab88248d60e"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\syn_mod\\ipsxb_mcdq_timing_act_pass_v1_2.vp",
+      "sha256": "0861783115962a39cbad0c7a252d39d1520ca364b8758bf96d7a053d23a1b914"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\syn_mod\\ipsxb_mcdq_timing_pre_pass_v1_2.vp",
+      "sha256": "12ad19172b41cc3ca3d68c167353ca8b90c9fc272da1123fdc918f72a13a5504"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\syn_mod\\ipsxb_mcdq_timing_rd_pass_v1_2.vp",
+      "sha256": "9be02688f6e6db213628b5fb5d69e7999660497e4997a06096357e75a16a893b"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\syn_mod\\ipsxb_mcdq_timing_ref_pass_v1_2.vp",
+      "sha256": "2b2ea662dc232c0cda18947a6d9de51dc6c90a1b843379061bfd9032049a0f74"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\syn_mod\\ipsxb_mcdq_timing_wr_pass_v1_2.vp",
+      "sha256": "1fdede72d31bec2d0120ff3a3d5758742747964c5c9a6f5d7951435c4e9dfe4c"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\sim_lib\\rtl\\mcdq_ctrl\\syn_mod\\ipsxb_mcdq_trc_timing_v1_2.vp",
+      "sha256": "68923e10ab84eeb477580c924718ac4cf6ff809d74f22d0d22f77651e5341eeb"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\test\\DDR3_50H\\rtl\\mcdq_ctrl\\distributed_fifo\\ipsxb_distributed_fifo_v1_0.v",
+      "sha256": "5395fa9859185a47bfa6fbdcbeddf172487358acb6eb694d3b6a6b5d742d1da3"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\test\\DDR3_50H\\rtl\\mcdq_ctrl\\distributed_fifo\\rtl\\ipsxb_distributed_fifo_ctr_v1_0.v",
+      "sha256": "b54ca51ff2df9fe00c55649011b08652784995566d8a109189d5ac38f0fdc255"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\test\\DDR3_50H\\rtl\\mcdq_ctrl\\distributed_fifo\\rtl\\ipsxb_distributed_fifo_v1_0_distributed_fifo_v1_0.v",
+      "sha256": "20465b7bb1000badd6f5fa9aebfe6639bcbc33aeb21260c7e836b5d43da922a4"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\test\\DDR3_50H\\rtl\\mcdq_ctrl\\distributed_fifo\\rtl\\ipsxb_distributed_sdpram_v1_0_distributed_fifo_v1_0.v",
+      "sha256": "4262dc3de05465c855c14b46707eeaeb4c36620b879f64c650e9028ff323350c"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\test\\DDR3_50H\\DDR3_50H.v",
+      "sha256": "ae813469959c26acc528a7348dc6da3df55cecf892182c9cb4bbabc8301ef6f3"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\test\\DDR3_50H\\DDR3_50H_ddrphy_top.v",
+      "sha256": "d1f0d0a75419fa4c6386aad3f8cf063c9f39bbf863b35e91b298a4ebda3bbd1f"
+    },
+    {
+      "path": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H\\example_design\\bench\\mem\\ddr3_parameters.vh",
+      "sha256": "e3da3613221c6be16678599f4ddd50f30310cd83c8b6fbc61703553b9ba55c53"
+    }
+  ],
+  "primitive_library": "D:\\pango\\PDS_2025.2-ads\\arch\\vendor\\pango\\verilog\\simulation",
+  "vendor_root": "D:\\pango\\works\\EmbFPGA\\HDMI_IN_DDR3_HDMI_OUT\\source\\rtl\\DDR3_50H",
+  "work_library": "D:\\pango\\works\\EmbFPGA\\test\\build_rebuilt\\vendor_ddr_e0d1651d52b34f968dc82e8e149fc60f\\work"
+}

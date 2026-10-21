@@ -1,0 +1,25 @@
+# vsim -c -quiet -vopt -lib verification/pose_tiled_20261010/source_bounds/candidate_256x32/work tb_pose_renderer_tiled -l D:\pango\works\EmbFPGA\test\verification\pose_tiled_20261010\source_bounds\candidate_256x32\result.log -do "onerror {quit -code 1}; run -all; quit -f" -gTILE_W=256 -gWIDTH=1920 -gH=1920 -gTILE_H=32 -gHEIGHT=1080 -gWRITE_LATENCY=32 -gV=1080 -gREAD_LATENCY=32 -gFULL=1 
+# Start time: 21:07:52 on Oct 10,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# //  ModelSim SE-64 10.6e Jun 23 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# onerror {quit -code 1}
+#  Warning: onerror command for use within macro
+#  run -all
+# MEASURE tiled yaw=-179 pitch=0 pixels=2073600 clocks=2904737 source_commands=15754 source_beats=150589 write_commands=8640 ms=29.047370 fps=34.426525 valid=2014926 black=58674
+# PASS tiled renderer: exact pixels, all tile edges, pose snapshot, DDR bursts/backpressure, final commit                  
+# ** Note: $finish    : D:/pango/works/EmbFPGA/test/verification/pose_tiled_20261010/source_bounds/candidate_256x32/tb_pose_renderer_tiled.sv(157)
+#    Time: 29047520 ns  Iteration: 1  Instance: /tb_pose_renderer_tiled
+# End time: 21:09:57 on Oct 10,2026, Elapsed time: 0:02:05
+# Errors: 0, Warnings: 0

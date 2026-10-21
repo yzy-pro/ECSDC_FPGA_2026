@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="synthesize_report_cdc_summary" title="Report CDC Summary" column_number="7" tree="">
+        <column_headers>
+            <data>Severity</data>
+            <data>CDC ID</data>
+            <data>Description</data>
+            <data>Exception</data>
+            <data>Startpoint</data>
+            <data>Endpoint</data>
+            <data>Category</data>
+        </column_headers>
+        <row>
+            <data>From  cfg_clk  To  sys_clk  (4 CDC Path)</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <row>
+                <data>Critical</data>
+                <data>CDC-10</data>
+                <data>Combinatorial logic has been detected in the fanin of a synchronization circuit</data>
+                <data>Async Clock Group</data>
+                <data>startup_count[4]/CLK</data>
+                <data>imu_reset_sync[0]/C</data>
+                <data>Unsafe</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-10</data>
+                <data>Combinatorial logic has been detected in the fanin of a synchronization circuit</data>
+                <data>Async Clock Group</data>
+                <data>startup_count[1]/CLK</data>
+                <data>imu_reset_sync[0]/C</data>
+                <data>Unsafe</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-10</data>
+                <data>Combinatorial logic has been detected in the fanin of a synchronization circuit</data>
+                <data>Async Clock Group</data>
+                <data>startup_count[4]/CLK</data>
+                <data>u_ddr3/u_ddrp_rstn_sync/sig_async_r1[0]/C</data>
+                <data>Unsafe</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-10</data>
+                <data>Combinatorial logic has been detected in the fanin of a synchronization circuit</data>
+                <data>Async Clock Group</data>
+                <data>startup_count[1]/CLK</data>
+                <data>u_ddr3/u_ddrp_rstn_sync/sig_async_r1[0]/C</data>
+                <data>Unsafe</data>
+            </row>
+        </row>
+        <row>
+            <data>From  cfg_clk  To  pixclk_in  (2 CDC Path)</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <row>
+                <data>Critical</data>
+                <data>CDC-10</data>
+                <data>Combinatorial logic has been detected in the fanin of a synchronization circuit</data>
+                <data>Async Clock Group</data>
+                <data>startup_count[4]/CLK</data>
+                <data>input_reset_sync[0]/C</data>
+                <data>Unsafe</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-10</data>
+                <data>Combinatorial logic has been detected in the fanin of a synchronization circuit</data>
+                <data>Async Clock Group</data>
+                <data>startup_count[1]/CLK</data>
+                <data>input_reset_sync[0]/C</data>
+                <data>Unsafe</data>
+            </row>
+        </row>
+        <row>
+            <data>From  ddrphy_clkin  To  pixclk_in  (1 CDC Path)</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <row>
+                <data>Warning</data>
+                <data>CDC-2</data>
+                <data>Single-bit synchronized without ASYNC_REG property</data>
+                <data>Async Clock Group</data>
+                <data>u_ddr3/u_ddrphy_top/ddrphy_dfi/dfi_init_complete/CLK</data>
+                <data>g_undistort_frame_buffer.u_frame_buffer/u_wr_buf/ddr_rstn_1d/D</data>
+                <data>Safe</data>
+            </row>
+        </row>
+        <row>
+            <data>From  ddrphy_clkin  To  pixel_clk  (6 CDC Path)</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <row>
+                <data>Critical</data>
+                <data>CDC-11</data>
+                <data>A fanout has been detected before a synchronization circuit</data>
+                <data>Async Clock Group</data>
+                <data>u_ddr3/u_ddrphy_top/ddrphy_dfi/dfi_init_complete/CLK</data>
+                <data>ddr_init_sync[0]/D</data>
+                <data>Unsafe</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-11</data>
+                <data>A fanout has been detected before a synchronization circuit</data>
+                <data>Async Clock Group</data>
+                <data>g_undistort_frame_buffer.u_frame_buffer/init_done/CLK</data>
+                <data>frame_init_sync[0]/D</data>
+                <data>Unsafe</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-11</data>
+                <data>A fanout has been detected before a synchronization circuit</data>
+                <data>Async Clock Group</data>
+                <data>u_ddr3/u_ddrphy_top/ddrphy_dfi/dfi_init_complete/CLK</data>
+                <data>g_undistort_frame_buffer.u_frame_buffer/u_undistort_rd_buf/cache_ready_sync[0]/C</data>
+                <data>Unsafe</data>
+            </row>
+            <row>
+                <data>Warning</data>
+                <data>CDC-2</data>
+                <data>Single-bit synchronized without ASYNC_REG property</data>
+                <data>Async Clock Group</data>
+                <data>g_undistort_frame_buffer.u_frame_buffer/u_undistort_rd_buf/u_band_cache/cache_prefill_ready/CLK</data>
+                <data>g_undistort_frame_buffer.u_frame_buffer/u_undistort_rd_buf/cache_ready_sync[0]/D</data>
+                <data>Safe</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-11</data>
+                <data>A fanout has been detected before a synchronization circuit</data>
+                <data>Async Clock Group</data>
+                <data>u_ddr3/u_ddrphy_top/ddrphy_dfi/dfi_init_complete/CLK</data>
+                <data>g_undistort_frame_buffer.u_frame_buffer/u_undistort_rd_buf/vout_ready_sync[0]/C</data>
+                <data>Unsafe</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-11</data>
+                <data>A fanout has been detected before a synchronization circuit</data>
+                <data>Async Clock Group</data>
+                <data>g_undistort_frame_buffer.u_frame_buffer/init_done/CLK</data>
+                <data>g_undistort_frame_buffer.u_frame_buffer/u_undistort_rd_buf/vout_ready_sync[0]/D</data>
+                <data>Unsafe</data>
+            </row>
+        </row>
+        <row>
+            <data>From  pixel_clk  To  ddrphy_clkin  (2 CDC Path)</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <row>
+                <data>Warning</data>
+                <data>CDC-2</data>
+                <data>Single-bit synchronized without ASYNC_REG property</data>
+                <data>Async Clock Group</data>
+                <data>u_output_timing/de_out/CLK</data>
+                <data>g_undistort_frame_buffer.u_frame_buffer/u_undistort_rd_buf/u_band_cache/active_sync[0]/D</data>
+                <data>Safe</data>
+            </row>
+            <row>
+                <data>Warning</data>
+                <data>CDC-2</data>
+                <data>Single-bit synchronized without ASYNC_REG property</data>
+                <data>Async Clock Group</data>
+                <data>u_output_timing/vs_out/CLK</data>
+                <data>g_undistort_frame_buffer.u_frame_buffer/u_undistort_rd_buf/u_band_cache/fsync_sync[0]/D</data>
+                <data>Safe</data>
+            </row>
+        </row>
+        <row>
+            <data>From  pixclk_in  To  ddrphy_clkin  (2 CDC Path)</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <row>
+                <data>Warning</data>
+                <data>CDC-2</data>
+                <data>Single-bit synchronized without ASYNC_REG property</data>
+                <data>Async Clock Group</data>
+                <data>u_rgb888_to_rgb565/vs_out/CLK</data>
+                <data>g_undistort_frame_buffer.u_frame_buffer/u_wr_buf/rd_fsync_1d/D</data>
+                <data>Safe</data>
+            </row>
+            <row>
+                <data>Warning</data>
+                <data>CDC-2</data>
+                <data>Single-bit synchronized without ASYNC_REG property</data>
+                <data>Async Clock Group</data>
+                <data>g_undistort_frame_buffer.u_frame_buffer/u_wr_buf/rd_pulse/CLK</data>
+                <data>g_undistort_frame_buffer.u_frame_buffer/u_wr_buf/rd_pulse_1d/D</data>
+                <data>Safe</data>
+            </row>
+        </row>
+        <row>
+            <data>From  input port clock  To  ddrphy_clkin  (8 CDC Path)</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <row>
+                <data>Critical</data>
+                <data>CDC-1</data>
+                <data>Single-bit unknown CDC circuitry</data>
+                <data>None</data>
+                <data>mem_dq[4]</data>
+                <data>u_ddr3/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].u_ddrphy_data_slice/data_slice_wrlvl/wrlvl_dq_r[0]/D</data>
+                <data>Unknown</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-1</data>
+                <data>Single-bit unknown CDC circuitry</data>
+                <data>None</data>
+                <data>mem_dq[0]</data>
+                <data>u_ddr3/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[0].u_ddrphy_data_slice/data_slice_wrlvl/wrlvl_dq_r[0]/D</data>
+                <data>Unknown</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-1</data>
+                <data>Single-bit unknown CDC circuitry</data>
+                <data>None</data>
+                <data>mem_dq[12]</data>
+                <data>u_ddr3/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].u_ddrphy_data_slice/data_slice_wrlvl/wrlvl_dq_r[0]/D</data>
+                <data>Unknown</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-1</data>
+                <data>Single-bit unknown CDC circuitry</data>
+                <data>None</data>
+                <data>mem_dq[8]</data>
+                <data>u_ddr3/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[1].u_ddrphy_data_slice/data_slice_wrlvl/wrlvl_dq_r[0]/D</data>
+                <data>Unknown</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-1</data>
+                <data>Single-bit unknown CDC circuitry</data>
+                <data>None</data>
+                <data>mem_dq[20]</data>
+                <data>u_ddr3/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].u_ddrphy_data_slice/data_slice_wrlvl/wrlvl_dq_r[0]/D</data>
+                <data>Unknown</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-1</data>
+                <data>Single-bit unknown CDC circuitry</data>
+                <data>None</data>
+                <data>mem_dq[16]</data>
+                <data>u_ddr3/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[2].u_ddrphy_data_slice/data_slice_wrlvl/wrlvl_dq_r[0]/D</data>
+                <data>Unknown</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-1</data>
+                <data>Single-bit unknown CDC circuitry</data>
+                <data>None</data>
+                <data>mem_dq[28]</data>
+                <data>u_ddr3/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].u_ddrphy_data_slice/data_slice_wrlvl/wrlvl_dq_r[0]/D</data>
+                <data>Unknown</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-1</data>
+                <data>Single-bit unknown CDC circuitry</data>
+                <data>None</data>
+                <data>mem_dq[24]</data>
+                <data>u_ddr3/u_ddrphy_top/ddrphy_slice_top/i_dqs_group[3].u_ddrphy_data_slice/data_slice_wrlvl/wrlvl_dq_r[0]/D</data>
+                <data>Unknown</data>
+            </row>
+        </row>
+        <row>
+            <data>From  input port clock  To  cfg_clk  (6 CDC Path)</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <row>
+                <data>Critical</data>
+                <data>CDC-1</data>
+                <data>Single-bit unknown CDC circuitry</data>
+                <data>None</data>
+                <data>iic_sda</data>
+                <data>u_ms72xx_ctl/iic_dir_rx/data_out[0]/D</data>
+                <data>Unknown</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-1</data>
+                <data>Single-bit unknown CDC circuitry</data>
+                <data>None</data>
+                <data>iic_sda</data>
+                <data>u_ms72xx_ctl/iic_dir_rx/receive_data[0]/D</data>
+                <data>Unknown</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-1</data>
+                <data>Single-bit unknown CDC circuitry</data>
+                <data>None</data>
+                <data>iic_sda</data>
+                <data>u_ms72xx_ctl/iic_dir_rx/slave_ack/D</data>
+                <data>Unknown</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-1</data>
+                <data>Single-bit unknown CDC circuitry</data>
+                <data>None</data>
+                <data>iic_tx_sda</data>
+                <data>u_ms72xx_ctl/iic_dir_tx/data_out[0]/D</data>
+                <data>Unknown</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-1</data>
+                <data>Single-bit unknown CDC circuitry</data>
+                <data>None</data>
+                <data>iic_tx_sda</data>
+                <data>u_ms72xx_ctl/iic_dir_tx/receive_data[0]/D</data>
+                <data>Unknown</data>
+            </row>
+            <row>
+                <data>Critical</data>
+                <data>CDC-1</data>
+                <data>Single-bit unknown CDC circuitry</data>
+                <data>None</data>
+                <data>iic_tx_sda</data>
+                <data>u_ms72xx_ctl/iic_dir_tx/slave_ack/D</data>
+                <data>Unknown</data>
+            </row>
+        </row>
+        <row>
+            <data>From  sys_clk  To  pixel_clk  (4 CDC Path)</data>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <data/>
+            <row>
+                <data>Warning</data>
+                <data>CDC-2</data>
+                <data>Single-bit synchronized without ASYNC_REG property</data>
+                <data>Async Clock Group</data>
+                <data>u_imu_protocol/attitude_toggle/CLK</data>
+                <data>u_imu_cdc/toggle_meta/D</data>
+                <data>Safe</data>
+            </row>
+            <row>
+                <data>Warning</data>
+                <data>CDC-5</data>
+                <data>Multi-bit synchronized without ASYNC_REG property</data>
+                <data>Async Clock Group</data>
+                <data>u_imu_protocol/pitch[15:0]/CLK</data>
+                <data>u_imu_cdc/pitch_meta[15:0]/D</data>
+                <data>Safe</data>
+            </row>
+            <row>
+                <data>Warning</data>
+                <data>CDC-5</data>
+                <data>Multi-bit synchronized without ASYNC_REG property</data>
+                <data>Async Clock Group</data>
+                <data>u_imu_protocol/roll[15:0]/CLK</data>
+                <data>u_imu_cdc/roll_meta[15:0]/D</data>
+                <data>Safe</data>
+            </row>
+            <row>
+                <data>Warning</data>
+                <data>CDC-5</data>
+                <data>Multi-bit synchronized without ASYNC_REG property</data>
+                <data>Async Clock Group</data>
+                <data>u_imu_protocol/yaw[15:0]/CLK</data>
+                <data>u_imu_cdc/yaw_meta[15:0]/D</data>
+                <data>Safe</data>
+            </row>
+        </row>
+    </table>
+</tables>

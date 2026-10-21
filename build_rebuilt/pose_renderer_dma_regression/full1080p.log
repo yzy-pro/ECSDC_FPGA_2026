@@ -1,0 +1,36 @@
+# vsim -c -quiet -lib build_rebuilt/pose_renderer_dma_regression/work -vopt tb_pose_renderer_dma -l D:\pango\works\EmbFPGA\test\build_rebuilt\pose_renderer_dma_regression\full1080p.log -do "onerror {quit -code 1}; run -all; quit -f" -gCACHE_INDEX_BITS=10 -gWIDTH=1920 -gINTERPOLATION_MODE=1 -gCACHE_LINE_WORDS=1 -gFULL_FRAME_RUN=1 -gHEIGHT=1080 -gRECIPROCAL_LUT_ENABLE=0 
+# Start time: 14:11:53 on Oct 10,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# //  ModelSim SE-64 10.6e Jun 23 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# onerror {quit -code 1}
+#  Warning: onerror command for use within macro
+#  run -all
+# PROGRESS full frame: completed_rows=108 clocks=1814243
+# PROGRESS full frame: completed_rows=216 clocks=3636553
+# PROGRESS full frame: completed_rows=324 clocks=5427553
+# PROGRESS full frame: completed_rows=432 clocks=7229493
+# PROGRESS full frame: completed_rows=540 clocks=9018748
+# PROGRESS full frame: completed_rows=648 clocks=10804413
+# PROGRESS full frame: completed_rows=756 clocks=12594398
+# PROGRESS full frame: completed_rows=864 clocks=14228583
+# PROGRESS full frame: completed_rows=972 clocks=15816288
+# PROGRESS full frame: completed_rows=1080 clocks=17403888
+# case yaw=1072 pitch=-715 mode=1 valid=1026848 black=1046752 source reads=75834
+# MEASURE full frame: clocks=17403899 source_reads=75834 destination_writes=129600 at_model_100MHz_ms=174.038990
+# PASS full1080p renderer DMA: 2073600 pixels checked, pose +30/-20 degrees, source sampling, black borders, command stalls and completed DDR writes
+# ** Note: $finish    : D:/pango/works/EmbFPGA/test/tests/tb_pose_renderer_dma.sv(198)
+#    Time: 174039090 ns  Iteration: 1  Instance: /tb_pose_renderer_dma
+# End time: 14:15:13 on Oct 10,2026, Elapsed time: 0:03:20
+# Errors: 0, Warnings: 0

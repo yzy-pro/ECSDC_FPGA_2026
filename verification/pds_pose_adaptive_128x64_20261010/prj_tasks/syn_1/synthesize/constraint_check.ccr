@@ -1,0 +1,182 @@
+##### Written on 2026/10/10 21:12:51 ################################################
+
+##### INFO ##########################################################################
+
+Current Device:
+    PGL50H-6FBG484
+
+Top Module:
+    hdmi_ddr3_top
+
+Constraint File(s):
+    D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc
+
+##### SUMMARY #######################################################################
+
+Found 0 error(s), 0 critical warning(s), 23 warning(s), out of 69 constraint(s)
+
+Constraints With Issues(infos):
+********************************************
+
+foreach {port pin} {
+    pixclk_in AA12
+    vs_in     W13
+    hs_in     V13
+    de_in     U13
+    {r_in[7]} Y14
+    {r_in[6]} W14
+    {r_in[5]} AB14
+    {r_in[4]} AA14
+    {r_in[3]} V15
+    {r_in[2]} U16
+    {r_in[1]} AB15
+    {r_in[0]} Y15
+    {g_in[7]} W17
+    {g_in[6]} Y18
+    {g_in[5]} AB18
+    {g_in[4]} AA18
+    {g_in[3]} AB19
+    {g_in[2]} W18
+    {g_in[1]} V17
+    {g_in[0]} Y17
+    {b_in[7]} AB17
+    {b_in[6]} AA16
+    {b_in[5]} AB16
+    {b_in[4]} Y16
+    {b_in[3]} W15
+    {b_in[2]} T15
+    {b_in[1]} U15
+    {b_in[0]} U14
+} {
+    set_lvcmos33_input $port $pin
+}
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 218)] Port p:pixclk_in has been placed at location AA12, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 218)] Port p:g_in[5] has been placed at location AB18, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 218)] Port p:g_in[4] has been placed at location AA18, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 218)] Port p:g_in[3] has been placed at location AB19, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 218)] Port p:g_in[2] has been placed at location W18, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 218)] Port p:g_in[1] has been placed at location V17, whose type is share pin.
+
+foreach {port pin} {
+    pixclk_out M22
+    vs_out     W20
+    hs_out     Y21
+    de_out     Y22
+    {r_out[7]} H19
+    {r_out[6]} H22
+    {r_out[5]} H21
+    {r_out[4]} K22
+    {r_out[3]} J20
+    {r_out[2]} J22
+    {r_out[1]} N19
+    {r_out[0]} K17
+    {g_out[7]} L17
+    {g_out[6]} K20
+    {g_out[5]} L19
+    {g_out[4]} N15
+    {g_out[3]} M16
+    {g_out[2]} M18
+    {g_out[1]} M17
+    {g_out[0]} M21
+    {b_out[7]} P19
+    {b_out[6]} R19
+    {b_out[5]} R22
+    {b_out[4]} R20
+    {b_out[3]} T22
+    {b_out[2]} T21
+    {b_out[1]} V22
+    {b_out[0]} V21
+    rstn_out   R17
+    iic_scl    V19
+    iic_tx_scl P17
+} {
+    set_lvcmos33_output $port $pin
+}
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 255)] Port p:pixclk_out has been placed at location M22, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 255)] Port p:r_out[7] has been placed at location H19, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 255)] Port p:r_out[6] has been placed at location H22, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 255)] Port p:r_out[5] has been placed at location H21, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 255)] Port p:r_out[0] has been placed at location K17, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 255)] Port p:g_out[7] has been placed at location L17, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 255)] Port p:g_out[6] has been placed at location K20, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 255)] Port p:g_out[5] has been placed at location L19, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 255)] Port p:g_out[0] has been placed at location M21, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 255)] Port p:b_out[5] has been placed at location R22, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 255)] Port p:b_out[4] has been placed at location R20, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 255)] Port p:b_out[2] has been placed at location T21, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 255)] Port p:iic_scl has been placed at location V19, whose type is share pin.
+
+foreach {port pin} {
+    {mem_dq[0]}  U1
+    {mem_dq[1]}  U3
+    {mem_dq[2]}  T2
+    {mem_dq[3]}  Y2
+    {mem_dq[4]}  T1
+    {mem_dq[5]}  Y1
+    {mem_dq[6]}  M7
+    {mem_dq[7]}  W1
+    {mem_dq[8]}  P1
+    {mem_dq[9]}  M2
+    {mem_dq[10]} R1
+    {mem_dq[11]} M1
+    {mem_dq[12]} P2
+    {mem_dq[13]} L3
+    {mem_dq[14]} P3
+    {mem_dq[15]} N4
+    {mem_dq[16]} K4
+    {mem_dq[17]} K1
+    {mem_dq[18]} J3
+    {mem_dq[19]} L4
+    {mem_dq[20]} K3
+    {mem_dq[21]} M3
+    {mem_dq[22]} J1
+    {mem_dq[23]} M4
+    {mem_dq[24]} J6
+    {mem_dq[25]} F1
+    {mem_dq[26]} K7
+    {mem_dq[27]} F2
+    {mem_dq[28]} H5
+    {mem_dq[29]} H3
+    {mem_dq[30]} J4
+    {mem_dq[31]} G3
+} {
+    set_ddr_dq $port $pin
+}
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 389)] Port p:mem_dq[9] has been placed at location M2, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 389)] Port p:mem_dq[11] has been placed at location M1, whose type is share pin.
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 389)] Port p:mem_dq[14] has been placed at location P3, whose type is share pin.
+
+set_lvcmos33_inout iic_sda V20
+    W: ConstraintEditor-4040: [D:/pango/works/EmbFPGA/test/verification/pds_pose_adaptive_128x64_20261010/input_snapshot/src/hdmi_ddr3_top.fdc(line number: 308)] Port p:iic_sda has been placed at location V20, whose type is share pin.
+
+Other Issues(infos):
+********************************************
+
+    I: Timing-4124: The pattern 'r_in[*]' in command 'get_ports {r_in[*] g_in[*] b_in[*] de_in hs_in vs_in}' match 8 objects below: p:r_in[0] p:r_in[1] p:r_in[2] p:r_in[3] p:r_in[4] p:r_in[5] p:r_in[6] p:r_in[7]
+    I: Timing-4124: The pattern 'g_in[*]' in command 'get_ports {r_in[*] g_in[*] b_in[*] de_in hs_in vs_in}' match 8 objects below: p:g_in[0] p:g_in[1] p:g_in[2] p:g_in[3] p:g_in[4] p:g_in[5] p:g_in[6] p:g_in[7]
+    I: Timing-4124: The pattern 'b_in[*]' in command 'get_ports {r_in[*] g_in[*] b_in[*] de_in hs_in vs_in}' match 8 objects below: p:b_in[0] p:b_in[1] p:b_in[2] p:b_in[3] p:b_in[4] p:b_in[5] p:b_in[6] p:b_in[7]
+    I: Timing-4124: The pattern 'r_in[*]' in command 'get_ports {r_in[*] g_in[*] b_in[*] de_in hs_in vs_in}' match 8 objects below: p:r_in[0] p:r_in[1] p:r_in[2] p:r_in[3] p:r_in[4] p:r_in[5] p:r_in[6] p:r_in[7]
+    I: Timing-4124: The pattern 'g_in[*]' in command 'get_ports {r_in[*] g_in[*] b_in[*] de_in hs_in vs_in}' match 8 objects below: p:g_in[0] p:g_in[1] p:g_in[2] p:g_in[3] p:g_in[4] p:g_in[5] p:g_in[6] p:g_in[7]
+    I: Timing-4124: The pattern 'b_in[*]' in command 'get_ports {r_in[*] g_in[*] b_in[*] de_in hs_in vs_in}' match 8 objects below: p:b_in[0] p:b_in[1] p:b_in[2] p:b_in[3] p:b_in[4] p:b_in[5] p:b_in[6] p:b_in[7]
+    I: Timing-4124: The pattern 'r_in[*]' in command 'get_ports {r_in[*] g_in[*] b_in[*] de_in vs_in}' match 8 objects below: p:r_in[0] p:r_in[1] p:r_in[2] p:r_in[3] p:r_in[4] p:r_in[5] p:r_in[6] p:r_in[7]
+    I: Timing-4124: The pattern 'g_in[*]' in command 'get_ports {r_in[*] g_in[*] b_in[*] de_in vs_in}' match 8 objects below: p:g_in[0] p:g_in[1] p:g_in[2] p:g_in[3] p:g_in[4] p:g_in[5] p:g_in[6] p:g_in[7]
+    I: Timing-4124: The pattern 'b_in[*]' in command 'get_ports {r_in[*] g_in[*] b_in[*] de_in vs_in}' match 8 objects below: p:b_in[0] p:b_in[1] p:b_in[2] p:b_in[3] p:b_in[4] p:b_in[5] p:b_in[6] p:b_in[7]
+    I: Timing-4124: The pattern 'r_out[*]' in command 'get_ports {r_out[*] g_out[*] b_out[*] de_out hs_out vs_out}' match 8 objects below: p:r_out[0] p:r_out[1] p:r_out[2] p:r_out[3] p:r_out[4] p:r_out[5] p:r_out[6] p:r_out[7]
+    I: Timing-4124: The pattern 'g_out[*]' in command 'get_ports {r_out[*] g_out[*] b_out[*] de_out hs_out vs_out}' match 8 objects below: p:g_out[0] p:g_out[1] p:g_out[2] p:g_out[3] p:g_out[4] p:g_out[5] p:g_out[6] p:g_out[7]
+    I: Timing-4124: The pattern 'b_out[*]' in command 'get_ports {r_out[*] g_out[*] b_out[*] de_out hs_out vs_out}' match 8 objects below: p:b_out[0] p:b_out[1] p:b_out[2] p:b_out[3] p:b_out[4] p:b_out[5] p:b_out[6] p:b_out[7]
+    I: Timing-4124: The pattern 'r_out[*]' in command 'get_ports {r_out[*] g_out[*] b_out[*] de_out hs_out vs_out}' match 8 objects below: p:r_out[0] p:r_out[1] p:r_out[2] p:r_out[3] p:r_out[4] p:r_out[5] p:r_out[6] p:r_out[7]
+    I: Timing-4124: The pattern 'g_out[*]' in command 'get_ports {r_out[*] g_out[*] b_out[*] de_out hs_out vs_out}' match 8 objects below: p:g_out[0] p:g_out[1] p:g_out[2] p:g_out[3] p:g_out[4] p:g_out[5] p:g_out[6] p:g_out[7]
+    I: Timing-4124: The pattern 'b_out[*]' in command 'get_ports {r_out[*] g_out[*] b_out[*] de_out hs_out vs_out}' match 8 objects below: p:b_out[0] p:b_out[1] p:b_out[2] p:b_out[3] p:b_out[4] p:b_out[5] p:b_out[6] p:b_out[7]
+    I: Timing-4124: The pattern '*u_capture_fifo/wr_gray[*]' in command 'get_cells -hierarchical {*u_capture_fifo/wr_gray[*] *u_capture_fifo/wr_binary[*]}' match 1 objects below: i:g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[9:0]
+    I: Timing-4124: The pattern '*u_capture_fifo/wr_binary[*]' in command 'get_cells -hierarchical {*u_capture_fifo/wr_gray[*] *u_capture_fifo/wr_binary[*]}' match 1 objects below: i:g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_binary[9:0]
+    I: Timing-4124: The pattern '*u_capture_fifo/wr_gray_rd1[*]' in command 'get_cells -hierarchical {*u_capture_fifo/wr_gray_rd1[*]}' match 1 objects below: i:g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray_rd1[9:0]
+    I: Timing-4124: The pattern '*u_capture_fifo/rd_gray[*]' in command 'get_cells -hierarchical {*u_capture_fifo/rd_gray[*] *u_capture_fifo/rd_binary[*]}' match 1 objects below: i:g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[9:0]
+    I: Timing-4124: The pattern '*u_capture_fifo/rd_binary[*]' in command 'get_cells -hierarchical {*u_capture_fifo/rd_gray[*] *u_capture_fifo/rd_binary[*]}' match 1 objects below: i:g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_binary[9:0]
+    I: Timing-4124: The pattern '*u_capture_fifo/rd_gray_wr1[*]' in command 'get_cells -hierarchical {*u_capture_fifo/rd_gray_wr1[*]}' match 1 objects below: i:g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray_wr1[9:0]
+    I: Timing-4124: The pattern '*u_display_fifo/wr_gray[*]' in command 'get_cells -hierarchical {*u_display_fifo/wr_gray[*] *u_display_fifo/wr_binary[*]}' match 1 objects below: i:g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[9:0]
+    I: Timing-4124: The pattern '*u_display_fifo/wr_binary[*]' in command 'get_cells -hierarchical {*u_display_fifo/wr_gray[*] *u_display_fifo/wr_binary[*]}' match 1 objects below: i:g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_binary[9:0]
+    I: Timing-4124: The pattern '*u_display_fifo/wr_gray_rd1[*]' in command 'get_cells -hierarchical {*u_display_fifo/wr_gray_rd1[*]}' match 1 objects below: i:g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray_rd1[9:0]
+    I: Timing-4124: The pattern '*u_display_fifo/rd_gray[*]' in command 'get_cells -hierarchical {*u_display_fifo/rd_gray[*] *u_display_fifo/rd_binary[*]}' match 1 objects below: i:g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[9:0]
+    I: Timing-4124: The pattern '*u_display_fifo/rd_binary[*]' in command 'get_cells -hierarchical {*u_display_fifo/rd_gray[*] *u_display_fifo/rd_binary[*]}' match 1 objects below: i:g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_binary[9:0]
+    I: Timing-4124: The pattern '*u_display_fifo/rd_gray_wr1[*]' in command 'get_cells -hierarchical {*u_display_fifo/rd_gray_wr1[*]}' match 1 objects below: i:g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray_wr1[9:0]
+

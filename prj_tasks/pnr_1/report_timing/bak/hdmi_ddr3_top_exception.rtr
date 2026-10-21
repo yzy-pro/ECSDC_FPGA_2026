@@ -1,0 +1,816 @@
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_max_delay(setup)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_max_delay(recovery)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_min_delay(hold)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_min_delay(removal)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_multicycle_path(setup)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+
+Startpoint  : r_in[4] (port)
+Endpoint    : u_rgb888_to_rgb565/wr_data[12]/opit_0_inv_IQ/I
+Path Group  : pixclk_in
+Path Type   : max (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    5.190  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  5.190
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ Input external delay                                    2.000       2.000 f                        
+
+ AA14                                                    0.000       2.000 f       r_in[4] (port)   
+                                   net (fanout=1)        0.129       2.129         r_in[4]          
+ IOBD_273_0/DIN                    td                    1.367       3.496 f       r_in_ibuf[4]/opit_0/O
+                                   net (fanout=1)        0.000       3.496         r_in_ibuf[4]/ntD 
+ IOL_275_6/DI                                                              f       u_rgb888_to_rgb565/wr_data[12]/opit_0_inv_IQ/I
+
+ Data arrival time                                                   3.496         Logic Levels: 1  
+                                                                                   Logic: 1.367ns(91.377%), Route: 0.129ns(8.623%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ AA12                                                    0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.078       0.078         pixclk_in        
+ IOBD_161_0/DIN                    td                    1.047       1.125 r       pixclk_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.125         pixclk_in_ibuf/ntD
+ IOL_163_6/INCK                    td                    0.048       1.173 r       pixclk_in_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.486       3.659         nt_pixclk_in_rt_0
+ USCM_84_112/CLK_USCM              td                    0.000       3.659 r       clkbufg_73/gopclkbufg/CLKOUT
+                                   net (fanout=96)       1.531       5.190         ntclkbufg_3      
+ IOL_275_6/CLK_SYS                                                         r       u_rgb888_to_rgb565/wr_data[12]/opit_0_inv_IQ/SYSCLK
+ clock pessimism                                         0.000       5.190                          
+ clock uncertainty                                       0.000       5.190                          
+
+ Setup time                                             -0.009       5.181                          
+
+ Data required time                                                  5.181                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  5.181                          
+ Data arrival time                                                   3.496                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         1.685                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : r_in[5] (port)
+Endpoint    : u_rgb888_to_rgb565/wr_data[13]/opit_0_inv_IQ/I
+Path Group  : pixclk_in
+Path Type   : max (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    5.190  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  5.190
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ Input external delay                                    2.000       2.000 f                        
+
+ AB14                                                    0.000       2.000 f       r_in[5] (port)   
+                                   net (fanout=1)        0.129       2.129         r_in[5]          
+ IOBS_TB_272_0/DIN                 td                    1.367       3.496 f       r_in_ibuf[5]/opit_0/O
+                                   net (fanout=1)        0.000       3.496         r_in_ibuf[5]/ntD 
+ IOL_275_5/DI                                                              f       u_rgb888_to_rgb565/wr_data[13]/opit_0_inv_IQ/I
+
+ Data arrival time                                                   3.496         Logic Levels: 1  
+                                                                                   Logic: 1.367ns(91.377%), Route: 0.129ns(8.623%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ AA12                                                    0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.078       0.078         pixclk_in        
+ IOBD_161_0/DIN                    td                    1.047       1.125 r       pixclk_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.125         pixclk_in_ibuf/ntD
+ IOL_163_6/INCK                    td                    0.048       1.173 r       pixclk_in_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.486       3.659         nt_pixclk_in_rt_0
+ USCM_84_112/CLK_USCM              td                    0.000       3.659 r       clkbufg_73/gopclkbufg/CLKOUT
+                                   net (fanout=96)       1.531       5.190         ntclkbufg_3      
+ IOL_275_5/CLK_SYS                                                         r       u_rgb888_to_rgb565/wr_data[13]/opit_0_inv_IQ/SYSCLK
+ clock pessimism                                         0.000       5.190                          
+ clock uncertainty                                       0.000       5.190                          
+
+ Setup time                                             -0.009       5.181                          
+
+ Data required time                                                  5.181                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  5.181                          
+ Data arrival time                                                   3.496                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         1.685                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : g_in[3] (port)
+Endpoint    : u_rgb888_to_rgb565/wr_data[6]/opit_0_inv_IQ/I
+Path Group  : pixclk_in
+Path Type   : max (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    5.190  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  5.190
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ Input external delay                                    2.000       2.000 f                        
+
+ AB19                                                    0.000       2.000 f       g_in[3] (port)   
+                                   net (fanout=1)        0.098       2.098         g_in[3]          
+ IOBS_TB_240_0/DIN                 td                    1.367       3.465 f       g_in_ibuf[3]/opit_0/O
+                                   net (fanout=1)        0.000       3.465         g_in_ibuf[3]/ntD 
+ IOL_243_5/DI                                                              f       u_rgb888_to_rgb565/wr_data[6]/opit_0_inv_IQ/I
+
+ Data arrival time                                                   3.465         Logic Levels: 1  
+                                                                                   Logic: 1.367ns(93.311%), Route: 0.098ns(6.689%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ AA12                                                    0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.078       0.078         pixclk_in        
+ IOBD_161_0/DIN                    td                    1.047       1.125 r       pixclk_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.125         pixclk_in_ibuf/ntD
+ IOL_163_6/INCK                    td                    0.048       1.173 r       pixclk_in_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.486       3.659         nt_pixclk_in_rt_0
+ USCM_84_112/CLK_USCM              td                    0.000       3.659 r       clkbufg_73/gopclkbufg/CLKOUT
+                                   net (fanout=96)       1.531       5.190         ntclkbufg_3      
+ IOL_243_5/CLK_SYS                                                         r       u_rgb888_to_rgb565/wr_data[6]/opit_0_inv_IQ/SYSCLK
+ clock pessimism                                         0.000       5.190                          
+ clock uncertainty                                       0.000       5.190                          
+
+ Setup time                                             -0.009       5.181                          
+
+ Data required time                                                  5.181                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  5.181                          
+ Data arrival time                                                   3.465                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         1.716                          
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_multicycle_path(hold)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+
+Startpoint  : de_in (port)
+Endpoint    : u_rgb888_to_rgb565/active_out/opit_0_inv_IQ/I
+Path Group  : pixclk_in
+Path Type   : min (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    5.523  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  5.523
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           6.734       6.734 r                        
+ Input external delay                                   -0.500       6.234 r                        
+
+ U13                                                     0.000       6.234 r       de_in (port)     
+                                   net (fanout=1)        0.044       6.278         de_in            
+ IOBR_TB_216_0/DIN                 td                    1.047       7.325 r       de_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       7.325         de_in_ibuf/ntD   
+ IOL_219_5/DI                                                              r       u_rgb888_to_rgb565/active_out/opit_0_inv_IQ/I
+
+ Data arrival time                                                   7.325         Logic Levels: 1  
+                                                                                   Logic: 1.047ns(95.967%), Route: 0.044ns(4.033%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ AA12                                                    0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.078       0.078         pixclk_in        
+ IOBD_161_0/DIN                    td                    1.254       1.332 r       pixclk_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.332         pixclk_in_ibuf/ntD
+ IOL_163_6/INCK                    td                    0.076       1.408 r       pixclk_in_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.530       3.938         nt_pixclk_in_rt_0
+ USCM_84_112/CLK_USCM              td                    0.000       3.938 r       clkbufg_73/gopclkbufg/CLKOUT
+                                   net (fanout=96)       1.585       5.523         ntclkbufg_3      
+ IOL_219_5/CLK_SYS                                                         r       u_rgb888_to_rgb565/active_out/opit_0_inv_IQ/SYSCLK
+ clock pessimism                                         0.000       5.523                          
+ clock uncertainty                                       0.050       5.573                          
+
+ Hold time                                               0.120       5.693                          
+
+ Data required time                                                  5.693                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  5.693                          
+ Data arrival time                                                   7.325                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         1.632                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : r_in[3] (port)
+Endpoint    : u_rgb888_to_rgb565/wr_data[11]/opit_0_inv_IQ/I
+Path Group  : pixclk_in
+Path Type   : min (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    5.523  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  5.523
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           6.734       6.734 r                        
+ Input external delay                                   -0.500       6.234 r                        
+
+ V15                                                     0.000       6.234 r       r_in[3] (port)   
+                                   net (fanout=1)        0.060       6.294         r_in[3]          
+ IOBR_TB_288_0/DIN                 td                    1.047       7.341 r       r_in_ibuf[3]/opit_0/O
+                                   net (fanout=1)        0.000       7.341         r_in_ibuf[3]/ntD 
+ IOL_291_5/DI                                                              r       u_rgb888_to_rgb565/wr_data[11]/opit_0_inv_IQ/I
+
+ Data arrival time                                                   7.341         Logic Levels: 1  
+                                                                                   Logic: 1.047ns(94.580%), Route: 0.060ns(5.420%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ AA12                                                    0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.078       0.078         pixclk_in        
+ IOBD_161_0/DIN                    td                    1.254       1.332 r       pixclk_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.332         pixclk_in_ibuf/ntD
+ IOL_163_6/INCK                    td                    0.076       1.408 r       pixclk_in_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.530       3.938         nt_pixclk_in_rt_0
+ USCM_84_112/CLK_USCM              td                    0.000       3.938 r       clkbufg_73/gopclkbufg/CLKOUT
+                                   net (fanout=96)       1.585       5.523         ntclkbufg_3      
+ IOL_291_5/CLK_SYS                                                         r       u_rgb888_to_rgb565/wr_data[11]/opit_0_inv_IQ/SYSCLK
+ clock pessimism                                         0.000       5.523                          
+ clock uncertainty                                       0.050       5.573                          
+
+ Hold time                                               0.120       5.693                          
+
+ Data required time                                                  5.693                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  5.693                          
+ Data arrival time                                                   7.341                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         1.648                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : vs_in (port)
+Endpoint    : u_rgb888_to_rgb565/vs_out/opit_0_inv_IQ/I
+Path Group  : pixclk_in
+Path Type   : min (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    5.523  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  5.523
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           6.734       6.734 r                        
+ Input external delay                                   -0.500       6.234 r                        
+
+ W13                                                     0.000       6.234 r       vs_in (port)     
+                                   net (fanout=1)        0.061       6.295         vs_in            
+ IOBS_TB_208_0/DIN                 td                    1.047       7.342 r       vs_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       7.342         vs_in_ibuf/ntD   
+ IOL_211_5/DI                                                              r       u_rgb888_to_rgb565/vs_out/opit_0_inv_IQ/I
+
+ Data arrival time                                                   7.342         Logic Levels: 1  
+                                                                                   Logic: 1.047ns(94.495%), Route: 0.061ns(5.505%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ AA12                                                    0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.078       0.078         pixclk_in        
+ IOBD_161_0/DIN                    td                    1.254       1.332 r       pixclk_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       1.332         pixclk_in_ibuf/ntD
+ IOL_163_6/INCK                    td                    0.076       1.408 r       pixclk_in_ibuf/opit_1/INCK
+                                   net (fanout=1)        2.530       3.938         nt_pixclk_in_rt_0
+ USCM_84_112/CLK_USCM              td                    0.000       3.938 r       clkbufg_73/gopclkbufg/CLKOUT
+                                   net (fanout=96)       1.585       5.523         ntclkbufg_3      
+ IOL_211_5/CLK_SYS                                                         r       u_rgb888_to_rgb565/vs_out/opit_0_inv_IQ/SYSCLK
+ clock pessimism                                         0.000       5.523                          
+ clock uncertainty                                       0.050       5.573                          
+
+ Hold time                                               0.120       5.693                          
+
+ Data required time                                                  5.693                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  5.693                          
+ Data arrival time                                                   7.342                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         1.649                          
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_multicycle_path(recovery)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_multicycle_path(removal)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_false_path(setup)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_false_path(hold)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_false_path(recovery)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_false_path(removal)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_max_delay(setup)
+| Fast Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_max_delay(recovery)
+| Fast Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_min_delay(hold)
+| Fast Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_min_delay(removal)
+| Fast Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_multicycle_path(setup)
+| Fast Corner
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+
+Startpoint  : r_in[4] (port)
+Endpoint    : u_rgb888_to_rgb565/wr_data[12]/opit_0_inv_IQ/I
+Path Group  : pixclk_in
+Path Type   : max (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    3.174  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.174
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ Input external delay                                    2.000       2.000 f                        
+
+ AA14                                                    0.000       2.000 f       r_in[4] (port)   
+                                   net (fanout=1)        0.129       2.129         r_in[4]          
+ IOBD_273_0/DIN                    td                    0.918       3.047 f       r_in_ibuf[4]/opit_0/O
+                                   net (fanout=1)        0.000       3.047         r_in_ibuf[4]/ntD 
+ IOL_275_6/DI                                                              f       u_rgb888_to_rgb565/wr_data[12]/opit_0_inv_IQ/I
+
+ Data arrival time                                                   3.047         Logic Levels: 1  
+                                                                                   Logic: 0.918ns(87.679%), Route: 0.129ns(12.321%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ AA12                                                    0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.078       0.078         pixclk_in        
+ IOBD_161_0/DIN                    td                    0.735       0.813 r       pixclk_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.813         pixclk_in_ibuf/ntD
+ IOL_163_6/INCK                    td                    0.038       0.851 r       pixclk_in_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.428       2.279         nt_pixclk_in_rt_0
+ USCM_84_112/CLK_USCM              td                    0.000       2.279 r       clkbufg_73/gopclkbufg/CLKOUT
+                                   net (fanout=96)       0.895       3.174         ntclkbufg_3      
+ IOL_275_6/CLK_SYS                                                         r       u_rgb888_to_rgb565/wr_data[12]/opit_0_inv_IQ/SYSCLK
+ clock pessimism                                         0.000       3.174                          
+ clock uncertainty                                       0.000       3.174                          
+
+ Setup time                                             -0.006       3.168                          
+
+ Data required time                                                  3.168                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  3.168                          
+ Data arrival time                                                   3.047                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.121                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : r_in[5] (port)
+Endpoint    : u_rgb888_to_rgb565/wr_data[13]/opit_0_inv_IQ/I
+Path Group  : pixclk_in
+Path Type   : max (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    3.174  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.174
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ Input external delay                                    2.000       2.000 f                        
+
+ AB14                                                    0.000       2.000 f       r_in[5] (port)   
+                                   net (fanout=1)        0.129       2.129         r_in[5]          
+ IOBS_TB_272_0/DIN                 td                    0.918       3.047 f       r_in_ibuf[5]/opit_0/O
+                                   net (fanout=1)        0.000       3.047         r_in_ibuf[5]/ntD 
+ IOL_275_5/DI                                                              f       u_rgb888_to_rgb565/wr_data[13]/opit_0_inv_IQ/I
+
+ Data arrival time                                                   3.047         Logic Levels: 1  
+                                                                                   Logic: 0.918ns(87.679%), Route: 0.129ns(12.321%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ AA12                                                    0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.078       0.078         pixclk_in        
+ IOBD_161_0/DIN                    td                    0.735       0.813 r       pixclk_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.813         pixclk_in_ibuf/ntD
+ IOL_163_6/INCK                    td                    0.038       0.851 r       pixclk_in_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.428       2.279         nt_pixclk_in_rt_0
+ USCM_84_112/CLK_USCM              td                    0.000       2.279 r       clkbufg_73/gopclkbufg/CLKOUT
+                                   net (fanout=96)       0.895       3.174         ntclkbufg_3      
+ IOL_275_5/CLK_SYS                                                         r       u_rgb888_to_rgb565/wr_data[13]/opit_0_inv_IQ/SYSCLK
+ clock pessimism                                         0.000       3.174                          
+ clock uncertainty                                       0.000       3.174                          
+
+ Setup time                                             -0.006       3.168                          
+
+ Data required time                                                  3.168                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  3.168                          
+ Data arrival time                                                   3.047                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.121                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : g_in[3] (port)
+Endpoint    : u_rgb888_to_rgb565/wr_data[6]/opit_0_inv_IQ/I
+Path Group  : pixclk_in
+Path Type   : max (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    3.174  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.174
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ Input external delay                                    2.000       2.000 f                        
+
+ AB19                                                    0.000       2.000 f       g_in[3] (port)   
+                                   net (fanout=1)        0.098       2.098         g_in[3]          
+ IOBS_TB_240_0/DIN                 td                    0.918       3.016 f       g_in_ibuf[3]/opit_0/O
+                                   net (fanout=1)        0.000       3.016         g_in_ibuf[3]/ntD 
+ IOL_243_5/DI                                                              f       u_rgb888_to_rgb565/wr_data[6]/opit_0_inv_IQ/I
+
+ Data arrival time                                                   3.016         Logic Levels: 1  
+                                                                                   Logic: 0.918ns(90.354%), Route: 0.098ns(9.646%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ AA12                                                    0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.078       0.078         pixclk_in        
+ IOBD_161_0/DIN                    td                    0.735       0.813 r       pixclk_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.813         pixclk_in_ibuf/ntD
+ IOL_163_6/INCK                    td                    0.038       0.851 r       pixclk_in_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.428       2.279         nt_pixclk_in_rt_0
+ USCM_84_112/CLK_USCM              td                    0.000       2.279 r       clkbufg_73/gopclkbufg/CLKOUT
+                                   net (fanout=96)       0.895       3.174         ntclkbufg_3      
+ IOL_243_5/CLK_SYS                                                         r       u_rgb888_to_rgb565/wr_data[6]/opit_0_inv_IQ/SYSCLK
+ clock pessimism                                         0.000       3.174                          
+ clock uncertainty                                       0.000       3.174                          
+
+ Setup time                                             -0.006       3.168                          
+
+ Data required time                                                  3.168                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  3.168                          
+ Data arrival time                                                   3.016                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.152                          
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_multicycle_path(hold)
+| Fast Corner
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+
+Startpoint  : de_in (port)
+Endpoint    : u_rgb888_to_rgb565/active_out/opit_0_inv_IQ/I
+Path Group  : pixclk_in
+Path Type   : min (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    3.377  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.377
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           6.734       6.734 r                        
+ Input external delay                                   -0.500       6.234 r                        
+
+ U13                                                     0.000       6.234 r       de_in (port)     
+                                   net (fanout=1)        0.044       6.278         de_in            
+ IOBR_TB_216_0/DIN                 td                    0.735       7.013 r       de_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       7.013         de_in_ibuf/ntD   
+ IOL_219_5/DI                                                              r       u_rgb888_to_rgb565/active_out/opit_0_inv_IQ/I
+
+ Data arrival time                                                   7.013         Logic Levels: 1  
+                                                                                   Logic: 0.735ns(94.352%), Route: 0.044ns(5.648%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ AA12                                                    0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.078       0.078         pixclk_in        
+ IOBD_161_0/DIN                    td                    0.861       0.939 r       pixclk_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.939         pixclk_in_ibuf/ntD
+ IOL_163_6/INCK                    td                    0.058       0.997 r       pixclk_in_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.455       2.452         nt_pixclk_in_rt_0
+ USCM_84_112/CLK_USCM              td                    0.000       2.452 r       clkbufg_73/gopclkbufg/CLKOUT
+                                   net (fanout=96)       0.925       3.377         ntclkbufg_3      
+ IOL_219_5/CLK_SYS                                                         r       u_rgb888_to_rgb565/active_out/opit_0_inv_IQ/SYSCLK
+ clock pessimism                                         0.000       3.377                          
+ clock uncertainty                                       0.050       3.427                          
+
+ Hold time                                               0.092       3.519                          
+
+ Data required time                                                  3.519                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  3.519                          
+ Data arrival time                                                   7.013                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         3.494                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : r_in[3] (port)
+Endpoint    : u_rgb888_to_rgb565/wr_data[11]/opit_0_inv_IQ/I
+Path Group  : pixclk_in
+Path Type   : min (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    3.377  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.377
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           6.734       6.734 r                        
+ Input external delay                                   -0.500       6.234 r                        
+
+ V15                                                     0.000       6.234 r       r_in[3] (port)   
+                                   net (fanout=1)        0.060       6.294         r_in[3]          
+ IOBR_TB_288_0/DIN                 td                    0.735       7.029 r       r_in_ibuf[3]/opit_0/O
+                                   net (fanout=1)        0.000       7.029         r_in_ibuf[3]/ntD 
+ IOL_291_5/DI                                                              r       u_rgb888_to_rgb565/wr_data[11]/opit_0_inv_IQ/I
+
+ Data arrival time                                                   7.029         Logic Levels: 1  
+                                                                                   Logic: 0.735ns(92.453%), Route: 0.060ns(7.547%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ AA12                                                    0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.078       0.078         pixclk_in        
+ IOBD_161_0/DIN                    td                    0.861       0.939 r       pixclk_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.939         pixclk_in_ibuf/ntD
+ IOL_163_6/INCK                    td                    0.058       0.997 r       pixclk_in_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.455       2.452         nt_pixclk_in_rt_0
+ USCM_84_112/CLK_USCM              td                    0.000       2.452 r       clkbufg_73/gopclkbufg/CLKOUT
+                                   net (fanout=96)       0.925       3.377         ntclkbufg_3      
+ IOL_291_5/CLK_SYS                                                         r       u_rgb888_to_rgb565/wr_data[11]/opit_0_inv_IQ/SYSCLK
+ clock pessimism                                         0.000       3.377                          
+ clock uncertainty                                       0.050       3.427                          
+
+ Hold time                                               0.092       3.519                          
+
+ Data required time                                                  3.519                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  3.519                          
+ Data arrival time                                                   7.029                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         3.510                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : vs_in (port)
+Endpoint    : u_rgb888_to_rgb565/vs_out/opit_0_inv_IQ/I
+Path Group  : pixclk_in
+Path Type   : min (fast corner)
+Path Class  : sequential timing path
+Clock Skew  :    3.377  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  3.377
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           6.734       6.734 r                        
+ Input external delay                                   -0.500       6.234 r                        
+
+ W13                                                     0.000       6.234 r       vs_in (port)     
+                                   net (fanout=1)        0.061       6.295         vs_in            
+ IOBS_TB_208_0/DIN                 td                    0.735       7.030 r       vs_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       7.030         vs_in_ibuf/ntD   
+ IOL_211_5/DI                                                              r       u_rgb888_to_rgb565/vs_out/opit_0_inv_IQ/I
+
+ Data arrival time                                                   7.030         Logic Levels: 1  
+                                                                                   Logic: 0.735ns(92.337%), Route: 0.061ns(7.663%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ AA12                                                    0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.078       0.078         pixclk_in        
+ IOBD_161_0/DIN                    td                    0.861       0.939 r       pixclk_in_ibuf/opit_0/O
+                                   net (fanout=1)        0.000       0.939         pixclk_in_ibuf/ntD
+ IOL_163_6/INCK                    td                    0.058       0.997 r       pixclk_in_ibuf/opit_1/INCK
+                                   net (fanout=1)        1.455       2.452         nt_pixclk_in_rt_0
+ USCM_84_112/CLK_USCM              td                    0.000       2.452 r       clkbufg_73/gopclkbufg/CLKOUT
+                                   net (fanout=96)       0.925       3.377         ntclkbufg_3      
+ IOL_211_5/CLK_SYS                                                         r       u_rgb888_to_rgb565/vs_out/opit_0_inv_IQ/SYSCLK
+ clock pessimism                                         0.000       3.377                          
+ clock uncertainty                                       0.050       3.427                          
+
+ Hold time                                               0.092       3.519                          
+
+ Data required time                                                  3.519                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  3.519                          
+ Data arrival time                                                   7.030                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         3.511                          
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_multicycle_path(recovery)
+| Fast Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_multicycle_path(removal)
+| Fast Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_false_path(setup)
+| Fast Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_false_path(hold)
+| Fast Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_false_path(recovery)
+| Fast Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_false_path(removal)
+| Fast Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+

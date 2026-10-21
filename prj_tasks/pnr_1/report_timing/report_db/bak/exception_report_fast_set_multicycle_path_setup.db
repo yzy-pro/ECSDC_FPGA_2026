@@ -1,0 +1,646 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="exception_report_fast_set_multicycle_path_setup" title="Setup Path Summary" column_number="18">
+        <column_headers>
+            <data>Slack</data>
+            <data>Logic Levels</data>
+            <data>High Fanout</data>
+            <data>Start Point</data>
+            <data>End Point</data>
+            <data>Exception</data>
+            <data>Line Num</data>
+            <data>Launch Clock</data>
+            <data>Capture Clock</data>
+            <data>Clock Edges</data>
+            <data>Clock Skew</data>
+            <data>Launch Clock Delay</data>
+            <data>Capture Clock Delay</data>
+            <data>Clock Pessimism Removal</data>
+            <data>Requirement</data>
+            <data>Data delay</data>
+            <data>Logic delay</data>
+            <data>Route delay</data>
+        </column_headers>
+        <row>
+            <data>0.121</data>
+            <data>1</data>
+            <data>1</data>
+            <data file_id="../src/hdmi_ddr3_top.v" line_number="68">r_in[4]</data>
+            <data file_id="../src/video/rgb888_to_rgb565.v" line_number="20">u_rgb888_to_rgb565/wr_data[12]/opit_0_inv_IQ/I</data>
+            <data>MultiCycle Path Setup -end 0</data>
+            <data>81</data>
+            <data>pixclk_in</data>
+            <data>pixclk_in</data>
+            <data>rise-rise</data>
+            <data>3.174</data>
+            <data>0.000</data>
+            <data>3.174</data>
+            <data>0.000</data>
+            <data>0.000</data>
+            <data>1.047</data>
+            <data>0.918 (87.7%)</data>
+            <data>0.129 (12.3%)</data>
+            <general_container>
+                <data>Path #1: setup slack is 0.121(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 3.047" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pixclk_in (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Input external delay</data>
+                            <data/>
+                            <data>2.000</data>
+                            <data>2.000</data>
+                            <data>f</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>AA14</data>
+                            <data> </data>
+                            <data>0.000</data>
+                            <data>2.000</data>
+                            <data>f</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="68">r_in[4] (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.129</data>
+                            <data>2.129</data>
+                            <data> </data>
+                            <data object_valid="true">r_in[4]</data>
+                        </row>
+                        <row>
+                            <data>IOBD_273_0/DIN</data>
+                            <data>td</data>
+                            <data>0.918</data>
+                            <data>3.047</data>
+                            <data>f</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="68">r_in_ibuf[4]/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>3.047</data>
+                            <data> </data>
+                            <data object_valid="true">r_in_ibuf[4]/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_275_6/DI</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../src/video/rgb888_to_rgb565.v" line_number="20">u_rgb888_to_rgb565/wr_data[12]/opit_0_inv_IQ/I</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 3.168" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pixclk_in (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>AA12</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="64">pixclk_in (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.078</data>
+                            <data>0.078</data>
+                            <data/>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="64">pixclk_in</data>
+                        </row>
+                        <row>
+                            <data>IOBD_161_0/DIN</data>
+                            <data>td</data>
+                            <data>0.735</data>
+                            <data>0.813</data>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="64">pixclk_in_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>0.813</data>
+                            <data/>
+                            <data object_valid="true">pixclk_in_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_163_6/INCK</data>
+                            <data>td</data>
+                            <data>0.038</data>
+                            <data>0.851</data>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="64">pixclk_in_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.428</data>
+                            <data>2.279</data>
+                            <data/>
+                            <data object_valid="true">nt_pixclk_in_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_112/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>2.279</data>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="64">clkbufg_73/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=96)</data>
+                            <data>0.895</data>
+                            <data>3.174</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_3</data>
+                        </row>
+                        <row>
+                            <data>IOL_275_6/CLK_SYS</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/video/rgb888_to_rgb565.v" line_number="20">u_rgb888_to_rgb565/wr_data[12]/opit_0_inv_IQ/SYSCLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>3.174</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>3.174</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.006</data>
+                            <data>3.168</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>0.121</data>
+            <data>1</data>
+            <data>1</data>
+            <data file_id="../src/hdmi_ddr3_top.v" line_number="68">r_in[5]</data>
+            <data file_id="../src/video/rgb888_to_rgb565.v" line_number="20">u_rgb888_to_rgb565/wr_data[13]/opit_0_inv_IQ/I</data>
+            <data>MultiCycle Path Setup -end 0</data>
+            <data>81</data>
+            <data>pixclk_in</data>
+            <data>pixclk_in</data>
+            <data>rise-rise</data>
+            <data>3.174</data>
+            <data>0.000</data>
+            <data>3.174</data>
+            <data>0.000</data>
+            <data>0.000</data>
+            <data>1.047</data>
+            <data>0.918 (87.7%)</data>
+            <data>0.129 (12.3%)</data>
+            <general_container>
+                <data>Path #2: setup slack is 0.121(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 3.047" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pixclk_in (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Input external delay</data>
+                            <data/>
+                            <data>2.000</data>
+                            <data>2.000</data>
+                            <data>f</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>AB14</data>
+                            <data> </data>
+                            <data>0.000</data>
+                            <data>2.000</data>
+                            <data>f</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="68">r_in[5] (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.129</data>
+                            <data>2.129</data>
+                            <data> </data>
+                            <data object_valid="true">r_in[5]</data>
+                        </row>
+                        <row>
+                            <data>IOBS_TB_272_0/DIN</data>
+                            <data>td</data>
+                            <data>0.918</data>
+                            <data>3.047</data>
+                            <data>f</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="68">r_in_ibuf[5]/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>3.047</data>
+                            <data> </data>
+                            <data object_valid="true">r_in_ibuf[5]/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_275_5/DI</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../src/video/rgb888_to_rgb565.v" line_number="20">u_rgb888_to_rgb565/wr_data[13]/opit_0_inv_IQ/I</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 3.168" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pixclk_in (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>AA12</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="64">pixclk_in (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.078</data>
+                            <data>0.078</data>
+                            <data/>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="64">pixclk_in</data>
+                        </row>
+                        <row>
+                            <data>IOBD_161_0/DIN</data>
+                            <data>td</data>
+                            <data>0.735</data>
+                            <data>0.813</data>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="64">pixclk_in_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>0.813</data>
+                            <data/>
+                            <data object_valid="true">pixclk_in_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_163_6/INCK</data>
+                            <data>td</data>
+                            <data>0.038</data>
+                            <data>0.851</data>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="64">pixclk_in_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.428</data>
+                            <data>2.279</data>
+                            <data/>
+                            <data object_valid="true">nt_pixclk_in_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_112/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>2.279</data>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="64">clkbufg_73/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=96)</data>
+                            <data>0.895</data>
+                            <data>3.174</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_3</data>
+                        </row>
+                        <row>
+                            <data>IOL_275_5/CLK_SYS</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/video/rgb888_to_rgb565.v" line_number="20">u_rgb888_to_rgb565/wr_data[13]/opit_0_inv_IQ/SYSCLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>3.174</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>3.174</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.006</data>
+                            <data>3.168</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+        <row>
+            <data>0.152</data>
+            <data>1</data>
+            <data>1</data>
+            <data file_id="../src/hdmi_ddr3_top.v" line_number="69">g_in[3]</data>
+            <data file_id="../src/video/rgb888_to_rgb565.v" line_number="20">u_rgb888_to_rgb565/wr_data[6]/opit_0_inv_IQ/I</data>
+            <data>MultiCycle Path Setup -end 0</data>
+            <data>81</data>
+            <data>pixclk_in</data>
+            <data>pixclk_in</data>
+            <data>rise-rise</data>
+            <data>3.174</data>
+            <data>0.000</data>
+            <data>3.174</data>
+            <data>0.000</data>
+            <data>0.000</data>
+            <data>1.016</data>
+            <data>0.918 (90.4%)</data>
+            <data>0.098 (9.6%)</data>
+            <general_container>
+                <data>Path #3: setup slack is 0.152(MET)</data>
+                <table_container>
+                    <table id="arrival" title="Data arrival time is 3.016" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pixclk_in (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Input external delay</data>
+                            <data/>
+                            <data>2.000</data>
+                            <data>2.000</data>
+                            <data>f</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>AB19</data>
+                            <data> </data>
+                            <data>0.000</data>
+                            <data>2.000</data>
+                            <data>f</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="69">g_in[3] (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.098</data>
+                            <data>2.098</data>
+                            <data> </data>
+                            <data object_valid="true">g_in[3]</data>
+                        </row>
+                        <row>
+                            <data>IOBS_TB_240_0/DIN</data>
+                            <data>td</data>
+                            <data>0.918</data>
+                            <data>3.016</data>
+                            <data>f</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="69">g_in_ibuf[3]/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>3.016</data>
+                            <data> </data>
+                            <data object_valid="true">g_in_ibuf[3]/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_243_5/DI</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>f</data>
+                            <data file_id="../src/video/rgb888_to_rgb565.v" line_number="20">u_rgb888_to_rgb565/wr_data[6]/opit_0_inv_IQ/I</data>
+                        </row>
+                    </table>
+                </table_container>
+                <table_container>
+                    <table id="require" title="Data required time is 3.168" column_number="6">
+                        <column_headers>
+                            <data>Location</data>
+                            <data>Delay Type</data>
+                            <data>Incr</data>
+                            <data>Path</data>
+                            <data>Trans</data>
+                            <data>Logical Resource</data>
+                        </column_headers>
+                        <row>
+                            <data>Clock pixclk_in (rising edge)</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>AA12</data>
+                            <data></data>
+                            <data>0.000</data>
+                            <data>0.000</data>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="64">pixclk_in (port)</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.078</data>
+                            <data>0.078</data>
+                            <data/>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="64">pixclk_in</data>
+                        </row>
+                        <row>
+                            <data>IOBD_161_0/DIN</data>
+                            <data>td</data>
+                            <data>0.735</data>
+                            <data>0.813</data>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="64">pixclk_in_ibuf/opit_0/O</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>0.000</data>
+                            <data>0.813</data>
+                            <data/>
+                            <data object_valid="true">pixclk_in_ibuf/ntD</data>
+                        </row>
+                        <row>
+                            <data>IOL_163_6/INCK</data>
+                            <data>td</data>
+                            <data>0.038</data>
+                            <data>0.851</data>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="64">pixclk_in_ibuf/opit_1/INCK</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=1)</data>
+                            <data>1.428</data>
+                            <data>2.279</data>
+                            <data/>
+                            <data object_valid="true">nt_pixclk_in_rt_0</data>
+                        </row>
+                        <row>
+                            <data>USCM_84_112/CLK_USCM</data>
+                            <data>td</data>
+                            <data>0.000</data>
+                            <data>2.279</data>
+                            <data>r</data>
+                            <data file_id="../src/hdmi_ddr3_top.v" line_number="64">clkbufg_73/gopclkbufg/CLKOUT</data>
+                        </row>
+                        <row>
+                            <data/>
+                            <data>net (fanout=96)</data>
+                            <data>0.895</data>
+                            <data>3.174</data>
+                            <data/>
+                            <data object_valid="true">ntclkbufg_3</data>
+                        </row>
+                        <row>
+                            <data>IOL_243_5/CLK_SYS</data>
+                            <data/>
+                            <data/>
+                            <data/>
+                            <data>r</data>
+                            <data file_id="../src/video/rgb888_to_rgb565.v" line_number="20">u_rgb888_to_rgb565/wr_data[6]/opit_0_inv_IQ/SYSCLK</data>
+                        </row>
+                        <row>
+                            <data>clock pessimism</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>3.174</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>clock uncertainty</data>
+                            <data/>
+                            <data>0.000</data>
+                            <data>3.174</data>
+                            <data/>
+                            <data/>
+                        </row>
+                        <row>
+                            <data>Setup time</data>
+                            <data/>
+                            <data>-0.006</data>
+                            <data>3.168</data>
+                            <data/>
+                            <data/>
+                        </row>
+                    </table>
+                </table_container>
+            </general_container>
+        </row>
+    </table>
+</tables>

@@ -1,0 +1,274 @@
+{
+  "limit_ns": 6.734,
+  "pointer_bits": 10,
+  "corners": {
+    "slow": [
+      {
+        "fifo": "u_capture_fifo",
+        "synchronizer": "rd_gray_wr1",
+        "bits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "required_ns": 6.734,
+        "actual_skew_ns": 0.952,
+        "slack_ns": 5.782,
+        "data_delay_min_ns": 0.89,
+        "data_delay_max_ns": 1.688,
+        "sources": [
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[0]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[1]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[2]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[3]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[4]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[5]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[6]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[7]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[8]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[9]/opit_0_inv/CLK"
+        ]
+      },
+      {
+        "fifo": "u_capture_fifo",
+        "synchronizer": "wr_gray_rd1",
+        "bits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "required_ns": 6.734,
+        "actual_skew_ns": 1.596,
+        "slack_ns": 5.138,
+        "data_delay_min_ns": 0.443,
+        "data_delay_max_ns": 1.267,
+        "sources": [
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_binary[9]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[0]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[1]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[2]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[3]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[4]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[5]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[6]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[7]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[8]/opit_0_inv/CLK"
+        ]
+      },
+      {
+        "fifo": "u_display_fifo",
+        "synchronizer": "rd_gray_wr1",
+        "bits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "required_ns": 6.734,
+        "actual_skew_ns": 1.687,
+        "slack_ns": 5.047,
+        "data_delay_min_ns": 0.44,
+        "data_delay_max_ns": 1.365,
+        "sources": [
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[0]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[1]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[2]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[3]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[4]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[5]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[6]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[7]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[8]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[9]/opit_0_inv/CLK"
+        ]
+      },
+      {
+        "fifo": "u_display_fifo",
+        "synchronizer": "wr_gray_rd1",
+        "bits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "required_ns": 6.734,
+        "actual_skew_ns": 1.34,
+        "slack_ns": 5.394,
+        "data_delay_min_ns": 0.44,
+        "data_delay_max_ns": 1.008,
+        "sources": [
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_binary[9]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[0]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[1]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[2]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[3]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[4]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[5]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[6]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[7]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[8]/opit_0_inv/CLK"
+        ]
+      }
+    ],
+    "fast": [
+      {
+        "fifo": "u_capture_fifo",
+        "synchronizer": "rd_gray_wr1",
+        "bits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "required_ns": 6.734,
+        "actual_skew_ns": 0.716,
+        "slack_ns": 6.018,
+        "data_delay_min_ns": 0.609,
+        "data_delay_max_ns": 1.194,
+        "sources": [
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[0]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[1]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[2]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[3]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[4]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[5]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[6]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[7]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[8]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[9]/opit_0_inv/CLK"
+        ]
+      },
+      {
+        "fifo": "u_capture_fifo",
+        "synchronizer": "wr_gray_rd1",
+        "bits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "required_ns": 6.734,
+        "actual_skew_ns": 1.262,
+        "slack_ns": 5.472,
+        "data_delay_min_ns": 0.321,
+        "data_delay_max_ns": 0.845,
+        "sources": [
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_binary[9]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[0]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[1]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[2]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[3]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[4]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[5]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[6]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[7]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[8]/opit_0_inv/CLK"
+        ]
+      },
+      {
+        "fifo": "u_display_fifo",
+        "synchronizer": "rd_gray_wr1",
+        "bits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "required_ns": 6.734,
+        "actual_skew_ns": 1.39,
+        "slack_ns": 5.344,
+        "data_delay_min_ns": 0.319,
+        "data_delay_max_ns": 0.974,
+        "sources": [
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[0]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[1]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[2]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[3]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[4]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[5]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[6]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[7]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[8]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[9]/opit_0_inv/CLK"
+        ]
+      },
+      {
+        "fifo": "u_display_fifo",
+        "synchronizer": "wr_gray_rd1",
+        "bits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "required_ns": 6.734,
+        "actual_skew_ns": 1.112,
+        "slack_ns": 5.622,
+        "data_delay_min_ns": 0.319,
+        "data_delay_max_ns": 0.693,
+        "sources": [
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_binary[9]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[0]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[1]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[2]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[3]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[4]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[5]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[6]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[7]/opit_0_inv/CLK",
+          "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[8]/opit_0_inv/CLK"
+        ]
+      }
+    ]
+  }
+}

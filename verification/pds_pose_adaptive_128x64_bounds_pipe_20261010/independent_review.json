@@ -1,0 +1,991 @@
+{
+  "reviewed_at": "2026-10-10T21:43:02.055047",
+  "timing_passed": true,
+  "board_tested": false,
+  "timing_summaries": {
+    "slow_setup": {
+      "worst_slack_ns": 0.462,
+      "rows": [
+        {
+          "Launch Clock": "ddrphy_clkin",
+          "Capture Clock": "ddrphy_clkin",
+          "WNS(ns)": "0.462",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "78207"
+        },
+        {
+          "Launch Clock": "pixel_clk",
+          "Capture Clock": "pixclk_out_clk",
+          "WNS(ns)": "0.721",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "27"
+        },
+        {
+          "Launch Clock": "pixel_clk",
+          "Capture Clock": "pixel_clk",
+          "WNS(ns)": "0.853",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "516"
+        },
+        {
+          "Launch Clock": "pixclk_in",
+          "Capture Clock": "pixclk_in",
+          "WNS(ns)": "0.927",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "3402"
+        },
+        {
+          "Launch Clock": "ioclk1",
+          "Capture Clock": "ioclk1",
+          "WNS(ns)": "1.492",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "72"
+        },
+        {
+          "Launch Clock": "ioclk0",
+          "Capture Clock": "ioclk0",
+          "WNS(ns)": "1.492",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "24"
+        },
+        {
+          "Launch Clock": "sys_clk",
+          "Capture Clock": "sys_clk",
+          "WNS(ns)": "8.064",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "559"
+        },
+        {
+          "Launch Clock": "cfg_clk",
+          "Capture Clock": "cfg_clk",
+          "WNS(ns)": "94.066",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "1179"
+        }
+      ]
+    },
+    "slow_hold": {
+      "worst_slack_ns": 0.114,
+      "rows": [
+        {
+          "Launch Clock": "ddrphy_clkin",
+          "Capture Clock": "ddrphy_clkin",
+          "WHS(ns)": "0.114",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "78207"
+        },
+        {
+          "Launch Clock": "cfg_clk",
+          "Capture Clock": "cfg_clk",
+          "WHS(ns)": "0.117",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "1179"
+        },
+        {
+          "Launch Clock": "pixel_clk",
+          "Capture Clock": "pixel_clk",
+          "WHS(ns)": "0.142",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "516"
+        },
+        {
+          "Launch Clock": "sys_clk",
+          "Capture Clock": "sys_clk",
+          "WHS(ns)": "0.182",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "559"
+        },
+        {
+          "Launch Clock": "pixclk_in",
+          "Capture Clock": "pixclk_in",
+          "WHS(ns)": "0.241",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "3402"
+        },
+        {
+          "Launch Clock": "ioclk1",
+          "Capture Clock": "ioclk1",
+          "WHS(ns)": "0.250",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "72"
+        },
+        {
+          "Launch Clock": "ioclk0",
+          "Capture Clock": "ioclk0",
+          "WHS(ns)": "0.250",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "24"
+        },
+        {
+          "Launch Clock": "pixel_clk",
+          "Capture Clock": "pixclk_out_clk",
+          "WHS(ns)": "0.863",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "27"
+        }
+      ]
+    },
+    "slow_recovery": {
+      "worst_slack_ns": 2.935,
+      "rows": [
+        {
+          "Launch Clock": "ddrphy_clkin",
+          "Capture Clock": "ddrphy_clkin",
+          "WNS(ns)": "2.935",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "21107"
+        },
+        {
+          "Launch Clock": "pixclk_in",
+          "Capture Clock": "pixclk_in",
+          "WNS(ns)": "3.319",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "290"
+        },
+        {
+          "Launch Clock": "sys_clk",
+          "Capture Clock": "sys_clk",
+          "WNS(ns)": "16.346",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "182"
+        },
+        {
+          "Launch Clock": "cfg_clk",
+          "Capture Clock": "cfg_clk",
+          "WNS(ns)": "95.607",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "148"
+        }
+      ]
+    },
+    "slow_removal": {
+      "worst_slack_ns": 0.519,
+      "rows": [
+        {
+          "Launch Clock": "cfg_clk",
+          "Capture Clock": "cfg_clk",
+          "WHS(ns)": "0.519",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "148"
+        },
+        {
+          "Launch Clock": "ddrphy_clkin",
+          "Capture Clock": "ddrphy_clkin",
+          "WHS(ns)": "0.550",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "21107"
+        },
+        {
+          "Launch Clock": "sys_clk",
+          "Capture Clock": "sys_clk",
+          "WHS(ns)": "0.741",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "182"
+        },
+        {
+          "Launch Clock": "pixclk_in",
+          "Capture Clock": "pixclk_in",
+          "WHS(ns)": "0.769",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "290"
+        }
+      ]
+    },
+    "slow_mpw": {
+      "worst_slack_ns": 0.397,
+      "rows": [
+        {
+          "Clock": "ioclk1",
+          "WPWS": "0.397",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "27"
+        },
+        {
+          "Clock": "ioclk2",
+          "WPWS": "0.397",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "2"
+        },
+        {
+          "Clock": "ioclk0",
+          "WPWS": "0.397",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "11"
+        },
+        {
+          "Clock": "pixel_clk",
+          "WPWS": "1.850",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "176"
+        },
+        {
+          "Clock": "pixclk_in",
+          "WPWS": "1.850",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "938"
+        },
+        {
+          "Clock": "ddrphy_clkin",
+          "WPWS": "3.100",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "23225"
+        },
+        {
+          "Clock": "ioclk_gate_clk",
+          "WPWS": "4.580",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "1"
+        },
+        {
+          "Clock": "sys_clk",
+          "WPWS": "9.380",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "186"
+        },
+        {
+          "Clock": "cfg_clk",
+          "WPWS": "49.184",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "263"
+        }
+      ]
+    },
+    "fast_setup": {
+      "worst_slack_ns": 0.121,
+      "rows": [
+        {
+          "Launch Clock": "pixclk_in",
+          "Capture Clock": "pixclk_in",
+          "WNS(ns)": "0.121",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "3402"
+        },
+        {
+          "Launch Clock": "pixel_clk",
+          "Capture Clock": "pixclk_out_clk",
+          "WNS(ns)": "0.967",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "27"
+        },
+        {
+          "Launch Clock": "ioclk1",
+          "Capture Clock": "ioclk1",
+          "WNS(ns)": "1.634",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "72"
+        },
+        {
+          "Launch Clock": "ioclk0",
+          "Capture Clock": "ioclk0",
+          "WNS(ns)": "1.634",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "24"
+        },
+        {
+          "Launch Clock": "pixel_clk",
+          "Capture Clock": "pixel_clk",
+          "WNS(ns)": "2.301",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "516"
+        },
+        {
+          "Launch Clock": "ddrphy_clkin",
+          "Capture Clock": "ddrphy_clkin",
+          "WNS(ns)": "2.914",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "78207"
+        },
+        {
+          "Launch Clock": "sys_clk",
+          "Capture Clock": "sys_clk",
+          "WNS(ns)": "8.276",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "559"
+        },
+        {
+          "Launch Clock": "cfg_clk",
+          "Capture Clock": "cfg_clk",
+          "WNS(ns)": "95.768",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "1179"
+        }
+      ]
+    },
+    "fast_hold": {
+      "worst_slack_ns": 0.054,
+      "rows": [
+        {
+          "Launch Clock": "ddrphy_clkin",
+          "Capture Clock": "ddrphy_clkin",
+          "WHS(ns)": "0.054",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "78207"
+        },
+        {
+          "Launch Clock": "cfg_clk",
+          "Capture Clock": "cfg_clk",
+          "WHS(ns)": "0.055",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "1179"
+        },
+        {
+          "Launch Clock": "pixel_clk",
+          "Capture Clock": "pixel_clk",
+          "WHS(ns)": "0.067",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "516"
+        },
+        {
+          "Launch Clock": "pixclk_in",
+          "Capture Clock": "pixclk_in",
+          "WHS(ns)": "0.176",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "3402"
+        },
+        {
+          "Launch Clock": "ioclk1",
+          "Capture Clock": "ioclk1",
+          "WHS(ns)": "0.183",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "72"
+        },
+        {
+          "Launch Clock": "ioclk0",
+          "Capture Clock": "ioclk0",
+          "WHS(ns)": "0.183",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "24"
+        },
+        {
+          "Launch Clock": "sys_clk",
+          "Capture Clock": "sys_clk",
+          "WHS(ns)": "0.255",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "559"
+        },
+        {
+          "Launch Clock": "pixel_clk",
+          "Capture Clock": "pixclk_out_clk",
+          "WHS(ns)": "1.149",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "27"
+        }
+      ]
+    },
+    "fast_recovery": {
+      "worst_slack_ns": 4.189,
+      "rows": [
+        {
+          "Launch Clock": "pixclk_in",
+          "Capture Clock": "pixclk_in",
+          "WNS(ns)": "4.189",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "290"
+        },
+        {
+          "Launch Clock": "ddrphy_clkin",
+          "Capture Clock": "ddrphy_clkin",
+          "WNS(ns)": "4.833",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "21107"
+        },
+        {
+          "Launch Clock": "sys_clk",
+          "Capture Clock": "sys_clk",
+          "WNS(ns)": "17.365",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "182"
+        },
+        {
+          "Launch Clock": "cfg_clk",
+          "Capture Clock": "cfg_clk",
+          "WNS(ns)": "96.814",
+          "TNS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "148"
+        }
+      ]
+    },
+    "fast_removal": {
+      "worst_slack_ns": 0.354,
+      "rows": [
+        {
+          "Launch Clock": "cfg_clk",
+          "Capture Clock": "cfg_clk",
+          "WHS(ns)": "0.354",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "148"
+        },
+        {
+          "Launch Clock": "ddrphy_clkin",
+          "Capture Clock": "ddrphy_clkin",
+          "WHS(ns)": "0.376",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "21107"
+        },
+        {
+          "Launch Clock": "sys_clk",
+          "Capture Clock": "sys_clk",
+          "WHS(ns)": "0.564",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "182"
+        },
+        {
+          "Launch Clock": "pixclk_in",
+          "Capture Clock": "pixclk_in",
+          "WHS(ns)": "0.577",
+          "THS(ns)": "0.000",
+          "Failing Endpoints": "0",
+          "Total Endpoints": "290"
+        }
+      ]
+    },
+    "fast_mpw": {
+      "worst_slack_ns": 0.568,
+      "rows": [
+        {
+          "Clock": "ioclk1",
+          "WPWS": "0.568",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "27"
+        },
+        {
+          "Clock": "ioclk2",
+          "WPWS": "0.568",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "2"
+        },
+        {
+          "Clock": "ioclk0",
+          "WPWS": "0.568",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "11"
+        },
+        {
+          "Clock": "pixel_clk",
+          "WPWS": "2.154",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "176"
+        },
+        {
+          "Clock": "pixclk_in",
+          "WPWS": "2.154",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "938"
+        },
+        {
+          "Clock": "ddrphy_clkin",
+          "WPWS": "3.480",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "23225"
+        },
+        {
+          "Clock": "ioclk_gate_clk",
+          "WPWS": "4.664",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "1"
+        },
+        {
+          "Clock": "sys_clk",
+          "WPWS": "9.504",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "186"
+        },
+        {
+          "Clock": "cfg_clk",
+          "WPWS": "49.364",
+          "TPWS": "0.000",
+          "Failing End Point": "0",
+          "Total End Point": "263"
+        }
+      ]
+    }
+  },
+  "snapshot_verified": true,
+  "current_source_changed": [],
+  "current_project_config_matches": true,
+  "fifo_cdc": {
+    "limit_ns": 6.734,
+    "pointer_bits": 10,
+    "corners": {
+      "slow": [
+        {
+          "fifo": "u_capture_fifo",
+          "synchronizer": "rd_gray_wr1",
+          "bits": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "required_ns": 6.734,
+          "actual_skew_ns": 0.952,
+          "slack_ns": 5.782,
+          "data_delay_min_ns": 0.89,
+          "data_delay_max_ns": 1.688,
+          "sources": [
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[0]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[1]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[2]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[3]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[4]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[5]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[6]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[7]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[8]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[9]/opit_0_inv/CLK"
+          ]
+        },
+        {
+          "fifo": "u_capture_fifo",
+          "synchronizer": "wr_gray_rd1",
+          "bits": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "required_ns": 6.734,
+          "actual_skew_ns": 1.596,
+          "slack_ns": 5.138,
+          "data_delay_min_ns": 0.443,
+          "data_delay_max_ns": 1.267,
+          "sources": [
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_binary[9]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[0]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[1]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[2]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[3]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[4]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[5]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[6]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[7]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[8]/opit_0_inv/CLK"
+          ]
+        },
+        {
+          "fifo": "u_display_fifo",
+          "synchronizer": "rd_gray_wr1",
+          "bits": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "required_ns": 6.734,
+          "actual_skew_ns": 1.687,
+          "slack_ns": 5.047,
+          "data_delay_min_ns": 0.44,
+          "data_delay_max_ns": 1.365,
+          "sources": [
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[0]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[1]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[2]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[3]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[4]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[5]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[6]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[7]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[8]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[9]/opit_0_inv/CLK"
+          ]
+        },
+        {
+          "fifo": "u_display_fifo",
+          "synchronizer": "wr_gray_rd1",
+          "bits": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "required_ns": 6.734,
+          "actual_skew_ns": 1.34,
+          "slack_ns": 5.394,
+          "data_delay_min_ns": 0.44,
+          "data_delay_max_ns": 1.008,
+          "sources": [
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_binary[9]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[0]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[1]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[2]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[3]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[4]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[5]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[6]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[7]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[8]/opit_0_inv/CLK"
+          ]
+        }
+      ],
+      "fast": [
+        {
+          "fifo": "u_capture_fifo",
+          "synchronizer": "rd_gray_wr1",
+          "bits": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "required_ns": 6.734,
+          "actual_skew_ns": 0.716,
+          "slack_ns": 6.018,
+          "data_delay_min_ns": 0.609,
+          "data_delay_max_ns": 1.194,
+          "sources": [
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[0]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[1]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[2]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[3]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[4]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[5]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[6]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[7]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[8]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/rd_gray[9]/opit_0_inv/CLK"
+          ]
+        },
+        {
+          "fifo": "u_capture_fifo",
+          "synchronizer": "wr_gray_rd1",
+          "bits": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "required_ns": 6.734,
+          "actual_skew_ns": 1.262,
+          "slack_ns": 5.472,
+          "data_delay_min_ns": 0.321,
+          "data_delay_max_ns": 0.845,
+          "sources": [
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_binary[9]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[0]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[1]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[2]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[3]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[4]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[5]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[6]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[7]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_capture_fifo/wr_gray[8]/opit_0_inv/CLK"
+          ]
+        },
+        {
+          "fifo": "u_display_fifo",
+          "synchronizer": "rd_gray_wr1",
+          "bits": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "required_ns": 6.734,
+          "actual_skew_ns": 1.39,
+          "slack_ns": 5.344,
+          "data_delay_min_ns": 0.319,
+          "data_delay_max_ns": 0.974,
+          "sources": [
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[0]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[1]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[2]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[3]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[4]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[5]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[6]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[7]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[8]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/rd_gray[9]/opit_0_inv/CLK"
+          ]
+        },
+        {
+          "fifo": "u_display_fifo",
+          "synchronizer": "wr_gray_rd1",
+          "bits": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "required_ns": 6.734,
+          "actual_skew_ns": 1.112,
+          "slack_ns": 5.622,
+          "data_delay_min_ns": 0.319,
+          "data_delay_max_ns": 0.693,
+          "sources": [
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_binary[9]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[0]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[1]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[2]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[3]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[4]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[5]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[6]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[7]/opit_0_inv/CLK",
+            "g_pose_frame_buffer.u_frame_buffer/u_display_fifo/wr_gray[8]/opit_0_inv/CLK"
+          ]
+        }
+      ]
+    }
+  },
+  "hdmi_input_multicycle_coverage": {
+    "slow_setup": {
+      "ports": [
+        "b_in[0]",
+        "b_in[1]",
+        "b_in[2]",
+        "b_in[3]",
+        "b_in[4]",
+        "b_in[5]",
+        "b_in[6]",
+        "b_in[7]",
+        "de_in",
+        "g_in[0]",
+        "g_in[1]",
+        "g_in[2]",
+        "g_in[3]",
+        "g_in[4]",
+        "g_in[5]",
+        "g_in[6]",
+        "g_in[7]",
+        "r_in[0]",
+        "r_in[1]",
+        "r_in[2]",
+        "r_in[3]",
+        "r_in[4]",
+        "r_in[5]",
+        "r_in[6]",
+        "r_in[7]",
+        "vs_in"
+      ],
+      "min_slack_ns": 1.685
+    },
+    "slow_hold": {
+      "ports": [
+        "b_in[0]",
+        "b_in[1]",
+        "b_in[2]",
+        "b_in[3]",
+        "b_in[4]",
+        "b_in[5]",
+        "b_in[6]",
+        "b_in[7]",
+        "de_in",
+        "g_in[0]",
+        "g_in[1]",
+        "g_in[2]",
+        "g_in[3]",
+        "g_in[4]",
+        "g_in[5]",
+        "g_in[6]",
+        "g_in[7]",
+        "r_in[0]",
+        "r_in[1]",
+        "r_in[2]",
+        "r_in[3]",
+        "r_in[4]",
+        "r_in[5]",
+        "r_in[6]",
+        "r_in[7]",
+        "vs_in"
+      ],
+      "min_slack_ns": 1.632
+    },
+    "fast_setup": {
+      "ports": [
+        "b_in[0]",
+        "b_in[1]",
+        "b_in[2]",
+        "b_in[3]",
+        "b_in[4]",
+        "b_in[5]",
+        "b_in[6]",
+        "b_in[7]",
+        "de_in",
+        "g_in[0]",
+        "g_in[1]",
+        "g_in[2]",
+        "g_in[3]",
+        "g_in[4]",
+        "g_in[5]",
+        "g_in[6]",
+        "g_in[7]",
+        "r_in[0]",
+        "r_in[1]",
+        "r_in[2]",
+        "r_in[3]",
+        "r_in[4]",
+        "r_in[5]",
+        "r_in[6]",
+        "r_in[7]",
+        "vs_in"
+      ],
+      "min_slack_ns": 0.121
+    },
+    "fast_hold": {
+      "ports": [
+        "b_in[0]",
+        "b_in[1]",
+        "b_in[2]",
+        "b_in[3]",
+        "b_in[4]",
+        "b_in[5]",
+        "b_in[6]",
+        "b_in[7]",
+        "de_in",
+        "g_in[0]",
+        "g_in[1]",
+        "g_in[2]",
+        "g_in[3]",
+        "g_in[4]",
+        "g_in[5]",
+        "g_in[6]",
+        "g_in[7]",
+        "r_in[0]",
+        "r_in[1]",
+        "r_in[2]",
+        "r_in[3]",
+        "r_in[4]",
+        "r_in[5]",
+        "r_in[6]",
+        "r_in[7]",
+        "vs_in"
+      ],
+      "min_slack_ns": 3.494
+    }
+  },
+  "check_timing_summary": {
+    "no_clock": 0,
+    "virtual_clock": 1,
+    "unexpandable_clocks": 0,
+    "no_input_delay": 34,
+    "no_output_delay": 76,
+    "partial_input_delay": 0,
+    "partial_output_delay": 0,
+    "io_min_max_delay_consistency": 0,
+    "input_delay_assigned_to_clock": 0,
+    "loops": 0,
+    "latch_loops": 0,
+    "latchs": 0
+  },
+  "coverage_limits": "Conventional no_input_delay ports are 32 DDR DQ plus two I2C; no_output_delay ports are DDR PHY, I2C and rstn_out. HDMI RGB/control input/output ports are constrained. No board test performed.",
+  "files": {
+    "source_identity.json": "814af3f7d8e20ee14e400436a7c710c068add344d646035d49c35fc656576637",
+    "snapshot_identity.json": "f127d68061f371d6dc8d9bfbd9c3387f886991c83fb6b2016822182d572ba330",
+    "prj_tasks/pnr_1/report_timing/hdmi_ddr3_top.rtr": "8e3e54f9035231ea594317f98898c0a737f1abb26d18e4fd2049dd1fc30a560c",
+    "prj_tasks/pnr_1/generate_bitstream/hdmi_ddr3_top.sbit": "6fdc083ff99cc02771f60d38124072fe0ace8da1362f0202cf66156d5b9032d2"
+  }
+}

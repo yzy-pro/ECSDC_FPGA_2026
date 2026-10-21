@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="device_map_timing_constraint" title="Timing Constraint" column_number="1">
+        <column_headers>
+            <data>Command</data>
+        </column_headers>
+        <row>
+            <data>create_clock -name sys_clk [get_ports sys_clk] -period 20.000 -waveform {0.000 10.000}</data>
+        </row>
+        <row>
+            <data>create_clock -name video_ref_clk [get_ports video_ref_clk] -period 37.037037 -waveform {0.000 18.518519}</data>
+        </row>
+        <row>
+            <data>create_clock -name pixclk_in [get_ports pixclk_in] -period 6.734 -waveform {0.000 3.367}</data>
+        </row>
+        <row>
+            <data>create_generated_clock -name ddrphy_clkin -source [get_ports sys_clk] [get_pins u_ddr3/I_GTP_CLKDIV/CLKDIVOUT] -master_clock [get_clocks sys_clk] -multiply_by 16 -divide_by 8</data>
+        </row>
+        <row>
+            <data>create_generated_clock -name ioclk0 -source [get_ports sys_clk] [get_pins u_ddr3/I_GTP_IOCLKBUF_0/CLKOUT] -master_clock [get_clocks sys_clk] -multiply_by 16 -divide_by 2</data>
+        </row>
+        <row>
+            <data>create_generated_clock -name ioclk1 -source [get_ports sys_clk] [get_pins u_ddr3/I_GTP_IOCLKBUF_1/CLKOUT] -master_clock [get_clocks sys_clk] -multiply_by 16 -divide_by 2</data>
+        </row>
+        <row>
+            <data>create_generated_clock -name ioclk2 -source [get_ports sys_clk] [get_pins u_ddr3/I_GTP_IOCLKBUF_2/CLKOUT] -master_clock [get_clocks sys_clk] -multiply_by 16 -divide_by 2</data>
+        </row>
+        <row>
+            <data>create_generated_clock -name ioclk_gate_clk -source [get_ports sys_clk] [get_pins u_ddr3/u_clkbufg_gate/CLKOUT] -master_clock [get_clocks sys_clk] -multiply_by 16 -divide_by 8</data>
+        </row>
+        <row>
+            <data>create_generated_clock -name pixel_clk -source [get_ports video_ref_clk] [get_pins u_video_pll/u_pll_e3/CLKOUT0] -master_clock [get_clocks video_ref_clk] -multiply_by 44 -divide_by 8</data>
+        </row>
+        <row>
+            <data>create_generated_clock -name cfg_clk -source [get_ports video_ref_clk] [get_pins u_video_pll/u_pll_e3/CLKOUT1] -master_clock [get_clocks video_ref_clk] -multiply_by 44 -divide_by 119</data>
+        </row>
+        <row>
+            <data>create_generated_clock -name pixclk_out_clk -source [get_pins u_video_pll/u_pll_e3/CLKOUT0] [get_ports pixclk_out] -master_clock [get_clocks pixel_clk] -divide_by 1 -invert</data>
+        </row>
+        <row>
+            <data>set_clock_groups -name board_clock_domains -asynchronous -group [get_clocks sys_clk] -group [get_clocks video_ref_clk] -group [get_clocks pixclk_in]</data>
+        </row>
+        <row>
+            <data>set_clock_groups -name imu_to_video_cdc -asynchronous -group [get_clocks sys_clk] -group [get_clocks pixel_clk]</data>
+        </row>
+        <row>
+            <data>set_clock_groups -name ddr_phy_domains -asynchronous -group [get_clocks ioclk0] -group [get_clocks ioclk1] -group [get_clocks ioclk2] -group [get_clocks ioclk_gate_clk]</data>
+        </row>
+        <row>
+            <data>set_clock_groups -name ddr_core_to_phy_io_cdc -asynchronous -group [get_clocks ddrphy_clkin] -group [get_clocks ioclk0] -group [get_clocks ioclk1] -group [get_clocks ioclk2] -group [get_clocks ioclk_gate_clk]</data>
+        </row>
+        <row>
+            <data>set_clock_groups -name sys_to_phy_io_reset_cdc -asynchronous -group [get_clocks sys_clk] -group [get_clocks ioclk0] -group [get_clocks ioclk1] -group [get_clocks ioclk2] -group [get_clocks ioclk_gate_clk]</data>
+        </row>
+        <row>
+            <data>set_clock_groups -name ddr_reference_to_core_cdc -asynchronous -group [get_clocks sys_clk] -group [get_clocks ddrphy_clkin]</data>
+        </row>
+        <row>
+            <data>set_clock_groups -name ddr_to_video_cdc -asynchronous -group [get_clocks ddrphy_clkin] -group [get_clocks pixel_clk]</data>
+        </row>
+        <row>
+            <data>set_clock_groups -name ddr_to_input_cdc -asynchronous -group [get_clocks ddrphy_clkin] -group [get_clocks pixclk_in]</data>
+        </row>
+        <row>
+            <data>set_clock_groups -name cfg_to_video_reset_cdc -asynchronous -group [get_clocks cfg_clk] -group [get_clocks pixel_clk]</data>
+        </row>
+        <row>
+            <data>set_clock_groups -name cfg_to_input_reset_cdc -asynchronous -group [get_clocks cfg_clk] -group [get_clocks pixclk_in]</data>
+        </row>
+        <row>
+            <data>set_clock_groups -name cfg_to_ddr_reset_cdc -asynchronous -group [get_clocks cfg_clk] -group [get_clocks sys_clk]</data>
+        </row>
+        <row>
+            <data>set_clock_groups -name input_to_video_cdc -asynchronous -group [get_clocks pixclk_in] -group [get_clocks pixel_clk]</data>
+        </row>
+        <row>
+            <data>set_clock_uncertainty 0.200 [get_clocks ddrphy_clkin] -setup -hold</data>
+        </row>
+        <row>
+            <data>set_clock_uncertainty 0.200 [get_clocks ioclk0] -setup -hold</data>
+        </row>
+        <row>
+            <data>set_clock_uncertainty 0.200 [get_clocks ioclk1] -setup -hold</data>
+        </row>
+        <row>
+            <data>set_clock_uncertainty 0.200 [get_clocks ioclk2] -setup -hold</data>
+        </row>
+        <row>
+            <data>set_clock_uncertainty 0.200 [get_clocks ioclk_gate_clk] -setup -hold</data>
+        </row>
+        <row>
+            <data>set_clock_uncertainty 0.200 [get_clocks pixel_clk] -setup -hold</data>
+        </row>
+        <row>
+            <data>set_clock_uncertainty 0.200 [get_clocks cfg_clk] -setup -hold</data>
+        </row>
+        <row>
+            <data>set_clock_uncertainty 0.200 [get_clocks pixclk_out_clk] -setup -hold</data>
+        </row>
+        <row>
+            <data>set_clock_uncertainty 0.200 [get_clocks video_ref_clk] -setup -hold</data>
+        </row>
+        <row>
+            <data>set_input_delay -clock [get_clocks pixclk_in] -max 2.000 [get_ports {r_in[*] g_in[*] b_in[*] de_in hs_in vs_in}]</data>
+        </row>
+        <row>
+            <data>set_input_delay -clock [get_clocks pixclk_in] -min -0.500 [get_ports {r_in[*] g_in[*] b_in[*] de_in hs_in vs_in}]</data>
+        </row>
+        <row>
+            <data>set_output_delay -clock [get_clocks pixclk_out_clk] -max 1.500 [get_ports {r_out[*] g_out[*] b_out[*] de_out hs_out vs_out}]</data>
+        </row>
+        <row>
+            <data>set_output_delay -clock [get_clocks pixclk_out_clk] -min -0.500 [get_ports {r_out[*] g_out[*] b_out[*] de_out hs_out vs_out}]</data>
+        </row>
+        <row>
+            <data>set_input_delay -clock [get_clocks sys_clk] -max 10.000 [get_ports imu_uart_rx]</data>
+        </row>
+        <row>
+            <data>set_input_delay -clock [get_clocks sys_clk] -min 0.000 [get_ports imu_uart_rx]</data>
+        </row>
+        <row>
+            <data>set_multicycle_path 0 -setup -end -from [get_ports {r_in[*] g_in[*] b_in[*] de_in vs_in}] -to [get_clocks pixclk_in]</data>
+        </row>
+    </table>
+</tables>

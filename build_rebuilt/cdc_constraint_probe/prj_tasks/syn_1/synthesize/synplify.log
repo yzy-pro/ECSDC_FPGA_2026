@@ -1,0 +1,14 @@
+
+Inputs and Outputs :
++--------------------------------------------------------------------------------------------------------------------------+
+| Type       | File Name                                                                                                  
++--------------------------------------------------------------------------------------------------------------------------+
+| Input      | D:/pango/works/EmbFPGA/test/build_rebuilt/cdc_constraint_probe/probe.fdc                                   
+|            | D:/pango/works/EmbFPGA/test/build_rebuilt/cdc_constraint_probe/probe.v                                     
+| Output     | D:/pango/works/EmbFPGA/test/build_rebuilt/cdc_constraint_probe/prj_tasks/syn_1/synthesize/synplify.log     
++--------------------------------------------------------------------------------------------------------------------------+
+
+
+Flow Command: set_option -options { top_module {probe} include_path {{D:/pango/works/EmbFPGA/test/build_rebuilt/cdc_constraint_probe}}} [get_filesets design_1]
+launch_tasks [get_tasks {syn_1}] -to_action synthesize
+wait_on_tasks [get_tasks {syn_1}] -to_action synthesize

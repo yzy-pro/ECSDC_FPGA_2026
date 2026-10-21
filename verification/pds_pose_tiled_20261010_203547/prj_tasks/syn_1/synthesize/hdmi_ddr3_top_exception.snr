@@ -1,0 +1,396 @@
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_max_delay(setup)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_max_delay(recovery)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_min_delay(hold)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_min_delay(removal)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_multicycle_path(setup)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+
+Startpoint  : de_in (port)
+Endpoint    : u_rgb888_to_rgb565/active_out/D (GTP_DFF_R)
+Path Group  : pixclk_in
+Path Type   : max (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    4.584  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  4.584
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ Input external delay                                    2.000       2.000 f                        
+
+ de_in                                                   0.000       2.000 f       de_in (port)     
+                                   net (fanout=1)        0.000       2.000         de_in            
+                                                                                   de_in_ibuf/I (GTP_INBUF)
+                                   td                    1.494       3.494 f       de_in_ibuf/O (GTP_INBUF)
+                                   net (fanout=1)        1.091       4.585         nt_de_in         
+                                                                           f       u_rgb888_to_rgb565/active_out/D (GTP_DFF_R)
+
+ Data arrival time                                                   4.585         Logic Levels: 1  
+                                                                                   Logic: 1.494ns(57.795%), Route: 1.091ns(42.205%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ pixclk_in                                               0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.000       0.000         pixclk_in        
+                                                                                   pixclk_in_ibuf/I (GTP_INBUF)
+                                   td                    1.380       1.380 r       pixclk_in_ibuf/O (GTP_INBUF)
+                                   net (fanout=696)      3.204       4.584         nt_pixclk_in     
+                                                                           r       u_rgb888_to_rgb565/active_out/CLK (GTP_DFF_R)
+ clock pessimism                                         0.000       4.584                          
+ clock uncertainty                                       0.000       4.584                          
+
+ Setup time                                              0.029       4.613                          
+
+ Data required time                                                  4.613                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  4.613                          
+ Data arrival time                                                   4.585                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.028                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : vs_in (port)
+Endpoint    : u_rgb888_to_rgb565/vs_out/D (GTP_DFF_S)
+Path Group  : pixclk_in
+Path Type   : max (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    4.584  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  4.584
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ Input external delay                                    2.000       2.000 f                        
+
+ vs_in                                                   0.000       2.000 f       vs_in (port)     
+                                   net (fanout=1)        0.000       2.000         vs_in            
+                                                                                   vs_in_ibuf/I (GTP_INBUF)
+                                   td                    1.494       3.494 f       vs_in_ibuf/O (GTP_INBUF)
+                                   net (fanout=1)        1.091       4.585         nt_vs_in         
+                                                                           f       u_rgb888_to_rgb565/vs_out/D (GTP_DFF_S)
+
+ Data arrival time                                                   4.585         Logic Levels: 1  
+                                                                                   Logic: 1.494ns(57.795%), Route: 1.091ns(42.205%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ pixclk_in                                               0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.000       0.000         pixclk_in        
+                                                                                   pixclk_in_ibuf/I (GTP_INBUF)
+                                   td                    1.380       1.380 r       pixclk_in_ibuf/O (GTP_INBUF)
+                                   net (fanout=696)      3.204       4.584         nt_pixclk_in     
+                                                                           r       u_rgb888_to_rgb565/vs_out/CLK (GTP_DFF_S)
+ clock pessimism                                         0.000       4.584                          
+ clock uncertainty                                       0.000       4.584                          
+
+ Setup time                                              0.029       4.613                          
+
+ Data required time                                                  4.613                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  4.613                          
+ Data arrival time                                                   4.585                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.028                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : b_in[3] (port)
+Endpoint    : u_rgb888_to_rgb565/wr_data[0]/D (GTP_DFF_R)
+Path Group  : pixclk_in
+Path Type   : max (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    4.584  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  4.584
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ Input external delay                                    2.000       2.000 f                        
+
+ b_in[3]                                                 0.000       2.000 f       b_in[3] (port)   
+                                   net (fanout=1)        0.000       2.000         b_in[3]          
+                                                                                   b_in_ibuf[3]/I (GTP_INBUF)
+                                   td                    1.494       3.494 f       b_in_ibuf[3]/O (GTP_INBUF)
+                                   net (fanout=1)        1.091       4.585         nt_b_in[3]       
+                                                                           f       u_rgb888_to_rgb565/wr_data[0]/D (GTP_DFF_R)
+
+ Data arrival time                                                   4.585         Logic Levels: 1  
+                                                                                   Logic: 1.494ns(57.795%), Route: 1.091ns(42.205%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ pixclk_in                                               0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.000       0.000         pixclk_in        
+                                                                                   pixclk_in_ibuf/I (GTP_INBUF)
+                                   td                    1.380       1.380 r       pixclk_in_ibuf/O (GTP_INBUF)
+                                   net (fanout=696)      3.204       4.584         nt_pixclk_in     
+                                                                           r       u_rgb888_to_rgb565/wr_data[0]/CLK (GTP_DFF_R)
+ clock pessimism                                         0.000       4.584                          
+ clock uncertainty                                       0.000       4.584                          
+
+ Setup time                                              0.029       4.613                          
+
+ Data required time                                                  4.613                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  4.613                          
+ Data arrival time                                                   4.585                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         0.028                          
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_multicycle_path(hold)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+
+Startpoint  : de_in (port)
+Endpoint    : u_rgb888_to_rgb565/active_out/D (GTP_DFF_R)
+Path Group  : pixclk_in
+Path Type   : min (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    4.584  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  4.584
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           6.734       6.734 r                        
+ Input external delay                                   -0.500       6.234 r                        
+
+ de_in                                                   0.000       6.234 r       de_in (port)     
+                                   net (fanout=1)        0.000       6.234         de_in            
+                                                                                   de_in_ibuf/I (GTP_INBUF)
+                                   td                    1.380       7.614 r       de_in_ibuf/O (GTP_INBUF)
+                                   net (fanout=1)        1.091       8.705         nt_de_in         
+                                                                           r       u_rgb888_to_rgb565/active_out/D (GTP_DFF_R)
+
+ Data arrival time                                                   8.705         Logic Levels: 1  
+                                                                                   Logic: 1.380ns(55.848%), Route: 1.091ns(44.152%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ pixclk_in                                               0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.000       0.000         pixclk_in        
+                                                                                   pixclk_in_ibuf/I (GTP_INBUF)
+                                   td                    1.380       1.380 r       pixclk_in_ibuf/O (GTP_INBUF)
+                                   net (fanout=696)      3.204       4.584         nt_pixclk_in     
+                                                                           r       u_rgb888_to_rgb565/active_out/CLK (GTP_DFF_R)
+ clock pessimism                                         0.000       4.584                          
+ clock uncertainty                                       0.050       4.634                          
+
+ Hold time                                               0.044       4.678                          
+
+ Data required time                                                  4.678                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  4.678                          
+ Data arrival time                                                   8.705                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         4.027                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : vs_in (port)
+Endpoint    : u_rgb888_to_rgb565/vs_out/D (GTP_DFF_S)
+Path Group  : pixclk_in
+Path Type   : min (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    4.584  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  4.584
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           6.734       6.734 r                        
+ Input external delay                                   -0.500       6.234 r                        
+
+ vs_in                                                   0.000       6.234 r       vs_in (port)     
+                                   net (fanout=1)        0.000       6.234         vs_in            
+                                                                                   vs_in_ibuf/I (GTP_INBUF)
+                                   td                    1.380       7.614 r       vs_in_ibuf/O (GTP_INBUF)
+                                   net (fanout=1)        1.091       8.705         nt_vs_in         
+                                                                           r       u_rgb888_to_rgb565/vs_out/D (GTP_DFF_S)
+
+ Data arrival time                                                   8.705         Logic Levels: 1  
+                                                                                   Logic: 1.380ns(55.848%), Route: 1.091ns(44.152%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ pixclk_in                                               0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.000       0.000         pixclk_in        
+                                                                                   pixclk_in_ibuf/I (GTP_INBUF)
+                                   td                    1.380       1.380 r       pixclk_in_ibuf/O (GTP_INBUF)
+                                   net (fanout=696)      3.204       4.584         nt_pixclk_in     
+                                                                           r       u_rgb888_to_rgb565/vs_out/CLK (GTP_DFF_S)
+ clock pessimism                                         0.000       4.584                          
+ clock uncertainty                                       0.050       4.634                          
+
+ Hold time                                               0.044       4.678                          
+
+ Data required time                                                  4.678                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  4.678                          
+ Data arrival time                                                   8.705                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         4.027                          
+====================================================================================================
+
+====================================================================================================
+
+Startpoint  : b_in[3] (port)
+Endpoint    : u_rgb888_to_rgb565/wr_data[0]/D (GTP_DFF_R)
+Path Group  : pixclk_in
+Path Type   : min (slow corner)
+Path Class  : sequential timing path
+Clock Skew  :    4.584  (Capture Clock Delay - Launch Clock Delay + Clock Pessimism Removal)
+  Capture Clock Delay     :  4.584
+  Launch Clock Delay      :  0.000
+  Clock Pessimism Removal :  0.000
+Timing Exception  :  MultiCycle Path Setup -end 0
+Exception constraint line number: 81
+
+ Location                          Delay Type             Incr        Path         Logical Resource 
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           6.734       6.734 r                        
+ Input external delay                                   -0.500       6.234 r                        
+
+ b_in[3]                                                 0.000       6.234 r       b_in[3] (port)   
+                                   net (fanout=1)        0.000       6.234         b_in[3]          
+                                                                                   b_in_ibuf[3]/I (GTP_INBUF)
+                                   td                    1.380       7.614 r       b_in_ibuf[3]/O (GTP_INBUF)
+                                   net (fanout=1)        1.091       8.705         nt_b_in[3]       
+                                                                           r       u_rgb888_to_rgb565/wr_data[0]/D (GTP_DFF_R)
+
+ Data arrival time                                                   8.705         Logic Levels: 1  
+                                                                                   Logic: 1.380ns(55.848%), Route: 1.091ns(44.152%)
+----------------------------------------------------------------------------------------------------
+
+ Clock pixclk_in (rising edge)                           0.000       0.000 r                        
+ pixclk_in                                               0.000       0.000 r       pixclk_in (port) 
+                                   net (fanout=1)        0.000       0.000         pixclk_in        
+                                                                                   pixclk_in_ibuf/I (GTP_INBUF)
+                                   td                    1.380       1.380 r       pixclk_in_ibuf/O (GTP_INBUF)
+                                   net (fanout=696)      3.204       4.584         nt_pixclk_in     
+                                                                           r       u_rgb888_to_rgb565/wr_data[0]/CLK (GTP_DFF_R)
+ clock pessimism                                         0.000       4.584                          
+ clock uncertainty                                       0.050       4.634                          
+
+ Hold time                                               0.044       4.678                          
+
+ Data required time                                                  4.678                          
+----------------------------------------------------------------------------------------------------
+ Data required time                                                  4.678                          
+ Data arrival time                                                   8.705                          
+----------------------------------------------------------------------------------------------------
+ Slack (MET)                                                         4.027                          
+====================================================================================================
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_multicycle_path(recovery)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_multicycle_path(removal)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_false_path(setup)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_false_path(hold)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_false_path(recovery)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------
+| Exception type  : set_false_path(removal)
+| Slow Corner
+----------------------------------------------------------------------------------------------------
+
+No such exception path.
+----------------------------------------------------------------------------------------------------
+

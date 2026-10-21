@@ -1,0 +1,7 @@
+﻿scope: all integer yaw,pitch in [-536,536], all 1920x1080 output pixels, 128x32 tiles, current default calibration, exact divider, nearest tap
+method: conservative integer intervals; each pose bucket covers every quantized pose, each pixel cell covers every coordinate; bound may include impossible combinations
+pose_bucket_step=16 pixel_cell_step=8 pose_buckets=4624
+max_source_beats_bound=1200 source_slot_capacity=2048 bytes_bound=38400
+worst_bucket_yaw=[504,519] pitch=[-536,-521] tile=1280,768 bbox_words_bound=12 bbox_rows_bound=100
+PASS conservative source-capacity bound (software arithmetic model, not formal RTL equivalence or timing proof)
+

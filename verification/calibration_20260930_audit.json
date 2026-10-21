@@ -1,0 +1,87 @@
+{
+  "input": {
+    "source": "User-confirmed MATLAB cameraParams on 2026-09-30",
+    "status": "confirmed_input_pending_cache_redesign_not_applied_to_rtl",
+    "image_size_hw": [
+      1080,
+      1920
+    ],
+    "intrinsic_matrix_matlab": [
+      [
+        748.4469,
+        0,
+        0
+      ],
+      [
+        0,
+        748.0773,
+        0
+      ],
+      [
+        944.9033,
+        522.3963,
+        1
+      ]
+    ],
+    "radial_distortion": [
+      0.0099,
+      -0.0434
+    ],
+    "tangential_distortion": [
+      0,
+      0
+    ],
+    "pixel_coordinate_origin": 1,
+    "output_intrinsics": "same as input; full 1920x1080; no crop or focal-length adjustment"
+  },
+  "active_rtl_modified": false,
+  "q14": {
+    "fx": 12262554,
+    "fy": 12256498,
+    "cx": 15481296,
+    "cy": 8558941,
+    "k1": 162,
+    "k2": -711,
+    "p1": 0,
+    "p2": 0
+  },
+  "q22": {
+    "xn_start": -5289644,
+    "yn_start": -2923354,
+    "xn_step": 5604,
+    "yn_step": 5607
+  },
+  "checked_output_pixels": 2073600,
+  "source_x_taps_inclusive": [
+    88,
+    1814
+  ],
+  "required_uniform_cache_rows": 108,
+  "floating_reference_max_rows": 108,
+  "required_uniform_cache_words_per_row": 109,
+  "first_window": [
+    2,
+    97
+  ],
+  "last_window": [
+    968,
+    1075
+  ],
+  "source_row_max_steps": [
+    0,
+    1,
+    2
+  ],
+  "ideal_minimum_drm18k_for_272bit_uniform_cache": 174,
+  "max_q14_projection_error_pixels": [
+    0.18384852752046754,
+    0.11804447367080684
+  ],
+  "compatible_with_current_cache": false,
+  "blocking_issues": [
+    "row cache insufficient: requires 108, has 72",
+    "horizontal aperture insufficient: requires beats 5..113, has 8..107",
+    "uniform full-row cache exceeds even the entire 134 DRM18K capacity, before other IP"
+  ],
+  "note": "Feasibility only, not RTL/PDS/board validation. No candidate has this calibration yet."
+}

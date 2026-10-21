@@ -1,0 +1,50 @@
+{
+  "candidate": "bitstream/EmbFPGA_1920_pose15_tiled_gamma_20261010_candidate.sbit",
+  "sha256": "6fdc083ff99cc02771f60d38124072fe0ace8da1362f0202cf66156d5b9032d2",
+  "bytes": 2101696,
+  "build": "verification/pds_pose_adaptive_128x64_bounds_pipe_20261010",
+  "board_programmed": false,
+  "board_tested": false,
+  "configuration": {
+    "resolution": "1920x1080",
+    "input_output_raster_hz": 60,
+    "render_ddr_mhz": 100,
+    "yaw_pitch_limit_q2048": 536,
+    "roll": false,
+    "absolute_imu_angles": true,
+    "tile": [
+      128,
+      64
+    ],
+    "source_slot_beats": 2048,
+    "sampling": "nearest",
+    "exact_projection": true,
+    "mesh_approximation": false,
+    "adaptive_preprocess": "frame-adaptive gamma",
+    "automatic_gamma": true,
+    "output_fixed_gamma": false
+  },
+  "timing": {
+    "all_constraints_met": true,
+    "slow_render_setup_ns": 0.462,
+    "max_fifo_gray_skew_ns": 1.687
+  },
+  "evidence": {
+    "source_identity.json": "814af3f7d8e20ee14e400436a7c710c068add344d646035d49c35fc656576637",
+    "snapshot_identity.json": "f127d68061f371d6dc8d9bfbd9c3387f886991c83fb6b2016822182d572ba330",
+    "source_status.json": "5e09c4af904a3f79d30e8e8a3a8f01fa089e9f628fb2cdf48775a8539f95f4d8",
+    "build_audit.json": "0d1dd60db51259ca9ed0c57e11945bc04102b7c0a870088dbf01afeede95c491",
+    "independent_review.json": "b26512f68591f0d4ab7ca26061965e14fcd68c5d57d6132369b11dd2d18e183e"
+  },
+  "throughput_verification": {
+    "summary": "verification/pose_tiled_20261010/integration_128x64_bounds_pipe/summary.json",
+    "sha256": "c402502cdc82011ee5636aadec89d0434859ad6e636d16d52cb04a70e4de3103",
+    "status": "PASS",
+    "independent_source_frames_per_second": 30.00003,
+    "full_stress_configurations": 4,
+    "poses_per_configuration": 11,
+    "publications_per_configuration": 13,
+    "worst_full_stress_render_ms": 32.40717,
+    "targeted_pose_worst_ms": 32.45705
+  }
+}

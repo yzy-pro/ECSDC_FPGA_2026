@@ -1,0 +1,222 @@
+{
+  "model": "float64 absolute yaw/pitch perspective, then lens distortion, four-tap sampling",
+  "status": "architecture exploration only; no RTL or board throughput proof",
+  "calibration_sha256": "b014b861c0c2ca8fd4bd1b28c1b2c3632251fedc20006e1ab400cd2405a388b9",
+  "render_fps": 30,
+  "input_and_display_fps": 60,
+  "pose_convention": "C=Ry(-yaw)Rx(-pitch), camera x right/y down/z forward; yaw up-positive; pitch down-positive; absolute zero; roll ignored",
+  "radial_domain_policy": "reject rays beyond maximum normalized radius of original raster; a numerical extrapolation guard, not an independently calibrated field of view",
+  "requires": [
+    "variable 1..16 beat AXI bursts",
+    "input/render/display arbitration",
+    "separate corrected-frame banks and ownership",
+    "tile resampling/output writes"
+  ],
+  "limitations": [
+    "angle samples do not prove all angles or tilted camera poses",
+    "DDR refresh, row/page misses and read/write turnaround not simulated",
+    "cache banking, power-of-two RAM rounding and compute throughput excluded",
+    "burst overhead is a sensitivity input, not measured hardware latency",
+    "fixed16-beat existing adapter cannot implement these transfer counts"
+  ],
+  "cases": [
+    {
+      "angle_deg": null,
+      "yaw_pitch_deg": [
+        0.0,
+        0.0
+      ],
+      "tile_size": 128,
+      "valid_pixels": 2073600,
+      "outside_pixels": 0,
+      "behind_camera_pixels": 0,
+      "outside_reference_radial_domain_pixels": 0,
+      "max_source_rows_per_output_line": 108,
+      "source_read_beats_per_frame": 135978,
+      "source_read_bursts_per_frame": 16269,
+      "output_write_bursts_per_frame": 16200,
+      "max_source_tile_bytes": 41600,
+      "max_aligned_source_width": 160,
+      "max_source_tile_height": 130,
+      "aggregate_MB_per_second": 752.619,
+      "serialized_100MHz_utilization": 0.717802,
+      "assumed_non_data_cycles_per_burst": 24
+    },
+    {
+      "angle_deg": null,
+      "yaw_pitch_deg": [
+        15.0,
+        0.0
+      ],
+      "tile_size": 128,
+      "valid_pixels": 1638716,
+      "outside_pixels": 434884,
+      "behind_camera_pixels": 0,
+      "outside_reference_radial_domain_pixels": 391138,
+      "max_source_rows_per_output_line": 178,
+      "source_read_beats_per_frame": 115677,
+      "source_read_bursts_per_frame": 14015,
+      "output_write_bursts_per_frame": 16200,
+      "max_source_tile_bytes": 53856,
+      "max_aligned_source_width": 176,
+      "max_source_tile_height": 153,
+      "aggregate_MB_per_second": 733.13,
+      "serialized_100MHz_utilization": 0.695483,
+      "assumed_non_data_cycles_per_burst": 24
+    },
+    {
+      "angle_deg": null,
+      "yaw_pitch_deg": [
+        -15.0,
+        0.0
+      ],
+      "tile_size": 128,
+      "valid_pixels": 1672407,
+      "outside_pixels": 401193,
+      "behind_camera_pixels": 0,
+      "outside_reference_radial_domain_pixels": 357436,
+      "max_source_rows_per_output_line": 182,
+      "source_read_beats_per_frame": 116673,
+      "source_read_bursts_per_frame": 14128,
+      "output_write_bursts_per_frame": 16200,
+      "max_source_tile_bytes": 58752,
+      "max_aligned_source_width": 192,
+      "max_source_tile_height": 153,
+      "aggregate_MB_per_second": 734.086,
+      "serialized_100MHz_utilization": 0.696596,
+      "assumed_non_data_cycles_per_burst": 24
+    },
+    {
+      "angle_deg": null,
+      "yaw_pitch_deg": [
+        0.0,
+        15.0
+      ],
+      "tile_size": 128,
+      "valid_pixels": 1620607,
+      "outside_pixels": 452993,
+      "behind_camera_pixels": 0,
+      "outside_reference_radial_domain_pixels": 129473,
+      "max_source_rows_per_output_line": 103,
+      "source_read_beats_per_frame": 111939,
+      "source_read_bursts_per_frame": 12702,
+      "output_write_bursts_per_frame": 16200,
+      "max_source_tile_bytes": 55616,
+      "max_aligned_source_width": 176,
+      "max_source_tile_height": 158,
+      "aggregate_MB_per_second": 729.541,
+      "serialized_100MHz_utilization": 0.684908,
+      "assumed_non_data_cycles_per_burst": 24
+    },
+    {
+      "angle_deg": null,
+      "yaw_pitch_deg": [
+        0.0,
+        -15.0
+      ],
+      "tile_size": 128,
+      "valid_pixels": 1600779,
+      "outside_pixels": 472821,
+      "behind_camera_pixels": 0,
+      "outside_reference_radial_domain_pixels": 162529,
+      "max_source_rows_per_output_line": 109,
+      "source_read_beats_per_frame": 112513,
+      "source_read_bursts_per_frame": 12739,
+      "output_write_bursts_per_frame": 16200,
+      "max_source_tile_bytes": 54912,
+      "max_aligned_source_width": 176,
+      "max_source_tile_height": 156,
+      "aggregate_MB_per_second": 730.092,
+      "serialized_100MHz_utilization": 0.685347,
+      "assumed_non_data_cycles_per_burst": 24
+    },
+    {
+      "angle_deg": null,
+      "yaw_pitch_deg": [
+        30.0,
+        20.0
+      ],
+      "tile_size": 128,
+      "valid_pixels": 1039146,
+      "outside_pixels": 1034454,
+      "behind_camera_pixels": 2418,
+      "outside_reference_radial_domain_pixels": 750201,
+      "max_source_rows_per_output_line": 319,
+      "source_read_beats_per_frame": 84521,
+      "source_read_bursts_per_frame": 9324,
+      "output_write_bursts_per_frame": 16200,
+      "max_source_tile_bytes": 88320,
+      "max_aligned_source_width": 240,
+      "max_source_tile_height": 208,
+      "aggregate_MB_per_second": 703.22,
+      "serialized_100MHz_utilization": 0.652361,
+      "assumed_non_data_cycles_per_burst": 24
+    },
+    {
+      "angle_deg": null,
+      "yaw_pitch_deg": [
+        -30.0,
+        -20.0
+      ],
+      "tile_size": 128,
+      "valid_pixels": 1051084,
+      "outside_pixels": 1022516,
+      "behind_camera_pixels": 2040,
+      "outside_reference_radial_domain_pixels": 741667,
+      "max_source_rows_per_output_line": 313,
+      "source_read_beats_per_frame": 85079,
+      "source_read_bursts_per_frame": 9375,
+      "output_write_bursts_per_frame": 16200,
+      "max_source_tile_bytes": 89280,
+      "max_aligned_source_width": 240,
+      "max_source_tile_height": 207,
+      "aggregate_MB_per_second": 703.756,
+      "serialized_100MHz_utilization": 0.652896,
+      "assumed_non_data_cycles_per_burst": 24
+    },
+    {
+      "angle_deg": null,
+      "yaw_pitch_deg": [
+        60.0,
+        30.0
+      ],
+      "tile_size": 128,
+      "valid_pixels": 603779,
+      "outside_pixels": 1469821,
+      "behind_camera_pixels": 573924,
+      "outside_reference_radial_domain_pixels": 692924,
+      "max_source_rows_per_output_line": 461,
+      "source_read_beats_per_frame": 58882,
+      "source_read_bursts_per_frame": 6386,
+      "output_write_bursts_per_frame": 16200,
+      "max_source_tile_bytes": 101280,
+      "max_aligned_source_width": 240,
+      "max_source_tile_height": 237,
+      "aggregate_MB_per_second": 678.607,
+      "serialized_100MHz_utilization": 0.623516,
+      "assumed_non_data_cycles_per_burst": 24
+    },
+    {
+      "angle_deg": null,
+      "yaw_pitch_deg": [
+        90.0,
+        0.0
+      ],
+      "tile_size": 128,
+      "valid_pixels": 437646,
+      "outside_pixels": 1635954,
+      "behind_camera_pixels": 1054080,
+      "outside_reference_radial_domain_pixels": 581874,
+      "max_source_rows_per_output_line": 118,
+      "source_read_beats_per_frame": 27801,
+      "source_read_bursts_per_frame": 4495,
+      "output_write_bursts_per_frame": 16200,
+      "max_source_tile_bytes": 40704,
+      "max_aligned_source_width": 128,
+      "max_source_tile_height": 159,
+      "aggregate_MB_per_second": 648.769,
+      "serialized_100MHz_utilization": 0.600576,
+      "assumed_non_data_cycles_per_burst": 24
+    }
+  ]
+}

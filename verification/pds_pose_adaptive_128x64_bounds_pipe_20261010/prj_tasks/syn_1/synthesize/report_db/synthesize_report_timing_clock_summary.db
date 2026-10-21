@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tables>
+    <table id="synthesize_report_timing_clock_summary" title="Clock Summary" column_number="10" tree="">
+        <column_headers>
+            <data>Clock Name</data>
+            <data>Type</data>
+            <data>Period</data>
+            <data>Frequency</data>
+            <data>Rise</data>
+            <data>Fall</data>
+            <data>Clock Load</data>
+            <data>Non-clock Load</data>
+            <data>Source</data>
+            <data>Targets</data>
+        </column_headers>
+        <row>
+            <data>sys_clk</data>
+            <data>Declared</data>
+            <data>20.0000</data>
+            <data>50.0000MHz</data>
+            <data>0.0000</data>
+            <data>10.0000</data>
+            <data>203</data>
+            <data>5</data>
+            <data/>
+            <data>{ sys_clk }</data>
+            <row>
+                <data>ddrphy_clkin</data>
+                <data>Generated</data>
+                <data>10.0000</data>
+                <data>100.0000MHz</data>
+                <data>0.0000</data>
+                <data>5.0000</data>
+                <data>24605</data>
+                <data>0</data>
+                <data>sys_clk</data>
+                <data>{ u_ddr3/I_GTP_CLKDIV/CLKDIVOUT }</data>
+            </row>
+            <row>
+                <data>ioclk0</data>
+                <data>Generated</data>
+                <data>2.5000</data>
+                <data>400.0000MHz</data>
+                <data>0.0000</data>
+                <data>1.2500</data>
+                <data>11</data>
+                <data>0</data>
+                <data>sys_clk</data>
+                <data>{ u_ddr3/I_GTP_IOCLKBUF_0/CLKOUT }</data>
+            </row>
+            <row>
+                <data>ioclk1</data>
+                <data>Generated</data>
+                <data>2.5000</data>
+                <data>400.0000MHz</data>
+                <data>0.0000</data>
+                <data>1.2500</data>
+                <data>27</data>
+                <data>1</data>
+                <data>sys_clk</data>
+                <data>{ u_ddr3/I_GTP_IOCLKBUF_1/CLKOUT }</data>
+            </row>
+            <row>
+                <data>ioclk2</data>
+                <data>Generated</data>
+                <data>2.5000</data>
+                <data>400.0000MHz</data>
+                <data>0.0000</data>
+                <data>1.2500</data>
+                <data>2</data>
+                <data>0</data>
+                <data>sys_clk</data>
+                <data>{ u_ddr3/I_GTP_IOCLKBUF_2/CLKOUT }</data>
+            </row>
+            <row>
+                <data>ioclk_gate_clk</data>
+                <data>Generated</data>
+                <data>10.0000</data>
+                <data>100.0000MHz</data>
+                <data>0.0000</data>
+                <data>5.0000</data>
+                <data>1</data>
+                <data>0</data>
+                <data>sys_clk</data>
+                <data>{ u_ddr3/u_clkbufg_gate/CLKOUT }</data>
+            </row>
+        </row>
+        <row>
+            <data>video_ref_clk</data>
+            <data>Declared</data>
+            <data>37.0370</data>
+            <data>27.0000MHz</data>
+            <data>0.0000</data>
+            <data>18.5180</data>
+            <data>0</data>
+            <data>2</data>
+            <data/>
+            <data>{ video_ref_clk }</data>
+            <row>
+                <data>pixel_clk</data>
+                <data>Generated</data>
+                <data>6.7340</data>
+                <data>148.5000MHz</data>
+                <data>0.0000</data>
+                <data>3.3670</data>
+                <data>176</data>
+                <data>1</data>
+                <data>video_ref_clk</data>
+                <data>{ u_video_pll/u_pll_e3/CLKOUT0 }</data>
+                <row>
+                    <data>pixclk_out_clk</data>
+                    <data>Generated</data>
+                    <data>6.7340</data>
+                    <data>148.5000MHz</data>
+                    <data>3.3670</data>
+                    <data>6.7340</data>
+                    <data>0</data>
+                    <data>1</data>
+                    <data>pixel_clk</data>
+                    <data>{ pixclk_out }</data>
+                </row>
+            </row>
+            <row>
+                <data>cfg_clk</data>
+                <data>Generated</data>
+                <data>100.1684</data>
+                <data>9.9832MHz</data>
+                <data>0.0000</data>
+                <data>50.0820</data>
+                <data>297</data>
+                <data>0</data>
+                <data>video_ref_clk</data>
+                <data>{ u_video_pll/u_pll_e3/CLKOUT1 }</data>
+            </row>
+        </row>
+        <row>
+            <data>pixclk_in</data>
+            <data>Declared</data>
+            <data>6.7340</data>
+            <data>148.5001MHz</data>
+            <data>0.0000</data>
+            <data>3.3670</data>
+            <data>992</data>
+            <data>0</data>
+            <data/>
+            <data>{ pixclk_in }</data>
+        </row>
+    </table>
+</tables>

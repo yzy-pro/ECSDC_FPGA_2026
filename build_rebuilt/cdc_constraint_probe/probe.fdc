@@ -1,0 +1,7 @@
+create_clock -name clk_a -period 6.734 [get_ports clk_a]
+create_clock -name clk_b -period 10.000 [get_ports clk_b]
+set_clock_groups -asynchronous -group [get_clocks clk_a] -group [get_clocks clk_b]
+set_max_skew 0.001 -from [get_cells {gray[*]}] -to [get_cells {sync1[*]}]
+set probe_targets [get_cells {sync1[*]}]
+set probe_missing [get_cells {absent[*]}]
+puts "TARGET_TEST valid_length=[llength $probe_targets] missing_length=[llength $probe_missing] valid=$probe_targets missing=$probe_missing"
