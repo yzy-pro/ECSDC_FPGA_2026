@@ -10,7 +10,7 @@ ROOT=Path(__file__).resolve().parents[1]
 MODEL=Path(r'D:\pango\modeltech64_10.6e\win64')
 OUT=ROOT/'verification/pose_tiled_20261010/adaptive_gamma'
 OUT.mkdir(parents=True,exist_ok=True)
-sources=[ROOT/'src/video/adaptive_gamma_stream.v',ROOT/'src/video/adaptive_gamma_lut.v',
+sources=[ROOT/'src/video/preprocess/adaptive_gamma_stream.v',ROOT/'src/video/preprocess/adaptive_gamma_lut.v',
     ROOT/'tests/tb_adaptive_gamma_stream.sv',ROOT/'tests/tb_adaptive_gamma_1080p.sv']
 assert sources[1].read_text(encoding='ascii')==generate(),'generated gamma ROM stale'
 

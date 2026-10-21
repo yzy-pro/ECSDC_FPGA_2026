@@ -7,62 +7,57 @@ $TemplatePath = Join-Path $ProjectRoot 'test.pds'
 $OutputPath = Join-Path $ProjectRoot 'EmbFPGA.pds'
 
 $ApplicationFiles = @(
-    'src/hdmi_ddr3_top.v'
+    'src/top/hdmi_ddr3_top.v'
     'src/imu/imu_uart_rx_50m.v'
     'src/imu/imu_protocol_50m.v'
     'src/imu/attitude_cdc.v'
     'src/imu/imu_affine_q14.v'
-    'src/video/pose_frame_bank_allocator.v'
-    'src/video/adaptive_preprocess_stream.v'
-    'src/video/adaptive_gamma_stream.v'
-    'src/video/adaptive_gamma_lut.v'
-    'src/video/pose_tile_read_scheduler.v'
-    'src/video/pose_inverse_project_q14.v'
-    'src/video/pose_reciprocal_lut.v'
-    'src/video/pose_renderer_dma.v'
-    'src/video/pose_renderer_tiled.v'
-    'src/video/pose_ddr_arbiter.v'
-    'src/video/pose_async_fifo.v'
-    'src/video/fram_buf_pose.v'
-    'src/iic_dir.v'
-    'src/ms72xx_ctl.v'
-    'src/ms7200_ctl.v'
-    'src/ms7210_ctl.v'
-    'src/video/fram_buf_undistort.v'
-    'src/video/fram_buf_linear.v'
-    'src/video/undistort_rd_buf.v'
-    'src/video/undistort_band_cache.v'
-    'src/video/undistort_band_tables.v'
-    'src/video/rd_buf.v'
-    'src/video/wr_buf.v'
-    'src/video/wr_cmd_trans.v'
-    'src/video/wr_rd_ctrl_top.v'
-    'src/video/wr_ctrl.v'
-    'src/video/rd_ctrl.v'
-    'src/video/sync_vg.v'
-    'src/video/rgb888_to_rgb565.v'
-    'src/video/rgb565_to_rgb888.v'
-    'src/video/gamma_correct_rgb888.v'
-    'src/video/video_raster_delay.v'
-    'src/ip/video_pll/pll.v'
-    'src/ip/wr_fram_buf/rtl/ipml_sdpram_v1_10_wr_fram_buf.v'
-    'src/ip/wr_fram_buf/wr_fram_buf.v'
-    'src/ip/rd_fram_buf/rtl/ipml_sdpram_v1_10_rd_fram_buf.v'
-    'src/ip/rd_fram_buf/rd_fram_buf.v'
+    'src/video/pose/pose_frame_bank_allocator.v'
+    'src/video/preprocess/adaptive_preprocess_stream.v'
+    'src/video/preprocess/adaptive_gamma_stream.v'
+    'src/video/preprocess/adaptive_gamma_lut.v'
+    'src/video/pose/pose_tile_read_scheduler.v'
+    'src/video/pose/pose_inverse_project_q14.v'
+    'src/video/pose/pose_reciprocal_lut.v'
+    'src/video/pose/pose_renderer_dma.v'
+    'src/video/pose/pose_renderer_tiled.v'
+    'src/video/pose/pose_ddr_arbiter.v'
+    'src/video/pose/pose_async_fifo.v'
+    'src/video/pose/fram_buf_pose.v'
+    'src/board/iic_dir.v'
+    'src/board/ms72xx_ctl.v'
+    'src/board/ms7200_ctl.v'
+    'src/board/ms7210_ctl.v'
+    'src/video/undistort/fram_buf_undistort.v'
+    'src/video/frame_buffer/fram_buf_linear.v'
+    'src/video/undistort/undistort_rd_buf.v'
+    'src/video/undistort/undistort_band_cache.v'
+    'src/video/undistort/undistort_band_tables.v'
+    'src/video/frame_buffer/rd_buf.v'
+    'src/video/frame_buffer/wr_buf.v'
+    'src/video/frame_buffer/wr_cmd_trans.v'
+    'src/video/frame_buffer/wr_rd_ctrl_top.v'
+    'src/video/frame_buffer/wr_ctrl.v'
+    'src/video/frame_buffer/rd_ctrl.v'
+    'src/video/timing/sync_vg.v'
+    'src/video/format/rgb888_to_rgb565.v'
+    'src/video/format/rgb565_to_rgb888.v'
+    'src/video/preprocess/gamma_correct_rgb888.v'
+    'src/video/timing/video_raster_delay.v'
 )
 
-$DdrRoot = Join-Path $ProjectRoot 'DDR3_50H'
+$DdrRoot = Join-Path $ProjectRoot 'ipcore/DDR3_50H'
 $DdrFiles = Get-ChildItem (Join-Path $DdrRoot 'rtl') -Recurse -File |
     Where-Object { $_.Extension -in '.v', '.vp' } |
     Sort-Object FullName |
     ForEach-Object { $_.FullName.Substring($ProjectRoot.Length + 1).Replace('\', '/') }
 
 $DesignFiles = @($ApplicationFiles) + @($DdrFiles) + @(
-    'DDR3_50H/DDR3_50H.v'
-    'DDR3_50H/DDR3_50H_ddrphy_top.v'
+    'ipcore/DDR3_50H/DDR3_50H.v'
+    'ipcore/DDR3_50H/DDR3_50H_ddrphy_top.v'
 )
 
-foreach ($RelativePath in $DesignFiles + @('src/hdmi_ddr3_top.fdc')) {
+foreach ($RelativePath in $DesignFiles + @('src/constraints/hdmi_ddr3_top.fdc')) {
     $AbsolutePath = Join-Path $ProjectRoot $RelativePath
     if (-not (Test-Path -LiteralPath $AbsolutePath -PathType Leaf)) {
         throw "Required project file is missing: $RelativePath"
@@ -70,7 +65,7 @@ foreach ($RelativePath in $DesignFiles + @('src/hdmi_ddr3_top.fdc')) {
 }
 
 $Entries = foreach ($RelativePath in $DesignFiles) {
-    $TopMarker = if ($RelativePath -eq 'src/hdmi_ddr3_top.v') { ' + "hdmi_ddr3_top"' } else { '' }
+    $TopMarker = if ($RelativePath -eq 'src/top/hdmi_ddr3_top.v') { ' + "hdmi_ddr3_top"' } else { '' }
     $Timestamp = (Get-Item -LiteralPath (Join-Path $ProjectRoot $RelativePath)).LastWriteTime.ToString('yyyy-MM-ddTHH:mm:ss')
     @"
                 (_file "$RelativePath"$TopMarker
@@ -88,11 +83,11 @@ $($Entries -join "`n")
         )
 "@
 
-$ConstraintTimestamp = (Get-Item -LiteralPath (Join-Path $ProjectRoot 'src/hdmi_ddr3_top.fdc')).LastWriteTime.ToString('yyyy-MM-ddTHH:mm:ss')
+$ConstraintTimestamp = (Get-Item -LiteralPath (Join-Path $ProjectRoot 'src/constraints/hdmi_ddr3_top.fdc')).LastWriteTime.ToString('yyyy-MM-ddTHH:mm:ss')
 $ConstraintBlock = @"
         (_widget wgt_import_logic_con_file
             (_input
-                (_file "src/hdmi_ddr3_top.fdc"
+                (_file "src/constraints/hdmi_ddr3_top.fdc"
                     (_format fdc)
                     (_timespec "$ConstraintTimestamp")
                 )

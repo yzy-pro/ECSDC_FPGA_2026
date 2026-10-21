@@ -117,16 +117,16 @@ def check_parameters(root):
         c['radial_distortion']!=[.0099,-.0434] or c['tangential_distortion']!=[0,0] or
         c['image_size_hw']!=[1080,1920]):
         raise ValueError('Input calibration differs from approved arithmetic')
-    rtl=(root/'src/video/undistort_rd_buf.v').read_text(encoding='ascii')
+    rtl=(root/'src/video/undistort/undistort_rd_buf.v').read_text(encoding='ascii')
     for name,value in dict(FX_Q14=FX_Q14,FY_Q14=FY_Q14,CX_Q14=CX_Q14,CY_Q14=CY_Q14,
         K1_Q14=162,K2_Q14=-711,XN_START_Q22=XN_START,YN_START_Q22=YN_START,
         XN_STEP_Q22=XN_STEP,YN_STEP_Q22=YN_STEP).items():
         m=re.search(r'\b'+name+r"\s*=\s*(-?)\d+'sd(\d+)",rtl)
         if not m or int(m[2])*(-1 if m[1] else 1)!=value:
             raise ValueError('RTL calibration mismatch: '+name)
-    for file,names in [('src/hdmi_ddr3_top.v',('DIST_P1_Q14','DIST_P2_Q14')),
-        ('src/video/fram_buf_undistort.v',('P1_Q14','P2_Q14')),
-        ('src/video/undistort_rd_buf.v',('P1_Q14','P2_Q14'))]:
+    for file,names in [('src/top/hdmi_ddr3_top.v',('DIST_P1_Q14','DIST_P2_Q14')),
+        ('src/video/undistort/fram_buf_undistort.v',('P1_Q14','P2_Q14')),
+        ('src/video/undistort/undistort_rd_buf.v',('P1_Q14','P2_Q14'))]:
         text=(root/file).read_text(encoding='ascii')
         if any(coefficient(text,n) for n in names): raise ValueError('Tangential table mismatch')
 
@@ -138,7 +138,7 @@ def main():
     check_parameters(a.root)
     rows=schedule()
     expected=table_source(rows)
-    path=a.root/'src/video/undistort_band_tables.v'
+    path=a.root/'src/video/undistort/undistort_band_tables.v'
     if a.write: path.write_text(expected,encoding='ascii')
     elif not path.is_file() or path.read_text(encoding='ascii')!=expected:
         raise SystemExit('Band ROMs missing/stale: regenerate with --write')

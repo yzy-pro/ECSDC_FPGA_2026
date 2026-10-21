@@ -18,7 +18,7 @@ def input_name(name,directory):
     path=Path(name)
     # PDS rewrites absolute file references relative to the isolated project
     # when saving. Resolve that spelling before comparing source membership.
-    if not path.is_absolute() and path.parts and path.parts[0] in ('src','DDR3_50H'):
+    if not path.is_absolute() and path.parts and path.parts[0] in ('src','ipcore'):
         return path.as_posix() if '..' not in path.parts else None
     path=path if path.is_absolute() else directory/path
     for base in (directory/'input_snapshot',ROOT):
@@ -28,7 +28,7 @@ def input_name(name,directory):
         except ValueError:
             pass
     else:return None
-    if path.parts and path.parts[0] in ('src','DDR3_50H') and '..' not in path.parts:
+    if path.parts and path.parts[0] in ('src','ipcore') and '..' not in path.parts:
         return path.as_posix()
     return None
 
@@ -50,7 +50,7 @@ def project_config(tree,directory,version=3):
             'actions':[{'name':action.get('name'),'options':options(action)}
                        for action in task.findall('action')]})
     for node in tree.iter('item'):
-        if node.get('type')=='FILE' and (name:=input_name(node.get('file',''),directory)):
+        if node.get('type') in ('FILE','IP') and (name:=input_name(node.get('file',''),directory)):
             file_options=options(node)
             # PDS expands FILE format/library attributes into identical
             # option children on save. These add no new configuration.
@@ -75,7 +75,7 @@ def snapshot_inputs(directory,hashes,tree,*,retrospective=False):
     # Preserve complete source trees, including relative include/ROM files.
     # Current sources have no literal include/readmem dependency outside them.
     # Conservatively track all copied files so later supporting-file edits are visible.
-    for source_root in ('src','DDR3_50H'):
+    for source_root in ('src','ipcore'):
         for source in (ROOT/source_root).rglob('*'):
             if source.is_file():blobs.setdefault(source.relative_to(ROOT).as_posix(),source.read_bytes())
     for name,data in blobs.items():
@@ -125,7 +125,7 @@ def verify_snapshot(directory,hashes,tree):
         raise SystemExit('Isolated project build settings changed after snapshot')
     if evidence['pds_reads_snapshot_inputs']:
         for node in tree.iter('item'):
-            if node.get('type')=='FILE' and (name:=input_name(node.get('file',''),directory)):
+            if node.get('type') in ('FILE','IP') and (name:=input_name(node.get('file',''),directory)):
                 actual=Path(node.get('file'))
                 actual=actual if actual.is_absolute() else directory/actual
                 if actual.resolve()!=(directory/'input_snapshot'/name).resolve():
@@ -210,7 +210,7 @@ def main():
         tree=ET.parse(ROOT/'EmbFPGA.pds')
         hashes={}
         for node in tree.iter('item'):
-            if node.attrib.get('type')=='FILE':
+            if node.attrib.get('type') in ('FILE','IP'):
                 name=input_name(node.attrib['file'],directory)
                 if name:
                     path=ROOT/name

@@ -22,7 +22,7 @@ def inputs():
         names = re.findall(r'\(_file "([^"]+)"', block[1])
     if not names or any('scale_in_1920_to_1440' in n or 'scale_out_1440_to_1920' in n for n in names):
         raise SystemExit('Missing sources or legacy scalers in active project')
-    names += ['src/hdmi_ddr3_top.fdc', 'generate_project.ps1',
+    names += ['src/constraints/hdmi_ddr3_top.fdc', 'generate_project.ps1',
               'calibration/camera_20260930.json', 'tools/generate_undistort_cache.py']
     hashes = {}
     for name in sorted(set(names)):

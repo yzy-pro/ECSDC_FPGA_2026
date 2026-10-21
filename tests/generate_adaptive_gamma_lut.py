@@ -21,4 +21,4 @@ def generate():
     return '\n'.join(lines)
 
 if __name__=='__main__':
-    (ROOT/'src/video/adaptive_gamma_lut.v').write_text(generate(),encoding='ascii')
+    (ROOT/'src/video/preprocess/adaptive_gamma_lut.v').write_text(generate(),encoding='ascii')

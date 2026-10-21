@@ -179,35 +179,38 @@ def main():
                  [ROOT/'src/imu/attitude_cdc.v'])
         simulate('pose_frame_bank_allocator',
                  (ROOT/'tests/tb_pose_frame_bank_allocator.sv').read_text(encoding='ascii'),
-                 [ROOT/'src/video/pose_frame_bank_allocator.v'])
+                 [ROOT/'src/video/pose/pose_frame_bank_allocator.v'])
         simulate('adaptive_preprocess_stream',
                  (ROOT/'tests/tb_adaptive_preprocess_stream.sv').read_text(encoding='ascii'),
-                 [ROOT/'src/video/adaptive_preprocess_stream.v'])
+                 [ROOT/'src/video/preprocess/adaptive_preprocess_stream.v'])
         simulate('pose_tile_read_scheduler',
                  (ROOT/'tests/tb_pose_tile_read_scheduler.sv').read_text(encoding='ascii'),
-                 [ROOT/'src/video/pose_tile_read_scheduler.v'])
+                 [ROOT/'src/video/pose/pose_tile_read_scheduler.v'])
         projector_tb=(ROOT/'tests/tb_pose_inverse_project_q14.sv').read_text(encoding='ascii')
         simulate('pose_inverse_project_q14', projector_tb,
-                 [ROOT/'src/video/pose_inverse_project_q14.v',
-                  ROOT/'src/video/pose_reciprocal_lut.v'])
+                 [ROOT/'src/video/pose/pose_inverse_project_q14.v',
+                  ROOT/'src/video/pose/pose_reciprocal_lut.v'])
         simulate('pose_inverse_project_reciprocal_lut',
                  projector_tb.replace('parameter integer RECIPROCAL_LUT_ENABLE = 0',
                                       'parameter integer RECIPROCAL_LUT_ENABLE = 1'),
-                 [ROOT/'src/video/pose_inverse_project_q14.v',
-                  ROOT/'src/video/pose_reciprocal_lut.v'])
+                 [ROOT/'src/video/pose/pose_inverse_project_q14.v',
+                  ROOT/'src/video/pose/pose_reciprocal_lut.v'])
         simulate('pose_reciprocal_lut_error',
                  (ROOT/'tests/tb_pose_reciprocal_lut.sv').read_text(encoding='ascii'),
-                 [ROOT/'src/video/pose_reciprocal_lut.v'])
+                 [ROOT/'src/video/pose/pose_reciprocal_lut.v'])
         simulate('pose_focal_product',(ROOT/'tests/tb_pose_focal_product.sv').read_text(encoding='ascii'),
-                 [ROOT/'src/video/pose_inverse_project_q14.v',
-                  ROOT/'src/video/pose_reciprocal_lut.v'])
+                 [ROOT/'src/video/pose/pose_inverse_project_q14.v',
+                  ROOT/'src/video/pose/pose_reciprocal_lut.v'])
         simulate('pose_async_fifo',(ROOT/'tests/tb_pose_async_fifo.sv').read_text(encoding='ascii'),
-                 [ROOT/'src/video/pose_async_fifo.v'])
+                 [ROOT/'src/video/pose/pose_async_fifo.v'])
         simulate('pose_ddr_arbiter',(ROOT/'tests/tb_pose_ddr_arbiter.sv').read_text(encoding='ascii'),
-                 [ROOT/'src/video/pose_ddr_arbiter.v'])
-        pose_sources=[ROOT/'src/video'/name for name in (
-            'pose_inverse_project_q14.v','pose_reciprocal_lut.v','pose_renderer_dma.v','pose_renderer_tiled.v','pose_async_fifo.v',
-            'pose_ddr_arbiter.v','fram_buf_pose.v','adaptive_gamma_stream.v','adaptive_gamma_lut.v','rgb888_to_rgb565.v')]
+                 [ROOT/'src/video/pose/pose_ddr_arbiter.v'])
+        pose_sources=[ROOT/'src/video/pose'/name for name in (
+            'pose_inverse_project_q14.v','pose_reciprocal_lut.v','pose_renderer_dma.v','pose_renderer_tiled.v',
+            'pose_async_fifo.v','pose_ddr_arbiter.v','fram_buf_pose.v')]
+        pose_sources += [ROOT/'src/video/preprocess'/name for name in
+                         ('adaptive_gamma_stream.v','adaptive_gamma_lut.v')]
+        pose_sources.append(ROOT/'src/video/format/rgb888_to_rgb565.v')
         for mode in (1,0):
             bench=(ROOT/'tests/tb_pose_renderer_dma.sv').read_text(encoding='ascii')
             bench=bench.replace('parameter integer INTERPOLATION_MODE=1',
@@ -224,47 +227,47 @@ def main():
                  (ROOT/'tests/tb_pose_capture_throughput.sv').read_text(encoding='ascii'),pose_sources)
         simulate('input_frame_alignment',
                  (ROOT/'tests/tb_input_frame_alignment.sv').read_text(encoding='ascii'),
-                 [ROOT/'src/video/rgb888_to_rgb565.v', ROOT/'src/video/wr_buf.v'])
+                 [ROOT/'src/video/format/rgb888_to_rgb565.v', ROOT/'src/video/frame_buffer/wr_buf.v'])
         simulate('rgb888_raster',
                  (ROOT/'tests/tb_rgb888_raster.sv').read_text(encoding='ascii'),
-                 [ROOT/'src/video/rgb565_to_rgb888.v', ROOT/'src/video/video_raster_delay.v'])
-        trans=ROOT/'src/video/wr_cmd_trans.v'
+                 [ROOT/'src/video/format/rgb565_to_rgb888.v', ROOT/'src/video/timing/video_raster_delay.v'])
+        trans=ROOT/'src/video/frame_buffer/wr_cmd_trans.v'
         tb=(ROOT/'tests/tb_read_completion.sv').read_text(encoding='ascii')
         simulate('read_completion',tb,[trans])
         old=tmp/'old_completion.v'
         old.write_text(trans.read_text(encoding='ascii').replace('if(read_en && rd_data_cnt ==', 'if(rd_data_cnt =='),encoding='ascii')
         simulate('reject_early_completion',tb,[old],True)
         cache_tb=(ROOT/'tests/tb_cache_return.sv').read_text(encoding='ascii')
-        cache_sources=[ROOT/'src/video/undistort_band_cache.v',ROOT/'src/video/undistort_band_tables.v']
-        simulate('cache_return',cache_tb,[trans,ROOT/'src/video/undistort_rd_buf.v',*cache_sources])
+        cache_sources=[ROOT/'src/video/undistort/undistort_band_cache.v',ROOT/'src/video/undistort/undistort_band_tables.v']
+        simulate('cache_return',cache_tb,[trans,ROOT/'src/video/undistort/undistort_rd_buf.v',*cache_sources])
         simulate('band_ddr_adapter',(ROOT/'tests/tb_band_ddr_adapter.sv').read_text(encoding='ascii'),
-                 [trans,ROOT/'src/video/rd_ctrl.v',*cache_sources])
-        rtl=(ROOT/'src/video/undistort_rd_buf.v').read_text(encoding='ascii')
+                 [trans,ROOT/'src/video/frame_buffer/rd_ctrl.v',*cache_sources])
+        rtl=(ROOT/'src/video/undistort/undistort_rd_buf.v').read_text(encoding='ascii')
         raster_tb=(ROOT/'tests/tb_direct1920_raster.sv').read_text(encoding='ascii')
-        raster_sources=[ROOT/'src/video/sync_vg.v',ROOT/'src/video/video_raster_delay.v',trans,*cache_sources]
+        raster_sources=[ROOT/'src/video/timing/sync_vg.v',ROOT/'src/video/timing/video_raster_delay.v',trans,*cache_sources]
         broken=tmp/'aliased_cache.v'
         cache_rtl=cache_sources[0].read_text(encoding='ascii')
         broken.write_text(cache_rtl.replace('7:band_base=2040','7:band_base=0'),encoding='ascii')
-        simulate('reject_cache_alias',cache_tb,[trans,ROOT/'src/video/undistort_rd_buf.v',broken,cache_sources[1]],True)
+        simulate('reject_cache_alias',cache_tb,[trans,ROOT/'src/video/undistort/undistort_rd_buf.v',broken,cache_sources[1]],True)
         if args.full_raster:
             raster_tb=raster_tb.replace('parameter FRAME_COUNT=3','parameter FRAME_COUNT='+str(args.frames))
             if args.bilinear:
                 raster_tb=raster_tb.replace('parameter INTERPOLATION_MODE=1','parameter INTERPOLATION_MODE=0')
             if args.dynamic_imu:
                 raster_tb=raster_tb.replace('parameter DYNAMIC_IMU=0','parameter DYNAMIC_IMU=1')
-            simulate('direct1920_raster',raster_tb,[*raster_sources,ROOT/'src/video/undistort_rd_buf.v'],timeout=3600)
+            simulate('direct1920_raster',raster_tb,[*raster_sources,ROOT/'src/video/undistort/undistort_rd_buf.v'],timeout=3600)
         # A parameter override without a matching cache schedule must fail
         # elaboration even when the project is built directly from the GUI.
         badtb=tmp/'bad_calibration.sv'
         badtb.write_text('module bad_calibration; undistort_rd_buf #(.P1_Q14(1234)) dut(); endmodule',encoding='ascii')
         if args.modelsim:
             lib=tmp/'bad_work'; run([args.modelsim/'vlib.exe',lib],tmp)
-            compiled=run([args.modelsim/'vlog.exe','-sv','-work',lib,badtb,ROOT/'src/video/undistort_rd_buf.v',*cache_sources,ROOT/'src/imu/imu_affine_q14.v'],tmp)
+            compiled=run([args.modelsim/'vlog.exe','-sv','-work',lib,badtb,ROOT/'src/video/undistort/undistort_rd_buf.v',*cache_sources,ROOT/'src/imu/imu_affine_q14.v'],tmp)
             assert not compiled.returncode, compiled.stdout+compiled.stderr
             bad=run([args.modelsim/'vsim.exe','-c','-lib',lib,'bad_calibration','-do','onerror {quit -code 1}; run -all; quit -f'],tmp)
             assert 'REGENERATE_UNDISTORT_CACHE_FOR_P1_P2' in bad.stdout and '** Error:' in bad.stdout,bad.stdout
         else:
-            bad=run([args.iverilog,'-g2012','-s','bad_calibration','-o',tmp/'bad.vvp',badtb,ROOT/'src/video/undistort_rd_buf.v',*cache_sources,ROOT/'src/imu/imu_affine_q14.v'],tmp)
+            bad=run([args.iverilog,'-g2012','-s','bad_calibration','-o',tmp/'bad.vvp',badtb,ROOT/'src/video/undistort/undistort_rd_buf.v',*cache_sources,ROOT/'src/imu/imu_affine_q14.v'],tmp)
             assert bad.returncode and 'REGENERATE_UNDISTORT_CACHE_FOR_P1_P2' in bad.stderr, bad.stderr
         print('PASS mismatched calibration rejected during RTL elaboration')
         baseline_file=ROOT/'reference/sept19_6be49a4/undistort_rd_buf.v'

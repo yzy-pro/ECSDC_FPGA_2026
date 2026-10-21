@@ -9,7 +9,7 @@ from generate_undistort_cache import schedule,ROWS,BASES,CACHE_DEPTH,SLOT_BITS,t
 def main():
     check_parameters(ROOT)
     rows=schedule()
-    table=(ROOT/'src/video/undistort_band_tables.v').read_text(encoding='ascii')
+    table=(ROOT/'src/video/undistort/undistort_band_tables.v').read_text(encoding='ascii')
     assert table==table_source(rows),'stale table'
     slots=[int(x,16) for x in re.findall(r"slots\[\d+\] = 48'h([0-9a-f]+)",table)]
     assert len(slots)==541

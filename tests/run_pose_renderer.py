@@ -31,9 +31,9 @@ def main():
     directory = ROOT / "build_rebuilt" / "pose_renderer_dma_regression"
     directory.mkdir(parents=True, exist_ok=True)
     sources = [ROOT / "tests/tb_pose_renderer_dma.sv",
-               ROOT / "src/video/pose_renderer_dma.v",
-               ROOT / "src/video/pose_inverse_project_q14.v",
-               ROOT / "src/video/pose_reciprocal_lut.v"]
+               ROOT / "src/video/pose/pose_renderer_dma.v",
+               ROOT / "src/video/pose/pose_inverse_project_q14.v",
+               ROOT / "src/video/pose/pose_reciprocal_lut.v"]
     if args.modelsim:
         library = directory / "work"
         if not library.exists():

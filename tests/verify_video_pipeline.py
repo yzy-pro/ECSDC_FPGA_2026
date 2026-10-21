@@ -8,16 +8,16 @@ from scipy.io import loadmat
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RTL_PATH = ROOT / "src" / "video" / "undistort_rd_buf.v"
+RTL_PATH = ROOT / "src" / "video" / "undistort" / "undistort_rd_buf.v"
 LUT_PATH = ROOT / "reference" / "EmbFPGA" / "lut_1440_1080_5.mat"
-TOP_PATH = ROOT / "src" / "hdmi_ddr3_top.v"
-PLL_PATH = ROOT / "src" / "ip" / "video_pll" / "pll.v"
-FDC_PATH = ROOT / "src" / "hdmi_ddr3_top.fdc"
-WR_BUF_PATH = ROOT / "src" / "video" / "wr_buf.v"
-FRAME_BUF_PATH = ROOT / "src" / "video" / "fram_buf_undistort.v"
-LINEAR_FRAME_BUF_PATH = ROOT / "src" / "video" / "fram_buf_linear.v"
-UNDISTORT_PATH = ROOT / "src" / "video" / "undistort_rd_buf.v"
-RD_BUF_PATH = ROOT / "src" / "video" / "rd_buf.v"
+TOP_PATH = ROOT / "src" / "top" / "hdmi_ddr3_top.v"
+PLL_PATH = ROOT / "ipcore" / "video_pll" / "pll.v"
+FDC_PATH = ROOT / "src" / "constraints" / "hdmi_ddr3_top.fdc"
+WR_BUF_PATH = ROOT / "src" / "video" / "frame_buffer" / "wr_buf.v"
+FRAME_BUF_PATH = ROOT / "src" / "video" / "undistort" / "fram_buf_undistort.v"
+LINEAR_FRAME_BUF_PATH = ROOT / "src" / "video" / "frame_buffer" / "fram_buf_linear.v"
+UNDISTORT_PATH = ROOT / "src" / "video" / "undistort" / "undistort_rd_buf.v"
+RD_BUF_PATH = ROOT / "src" / "video" / "frame_buffer" / "rd_buf.v"
 
 WIDTH = 1440
 HEIGHT = 1080

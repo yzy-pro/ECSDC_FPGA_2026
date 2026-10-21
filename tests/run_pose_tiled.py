@@ -24,8 +24,8 @@ def main():
         return r.stdout+r.stderr
     if not lib.exists():run([args.modelsim/'vlib.exe',lib])
     run([args.modelsim/'vlog.exe','-sv','-work',lib,ROOT/'tests/tb_pose_renderer_tiled.sv',
-         ROOT/'src/video/pose_renderer_tiled.v',ROOT/'src/video/pose_inverse_project_q14.v',
-         ROOT/'src/video/pose_reciprocal_lut.v'])
+         ROOT/'src/video/pose/pose_renderer_tiled.v',ROOT/'src/video/pose/pose_inverse_project_q14.v',
+         ROOT/'src/video/pose/pose_reciprocal_lut.v'])
     overrides=['-gH=1920','-gV=1080','-gWIDTH=1920','-gHEIGHT=1080','-gFULL=1'] if args.full else []
     overrides.extend([f'-gTILE_W={args.tile_width}',f'-gTILE_H={args.tile_height}'])
     output=run([args.modelsim/'vsim.exe','-c','-quiet','-vopt','-lib',lib.relative_to(ROOT).as_posix(),

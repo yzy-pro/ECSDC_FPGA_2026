@@ -121,5 +121,17 @@
         <row>
             <data>set_multicycle_path 0 -setup -end -from [get_ports {r_in[*] g_in[*] b_in[*] de_in vs_in}] -to [get_clocks pixclk_in]</data>
         </row>
+        <row>
+            <data>set_max_skew 6.734 -from [get_cells -hierarchical {*u_capture_fifo/wr_gray[*] *u_capture_fifo/wr_binary[*]}] -to [get_cells -hierarchical {*u_capture_fifo/wr_gray_rd1[*]}]</data>
+        </row>
+        <row>
+            <data>set_max_skew 6.734 -from [get_cells -hierarchical {*u_capture_fifo/rd_gray[*] *u_capture_fifo/rd_binary[*]}] -to [get_cells -hierarchical {*u_capture_fifo/rd_gray_wr1[*]}]</data>
+        </row>
+        <row>
+            <data>set_max_skew 6.734 -from [get_cells -hierarchical {*u_display_fifo/wr_gray[*] *u_display_fifo/wr_binary[*]}] -to [get_cells -hierarchical {*u_display_fifo/wr_gray_rd1[*]}]</data>
+        </row>
+        <row>
+            <data>set_max_skew 6.734 -from [get_cells -hierarchical {*u_display_fifo/rd_gray[*] *u_display_fifo/rd_binary[*]}] -to [get_cells -hierarchical {*u_display_fifo/rd_gray_wr1[*]}]</data>
+        </row>
     </table>
 </tables>

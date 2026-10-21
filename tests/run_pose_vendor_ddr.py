@@ -39,7 +39,7 @@ def main():
     if not source_list.is_file():
         parser.error(f'generated vendor file list is missing: {source_list}')
     sources = [primitive / 'GTP_GRS.v', ROOT / 'tests/tb_pose_vendor_ddr.sv',
-               ROOT / 'src/video/pose_ddr_arbiter.v']
+               ROOT / 'src/video/pose/pose_ddr_arbiter.v']
     provenance = []
     for line in source_list.read_text(encoding='utf-8').splitlines():
         line = line.strip()
@@ -49,7 +49,7 @@ def main():
         relative = path.relative_to(vendor)
         if relative.parts[0] == 'example_design' and path.name != 'ddr3.v':
             continue
-        workspace_path = ROOT / 'DDR3_50H' / relative
+        workspace_path = ROOT / 'ipcore' / 'DDR3_50H' / relative
         if relative.parts[0] != 'sim_lib' and workspace_path.is_file():
             path = workspace_path
         if not path.is_file():
