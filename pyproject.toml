@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ecsdc-fpga-host"
+version = "0.1.0"
+description = "Qt workstation for FPGA video comparison and gimbal telemetry"
+requires-python = ">=3.10"
+dependencies = ["PySide6-Essentials>=6.6,<7", "numpy>=1.24,<3", "opencv-python-headless>=4.8,<5", "pyserial>=3.5,<4"]
+
+[project.scripts]
+fpga-host = "fpga_host.app:main"
+
+[tool.setuptools.packages.find]
+include = ["fpga_host*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

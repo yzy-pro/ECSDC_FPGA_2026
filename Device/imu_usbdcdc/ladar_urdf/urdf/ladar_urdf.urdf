@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="ladar_urdf">
+  <link
+    name="ladar_link">
+    <inertial>
+      <origin
+        xyz="0.042047 -0.043466 -0.01854"
+        rpy="0 0 0" />
+      <mass
+        value="4.0376" />
+      <inertia
+        ixx="0.010633"
+        ixy="-7.3217E-06"
+        ixz="1.3869E-05"
+        iyy="0.0092128"
+        iyz="9.0167E-09"
+        izz="0.011728" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ladar_urdf/meshes/ladar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ladar_urdf/meshes/ladar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="yaw_link">
+    <inertial>
+      <origin
+        xyz="0.0016044 0.0031523 0.018452"
+        rpy="0 0 0" />
+      <mass
+        value="0.2317" />
+      <inertia
+        ixx="7.2873E-05"
+        ixy="7.5563E-07"
+        ixz="1.2621E-07"
+        iyy="9.9156E-05"
+        iyz="7.5853E-08"
+        izz="9.518E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ladar_urdf/meshes/yaw_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ladar_urdf/meshes/yaw_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="yaw_joint"
+    type="revolute">
+    <origin
+      xyz="-0.052305 -0.2425 -0.0392"
+      rpy="0 0 0" />
+    <parent
+      link="ladar_link" />
+    <child
+      link="yaw_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="pitch_link">
+    <inertial>
+      <origin
+        xyz="-0.0010918 0.037956 0.044776"
+        rpy="0 0 0" />
+      <mass
+        value="0.14221" />
+      <inertia
+        ixx="8.2702E-05"
+        ixy="2.1125E-07"
+        ixz="9.0946E-07"
+        iyy="0.00013327"
+        iyz="1.3043E-09"
+        izz="8.6989E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ladar_urdf/meshes/pitch_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ladar_urdf/meshes/pitch_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.0012215 0.047484 0.04"
+      rpy="1.5708 0 -0.025717" />
+    <parent
+      link="yaw_link" />
+    <child
+      link="pitch_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="0.0052262 -9.0412E-12 1.4677E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.033212" />
+      <inertia
+        ixx="4.2973E-06"
+        ixy="1.7602E-21"
+        ixz="1.1025E-10"
+        iyy="6.9988E-06"
+        iyz="8.5612E-22"
+        izz="7.0028E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ladar_urdf/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://ladar_urdf/meshes/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0272 0.0665 0.0685"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="pitch_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
