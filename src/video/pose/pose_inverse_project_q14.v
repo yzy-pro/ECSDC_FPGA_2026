@@ -30,12 +30,15 @@ module pose_inverse_project_q14 #(
     // Keep the exact restoring divider as the compatibility default.  The
     // LUT path is intended for measured error/resource comparison and can be
     // enabled by the top-level build once its timing is accepted.
-    parameter integer RECIPROCAL_LUT_ENABLE = 0
+    parameter integer RECIPROCAL_LUT_ENABLE = 0,
+    parameter integer RUNTIME_CONTROL = 0
 ) (
     input                         clk,
     input                         rstn,
 
     input                         pose_load,
+    // Sampled at pose_load; ignored in compatibility configurations.
+    input                         lens_enable,
     input signed [15:0]           pose_yaw_q2048,
     input signed [15:0]           pose_pitch_q2048,
     output reg                    pose_clamped,
@@ -52,6 +55,7 @@ module pose_inverse_project_q14 #(
 );
 
     localparam integer NORM_FRAC = 18;
+    reg frame_lens_enable;
     localparam integer NORM_WIDTH = 24;
     localparam integer DIVIDEND_WIDTH = NORM_WIDTH + NORM_FRAC;
     localparam integer DIV_STAGES = DIVIDEND_WIDTH;
@@ -392,6 +396,7 @@ module pose_inverse_project_q14 #(
     integer i;
     always @(posedge clk or negedge rstn) begin
         if (!rstn) begin
+            frame_lens_enable <= 1'b1;
             sin_yaw_q14 <= 0;
             cos_yaw_q14 <= 16'sd16384;
             sin_pitch_q14 <= 0;
@@ -463,6 +468,7 @@ module pose_inverse_project_q14 #(
             trig_yaw_negative <= {trig_yaw_negative[2:0],pose_yaw_q2048[15]};
             trig_pitch_negative <= {trig_pitch_negative[2:0],pose_pitch_q2048[15]};
             if (pose_load) begin
+                frame_lens_enable <= !RUNTIME_CONTROL || lens_enable;
                 trig0_yaw_abs <= bounded_abs_q2048(pose_yaw_q2048);
                 trig0_pitch_abs <= bounded_abs_q2048(pose_pitch_q2048);
                 pose_clamped <= (pose_yaw_q2048 > POSE_LIMIT_Q2048) ||
@@ -631,10 +637,12 @@ module pose_inverse_project_q14 #(
             l4_x_q18 <= l3p_x_q18;
             l4_y_q18 <= l3p_y_q18;
             l4_r2_q18 <= l3p_r2_q18;
-            l4_scale_q14 <= 32'sd16384 +
-                (l3p_k1 >>> NORM_FRAC) + (l3p_k2 >>> NORM_FRAC);
-            l4_tan_x_q18 <= (l3p_p1xy >>> 13) + (l3p_p2xx >>> 14);
-            l4_tan_y_q18 <= (l3p_p1yy >>> 14) + (l3p_p2xy >>> 13);
+            l4_scale_q14 <= (!RUNTIME_CONTROL || frame_lens_enable) ?
+                32'sd16384 + (l3p_k1 >>> NORM_FRAC) + (l3p_k2 >>> NORM_FRAC) : 32'sd16384;
+            l4_tan_x_q18 <= (!RUNTIME_CONTROL || frame_lens_enable) ?
+                (l3p_p1xy >>> 13) + (l3p_p2xx >>> 14) : 32'sd0;
+            l4_tan_y_q18 <= (!RUNTIME_CONTROL || frame_lens_enable) ?
+                (l3p_p1yy >>> 14) + (l3p_p2xy >>> 13) : 32'sd0;
 
             l4p_valid<=l4_valid; l4p_candidate<=l4_candidate; l4p_r2_q18<=l4_r2_q18;
             l4p_x_product<=mul24x32(l4_x_q18,l4_scale_q14);
@@ -647,7 +655,8 @@ module pose_inverse_project_q14 #(
             l5_ydist_q18 <= (l4p_y_product >>> 14) + l4p_tan_y_q18;
 
             focal_valid<={focal_valid[2:0],l5_valid};
-            focal_candidate<={focal_candidate[2:0],l5_candidate && l5_r2_q18<=MAX_RADIUS2_Q18};
+            focal_candidate<={focal_candidate[2:0],l5_candidate &&
+                ((RUNTIME_CONTROL && !frame_lens_enable) || l5_r2_q18<=MAX_RADIUS2_Q18)};
             focal_x_ll <= $signed({1'b0,l5_xdist_q18[15:0]}) * $signed({1'b0,FX_Q14[15:0]});
             focal_x_lh <= $signed({1'b0,l5_xdist_q18[15:0]}) * $signed(FX_Q14[31:16]);
             focal_x_hl <= $signed(l5_xdist_q18[31:16]) * $signed({1'b0,FX_Q14[15:0]});

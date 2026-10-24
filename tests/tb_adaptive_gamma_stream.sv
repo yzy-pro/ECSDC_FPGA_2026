@@ -7,7 +7,7 @@ module tb_adaptive_gamma_stream;
     wire [7:0] out_r,out_g,out_b;
     wire [2:0] active_curve,target_curve;
     wire [31:0] luma_sum,pixel_count,dark_count,highlight_count;
-    adaptive_gamma_stream dut(.*);
+    adaptive_gamma_stream dut(.stats_curve(),.stats_target(),.stats_enabled(),.*);
     reg lut_clk=0;
     reg [2:0] curve=0;
     reg [7:0] value=0;

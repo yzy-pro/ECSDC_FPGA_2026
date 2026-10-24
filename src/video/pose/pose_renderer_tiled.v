@@ -7,15 +7,20 @@
 module pose_renderer_tiled #(
     parameter ADDR_WIDTH=28, H_NUM=1920, V_NUM=1080,
     parameter OUTPUT_H_NUM=H_NUM, OUTPUT_V_NUM=V_NUM,
-    parameter TILE_W=128, TILE_H=64, SOURCE_BITS=11,
+    // Smaller coordinate/output tiles leave placement room for PC control.
+    // Keep source capacity unchanged for the complete +/-15 degree range.
+    parameter TILE_W=128, TILE_H=32, SOURCE_BITS=11,
     parameter signed [15:0] POSE_LIMIT_Q2048=16'sd536,
     parameter RECIPROCAL_LUT_ENABLE=0,
+    parameter RUNTIME_CONTROL=0,
+    parameter SHARED_WRITE_PAYLOAD=0,
     parameter signed [31:0] FX_Q14=32'sd12262554, FY_Q14=32'sd12256498,
     parameter signed [31:0] CX_Q14=32'sd15481296, CY_Q14=32'sd8558941,
     parameter signed [17:0] K1_Q14=18'sd162, K2_Q14=-18'sd711,
     parameter signed [17:0] P1_Q14=18'sd0, P2_Q14=18'sd0
 ) (
     input clk, rstn, start,
+    input lens_enable,
     input [1:0] source_bank, render_bank,
     input signed [15:0] yaw_q2048, pitch_q2048,
     output reg busy, done, error, output pose_clamped,
@@ -25,7 +30,8 @@ module pose_renderer_tiled #(
     input rd_data_valid, input [255:0] rd_data, input rd_data_last,
     output wr_cmd_valid, input wr_cmd_ready,
     output [ADDR_WIDTH-1:0] wr_cmd_addr, output [4:0] wr_cmd_len,
-    output [4095:0] wr_data, input wr_done
+    output [4095:0] wr_data, input wr_done,
+    input [3:0] wr_beat_index, output [255:0] wr_beat
 );
     localparam TP=TILE_W*TILE_H, CB=$clog2(TP), OW=TP/16,
                OB=$clog2(OW), SW=1<<SOURCE_BITS;
@@ -53,19 +59,32 @@ module pose_renderer_tiled #(
     reg [SOURCE_BITS:0] fill_count;
     reg [4:0] read_left;
     wire pv,pm,pose_ready;
+    wire projector_valid,projector_map;
+    wire signed [31:0] projector_x,projector_y;
+    reg frame_lens_enable,identity_frame;
+    reg identity_valid;
+    reg [10:0] identity_x,identity_y;
     wire signed [31:0] pu,pvcoord;
     wire [10:0] tap_x=pu[24:14]+pu[13];
     wire [10:0] tap_y=pvcoord[24:14]+pvcoord[13];
     wire project_en=busy && !error && ps==P_PROJECT;
+    // Both geometry switches off is an exact copy, including the last row
+    // and column. Avoid fixed-point round trips and four-tap border guards.
+    assign pv=identity_frame ? identity_valid : projector_valid;
+    assign pm=identity_frame ? identity_valid : projector_map;
+    assign pu=identity_frame ? $signed({7'd0,identity_x,14'd0}) : projector_x;
+    assign pvcoord=identity_frame ? $signed({7'd0,identity_y,14'd0}) : projector_y;
     pose_inverse_project_q14 #(.H_NUM(H_NUM),.V_NUM(V_NUM),
         .POSE_LIMIT_Q2048(POSE_LIMIT_Q2048),.RECIPROCAL_LUT_ENABLE(RECIPROCAL_LUT_ENABLE),
+        .RUNTIME_CONTROL(RUNTIME_CONTROL),
         .FX_Q14(FX_Q14),.FY_Q14(FY_Q14),.CX_Q14(CX_Q14),.CY_Q14(CY_Q14),
         .K1_Q14(K1_Q14),.K2_Q14(K2_Q14),.P1_Q14(P1_Q14),.P2_Q14(P2_Q14)) u_projector (
         .clk(clk),.rstn(rstn),.pose_load(busy && ps==P_POSE),
+        .lens_enable(frame_lens_enable),
         .pose_yaw_q2048(yaw_q),.pose_pitch_q2048(pitch_q),
         .pose_clamped(pose_clamped),.pose_ready(pose_ready),
-        .in_valid(project_en),.dst_x(ox[pb]+launch_x),.dst_y(oy[pb]+launch_y),
-        .out_valid(pv),.map_valid(pm),.src_x_q14(pu),.src_y_q14(pvcoord));
+        .in_valid(project_en && !identity_frame),.dst_x(ox[pb]+launch_x),.dst_y(oy[pb]+launch_y),
+        .out_valid(projector_valid),.map_valid(projector_map),.src_x_q14(projector_x),.src_y_q14(projector_y));
     // Separate synchronous RAM ports. Contents need no reset: slot ownership,
     // valid coordinates and rows_ready prevent reading stale/unwritten words.
     reg [22:0] coordinates[0:2*TP-1];
@@ -107,12 +126,27 @@ module pose_renderer_tiled #(
     reg [4:0] load_word;
     reg load_phase;
     reg [255:0] output_q;
-    reg [4095:0] write_burst;
     wire [OB-1:0] out_read_pos=write_y*(TILE_W/16)+load_word;
     assign wr_cmd_valid=busy && !error && ws==W_CMD;
     assign wr_cmd_addr=render_base+(oy[sb]+write_y)*(H_NUM/2)+(ox[sb]/16)*8;
     assign wr_cmd_len=width[sb]/16;
-    assign wr_data=write_burst;
+    generate if(SHARED_WRITE_PAYLOAD) begin : g_write_ram
+        reg [255:0] row_mem[0:15] /* synthesis syn_ramstyle="lut_ram" */;
+        always @(posedge clk)
+            if(rstn && busy && !error && ws==W_LOAD && load_phase)
+                row_mem[load_word-1'b1]<=output_q;
+        // Ownership remains with this row through the final accepted beat.
+        assign wr_beat=row_mem[wr_beat_index];
+        assign wr_data=4096'd0;
+    end else begin : g_write_registers
+        reg [4095:0] write_burst;
+        always @(posedge clk or negedge rstn)
+            if(!rstn) write_burst<=0;
+            else if(busy && !error && ws==W_LOAD && load_phase)
+                write_burst[(load_word-1'b1)*256 +:256]<=output_q;
+        assign wr_data=write_burst;
+        assign wr_beat=256'd0;
+    end endgenerate
     wire tile_committed=busy && !error && ws==W_DONE && wr_done && write_y==height[sb]-1;
     always @(posedge clk) begin
         if(busy && !error && pv && (ps==P_PROJECT || ps==P_DRAIN))
@@ -124,10 +158,12 @@ module pose_renderer_tiled #(
         source_data_q<=source_mem[{sb,source_addr_q}];
         if(sample_valid[3] && !error && pos3[3:0]==15)
             output_mem[{sb,pos3[CB-1:4]}]<={pixel_q,pack[239:0]};
-        if(ws==W_LOAD && !load_phase) output_q<=output_mem[{sb,out_read_pos}];
+        if(ws==W_LOAD && load_word<width[sb]/16)
+            output_q<=output_mem[{sb,out_read_pos}];
     end
     always @(posedge clk or negedge rstn) begin
         if(!rstn) begin
+            frame_lens_enable<=1;identity_frame<=0;identity_valid<=0;identity_x<=0;identity_y<=0;
             busy<=0;done<=0;error<=0;ps<=P_IDLE;ss<=S_WAIT;ws<=W_WAIT;
             pb<=0;sb<=0;occupied<=0;ready_tiles<=0;source_q<=0;render_q<=0;
             yaw_q<=0;pitch_q<=0;next_x<=0;next_y<=0;
@@ -139,8 +175,10 @@ module pose_renderer_tiled #(
             sample_x<=0;sample_y<=0;sample_valid<=0;
             source_addr_q<=0;pixel_q<=0;pos0<=0;pos1<=0;pos2<=0;pos3<=0;
             map1<=0;map2<=0;lane1<=0;lane2<=0;pack<=0;
-            write_y<=0;load_word<=0;load_phase<=0;write_burst<=0;
+            write_y<=0;load_word<=0;load_phase<=0;
         end else begin
+            identity_valid<=project_en && identity_frame;
+            identity_x<=ox[pb]+launch_x;identity_y<=oy[pb]+launch_y;
             done<=0;
             sample_valid<={sample_valid[2:0],sample_en};
             if(sample_en) pos0<=sample_pos;
@@ -154,6 +192,8 @@ module pose_renderer_tiled #(
                     rows_ready[sb]<=pos3/TILE_W+1'b1;
             end
             if(start && !busy) begin
+                frame_lens_enable<=!RUNTIME_CONTROL || lens_enable;
+                identity_frame<=RUNTIME_CONTROL && !lens_enable && yaw_q2048==0 && pitch_q2048==0;
                 busy<=1;error<=0;source_q<=source_bank;render_q<=render_bank;
                 yaw_q<=yaw_q2048;pitch_q<=pitch_q2048;
                 ps<=P_POSE;ss<=S_WAIT;ws<=W_WAIT;pb<=0;sb<=0;
@@ -243,12 +283,11 @@ module pose_renderer_tiled #(
                         load_word<=0;load_phase<=0;ws<=W_LOAD;
                     end
                     W_LOAD: begin
-                        load_phase<=~load_phase;
-                        if(load_phase) begin
-                            write_burst[load_word*256 +:256]<=output_q;
-                            if(load_word==width[sb]/16-1) ws<=W_CMD;
-                            else load_word<=load_word+1'b1;
-                        end
+                        // Issue a RAM read every cycle; output_q belongs to
+                        // the previous read. Drain that last word before AW.
+                        load_phase<=1'b1;
+                        if(load_word==width[sb]/16) ws<=W_CMD;
+                        else load_word<=load_word+1'b1;
                     end
                     W_CMD: if(wr_cmd_ready) ws<=W_DONE;
                     W_DONE: if(wr_done) begin

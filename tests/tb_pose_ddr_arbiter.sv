@@ -1,5 +1,6 @@
 `timescale 1ns/1ps
 module tb_pose_ddr_arbiter;
+    parameter STREAM=0;
     reg clk=0, rstn=0;
     always #5 clk=~clk;
     reg cap_w_valid=0,render_w_valid=0,display_r_valid=0,render_r_valid=0;
@@ -24,7 +25,17 @@ module tb_pose_ddr_arbiter;
     reg axi_rvalid=0,axi_rlast=0;
     reg [3:0] axi_rid=0;
     wire protocol_error;
-    pose_ddr_arbiter dut(.*);
+    wire [3:0] write_beat_index;
+    reg [4095:0] held_cap_payload;
+    reg [255:0] held_render_payload;
+    wire [255:0] cap_w_beat=held_cap_payload[write_beat_index*256 +:256];
+    wire [255:0] render_w_beat=held_render_payload;
+    // Model clients retain their own buffer even after request deassertion.
+    always @(posedge clk) begin
+        if(cap_w_valid && cap_w_ready) held_cap_payload<=cap_w_data;
+        if(render_w_valid && render_w_ready) held_render_payload<=render_w_data;
+    end
+    pose_ddr_arbiter #(.SHARED_WRITE_PAYLOAD(STREAM)) dut(.*);
 
     function automatic [255:0] payload(input [27:0] address);
         integer lane;
@@ -264,6 +275,14 @@ module tb_pose_ddr_arbiter;
         @(negedge clk);
         if(!cap_w_done || protocol_error) $fatal(1,"valid final write not completed");
 
+        // The first payload may be accepted on the AW handshake itself.
+        reset_manual();
+        @(negedge clk);cap_w_valid=1;cap_w_data=payload(28'h2345670);
+        @(negedge clk);cap_w_valid=0;axi_awready=1;axi_wready=1;axi_wlast=1;
+        if(axi_wdata!==payload(28'h2345670)) $fatal(1,"same-edge AW payload mismatch");
+        @(negedge clk);
+        if(!cap_w_done || protocol_error) $fatal(1,"same-edge AW/final payload lost");
+
         reset_manual();
         @(negedge clk);render_w_valid=1;render_w_addr=28'h3456780;render_w_data=payload(28'h3456780);
         @(negedge clk);render_w_valid=0;axi_awready=1;
@@ -278,7 +297,7 @@ module tb_pose_ddr_arbiter;
         @(negedge clk);axi_wready=0;
         if(!protocol_error || cap_w_done || cap_w_ready)
             $fatal(1,"early WLAST completed an incomplete capture burst");
-        $display("PASS pose_ddr_arbiter: 160 writes/760 beats, 128 reads/488 beats, randomized stalls, priority, ownership, LAST/ID faults");
+        $display("PASS pose_ddr_arbiter STREAM=%0d: 160 writes/760 beats, 128 reads/488 beats, randomized stalls, priority, ownership, same-edge AW/payload, LAST/ID faults",STREAM);
         $finish;
     end
     initial begin #2000000;$fatal(1,"arbiter test timeout");end

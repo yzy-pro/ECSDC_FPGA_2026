@@ -7,6 +7,9 @@ module tb_fram_buf_pose_tiled;
     parameter FULL=0,H=320,V=180,FRAMES=12,DDR_LATENCY=32;
     parameter SHARED_PAYLOAD=0,REFRESH_CYCLES=0,REFRESH_INTERVAL=780;
     parameter PREPROCESS=0;
+    parameter RUNTIME=0;
+    reg [2:0] control_mask=7;
+    reg lens_enable=1;
     localparam PIXELS=H*V,WORDS=PIXELS/16,POSE_COUNT=11;
     localparam HT=FULL ? 2200 : H+64,VT=FULL ? 1125 : V+20;
     localparam FX=FULL ? 12262554 : 125*16384;
@@ -41,7 +44,7 @@ module tb_fram_buf_pose_tiled;
         end
         adaptive_gamma_stream u_gamma (
             .clk(vin_clk),.rstn(ddr_rstn),.in_vs(input_vs),.in_de(input_de),
-            .in_r(input_r),.in_g(input_g),.in_b(input_b),.enable(1'b1),
+            .in_r(input_r),.in_g(input_g),.in_b(input_b),.enable(!RUNTIME || control_mask[2]),
             .out_vs(gamma_vs),.out_de(gamma_de),.out_r(gamma_r),.out_g(gamma_g),.out_b(gamma_b),
             .active_curve(gamma_curve),.target_curve(),.stats_valid(),.luma_sum(),
             .pixel_count(),.dark_count(),.highlight_count());
@@ -70,13 +73,15 @@ module tb_fram_buf_pose_tiled;
     reg axi_rvalid=0,axi_rlast=0;
     reg [3:0] axi_rid=0;
     wire [31:0] captured_frames,rendered_frames,displayed_frames,rejected_captures;
-    fram_buf_pose #(.H_NUM(H),.V_NUM(V),.TILED_ENABLE(1),
+    fram_buf_pose #(.H_NUM(H),.V_NUM(V),.TILED_ENABLE(1),.RUNTIME_CONTROL(RUNTIME),
         .FX_Q14(FX),.FY_Q14(FY),.CX_Q14(CX),.CY_Q14(CY)) dut(.*);
     reg [255:0] memory[0:3][0:WORDS-1];
     reg [15:0] expected[0:PIXELS-1];
     reg seen[0:PIXELS-1];
     integer generation[0:3],generation_pose[0:3];
     integer generation_curve[0:FRAMES+1];
+    reg [2:0] generation_mask[0:FRAMES+1];
+    reg [7:0] rendered_control_mask=0;
     reg [7:0] gamma_oracle[0:6][0:255];
     reg [6:0] captured_curve_mask=0;
     integer input_generation=0,render_generation=0,pending_generation=0,last_display_generation=0;
@@ -114,7 +119,7 @@ module tb_fram_buf_pose_tiled;
         reg [7:0] r,g,b;
         begin
             p=raw_pixel(gen,x,y);
-            if(PREPROCESS) begin
+            if(PREPROCESS && (!RUNTIME || generation_mask[gen][2])) begin
                 r=gamma_oracle[generation_curve[gen]][{p[15:11],p[15:13]}];
                 g=gamma_oracle[generation_curve[gen]][{p[10:5],p[10:9]}];
                 b=gamma_oracle[generation_curve[gen]][{p[4:0],p[4:2]}];
@@ -148,10 +153,12 @@ module tb_fram_buf_pose_tiled;
         if(dut.renderer_start) begin
             render_generation=generation[dut.renderer_source_bank];render_start_cycle=cycle;checked_pixels=0;
             render_pose_index=generation_pose[dut.renderer_source_bank];
-            if(dut.renderer_yaw!==pose_yaw(render_pose_index) ||
-               dut.renderer_pitch!==pose_pitch(render_pose_index))
+            if(dut.renderer_yaw!==((!RUNTIME || generation_mask[render_generation][1]) ? pose_yaw(render_pose_index) : 16'sd0) ||
+               dut.renderer_pitch!==((!RUNTIME || generation_mask[render_generation][1]) ? pose_pitch(render_pose_index) : 16'sd0))
                 $fatal(1,"source pose/frame mismatch gen=%0d pose=%0d yaw=%0d pitch=%0d",
                     render_generation,render_pose_index,dut.renderer_yaw,dut.renderer_pitch);
+            if(RUNTIME && dut.renderer_lens_enable!==generation_mask[render_generation][0])
+                $fatal(1,"lens setting mixed between source frames");
             for(i=0;i<PIXELS;i=i+1) begin seen[i]=0;expected[i]='x;end
         end
         if(dut.g_tiled.u_renderer.pv &&
@@ -194,6 +201,7 @@ module tb_fram_buf_pose_tiled;
         end
         if(axi_rvalid) begin ra=ra+8;read_left=read_left-1;if(read_left==0) rp=0;end
         if(rendered_frames!=prev_rendered) begin
+            rendered_control_mask[generation_mask[render_generation]]=1;
             if(checked_pixels!=PIXELS) $fatal(1,"publication omitted pixels: checked=%0d required=%0d",checked_pixels,PIXELS);
             rendered_pose_mask[render_pose_index]=1;
             pending_pose=0;pending_pose[render_pose_index]=1;
@@ -275,13 +283,18 @@ module tb_fram_buf_pose_tiled;
         repeat(10) @(negedge vin_clk);ddr_rstn=1;
         for(f=1;f<=FRAMES;f=f+1) begin
             input_generation=f;
+            control_mask=RUNTIME ? accepted_sources%8 : 7;
+            generation_mask[f]=control_mask;lens_enable=control_mask[0];
             // Advance only after accepted SOF: the renderer may deliberately
             // skip input frames while its source/output banks are owned.
             input_pose_index=accepted_sources%POSE_COUNT;
-            imu_yaw=pose_yaw(input_pose_index);imu_pitch=pose_pitch(input_pose_index);
+            imu_yaw=(!RUNTIME || control_mask[1]) ? pose_yaw(input_pose_index) : 0;
+            imu_pitch=(!RUNTIME || control_mask[1]) ? pose_pitch(input_pose_index) : 0;
             raw_fsync=1;@(negedge vin_clk);raw_fsync=0;
             repeat((VT-V)*HT-1) @(negedge vin_clk);
             if(dut.capture_active) accepted_sources=accepted_sources+1;
+            // Stress the source-SOF snapshot independently of normal controls.
+            if(RUNTIME) lens_enable=~lens_enable;
             for(y=0;y<V;y=y+1) begin
                 for(x=0;x<H;x=x+1) begin raw_en=1;raw_data=raw_pixel(f,x,y);@(negedge vin_clk);end
                 raw_en=0;repeat(HT-H) @(negedge vin_clk);
@@ -292,6 +305,7 @@ module tb_fram_buf_pose_tiled;
         wait(completed_display_generation>=last_display_generation);
         if(overlap_cycles==0 || publications<3 || display_checked==0) $fatal(1,"no concurrent/sustained progress");
         if(FULL && !(&rendered_pose_mask)) $fatal(1,"incomplete eleven-pose coverage");
+        if(RUNTIME && !(&rendered_control_mask)) $fatal(1,"incomplete runtime switch coverage %b",rendered_control_mask);
         if(PREPROCESS && (captured_curve_mask & 7'b1110111)==0) $fatal(1,"adaptive gamma never exercised nonidentity curve");
         if(FULL && (publications-1)*100000000.0/(last_publication-first_publication)<29.99)
             $fatal(1,"sustained publication below 30fps");

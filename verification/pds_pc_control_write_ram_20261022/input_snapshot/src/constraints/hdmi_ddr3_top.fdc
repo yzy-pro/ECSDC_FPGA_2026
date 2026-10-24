@@ -1,0 +1,464 @@
+# Logos PGL50H-FBG484 (BG484), HDMI input -> DDR3 -> HDMI output.
+# HDMI pins come from the Pangu 50K hdmi_loop demo. DDR3 pins and PHY
+# locations come from the PGL50H-FBG484 DDR3_50H IP instance.
+
+### Clocks
+create_clock -name {sys_clk} [get_ports {sys_clk}] -period {20.000} -waveform {0.000 10.000}
+create_clock -name {video_ref_clk} [get_ports {video_ref_clk}] -period {37.037037} -waveform {0.000 18.518519}
+create_clock -name {pixclk_in} [get_ports {pixclk_in}] -period {6.734} -waveform {0.000 3.367}
+
+### Generated clocks from the PGL50H DDR3 PHY.
+# The DDR3 IP multiplies the 50 MHz board clock internally. These clocks are
+# required by the PHY timing model and must be attached to the generated
+# clock pins, not to the external DDR pins.
+create_generated_clock -name {ddrphy_clkin} \
+    -source [get_ports {sys_clk}] \
+    [get_pins {u_ddr3/I_GTP_CLKDIV/CLKDIVOUT}] \
+    -master_clock [get_clocks {sys_clk}] \
+    -multiply_by {16} -divide_by {8}
+create_generated_clock -name {ioclk0} \
+    -source [get_ports {sys_clk}] \
+    [get_pins {u_ddr3/I_GTP_IOCLKBUF_0/CLKOUT}] \
+    -master_clock [get_clocks {sys_clk}] \
+    -multiply_by {16} -divide_by {2}
+create_generated_clock -name {ioclk1} \
+    -source [get_ports {sys_clk}] \
+    [get_pins {u_ddr3/I_GTP_IOCLKBUF_1/CLKOUT}] \
+    -master_clock [get_clocks {sys_clk}] \
+    -multiply_by {16} -divide_by {2}
+create_generated_clock -name {ioclk2} \
+    -source [get_ports {sys_clk}] \
+    [get_pins {u_ddr3/I_GTP_IOCLKBUF_2/CLKOUT}] \
+    -master_clock [get_clocks {sys_clk}] \
+    -multiply_by {16} -divide_by {2}
+create_generated_clock -name {ioclk_gate_clk} \
+    -source [get_ports {sys_clk}] \
+    [get_pins {u_ddr3/u_clkbufg_gate/CLKOUT}] \
+    -master_clock [get_clocks {sys_clk}] \
+    -multiply_by {16} -divide_by {8}
+
+### Generated clocks from the video PLL.
+# The K21 27 MHz oscillator produces exact 148.5 MHz with 44/(1*8).
+create_generated_clock -name {pixel_clk} \
+    -source [get_ports {video_ref_clk}] \
+    [get_pins {u_video_pll/u_pll_e3/CLKOUT0}] \
+    -master_clock [get_clocks {video_ref_clk}] \
+    -multiply_by {44} -divide_by {8}
+create_generated_clock -name {cfg_clk} \
+    -source [get_ports {video_ref_clk}] \
+    [get_pins {u_video_pll/u_pll_e3/CLKOUT1}] \
+    -master_clock [get_clocks {video_ref_clk}] \
+    -multiply_by {44} -divide_by {119}
+
+# In processed mode pixclk_out preserves the physical 148.5 MHz clock polarity.
+# The board demos launch RGB/control on the rising edge and the MS7210 samples
+# on the falling edge. Model that falling sampling edge as an inverted generated
+# clock while leaving the physical clock itself non-inverted.
+create_generated_clock -name {pixclk_out_clk} \
+    -source [get_pins {u_video_pll/u_pll_e3/CLKOUT0}] \
+    [get_ports {pixclk_out}] \
+    -master_clock [get_clocks {pixel_clk}] \
+    -divide_by {1} -invert
+
+# Source-synchronous timing budgets for the two HDMI bridge parallel buses.
+# These board-level budgets include bridge setup/hold and PCB skew. Keep them
+# below half of the 6.737 ns pixel period because output data is launched on
+# pixel_clk's rising edge and sampled on the inverted clock's rising edge.
+set hdmi_input_bus [get_ports {r_in[*] g_in[*] b_in[*] de_in hs_in vs_in}]
+set_input_delay -clock [get_clocks {pixclk_in}] -max {2.000} $hdmi_input_bus
+set_input_delay -clock [get_clocks {pixclk_in}] -min {-0.500} $hdmi_input_bus
+
+# Rising-edge source-synchronous capture in the same launch cycle. The raw
+# input clock traverses IBUF + global clock network before reaching the IOL
+# register; it is NOT deskewed by a PLL. Capture the pixel launched at this
+# edge, not the preceding pixel (the default one-cycle relationship).
+# Tighten setup by one whole cycle; the associated hold check moves to the
+# NEXT pixel transition. No false path and no change to the +/- input budget.
+# PDS UCE User Guide 2.2.4.3 explicitly supports multiplier 0 (zero cycle).
+# Only external pad -> first input registers is affected; all subsequent
+# pixclk_in register paths remain ordinary one-cycle paths.
+set hdmi_capture_bus [get_ports {r_in[*] g_in[*] b_in[*] de_in vs_in}]
+set_multicycle_path 0 -setup -end -from $hdmi_capture_bus -to [get_clocks {pixclk_in}]
+
+set hdmi_output_bus [get_ports {r_out[*] g_out[*] b_out[*] de_out hs_out vs_out}]
+set_output_delay -clock [get_clocks {pixclk_out_clk}] -max {1.500} $hdmi_output_bus
+set_output_delay -clock [get_clocks {pixclk_out_clk}] -min {-0.500} $hdmi_output_bus
+
+set_clock_uncertainty {0.200} [get_clocks {ddrphy_clkin}] -setup -hold
+set_clock_uncertainty {0.200} [get_clocks {ioclk0}] -setup -hold
+set_clock_uncertainty {0.200} [get_clocks {ioclk1}] -setup -hold
+set_clock_uncertainty {0.200} [get_clocks {ioclk2}] -setup -hold
+set_clock_uncertainty {0.200} [get_clocks {ioclk_gate_clk}] -setup -hold
+set_clock_uncertainty {0.200} [get_clocks {pixel_clk}] -setup -hold
+set_clock_uncertainty {0.200} [get_clocks {cfg_clk}] -setup -hold
+set_clock_uncertainty {0.200} [get_clocks {pixclk_out_clk}] -setup -hold
+set_clock_uncertainty {0.200} [get_clocks {video_ref_clk}] -setup -hold
+
+set_clock_groups -name {board_clock_domains} -asynchronous \
+    -group [get_clocks {sys_clk}] \
+    -group [get_clocks {video_ref_clk}] \
+    -group [get_clocks {pixclk_in}]
+
+# IMU UART is sampled by sys_clk; the input is asynchronous to that clock and
+# is first passed through a two-flop synchronizer in imu_uart_rx_50m.
+set_clock_groups -name {imu_to_video_cdc} -asynchronous \
+    -group [get_clocks {sys_clk}] \
+    -group [get_clocks {pixel_clk}]
+set_input_delay -clock [get_clocks {sys_clk}] -max {10.000} [get_ports {imu_uart_rx}]
+set_input_delay -clock [get_clocks {sys_clk}] -min {0.000} [get_ports {imu_uart_rx}]
+
+# Board CP2102 UART is asynchronous; pc receiver contains a two-flop input
+# synchronizer. Budget its external input against sys_clk, like the IMU UART.
+set_input_delay -clock [get_clocks {sys_clk}] -max {10.000} [get_ports {pc_uart_rx}]
+set_input_delay -clock [get_clocks {sys_clk}] -min {0.000} [get_ports {pc_uart_rx}]
+
+# These PHY clocks are implementation clocks internal to the DDR controller.
+# Keep them from being analyzed as unrelated board-clock domains.
+set_clock_groups -name {ddr_phy_domains} -asynchronous \
+    -group [get_clocks {ioclk0}] \
+    -group [get_clocks {ioclk1}] \
+    -group [get_clocks {ioclk2}] \
+    -group [get_clocks {ioclk_gate_clk}]
+
+# The PHY training/reset logic intentionally releases reset from the divided
+# DDR clock into the per-byte IO clocks.  These reset-only paths are CDC paths,
+# not data paths, so recovery/removal must not be checked between the domains.
+set_clock_groups -name {ddr_core_to_phy_io_cdc} -asynchronous \
+    -group [get_clocks {ddrphy_clkin}] \
+    -group [get_clocks {ioclk0}] \
+    -group [get_clocks {ioclk1}] \
+    -group [get_clocks {ioclk2}] \
+    -group [get_clocks {ioclk_gate_clk}]
+set_clock_groups -name {sys_to_phy_io_reset_cdc} -asynchronous \
+    -group [get_clocks {sys_clk}] \
+    -group [get_clocks {ioclk0}] \
+    -group [get_clocks {ioclk1}] \
+    -group [get_clocks {ioclk2}] \
+    -group [get_clocks {ioclk_gate_clk}]
+
+# DDR IP reference: DDR3_50H/pnr/ddr_test.fdc isolates ref_clk from all
+# other clocks. Its PLL/divider core clock has no guaranteed phase relative
+# to ref_clk; reset and training status cross through the IP synchronizers.
+# PDS 2022 does not infer this missing pair from board_clock_domains above.
+# Keep this exception limited to the reference/core pair: synchronous DDR
+# data paths, HDMI input paths and pixel arithmetic remain timed.
+set_clock_groups -name {ddr_reference_to_core_cdc} -asynchronous \
+    -group [get_clocks {sys_clk}] \
+    -group [get_clocks {ddrphy_clkin}]
+
+# The frame buffer uses independent-clock FIFOs.  DDR initialization status
+# and the HDMI input/output timing therefore cross between unrelated domains;
+# do not time these CDC/reset paths as ordinary synchronous logic paths.
+set_clock_groups -name {ddr_to_video_cdc} -asynchronous \
+    -group [get_clocks {ddrphy_clkin}] \
+    -group [get_clocks {pixel_clk}]
+set_clock_groups -name {ddr_to_input_cdc} -asynchronous \
+    -group [get_clocks {ddrphy_clkin}] \
+    -group [get_clocks {pixclk_in}]
+set_clock_groups -name {cfg_to_video_reset_cdc} -asynchronous \
+    -group [get_clocks {cfg_clk}] \
+    -group [get_clocks {pixel_clk}]
+set_clock_groups -name {cfg_to_input_reset_cdc} -asynchronous \
+    -group [get_clocks {cfg_clk}] \
+    -group [get_clocks {pixclk_in}]
+set_clock_groups -name {cfg_to_ddr_reset_cdc} -asynchronous \
+    -group [get_clocks {cfg_clk}] \
+    -group [get_clocks {sys_clk}]
+set_clock_groups -name {input_to_video_cdc} -asynchronous \
+    -group [get_clocks {pixclk_in}] \
+    -group [get_clocks {pixel_clk}]
+
+# PDS set_max_skew is checked independently of the asynchronous clock groups.
+# Bound each Gray bus to the shortest source period (148.5 MHz). Include the
+# binary source registers because synthesis merges the equal Gray/binary MSB.
+# Keep the four buses separate; unrelated FIFO directions need no alignment.
+# The active top instantiates both pose FIFOs. If selecting the legacy frame
+# buffer, remove these four constraints together with the disabled pose path.
+# PDS stores skew failures in report_db/*_path_max_skew.db; its text timing
+# summary can still say "All Constraints Met". build_test.ps1 audits that XML.
+set_max_skew 6.734 \
+    -from [get_cells -hierarchical {*u_capture_fifo/wr_gray[*] *u_capture_fifo/wr_binary[*]}] \
+    -to [get_cells -hierarchical {*u_capture_fifo/wr_gray_rd1[*]}]
+set_max_skew 6.734 \
+    -from [get_cells -hierarchical {*u_capture_fifo/rd_gray[*] *u_capture_fifo/rd_binary[*]}] \
+    -to [get_cells -hierarchical {*u_capture_fifo/rd_gray_wr1[*]}]
+set_max_skew 6.734 \
+    -from [get_cells -hierarchical {*u_display_fifo/wr_gray[*] *u_display_fifo/wr_binary[*]}] \
+    -to [get_cells -hierarchical {*u_display_fifo/wr_gray_rd1[*]}]
+set_max_skew 6.734 \
+    -from [get_cells -hierarchical {*u_display_fifo/rd_gray[*] *u_display_fifo/rd_binary[*]}] \
+    -to [get_cells -hierarchical {*u_display_fifo/rd_gray_wr1[*]}]
+
+### Small helpers keep the pin table readable while still assigning every
+### electrical attribute explicitly.
+proc set_lvcmos33_input {port pin} {
+    define_attribute "p:${port}" {PAP_IO_DIRECTION} {INPUT}
+    define_attribute "p:${port}" {PAP_IO_LOC} $pin
+    define_attribute "p:${port}" {PAP_IO_VCCIO} {3.3}
+    define_attribute "p:${port}" {PAP_IO_STANDARD} {LVCMOS33}
+    define_attribute "p:${port}" {PAP_IO_NONE} {TRUE}
+}
+
+proc set_lvcmos33_output {port pin} {
+    define_attribute "p:${port}" {PAP_IO_DIRECTION} {OUTPUT}
+    define_attribute "p:${port}" {PAP_IO_LOC} $pin
+    define_attribute "p:${port}" {PAP_IO_VCCIO} {3.3}
+    define_attribute "p:${port}" {PAP_IO_STANDARD} {LVCMOS33}
+    define_attribute "p:${port}" {PAP_IO_DRIVE} {8}
+    define_attribute "p:${port}" {PAP_IO_NONE} {TRUE}
+    define_attribute "p:${port}" {PAP_IO_SLEW} {FAST}
+}
+
+proc set_lvcmos33_inout {port pin} {
+    define_attribute "p:${port}" {PAP_IO_DIRECTION} {INOUT}
+    define_attribute "p:${port}" {PAP_IO_LOC} $pin
+    define_attribute "p:${port}" {PAP_IO_VCCIO} {3.3}
+    define_attribute "p:${port}" {PAP_IO_STANDARD} {LVCMOS33}
+    define_attribute "p:${port}" {PAP_IO_DRIVE} {8}
+    define_attribute "p:${port}" {PAP_IO_NONE} {TRUE}
+    define_attribute "p:${port}" {PAP_IO_SLEW} {FAST}
+}
+
+### HDMI receiver inputs (MS7200)
+foreach {port pin} {
+    pixclk_in AA12
+    vs_in     W13
+    hs_in     V13
+    de_in     U13
+    {r_in[7]} Y14
+    {r_in[6]} W14
+    {r_in[5]} AB14
+    {r_in[4]} AA14
+    {r_in[3]} V15
+    {r_in[2]} U16
+    {r_in[1]} AB15
+    {r_in[0]} Y15
+    {g_in[7]} W17
+    {g_in[6]} Y18
+    {g_in[5]} AB18
+    {g_in[4]} AA18
+    {g_in[3]} AB19
+    {g_in[2]} W18
+    {g_in[1]} V17
+    {g_in[0]} Y17
+    {b_in[7]} AB17
+    {b_in[6]} AA16
+    {b_in[5]} AB16
+    {b_in[4]} Y16
+    {b_in[3]} W15
+    {b_in[2]} T15
+    {b_in[1]} U15
+    {b_in[0]} U14
+} {
+    set_lvcmos33_input $port $pin
+}
+
+### IMU UART input. The reference IMU carrier routes its TTL TX to AB4.
+set_lvcmos33_input imu_uart_rx AB4
+
+# MES50HP manual 3.2.4, table 3-5 (PDF p27): FPGA RX R8 / TX R9.
+set_lvcmos33_input pc_uart_rx R8
+set_lvcmos33_output pc_uart_tx R9
+# Manual 3.4.2, table 3-9 (PDF pp33-34): LEDs are active high.
+foreach {port pin} {
+    {sys_led[0]} B2
+    {sys_led[1]} A2
+    {sys_led[2]} B3
+    {sys_led[3]} A3
+    {sys_led[4]} C5
+    {sys_led[5]} A5
+    {sys_led[6]} F7
+    {sys_led[7]} F8
+} {
+    set_lvcmos33_output $port $pin
+}
+
+### HDMI transmitter outputs (MS7210)
+foreach {port pin} {
+    pixclk_out M22
+    vs_out     W20
+    hs_out     Y21
+    de_out     Y22
+    {r_out[7]} H19
+    {r_out[6]} H22
+    {r_out[5]} H21
+    {r_out[4]} K22
+    {r_out[3]} J20
+    {r_out[2]} J22
+    {r_out[1]} N19
+    {r_out[0]} K17
+    {g_out[7]} L17
+    {g_out[6]} K20
+    {g_out[5]} L19
+    {g_out[4]} N15
+    {g_out[3]} M16
+    {g_out[2]} M18
+    {g_out[1]} M17
+    {g_out[0]} M21
+    {b_out[7]} P19
+    {b_out[6]} R19
+    {b_out[5]} R22
+    {b_out[4]} R20
+    {b_out[3]} T22
+    {b_out[2]} T21
+    {b_out[1]} V22
+    {b_out[0]} V21
+    rstn_out   R17
+    iic_scl    V19
+    iic_tx_scl P17
+} {
+    set_lvcmos33_output $port $pin
+}
+
+# Keep the final video registers in the output I/O cells. At 148.5 MHz the
+# fabric-to-pad delay and bit-to-bit skew are otherwise large enough to miss
+# the MS7210 falling-edge setup time, which appears on the monitor as unstable
+# colors or continuous flashing. This is the same packing constraint used by
+# the vendor HDMI+DDR3 reference design.
+foreach port {
+    vs_out hs_out de_out
+    {r_out[7]} {r_out[6]} {r_out[5]} {r_out[4]}
+    {r_out[3]} {r_out[2]} {r_out[1]} {r_out[0]}
+    {g_out[7]} {g_out[6]} {g_out[5]} {g_out[4]}
+    {g_out[3]} {g_out[2]} {g_out[1]} {g_out[0]}
+    {b_out[7]} {b_out[6]} {b_out[5]} {b_out[4]}
+    {b_out[3]} {b_out[2]} {b_out[1]} {b_out[0]}
+} {
+    define_attribute "p:${port}" {PAP_IO_REGISTER} {TRUE}
+}
+
+set_lvcmos33_inout iic_sda V20
+set_lvcmos33_inout iic_tx_sda P18
+set_lvcmos33_input sys_clk P20
+set_lvcmos33_input video_ref_clk K21
+
+### DDR3 helpers
+proc set_ddr_output {port pin standard slew} {
+    define_attribute "p:${port}" {PAP_IO_DIRECTION} {OUTPUT}
+    define_attribute "p:${port}" {PAP_IO_LOC} $pin
+    define_attribute "p:${port}" {PAP_IO_VCCIO} {1.5}
+    define_attribute "p:${port}" {PAP_IO_STANDARD} $standard
+    define_attribute "p:${port}" {PAP_IO_DRIVE} {8}
+    define_attribute "p:${port}" {PAP_IO_NONE} {TRUE}
+    define_attribute "p:${port}" {PAP_IO_SLEW} $slew
+}
+
+proc set_ddr_dq {port pin} {
+    define_attribute "p:${port}" {PAP_IO_DIRECTION} {INOUT}
+    define_attribute "p:${port}" {PAP_IO_LOC} $pin
+    define_attribute "p:${port}" {PAP_IO_VCCIO} {1.5}
+    define_attribute "p:${port}" {PAP_IO_STANDARD} {HSTL15_I}
+    define_attribute "p:${port}" {PAP_IO_DRIVE} {8}
+    define_attribute "p:${port}" {PAP_IO_NONE} {TRUE}
+    define_attribute "p:${port}" {PAP_IO_SLEW} {FAST}
+}
+
+proc set_ddr_dqs {port pin} {
+    define_attribute "p:${port}" {PAP_IO_DIRECTION} {INOUT}
+    define_attribute "p:${port}" {PAP_IO_LOC} $pin
+    define_attribute "p:${port}" {PAP_IO_VCCIO} {1.5}
+    define_attribute "p:${port}" {PAP_IO_STANDARD} {HSTL15D_I}
+    define_attribute "p:${port}" {PAP_IO_DRIVE} {8}
+    define_attribute "p:${port}" {PAP_IO_NONE} {TRUE}
+    define_attribute "p:${port}" {PAP_IO_SLEW} {FAST}
+}
+
+### DDR3 address and command pins
+foreach {port pin} {
+    mem_rst_n C1
+    mem_cke   Y3
+    mem_cs_n  G6
+    mem_cas_n H8
+    mem_ras_n J7
+    mem_we_n  H6
+    mem_odt   G7
+    {mem_ba[0]} F5
+    {mem_ba[1]} W4
+    {mem_ba[2]} N7
+    {mem_a[0]}  N6
+    {mem_a[1]}  R4
+    {mem_a[2]}  P6
+    {mem_a[3]}  F3
+    {mem_a[4]}  V5
+    {mem_a[5]}  E4
+    {mem_a[6]}  V3
+    {mem_a[7]}  D2
+    {mem_a[8]}  U4
+    {mem_a[9]}  P5
+    {mem_a[10]} P8
+    {mem_a[11]} T4
+    {mem_a[12]} P7
+    {mem_a[13]} P4
+    {mem_a[14]} T3
+} {
+    set_ddr_output $port $pin HSTL15_I FAST
+}
+
+set_ddr_output mem_ck   T6 HSTL15D_I FAST
+set_ddr_output mem_ck_n T5 HSTL15D_I FAST
+
+### DDR3 byte masks
+foreach {port pin} {
+    {mem_dm[0]} W3
+    {mem_dm[1]} L1
+    {mem_dm[2]} K2
+    {mem_dm[3]} G1
+} {
+    set_ddr_output $port $pin HSTL15_I FAST
+}
+
+### DDR3 data bus. Each group of eight DQ pins belongs with one DQS pair.
+foreach {port pin} {
+    {mem_dq[0]}  U1
+    {mem_dq[1]}  U3
+    {mem_dq[2]}  T2
+    {mem_dq[3]}  Y2
+    {mem_dq[4]}  T1
+    {mem_dq[5]}  Y1
+    {mem_dq[6]}  M7
+    {mem_dq[7]}  W1
+    {mem_dq[8]}  P1
+    {mem_dq[9]}  M2
+    {mem_dq[10]} R1
+    {mem_dq[11]} M1
+    {mem_dq[12]} P2
+    {mem_dq[13]} L3
+    {mem_dq[14]} P3
+    {mem_dq[15]} N4
+    {mem_dq[16]} K4
+    {mem_dq[17]} K1
+    {mem_dq[18]} J3
+    {mem_dq[19]} L4
+    {mem_dq[20]} K3
+    {mem_dq[21]} M3
+    {mem_dq[22]} J1
+    {mem_dq[23]} M4
+    {mem_dq[24]} J6
+    {mem_dq[25]} F1
+    {mem_dq[26]} K7
+    {mem_dq[27]} F2
+    {mem_dq[28]} H5
+    {mem_dq[29]} H3
+    {mem_dq[30]} J4
+    {mem_dq[31]} G3
+} {
+    set_ddr_dq $port $pin
+}
+
+foreach {port pin} {
+    {mem_dqs[0]}   V2
+    {mem_dqs_n[0]} V1
+    {mem_dqs[1]}   N3
+    {mem_dqs_n[1]} N1
+    {mem_dqs[2]}   M6
+    {mem_dqs_n[2]} L6
+    {mem_dqs[3]}   E3
+    {mem_dqs_n[3]} E1
+} {
+    set_ddr_dqs $port $pin
+}
+
+### Physical resources required by the PGL50H DDR PHY.
+define_attribute {i:u_ddr3.u_ipsxb_ddrphy_pll_0.u_pll_e3} {PAP_LOC} {PLL_158_199}
+define_attribute {i:u_ddr3.u_ipsxb_ddrphy_pll_1.u_pll_e3} {PAP_LOC} {PLL_158_179}
+define_attribute {i:u_ddr3.u_ddrphy_top.ddrphy_reset_ctrl.ddrphy_ioclk_gate} {PAP_LOC} {CLMA_150_192:FF3}

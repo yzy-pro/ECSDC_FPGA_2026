@@ -4,7 +4,10 @@
 module tb_pose_renderer_tiled;
     parameter H=320,V=180,WIDTH=H,HEIGHT=V,FULL=0;
     parameter READ_LATENCY=24,WRITE_LATENCY=24;
-    parameter TILE_W=128,TILE_H=64;
+    parameter TILE_W=128,TILE_H=32;
+    parameter RUNTIME=0,CONTROL_MODE=3;
+    reg lens_enable=1;
+    reg identity_expected=0;
     localparam PIXELS=WIDTH*HEIGHT;
     localparam FX=FULL ? 12262554 : 125*16384;
     localparam FY=FULL ? 12256498 : 125*16384;
@@ -23,8 +26,10 @@ module tb_pose_renderer_tiled;
     reg rd_cmd_ready=0,wr_cmd_ready=0,rd_data_valid=0,rd_data_last=0,wr_done=0;
     reg [255:0] rd_data=0;
     pose_renderer_tiled #(.H_NUM(H),.V_NUM(V),.OUTPUT_H_NUM(WIDTH),.OUTPUT_V_NUM(HEIGHT),
-        .TILE_W(TILE_W),.TILE_H(TILE_H),.FX_Q14(FX),.FY_Q14(FY),.CX_Q14(CX),.CY_Q14(CY)) dut (
+        .TILE_W(TILE_W),.TILE_H(TILE_H),.RUNTIME_CONTROL(RUNTIME),
+        .FX_Q14(FX),.FY_Q14(FY),.CX_Q14(CX),.CY_Q14(CY)) dut (
         .clk(clk),.rstn(rstn),.start(start),.source_bank(source_bank),.render_bank(render_bank),
+        .lens_enable(lens_enable),
         .yaw_q2048(yaw),.pitch_q2048(pitch),.busy(busy),.done(done),.error(error),
         .pose_clamped(pose_clamped),.completed_bank(completed_bank),
         .rd_cmd_valid(rd_cmd_valid),.rd_cmd_ready(rd_cmd_ready),.rd_cmd_addr(rd_cmd_addr),.rd_cmd_len(rd_cmd_len),
@@ -39,6 +44,8 @@ module tb_pose_renderer_tiled;
     wire ref_valid,ref_map;
     wire signed [31:0] ref_u,ref_v;
     pose_inverse_project_q14 #(.H_NUM(H),.V_NUM(V),.POSE_LIMIT_Q2048(536),
+        .K1_Q14((RUNTIME && !(CONTROL_MODE&1)) ? 0 : 162),
+        .K2_Q14((RUNTIME && !(CONTROL_MODE&1)) ? 0 : -711),
         .FX_Q14(FX),.FY_Q14(FY),.CX_Q14(CX),.CY_Q14(CY)) oracle (
         .clk(clk),.rstn(rstn),.pose_load(reference_load),.pose_yaw_q2048(eyaw),.pose_pitch_q2048(epitch),
         .pose_clamped(),.pose_ready(),.in_valid(dut.project_en),.dst_x(ref_x),.dst_y(ref_y),
@@ -64,7 +71,9 @@ module tb_pose_renderer_tiled;
             end else lx=lx+1;
         end
         if(ref_valid && !bad_last) begin
-            expected[positions[results]]=ref_map ? pixel(esource,(ref_u+8192)>>14,(ref_v+8192)>>14) : 0;
+            expected[positions[results]]=identity_expected ?
+                pixel(esource,positions[results]%WIDTH,positions[results]/WIDTH) :
+                ref_map ? pixel(esource,(ref_u+8192)>>14,(ref_v+8192)>>14) : 0;
             results=results+1;
             if(ref_map) color=color+1; else black=black+1;
         end
@@ -131,6 +140,9 @@ module tb_pose_renderer_tiled;
     task automatic render(input integer ya,pi,bank);
         begin
             @(negedge clk);
+            if(RUNTIME && !(CONTROL_MODE&2)) begin ya=0;pi=0;end
+            lens_enable=!RUNTIME || (CONTROL_MODE&1)!=0;
+            identity_expected=RUNTIME && !lens_enable && ya==0 && pi==0;
             tx=0;ty=0;lx=0;ly=0;inputs=0;results=0;reads=0;readbeats=0;writes=0;writebeats=0;commits=0;black=0;color=0;
             for(i=0;i<PIXELS;i=i+1) begin seen[i]=0;expected[i]='x; end
             esource=bank;erender=bank+2;eyaw=ya;epitch=pi;
@@ -138,6 +150,7 @@ module tb_pose_renderer_tiled;
             repeat(2) @(negedge clk);reference_load=0;start=1;start_cycle=cycle;
             @(negedge clk);start=0;
             repeat(8) @(negedge clk);source_bank=bank^1;render_bank=(bank^1)+2;yaw=-ya;pitch=-pi;
+            lens_enable=~lens_enable;
             wait(done);@(negedge clk);
             if(inputs!=PIXELS || results!=PIXELS || error) $fatal(1,"incomplete frame");
             for(i=0;i<PIXELS;i=i+1) if(!seen[i]) $fatal(1,"missing output pixel");

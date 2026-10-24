@@ -1,0 +1,40 @@
+Reading D:/pango/modeltech64_10.6e/tcl/vsim/pref.tcl
+
+# 10.6e
+
+# vsim -c -quiet -lib D:\pango\works\fpga\build_rebuilt\rtl_16766d526d5941fca6390ab580c5aa2f\pose_renderer_tiled_work tb_pose_renderer_tiled -do "onerror {quit -code 1}; run -all; quit -f" 
+# Start time: 20:05:36 on Oct 22,2026
+# ** Warning: (vsim-8891) All optimizations are turned off because the -novopt switch is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features please see the User's Manual section on Preserving Object Visibility with vopt.
+# //  ModelSim SE-64 10.6e Jun 23 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# ** Warning: (vsim-3017) D:/pango/works/fpga/build_rebuilt/rtl_16766d526d5941fca6390ab580c5aa2f/pose_renderer_tiled.sv(30): [TFMPC] - Too few port connections. Expected 28, found 26.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pose_renderer_tiled/dut File: D:/pango/works/fpga/src/video/pose/pose_renderer_tiled.v
+# ** Warning: (vsim-3722) D:/pango/works/fpga/build_rebuilt/rtl_16766d526d5941fca6390ab580c5aa2f/pose_renderer_tiled.sv(30): [TFMPC] - Missing connection for port 'wr_beat_index'.
+# ** Warning: (vsim-3722) D:/pango/works/fpga/build_rebuilt/rtl_16766d526d5941fca6390ab580c5aa2f/pose_renderer_tiled.sv(30): [TFMPC] - Missing connection for port 'wr_beat'.
+# ** Warning: (vsim-3017) D:/pango/works/fpga/build_rebuilt/rtl_16766d526d5941fca6390ab580c5aa2f/pose_renderer_tiled.sv(49): [TFMPC] - Too few port connections. Expected 15, found 14.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pose_renderer_tiled/oracle File: D:/pango/works/fpga/src/video/pose/pose_inverse_project_q14.v
+# ** Warning: (vsim-3722) D:/pango/works/fpga/build_rebuilt/rtl_16766d526d5941fca6390ab580c5aa2f/pose_renderer_tiled.sv(49): [TFMPC] - Missing connection for port 'lens_enable'.
+# onerror {quit -code 1}
+#  Warning: onerror command for use within macro
+#  run -all
+# MEASURE tiled yaw=0 pitch=0 pixels=57600 clocks=85548 source_commands=579 source_beats=3653 write_commands=540 ms=0.855480 fps=1168.934399 valid=57600 black=0
+# MEASURE tiled yaw=536 pitch=536 pixels=57600 clocks=84777 source_commands=475 source_beats=3252 write_commands=540 ms=0.847770 fps=1179.565212 valid=38012 black=19588
+# MEASURE tiled yaw=536 pitch=-536 pixels=57600 clocks=84547 source_commands=465 source_beats=3270 write_commands=540 ms=0.845470 fps=1182.774078 valid=37939 black=19661
+# MEASURE tiled yaw=-536 pitch=536 pixels=57600 clocks=84304 source_commands=503 source_beats=3187 write_commands=540 ms=0.843040 fps=1186.183336 valid=38169 black=19431
+# MEASURE tiled yaw=-536 pitch=-536 pixels=57600 clocks=84340 source_commands=497 source_beats=3178 write_commands=540 ms=0.843400 fps=1185.677022 valid=38096 black=19504
+# PASS tiled renderer: exact pixels, all tile edges, pose snapshot, DDR bursts/backpressure, final commit and bad LAST hold
+# ** Note: $finish    : D:/pango/works/fpga/build_rebuilt/rtl_16766d526d5941fca6390ab580c5aa2f/pose_renderer_tiled.sv(170)
+#    Time: 4277940 ns  Iteration: 1  Instance: /tb_pose_renderer_tiled
+# End time: 20:05:58 on Oct 22,2026, Elapsed time: 0:00:22
+# Errors: 0, Warnings: 6

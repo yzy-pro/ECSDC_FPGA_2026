@@ -9,6 +9,7 @@ module fram_buf_pose #(
     parameter FIFO_BITS=9, CACHE_INDEX_BITS=10, CACHE_LINE_WORDS=1, INTERPOLATION_MODE=1,
     parameter RECIPROCAL_LUT_ENABLE=0,
     parameter TILED_ENABLE=0,
+    parameter RUNTIME_CONTROL=0,
     parameter signed [31:0] FX_Q14=32'sd12262554,
     parameter signed [31:0] FY_Q14=32'sd12256498,
     parameter signed [31:0] CX_Q14=32'sd15481296,
@@ -22,6 +23,8 @@ module fram_buf_pose #(
     input vout_clk, rd_fsync, rd_en,
     // Coherent attitude mailbox already synchronized into vin_clk.
     input signed [15:0] imu_yaw, imu_pitch,
+    // Held from input SOF through source-frame completion and dispatch.
+    input lens_enable,
     output vout_de, output reg [15:0] vout_data,
     output reg init_done,
     output [ADDR_WIDTH-1:0] axi_awaddr,
@@ -47,6 +50,7 @@ module fram_buf_pose #(
     reg capture_request;
     reg [1:0] capture_bank,renderer_source_bank;
     reg signed [15:0] renderer_yaw,renderer_pitch;
+    reg capture_lens_enable,renderer_lens_enable;
     reg [1:0] vin_reset, out_reset;
     always @(posedge vin_clk or negedge ddr_rstn)
         if(!ddr_rstn) vin_reset<=0; else vin_reset<={vin_reset[0],1'b1};
@@ -70,6 +74,7 @@ module fram_buf_pose #(
             capture_complete<=0; capture_failed<=0; wr_fs_d<=0;
             capture_finish_pending<=0;
             capture_yaw<=0; capture_pitch<=0;
+            capture_lens_enable<=1;
             capture_pixels<=0; capture_pack<=0; capture_fifo_data<=0;
             capture_fifo_valid<=0;
         end else if(vin_reset[1]) begin
@@ -90,6 +95,7 @@ module fram_buf_pose #(
                     capture_req_seen<=capture_req_sync[1]; capture_active<=1;
                     capture_pixels<=0; capture_failed<=0; capture_pack<=0;
                     capture_yaw<=imu_yaw; capture_pitch<=imu_pitch;
+                    capture_lens_enable<=!RUNTIME_CONTROL || lens_enable;
                 end
             end
             if(capture_active && wr_en && !(wr_fsync && !wr_fs_d)) begin
@@ -117,14 +123,33 @@ module fram_buf_pose #(
     reg [31:0] cap_words;
     reg cap_inflight;
     reg [3:0] cap_settle;
-    reg [4095:0] capture_burst;
+    wire [4095:0] capture_burst;
+    wire [255:0] capture_beat,render_write_beat;
+    wire [3:0] write_beat_index;
     reg [4:0] capture_burst_count, capture_sent_len;
     wire cap_w_ready,cap_w_done;
     wire capture_tail=cap_done_sync[2]==capture_request && cap_settle==8 &&
                       !cap_fifo_valid && cap_rd_count==0;
     wire cap_w_valid=control_state==C_CAPTURE && !cap_inflight &&
         (capture_burst_count==16 || (capture_tail && capture_burst_count!=0));
-    assign cap_fifo_ready=control_state==C_CAPTURE && capture_burst_count<16;
+    assign cap_fifo_ready=control_state==C_CAPTURE && capture_burst_count<16 &&
+        (!FAST || !cap_inflight);
+    generate if(FAST) begin : g_capture_write_ram
+        reg [255:0] burst_mem[0:15] /* synthesis syn_ramstyle="lut_ram" */;
+        always @(posedge ddr_clk)
+            if(ddr_rstn && cap_fifo_valid && cap_fifo_ready)
+                burst_mem[capture_burst_count[3:0]]<=cap_fifo_data;
+        assign capture_beat=burst_mem[write_beat_index];
+        assign capture_burst=4096'd0;
+    end else begin : g_capture_write_registers
+        reg [4095:0] burst_q;
+        always @(posedge ddr_clk or negedge ddr_rstn)
+            if(!ddr_rstn) burst_q<=0;
+            else if(cap_fifo_valid && cap_fifo_ready)
+                burst_q[capture_burst_count*256 +:256]<=cap_fifo_data;
+        assign capture_burst=burst_q;
+        assign capture_beat=256'd0;
+    end endgenerate
     wire [ADDR_WIDTH-1:0] capture_base={{(ADDR_WIDTH-24){1'b0}},capture_bank,22'd0};
     wire [ADDR_WIDTH-1:0] cap_addr=capture_base+cap_words*8;
 
@@ -211,11 +236,14 @@ module fram_buf_pose #(
     generate if(FAST) begin : g_tiled
     pose_renderer_tiled #(
         .ADDR_WIDTH(ADDR_WIDTH),.H_NUM(H_NUM),.V_NUM(V_NUM),
+        .SHARED_WRITE_PAYLOAD(1),
+        .RUNTIME_CONTROL(RUNTIME_CONTROL),
         .RECIPROCAL_LUT_ENABLE(RECIPROCAL_LUT_ENABLE),
         .FX_Q14(FX_Q14),.FY_Q14(FY_Q14),.CX_Q14(CX_Q14),.CY_Q14(CY_Q14),
         .K1_Q14(K1_Q14),.K2_Q14(K2_Q14),.P1_Q14(P1_Q14),.P2_Q14(P2_Q14)
     ) u_renderer (
         .clk(ddr_clk),.rstn(ddr_rstn),.start(renderer_start),
+        .lens_enable(renderer_lens_enable),
         .source_bank(renderer_source_bank),.render_bank(render_bank),
         .yaw_q2048(renderer_yaw),.pitch_q2048(renderer_pitch),
         .busy(renderer_busy),.done(renderer_done),.error(renderer_error),
@@ -225,7 +253,8 @@ module fram_buf_pose #(
         .rd_data_valid(render_data_valid),.rd_data(render_read_data),.rd_data_last(render_rd_done),
         .wr_cmd_valid(render_wr_valid),.wr_cmd_ready(render_wr_ready),
         .wr_cmd_addr(render_wr_addr),.wr_cmd_len(render_write_len),
-        .wr_data(render_write_burst),.wr_done(render_wr_done)
+        .wr_data(render_write_burst),.wr_done(render_wr_done),
+        .wr_beat_index(write_beat_index),.wr_beat(render_write_beat)
     );
     assign render_write_data=render_write_burst[255:0];
     end else begin : g_serial
@@ -253,19 +282,22 @@ module fram_buf_pose #(
     );
     assign render_write_burst={3840'd0,render_write_data};
     assign render_write_len=5'd1;
+    assign render_write_beat=256'd0;
     end endgenerate
     wire arbiter_error;
     reg fifo_error;
     assign protocol_error=arbiter_error || renderer_error || fifo_error;
     pose_ddr_arbiter #(.ADDR_WIDTH(ADDR_WIDTH),
         .RENDER_BURST_ENABLE(FAST || CACHE_LINE_WORDS > 1),
-        .RENDER_WRITE_BURST_ENABLE(FAST)) u_arbiter (
+        .RENDER_WRITE_BURST_ENABLE(FAST),.SHARED_WRITE_PAYLOAD(FAST)) u_arbiter (
         .clk(ddr_clk),.rstn(ddr_rstn),
         .cap_w_valid(cap_w_valid),.cap_w_ready(cap_w_ready),
         .cap_w_addr(cap_addr),.cap_w_data(capture_burst),.cap_w_len(capture_burst_count),.cap_w_done(cap_w_done),
         .render_w_valid(render_wr_valid),.render_w_ready(render_wr_ready),
         .render_w_addr(render_wr_addr),.render_w_data(render_write_data),.render_w_done(render_wr_done),
         .render_w_burst(render_write_burst),.render_w_len(render_write_len),
+        .cap_w_beat(capture_beat),.render_w_beat(render_write_beat),
+        .write_beat_index(write_beat_index),
         .display_r_valid(display_r_valid),.display_r_ready(display_r_ready),
         .display_r_addr(display_addr),.display_r_len(display_len),
         .display_r_data(display_data),.display_r_data_valid(display_data_valid),.display_r_done(display_r_done),
@@ -284,9 +316,10 @@ module fram_buf_pose #(
         if(!ddr_rstn) begin
             control_state<=C_REQUEST; capture_request<=0;
             capture_bank<=0;renderer_source_bank<=0;renderer_yaw<=0;renderer_pitch<=0;
+            renderer_lens_enable<=1;
             cap_done_sync<=0; cap_bad_sync<=0; cap_words<=0; cap_inflight<=0;
             cap_settle<=0;
-            capture_burst<=0; capture_burst_count<=0; capture_sent_len<=0;
+            capture_burst_count<=0; capture_sent_len<=0;
             display_req_sync<=0; display_epoch<=0; display_bank<=2; render_bank<=1;
             display_accept_sync<=0;
             display_valid<=0; pending_valid<=0; display_words<=0; display_inflight<=0;
@@ -304,7 +337,6 @@ module fram_buf_pose #(
                 if(cap_settle<8) cap_settle<=cap_settle+1'b1;
             end else cap_settle<=0;
             if(cap_fifo_valid && cap_fifo_ready) begin
-                capture_burst[capture_burst_count*256 +: 256]<=cap_fifo_data;
                 capture_burst_count<=capture_burst_count+1'b1;
             end
             if(cap_w_valid && cap_w_ready) begin
@@ -347,6 +379,7 @@ module fram_buf_pose #(
                     C_RENDER: if(!renderer_busy && !renderer_start && !renderer_done && !pending_valid && !renderer_error) begin
                         renderer_source_bank<=capture_bank;
                         renderer_yaw<=capture_yaw;renderer_pitch<=capture_pitch;
+                        renderer_lens_enable<=capture_lens_enable;
                         render_bank<=(display_bank==1) ? 2 : 1;
                         renderer_start<=1;
                         capture_bank<=(capture_bank==0) ? 3 : 0;

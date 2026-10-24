@@ -14,7 +14,10 @@
 module pose_ddr_arbiter #(
     parameter integer ADDR_WIDTH = 28,
     parameter integer RENDER_BURST_ENABLE = 0,
-    parameter integer RENDER_WRITE_BURST_ENABLE = 0
+    parameter integer RENDER_WRITE_BURST_ENABLE = 0,
+    // Clients hold their beat-addressed buffers until *_w_done. This avoids
+    // a duplicate 4096-bit shift buffer in the tiled video path.
+    parameter integer SHARED_WRITE_PAYLOAD = 0
 ) (
     input clk, input rstn,
     input cap_w_valid, output cap_w_ready,
@@ -25,6 +28,8 @@ module pose_ddr_arbiter #(
     input [ADDR_WIDTH-1:0] render_w_addr, input [255:0] render_w_data,
     input [4095:0] render_w_burst,
     input [4:0] render_w_len,
+    input [255:0] cap_w_beat, render_w_beat,
+    output reg [3:0] write_beat_index,
     output reg render_w_done,
     input display_r_valid, output display_r_ready,
     input [ADDR_WIDTH-1:0] display_r_addr, input [4:0] display_r_len,
@@ -38,7 +43,7 @@ module pose_ddr_arbiter #(
     output reg [ADDR_WIDTH-1:0] axi_awaddr,
     output reg [3:0] axi_awid, output reg [3:0] axi_awlen,
     output axi_awvalid, input axi_awready,
-    output reg [255:0] axi_wdata, output [31:0] axi_wstrb,
+    output [255:0] axi_wdata, output [31:0] axi_wstrb,
     input axi_wready, input axi_wlast,
     output reg [ADDR_WIDTH-1:0] axi_araddr,
     output reg [3:0] axi_arid, output reg [3:0] axi_arlen,
@@ -52,6 +57,7 @@ module pose_ddr_arbiter #(
     reg write_owner, read_owner; // 0: capture/display, 1: renderer
     reg [4:0] write_remaining;
     reg [3839:0] write_tail;
+    reg [255:0] write_head;
     reg [4:0] read_remaining;
     reg write_error, read_error;
     wire write_address_accepted = write_state==ADDRESS && axi_awready;
@@ -68,13 +74,15 @@ module pose_ddr_arbiter #(
     assign axi_awvalid = rstn && write_state==ADDRESS;
     assign axi_arvalid = rstn && read_state==ADDRESS;
     assign axi_wstrb = 32'hffffffff;
+    assign axi_wdata = SHARED_WRITE_PAYLOAD ?
+        (write_owner ? render_w_beat : cap_w_beat) : write_head;
     assign protocol_error = write_error || read_error;
 
     always @(posedge clk or negedge rstn) begin
         if (!rstn) begin
             write_state<=IDLE; write_owner<=0; write_error<=0;
             write_remaining<=0; write_tail<=0;
-            axi_awaddr<=0; axi_awid<=0; axi_awlen<=0; axi_wdata<=0;
+            axi_awaddr<=0; axi_awid<=0; axi_awlen<=0; write_head<=0; write_beat_index<=0;
             cap_w_done<=0; render_w_done<=0;
         end else begin
             cap_w_done<=0; render_w_done<=0;
@@ -88,10 +96,11 @@ module pose_ddr_arbiter #(
                         axi_awaddr<=cap_w_valid ? cap_w_addr : render_w_addr;
                         axi_awid<=cap_w_valid ? 4'd0 : 4'd1;
                         axi_awlen<=cap_w_valid ? cap_w_len-1'b1 : selected_write_len-1'b1;
-                        axi_wdata<=cap_w_valid ? cap_w_data[255:0] :
+                        write_head<=cap_w_valid ? cap_w_data[255:0] :
                             (RENDER_WRITE_BURST_ENABLE ? render_w_burst[255:0] : render_w_data);
                         write_tail<=cap_w_valid ? cap_w_data[4095:256] : render_w_burst[4095:256];
                         write_remaining<=cap_w_valid ? cap_w_len : selected_write_len;
+                        write_beat_index<=0;
                         write_state<=ADDRESS;
                     end
                 end
@@ -106,8 +115,9 @@ module pose_ddr_arbiter #(
                         write_remaining<=0;
                         write_state<=IDLE;
                     end else begin
-                        axi_wdata<=write_tail[255:0];
+                        write_head<=write_tail[255:0];
                         write_tail<={256'd0,write_tail[3839:256]};
+                        write_beat_index<=write_beat_index+1'b1;
                         write_remaining<=write_remaining-1'b1;
                     end
                 end

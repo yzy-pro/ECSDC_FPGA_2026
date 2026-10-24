@@ -1,0 +1,34 @@
+# vsim -c -quiet -vopt -lib build_rebuilt/pc_control/work tb_pose_renderer_tiled -l D:\pango\works\fpga\build_rebuilt\pc_control\12_tb_pose_renderer_tiled.log -do "onerror {quit -code 1}; run -all; quit -f" 
+# Start time: 20:05:44 on Oct 22,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: D:\pango\works\fpga\tests\tb_pose_renderer_tiled.sv(30): (vopt-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 28, found 26.
+# ** Warning: D:\pango\works\fpga\tests\tb_pose_renderer_tiled.sv(30): (vopt-2718) [TFMPC] - Missing connection for port 'wr_beat'.
+# ** Warning: D:\pango\works\fpga\tests\tb_pose_renderer_tiled.sv(30): (vopt-2718) [TFMPC] - Missing connection for port 'wr_beat_index'.
+# ** Warning: D:\pango\works\fpga\tests\tb_pose_renderer_tiled.sv(49): (vopt-2685) [TFMPC] - Too few port connections for 'oracle'.  Expected 15, found 14.
+# ** Warning: D:\pango\works\fpga\tests\tb_pose_renderer_tiled.sv(49): (vopt-2718) [TFMPC] - Missing connection for port 'lens_enable'.
+# //  ModelSim SE-64 10.6e Jun 23 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# onerror {quit -code 1}
+#  Warning: onerror command for use within macro
+#  run -all
+# MEASURE tiled yaw=0 pitch=0 pixels=57600 clocks=85548 source_commands=579 source_beats=3653 write_commands=540 ms=0.855480 fps=1168.934399 valid=57600 black=0
+# MEASURE tiled yaw=536 pitch=536 pixels=57600 clocks=84777 source_commands=475 source_beats=3252 write_commands=540 ms=0.847770 fps=1179.565212 valid=38012 black=19588
+# MEASURE tiled yaw=536 pitch=-536 pixels=57600 clocks=84547 source_commands=465 source_beats=3270 write_commands=540 ms=0.845470 fps=1182.774078 valid=37939 black=19661
+# MEASURE tiled yaw=-536 pitch=536 pixels=57600 clocks=84304 source_commands=503 source_beats=3187 write_commands=540 ms=0.843040 fps=1186.183336 valid=38169 black=19431
+# MEASURE tiled yaw=-536 pitch=-536 pixels=57600 clocks=84340 source_commands=497 source_beats=3178 write_commands=540 ms=0.843400 fps=1185.677022 valid=38096 black=19504
+# PASS tiled renderer: exact pixels, all tile edges, pose snapshot, DDR bursts/backpressure, final commit and bad LAST hold
+# ** Note: $finish    : D:/pango/works/fpga/tests/tb_pose_renderer_tiled.sv(170)
+#    Time: 4277940 ns  Iteration: 1  Instance: /tb_pose_renderer_tiled
+# End time: 20:05:56 on Oct 22,2026, Elapsed time: 0:00:12
+# Errors: 0, Warnings: 5

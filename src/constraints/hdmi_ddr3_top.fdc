@@ -107,6 +107,11 @@ set_clock_groups -name {imu_to_video_cdc} -asynchronous \
 set_input_delay -clock [get_clocks {sys_clk}] -max {10.000} [get_ports {imu_uart_rx}]
 set_input_delay -clock [get_clocks {sys_clk}] -min {0.000} [get_ports {imu_uart_rx}]
 
+# Board CP2102 UART is asynchronous; pc receiver contains a two-flop input
+# synchronizer. Budget its external input against sys_clk, like the IMU UART.
+set_input_delay -clock [get_clocks {sys_clk}] -max {10.000} [get_ports {pc_uart_rx}]
+set_input_delay -clock [get_clocks {sys_clk}] -min {0.000} [get_ports {pc_uart_rx}]
+
 # These PHY clocks are implementation clocks internal to the DDR controller.
 # Keep them from being analyzed as unrelated board-clock domains.
 set_clock_groups -name {ddr_phy_domains} -asynchronous \
@@ -250,6 +255,23 @@ foreach {port pin} {
 
 ### IMU UART input. The reference IMU carrier routes its TTL TX to AB4.
 set_lvcmos33_input imu_uart_rx AB4
+
+# MES50HP manual 3.2.4, table 3-5 (PDF p27): FPGA RX R8 / TX R9.
+set_lvcmos33_input pc_uart_rx R8
+set_lvcmos33_output pc_uart_tx R9
+# Manual 3.4.2, table 3-9 (PDF pp33-34): LEDs are active high.
+foreach {port pin} {
+    {sys_led[0]} B2
+    {sys_led[1]} A2
+    {sys_led[2]} B3
+    {sys_led[3]} A3
+    {sys_led[4]} C5
+    {sys_led[5]} A5
+    {sys_led[6]} F7
+    {sys_led[7]} F8
+} {
+    set_lvcmos33_output $port $pin
+}
 
 ### HDMI transmitter outputs (MS7210)
 foreach {port pin} {

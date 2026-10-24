@@ -1,0 +1,59 @@
+# vsim -c -quiet -vopt -lib build_rebuilt/pc_control/work tb_fram_buf_pose_tiled -l D:\pango\works\fpga\build_rebuilt\pc_control\16_tb_fram_buf_pose_tiled.log -do "onerror {quit -code 1}; run -all; quit -f" -gSHARED_PAYLOAD=1 -gRUNTIME=1 -gREFRESH_CYCLES=35 -gFRAMES=32 -gPREPROCESS=1 
+# Start time: 20:06:23 on Oct 22,2026
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: D:\pango\works\fpga\tests\tb_fram_buf_pose_tiled.sv(45): (vopt-2685) [TFMPC] - Too few port connections for 'u_gamma'.  Expected 23, found 20.
+# ** Warning: D:\pango\works\fpga\tests\tb_fram_buf_pose_tiled.sv(45): (vopt-2718) [TFMPC] - Missing connection for port 'stats_enabled'.
+# ** Warning: D:\pango\works\fpga\tests\tb_fram_buf_pose_tiled.sv(45): (vopt-2718) [TFMPC] - Missing connection for port 'stats_target'.
+# ** Warning: D:\pango\works\fpga\tests\tb_fram_buf_pose_tiled.sv(45): (vopt-2718) [TFMPC] - Missing connection for port 'stats_curve'.
+# //  ModelSim SE-64 10.6e Jun 23 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# onerror {quit -code 1}
+#  Warning: onerror command for use within macro
+#  run -all
+# MODEL latency=32 shared_payload=1 refresh_cycles=35 refresh_interval=780 payload_bubble_percent=25 preprocess=1
+# RENDER frame=1 gen=1 pose=0 yaw=0 pitch=0 curve=3 clocks=88611
+# PUBLISH frame=1 gen=1 clock=155249
+# RENDER frame=2 gen=3 pose=1 yaw=0 pitch=0 curve=3 clocks=96406
+# PUBLISH frame=2 gen=3 clock=258683
+# RENDER frame=3 gen=5 pose=2 yaw=536 pitch=-536 curve=1 clocks=95021
+# PUBLISH frame=3 gen=5 clock=362118
+# RENDER frame=4 gen=7 pose=3 yaw=-536 pitch=536 curve=0 clocks=96455
+# PUBLISH frame=4 gen=7 clock=465552
+# RENDER frame=5 gen=9 pose=4 yaw=0 pitch=0 curve=0 clocks=94164
+# PUBLISH frame=5 gen=9 clock=568986
+# RENDER frame=6 gen=11 pose=5 yaw=0 pitch=0 curve=0 clocks=96508
+# PUBLISH frame=6 gen=11 clock=672420
+# RENDER frame=7 gen=13 pose=6 yaw=-536 pitch=0 curve=2 clocks=99849
+# PUBLISH frame=7 gen=13 clock=775855
+# RENDER frame=8 gen=15 pose=7 yaw=0 pitch=536 curve=4 clocks=93379
+# PUBLISH frame=8 gen=15 clock=879289
+# RENDER frame=9 gen=17 pose=8 yaw=0 pitch=0 curve=6 clocks=94194
+# PUBLISH frame=9 gen=17 clock=982723
+# RENDER frame=10 gen=19 pose=9 yaw=0 pitch=0 curve=6 clocks=96255
+# PUBLISH frame=10 gen=19 clock=1086157
+# RENDER frame=11 gen=21 pose=10 yaw=179 pitch=0 curve=4 clocks=97628
+# PUBLISH frame=11 gen=21 clock=1189592
+# RENDER frame=12 gen=23 pose=0 yaw=0 pitch=0 curve=3 clocks=96183
+# PUBLISH frame=12 gen=23 clock=1293026
+# RENDER frame=13 gen=25 pose=1 yaw=0 pitch=0 curve=3 clocks=94171
+# PUBLISH frame=13 gen=25 clock=1396460
+# RENDER frame=14 gen=27 pose=2 yaw=0 pitch=0 curve=3 clocks=96241
+# PUBLISH frame=14 gen=27 clock=1499894
+# RENDER frame=15 gen=29 pose=3 yaw=-536 pitch=536 curve=1 clocks=96593
+# PUBLISH frame=15 gen=29 clock=1603328
+# PASS concurrent tiled frame path: publications=15 fps=966.798082 max_render_clocks=99849 max_publication_clocks=103435 capture_fifo_peak=13 overlap_clocks=657234 displayed_pixels_checked=1670400 pose_mask=11111111111 shared_contentions=11546 refresh_stall_clocks=74270 gamma_curve_mask=1011111
+# ** Note: $finish    : D:/pango/works/fpga/tests/tb_fram_buf_pose_tiled.sv(314)
+#    Time: 16550482766 ps  Iteration: 2  Instance: /tb_fram_buf_pose_tiled
+# End time: 20:06:49 on Oct 22,2026, Elapsed time: 0:00:26
+# Errors: 0, Warnings: 4

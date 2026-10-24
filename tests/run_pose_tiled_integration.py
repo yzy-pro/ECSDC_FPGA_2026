@@ -13,6 +13,7 @@ def main():
     p.add_argument('--latency',type=int,default=32)
     p.add_argument('--shared-payload',action='store_true',help='allow only one read or write payload beat per clock')
     p.add_argument('--preprocess',action='store_true',help='include adaptive gamma and registered RGB888-to-RGB565 converter')
+    p.add_argument('--runtime',action='store_true',help='cycle all eight runtime control masks with source-frame snapshots')
     p.add_argument('--refresh-cycles',type=int,default=0,help='periodic clocks with commands/payload suspended (35 is conservative for configured 300ns tRFC)')
     p.add_argument('--refresh-interval',type=int,default=780,help='refresh period in 100MHz clocks (configured tREFI=7.8us)')
     p.add_argument('--modelsim',type=Path,default=Path(r'D:\pango\modeltech64_10.6e\win64'))
@@ -31,20 +32,22 @@ def main():
         if r.returncode or re.search(r'\*\* (?:Fatal|Error):',r.stdout+r.stderr):raise RuntimeError(r.stdout+r.stderr)
         return r.stdout+r.stderr
     if not lib.exists():run([args.modelsim/'vlib.exe',lib])
-    sources=[ROOT/'src/video'/s for s in ('fram_buf_pose.v','pose_renderer_tiled.v','pose_renderer_dma.v',
+    source_dirs={path.name:path for path in (ROOT/'src/video').rglob('*.v')}
+    sources=[source_dirs[s] for s in ('fram_buf_pose.v','pose_renderer_tiled.v','pose_renderer_dma.v',
              'pose_inverse_project_q14.v','pose_reciprocal_lut.v','pose_ddr_arbiter.v','pose_async_fifo.v',
              'adaptive_gamma_stream.v','adaptive_gamma_lut.v','rgb888_to_rgb565.v')]
     manifest={
         'parameters':{'full':args.full,'frames':frames,'latency':args.latency,
                       'shared_payload':args.shared_payload,'refresh_cycles':args.refresh_cycles,
-                      'refresh_interval':args.refresh_interval,'preprocess':args.preprocess},
+                      'refresh_interval':args.refresh_interval,'preprocess':args.preprocess,'runtime':args.runtime},
         'sha256':{path.relative_to(ROOT).as_posix():hashlib.sha256(path.read_bytes()).hexdigest()
                   for path in [Path(__file__),ROOT/'tests/tb_fram_buf_pose_tiled.sv',*sources]}}
     (directory/'source_identity.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
     run([args.modelsim/'vlog.exe','-sv','-work',lib,ROOT/'tests/tb_fram_buf_pose_tiled.sv',*sources])
     overrides=['-gH=1920','-gV=1080','-gFULL=1'] if args.full else []
     overrides.extend([f'-gSHARED_PAYLOAD={int(args.shared_payload)}',f'-gREFRESH_CYCLES={args.refresh_cycles}',
-                      f'-gREFRESH_INTERVAL={args.refresh_interval}',f'-gPREPROCESS={int(args.preprocess)}'])
+                      f'-gREFRESH_INTERVAL={args.refresh_interval}',f'-gPREPROCESS={int(args.preprocess)}',
+                      f'-gRUNTIME={int(args.runtime)}'])
     out=run([args.modelsim/'vsim.exe','-c','-quiet','-vopt','-lib',lib.relative_to(ROOT).as_posix(),
              'tb_fram_buf_pose_tiled',*overrides,f'-gFRAMES={frames}',f'-gDDR_LATENCY={args.latency}',
              '-l',directory/'result.log','-do','onerror {quit -code 1}; run -all; quit -f'],timeout=14400)

@@ -35,6 +35,8 @@ module hdmi_ddr3_top #(
     parameter POSE_CACHE_INDEX_BITS = 10,
     // Exact tile renderer with overlapping source capture; nearest sampling.
     parameter POSE_TILED_ENABLE = 1'b1,
+    // Runtime CP2102 switches are supported by the default tiled path.
+    parameter PC_CONTROL_ENABLE = 1'b1,
     // Number of adjacent 256-bit source words fetched on a cache miss.
     parameter POSE_CACHE_LINE_WORDS = 1,
     // 1 selects the experimental normalized reciprocal ROM in place of the
@@ -49,6 +51,10 @@ module hdmi_ddr3_top #(
     input                              sys_clk,
     // TTL UART from the IMU/STM32 board, 921600 baud, 8-N-1.
     input                              imu_uart_rx,
+    // Board CP2102: R8 receives from the PC; R9 transmits to the PC.
+    input                              pc_uart_rx,
+    output                             pc_uart_tx,
+    output [7:0]                       sys_led,
 
     // The independent 27 MHz oscillator feeds the video PLL.  Keeping video
     // timing off the DDR reference permits an exact 148.5 MHz 1080p60 clock.
@@ -242,9 +248,55 @@ module hdmi_ddr3_top #(
     end
     wire input_reset_n = input_reset_sync[1];
 
+    localparam PC_GEOMETRY = PC_CONTROL_ENABLE && UNDISTORT_ENABLE &&
+        POSE_CORRECTION_ENABLE && POSE_TILED_ENABLE && INTERPOLATION_MODE==1 && !OUTPUT_BYPASS;
+    localparam PC_GAMMA = PC_CONTROL_ENABLE && ADAPTIVE_PREPROCESS_ENABLE &&
+        ADAPTIVE_PREPROCESS_MODE==2'd3 && !OUTPUT_BYPASS;
+    localparam [2:0] PC_AVAILABLE = {PC_GAMMA,PC_GEOMETRY,PC_GEOMETRY};
+    localparam [2:0] PC_DEFAULT = {PC_GAMMA,PC_GEOMETRY && ATTITUDE_WARP_ENABLE,PC_GEOMETRY};
+    wire [2:0] requested_mask,applied_mask,source_mask,control_mask,next_source_mask;
+    wire control_busy,control_valid,stream_enabled;
+    wire [31:0] pc_receive_errors;
+    wire telemetry_sys_valid;
+    wire [223:0] telemetry_sys_data;
+    wire control_vs;
+    reg control_vs_d;
+    always @(posedge pixclk_in or negedge input_reset_n)
+        if(!input_reset_n) control_vs_d<=1'b0;
+        else control_vs_d<=control_vs;
+    // Only use the registered VS inside the FPGA: pad-to-control logic would
+    // violate the source-synchronous zero-cycle input setup constraint.
+    video_control_cdc #(.DEFAULT_MASK(PC_DEFAULT)) u_pc_control_cdc (
+        .sys_clk(sys_clk),.vin_clk(pixclk_in),.rstn(rstn_out),
+        .frame_start(control_vs && !control_vs_d),.command_valid(control_valid),.command_mask(control_mask),
+        .busy(control_busy),.requested_mask(requested_mask),.applied_mask_sys(applied_mask),
+        .applied_mask_vin(source_mask),.next_mask_vin(next_source_mask));
+    cp2102_control #(.AVAILABLE_MASK(PC_AVAILABLE)) u_pc_control (
+        .clk(sys_clk),.rstn(imu_reset_sync[1]),.rx(pc_uart_rx),.tx(pc_uart_tx),
+        .control_busy(control_busy),.requested_mask(requested_mask),.applied_mask(applied_mask),
+        .control_valid(control_valid),.control_mask(control_mask),
+        .sample_valid(telemetry_sys_valid),.sample_data(telemetry_sys_data),
+        .stream_enabled(stream_enabled),.receive_errors(pc_receive_errors));
+    // LED1..3: applied source-frame lens/pose/gamma enables. Remaining user
+    // LEDs are reserved and off. A completed older result can still display.
+    assign sys_led={5'd0,applied_mask};
+
+    wire gamma_stats_valid,gamma_stats_enabled;
+    wire [2:0] gamma_active_curve,gamma_target_curve,gamma_stats_curve,gamma_stats_target;
+    wire [31:0] gamma_luma_sum,gamma_pixel_count,gamma_dark_count,gamma_highlight_count;
+    wire gamma_sample_valid;
+    wire [223:0] gamma_sample_data;
+    cdc_snapshot #(.WIDTH(224)) u_gamma_cdc (
+        .src_clk(pixclk_in),.dst_clk(sys_clk),.rstn(rstn_out),
+        .src_valid(gamma_sample_valid),.src_data(gamma_sample_data),.src_busy(),
+        .dst_valid(telemetry_sys_valid),.dst_data(telemetry_sys_data));
+
     wire [7:0] preprocess_r, preprocess_g, preprocess_b;
     wire preprocess_de;
     localparam AUTO_GAMMA = ADAPTIVE_PREPROCESS_ENABLE && ADAPTIVE_PREPROCESS_MODE==2'd3;
+    // With gamma, the converter SOF is later than the control commit. In
+    // manual modes the converter and control see the registered SOF together.
+    wire [2:0] geometry_mask=AUTO_GAMMA ? source_mask : next_source_mask;
     wire [7:0] preprocess_source_r,preprocess_source_g,preprocess_source_b;
     wire preprocess_source_vs,preprocess_source_de;
     generate if(AUTO_GAMMA) begin : g_auto_gamma
@@ -263,17 +315,36 @@ module hdmi_ddr3_top #(
             end
         end
         wire gamma_frame_sync;
+        assign control_vs=!input_vs_q;
         adaptive_gamma_stream u_auto_gamma (
             .clk(pixclk_in),.rstn(input_reset_n),.in_vs(!input_vs_q),.in_de(input_de),
-            .in_r(input_r),.in_g(input_g),.in_b(input_b),.enable(1'b1),
+            .in_r(input_r),.in_g(input_g),.in_b(input_b),.enable(!PC_CONTROL_ENABLE || next_source_mask[2]),
             .out_vs(gamma_frame_sync),.out_de(preprocess_source_de),
             .out_r(preprocess_source_r),.out_g(preprocess_source_g),.out_b(preprocess_source_b),
-            .active_curve(),.target_curve(),.stats_valid(),.luma_sum(),.pixel_count(),
-            .dark_count(),.highlight_count()
+            .active_curve(gamma_active_curve),.target_curve(gamma_target_curve),
+            .stats_valid(gamma_stats_valid),.luma_sum(gamma_luma_sum),.pixel_count(gamma_pixel_count),
+            .dark_count(gamma_dark_count),.highlight_count(gamma_highlight_count),
+            .stats_curve(gamma_stats_curve),.stats_target(gamma_stats_target),.stats_enabled(gamma_stats_enabled)
         );
+        gamma_telemetry u_gamma_telemetry (
+            .clk(pixclk_in),.rstn(input_reset_n),.stats_valid(gamma_stats_valid),
+            .out_vs(gamma_frame_sync),.out_de(preprocess_source_de),
+            .out_r(preprocess_source_r),.out_g(preprocess_source_g),.out_b(preprocess_source_b),
+            .luma_sum(gamma_luma_sum),.pixel_count(gamma_pixel_count),
+            .dark_count(gamma_dark_count),.highlight_count(gamma_highlight_count),
+            .stats_curve(gamma_stats_curve),.stats_target(gamma_stats_target),
+            .stats_enabled(gamma_stats_enabled),.frame_mask(source_mask),
+            .sample_valid(gamma_sample_valid),.sample_data(gamma_sample_data));
         // HDMI VS is active low; the adaptive module uses positive SOF.
         assign preprocess_source_vs=!gamma_frame_sync;
     end else begin : g_manual_preprocess
+        reg control_vs_q /* synthesis syn_useioff = 1 */;
+        always @(posedge pixclk_in)
+            if(!input_reset_n) control_vs_q<=1'b1;
+            else control_vs_q<=vs_in;
+        assign control_vs=!control_vs_q;
+        assign gamma_sample_valid=1'b0;
+        assign gamma_sample_data=224'd0;
         assign preprocess_source_r=r_in;
         assign preprocess_source_g=g_in;
         assign preprocess_source_b=b_in;
@@ -378,14 +449,16 @@ module hdmi_ddr3_top #(
             .INTERPOLATION_MODE(INTERPOLATION_MODE),
             .CACHE_INDEX_BITS(POSE_CACHE_INDEX_BITS),
             .TILED_ENABLE(POSE_TILED_ENABLE),
+            .RUNTIME_CONTROL(PC_GEOMETRY),
             .CACHE_LINE_WORDS(POSE_CACHE_LINE_WORDS),
             .RECIPROCAL_LUT_ENABLE(POSE_RECIPROCAL_LUT_ENABLE),
             .P1_Q14(DIST_P1_Q14),.P2_Q14(DIST_P2_Q14)) u_frame_buffer (
             .ddr_clk(ddr_core_clk),.ddr_rstn(ddr_init_done),
             .vin_clk(pixclk_in),.wr_fsync(~input_vs),.wr_en(wr_en_1920),.wr_data(rgb565_in),
             .vout_clk(pixel_clk),.rd_fsync(timing_vs),.rd_en(alg_rd_en),
-            .imu_yaw(ATTITUDE_WARP_ENABLE ? imu_yaw_capture : 16'd0),
-            .imu_pitch(ATTITUDE_WARP_ENABLE ? imu_pitch_capture : 16'd0),
+            .lens_enable(!PC_GEOMETRY || geometry_mask[0]),
+            .imu_yaw((PC_GEOMETRY ? geometry_mask[1] : ATTITUDE_WARP_ENABLE) ? imu_yaw_capture : 16'd0),
+            .imu_pitch((PC_GEOMETRY ? geometry_mask[1] : ATTITUDE_WARP_ENABLE) ? imu_pitch_capture : 16'd0),
             .vout_de(frame_de),.vout_data(rgb565_out),.init_done(frame_init_done),
             .axi_awaddr(axi_awaddr),.axi_awid(axi_awid),.axi_awlen(axi_awlen),
             .axi_awvalid(axi_awvalid),.axi_awready(axi_awready),

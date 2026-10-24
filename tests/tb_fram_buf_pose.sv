@@ -25,7 +25,7 @@ module tb_fram_buf_pose;
     wire [31:0] captured_frames,rendered_frames,displayed_frames,rejected_captures;
     fram_buf_pose #(.H_NUM(H),.V_NUM(V),.FIFO_BITS(5),
         .FX_Q14(16*16384),.FY_Q14(16*16384),.CX_Q14(16*16384),.CY_Q14(8*16384),
-        .K1_Q14(0),.K2_Q14(0)) dut (.*);
+        .K1_Q14(0),.K2_Q14(0)) dut (.lens_enable(1'b1),.*);
 
     reg [255:0] memory [0:2][0:WORDS-1];
     integer cycle=0;

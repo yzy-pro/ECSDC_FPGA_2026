@@ -25,7 +25,7 @@ module tb_pose_capture_throughput;
     reg axi_rvalid=0,axi_rlast=0;
     reg [3:0] axi_rid=0;
     wire [31:0] captured_frames,rendered_frames,displayed_frames,rejected_captures;
-    fram_buf_pose #(.H_NUM(H),.V_NUM(V)) dut (.*);
+    fram_buf_pose #(.H_NUM(H),.V_NUM(V)) dut (.lens_enable(1'b1),.*);
 
     reg write_pending=0;
     integer delay_cycles=0,remaining=0,received_words=0,burst_count=0;

@@ -45,6 +45,22 @@ assert not any(n.attrib.get('type') == 'FILE' and
                 n.attrib.get('file', '').startswith('DDR3_50H/'))
                for n in ET.fromstring(project).iter('item'))
 assert 'EmbFPGA_repo' not in project
+for file in ('uart_tx.v','cdc_snapshot.v','video_control_cdc.v',
+             'gamma_telemetry.v','cp2102_control.v'):
+    assert 'src/control/'+file in rtl, file
+assert "parameter PC_CONTROL_ENABLE = 1'b1" in top
+assert '.RUNTIME_CONTROL(PC_GEOMETRY)' in top
+assert '.lens_enable(!PC_GEOMETRY || geometry_mask[0])' in top
+assert 'wire [2:0] geometry_mask=AUTO_GAMMA ? source_mask : next_source_mask;' in top
+assert '.frame_start(control_vs && !control_vs_d)' in top
+assert '.next_mask_vin(next_source_mask)' in top
+assert 'assign control_vs=!input_vs_q;' in top
+assert '.enable(!PC_CONTROL_ENABLE || next_source_mask[2])' in top
+assert '!vs_in && raw_vs_d' not in top
+assert 'assign sys_led={5\'d0,applied_mask};' in top
+constraints=(ROOT/'src/constraints/hdmi_ddr3_top.fdc').read_text(encoding='ascii')
+assert 'set_lvcmos33_input pc_uart_rx R8' in constraints
+assert 'set_lvcmos33_output pc_uart_tx R9' in constraints
 cache=(ROOT/'src/video/undistort/undistort_band_cache.v').read_text(encoding='ascii')
 assert 'localparam CACHE_DEPTH=2475;' in cache
 for file in ('imu_uart_rx_50m.v','imu_protocol_50m.v','attitude_cdc.v','imu_affine_q14.v'):

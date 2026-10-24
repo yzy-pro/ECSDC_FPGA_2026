@@ -8,6 +8,11 @@ $OutputPath = Join-Path $ProjectRoot 'EmbFPGA.pds'
 
 $ApplicationFiles = @(
     'src/top/hdmi_ddr3_top.v'
+    'src/control/uart_tx.v'
+    'src/control/cdc_snapshot.v'
+    'src/control/video_control_cdc.v'
+    'src/control/gamma_telemetry.v'
+    'src/control/cp2102_control.v'
     'src/imu/imu_uart_rx_50m.v'
     'src/imu/imu_protocol_50m.v'
     'src/imu/attitude_cdc.v'

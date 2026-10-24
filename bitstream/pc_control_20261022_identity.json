@@ -1,0 +1,82 @@
+{
+  "candidate": "bitstream/EmbFPGA_1920_pc_control_20261022.sbit",
+  "sha256": "492e1c3c29606e4e29eb47e5f95704fb1892cc3cc0a970f555cbb3e9bd320b4c",
+  "bytes": 2101696,
+  "device": "PGL50H-FBG484-6",
+  "tool": "PDS 2025.2 build 211867",
+  "build": "build_rebuilt/pds_pc_control_write_ram_20261022",
+  "archived_evidence": "verification/pds_pc_control_write_ram_20261022",
+  "board_programmed": false,
+  "board_tested": false,
+  "configuration": {
+    "resolution": "1920x1080",
+    "input_output_raster_hz": 60,
+    "render_ddr_mhz": 100,
+    "yaw_pitch_limit_q2048": 536,
+    "roll": false,
+    "tile": [128, 32],
+    "source_slot_beats": 2048,
+    "sampling": "nearest",
+    "exact_projection": true,
+    "automatic_gamma": true,
+    "pc_uart_baud": 115200,
+    "available_mask": 7,
+    "default_mask": 7,
+    "gamma_telemetry_hz": 10,
+    "shared_write_payload": true,
+    "burst_storage": "client-owned distributed RAM"
+  },
+  "synthesis_resources": {
+    "lut": 14571,
+    "flip_flops": 15006,
+    "apm": 45,
+    "drm18k_equivalent": 103,
+    "latches": 0
+  },
+  "implementation_resources": {
+    "drm_sites": 104,
+    "drm_sites_available": 134,
+    "lut_including_constant_and_bypass": 16878,
+    "clm_flip_flops_excluding_io": 14871
+  },
+  "timing": {
+    "all_constraints_met": true,
+    "both_corners_checked": true,
+    "slow_render_setup_ns": 0.873,
+    "minimum_setup_ns": 0.121,
+    "minimum_hold_ns": 0.053,
+    "max_fifo_gray_skew_ns": 1.47,
+    "fifo_gray_skew_limit_ns": 6.734
+  },
+  "throughput_verification": {
+    "status": "PASS",
+    "frames": 28,
+    "publications": 13,
+    "independent_source_frames_per_second": 30.00003,
+    "max_render_clocks_100mhz": 3314614,
+    "max_publication_clocks_100mhz": 3333330,
+    "capture_fifo_peak": 15,
+    "displayed_pixels_checked": 51840000,
+    "poses": 11,
+    "control_masks": 8,
+    "ddr_command_latency_clocks": 32,
+    "payload_bubble_percent": 25,
+    "shared_read_write_payload": true,
+    "refresh_cycles": 35,
+    "refresh_interval_clocks": 780,
+    "includes_physical_uart": false,
+    "includes_vendor_ddr_phy": false,
+    "pc_control_test_cases": 17,
+    "main_rtl_regressions_passed": true
+  },
+  "evidence_sha256": {
+    "source_identity.json": "77e883ab4a6e1492eabe6f919bafd550d7992092e6284508c5d9ffb4e04363e4",
+    "snapshot_identity.json": "48c0d6fd0ac58dc2631da37b86e0fdb39768b1c33a8d5c5c8d5bcb9dc6844099",
+    "source_status.json": "5e09c4af904a3f79d30e8e8a3a8f01fa089e9f628fb2cdf48775a8539f95f4d8",
+    "build_audit.json": "656df3119732e272f406ea55c0b1633ceca72b35402aa66ba3a99a138580f974",
+    "pose_fifo_cdc.json": "c9e97699863b96c3fe8bbc1546d18819acb3b54d4e997b5ade16fe0dc806fc89",
+    "prj_tasks/pnr_1/report_timing/hdmi_ddr3_top.rtr": "7e0f2ed7af2a4b69c3a4e5706828490e5960e8860e500239cfcb7545ac1b49d1",
+    "simulation/result.log": "3735f189b857bbac1812e60d473459c52cf0dde302e264fb53abdffa559e921b",
+    "simulation/source_identity.json": "d83043ff397017c534d7b57e68a1282d1e9dc1b79d61d0901eec25f99ee94723"
+  }
+}

@@ -16,7 +16,10 @@ module adaptive_gamma_stream (
     output [7:0] out_r, out_g, out_b,
     output reg [2:0] active_curve, target_curve,
     output reg stats_valid,
-    output reg [31:0] luma_sum, pixel_count, dark_count, highlight_count
+    output reg [31:0] luma_sum, pixel_count, dark_count, highlight_count,
+    // Metadata belongs to the completed statistics frame, not the new curve.
+    output reg [2:0] stats_curve, stats_target,
+    output reg stats_enabled
 );
     reg vs_d, vs0, de0, sof0, enable0;
     reg [7:0] r0,g0,b0,luma0;
@@ -63,6 +66,7 @@ module adaptive_gamma_stream (
             frame_enable<=0;enable1<=0;active_curve<=3;target_curve<=3;
             running_luma<=0;running_count<=0;running_dark<=0;running_highlight<=0;
             frame_seen<=0;stats_valid<=0;luma_sum<=0;pixel_count<=0;dark_count<=0;highlight_count<=0;
+            stats_curve<=3;stats_target<=3;stats_enabled<=0;
             classify_valid<=0;very_dark<=0;dim<=0;slightly_dim<=0;
             slightly_bright<=0;bright<=0;very_bright<=0;mixed_light<=0;
             candidate_curve<=3;candidate_seen<=0;
@@ -78,6 +82,7 @@ module adaptive_gamma_stream (
                 luma_sum<={2'b0,running_luma};pixel_count<={10'b0,running_count};
                 dark_count<={10'b0,running_dark};highlight_count<={10'b0,running_highlight};
                 stats_valid<=frame_seen && running_count!=0;
+                stats_curve<=active_curve;stats_target<=target_curve;stats_enabled<=frame_enable;
                 frame_seen<=1;
                 // The first active pixel belongs to the new frame, including
                 // when DE and VS rise on the same source clock.

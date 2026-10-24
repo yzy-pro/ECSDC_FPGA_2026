@@ -184,12 +184,18 @@ def audit_routed_build(directory,status=None):
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--route',action='store_true')
+    p.add_argument('--route-mode',choices=('fast','normal','performance'),
+                   help='PDS routing strategy for a new isolated build; timing audit is unchanged')
+    p.add_argument('--place-decongestion',type=int,choices=range(10),
+                   help='PDS placement spreading level for a new routed build')
     p.add_argument('--output',type=Path)
     p.add_argument('--resume',action='store_true',help='resume an unchanged isolated --output build')
     p.add_argument('--audit-only',action='store_true',help='check a finished --route --output build without running PDS')
     p.add_argument('--snapshot-only',action='store_true',help='archive verified inputs of an existing build without changing its project or running PDS')
     p.add_argument('--allow-source-drift',action='store_true',help='audit a historical snapshot; never claim it represents current workspace sources')
     args=p.parse_args()
+    if (args.route_mode or args.place_decongestion is not None) and (not args.route or args.resume or args.audit_only or args.snapshot_only):
+        p.error('routing strategy options require a new --route build')
     if sum((args.resume,args.audit_only,args.snapshot_only))>1:p.error('choose only one of --resume/--audit-only/--snapshot-only')
     if (args.resume or args.audit_only or args.snapshot_only) and not args.output:p.error('--resume/--audit-only/--snapshot-only requires --output')
     if args.allow_source_drift and not args.audit_only:p.error('--allow-source-drift is only valid with --audit-only')
@@ -224,13 +230,17 @@ def main():
                          'optimize_dp_recovery':'TRUE','optimize_rp_recovery':'TRUE'},
             'cmd_route_optimize':{'fix_hold_violation':'TRUE'},
             'cmd_report_post_pnr_timing':{'nworst':'64','max_path':'64','report_max_skew':'TRUE'}}
+        if args.route_mode:settings['cmd_route']={'route_mode':args.route_mode}
+        if args.place_decongestion is not None:
+            settings['cmd_place']['plc_decongestion']=str(args.place_decongestion)
         for action in tree.iter('action'):
             for name,value in settings.get(action.attrib.get('name'),{}).items():
                 options=action.find('options')
                 option=options.find(f"option[@name='{name}']")
                 if option is None:
                     option=ET.SubElement(options,'option',name=name,
-                                         type='interger' if name in ('nworst','max_path') else 'switch')
+                                         type='interger' if name in ('nworst','max_path','plc_decongestion') else
+                                              'string' if name=='route_mode' else 'switch')
                 option.set('value',value)
         tree.write(project,encoding='utf-8',xml_declaration=True)
         identity.write_text(json.dumps(hashes,indent=2),encoding='utf-8')
